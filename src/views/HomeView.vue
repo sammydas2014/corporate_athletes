@@ -53,8 +53,6 @@
       </div>
     </section>
 
-    <BaseInsightsSection />
-
     <section class="cstd_sec">
       <div class="container">
         <div class="cstd-top text-center">
@@ -64,6 +62,9 @@
         <CaseStudySlider :cards="caseStudies" />
       </div>
     </section>
+
+    <BaseInsightsSection />
+
     <BaseAccelerate />
   </div>
 </template>
