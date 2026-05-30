@@ -1,7 +1,7 @@
 <template>
- <footer class="footer-sec">
+  <footer class="footer-sec">
     <div class="container">
-      <div class="row ftr-wrap ">
+      <div class="row ftr-wrap">
         <div class="col-md-4 col-12">
           <div class="logo-box">
             <div class="logo-wrap">
@@ -87,7 +87,9 @@
             <p class="footer-copy">© Corporate Athletes 2026</p>
           </div>
           <div class="col-md-6 col-12">
-            <ul class="d-flex justify-content-end align-items-center align-self-center policy-lists">
+            <ul
+              class="d-flex justify-content-end align-items-center align-self-center policy-lists"
+            >
               <li>
                 <RouterLink to="/" class="policy-links">Privacy Policy</RouterLink>
               </li>
@@ -113,8 +115,6 @@ import { ref } from 'vue'
 import BaseButton from '../ui/BaseButton.vue'
 import { footerSections } from '@/config/footer.config'
 const userEmail = ref('')
-
-
 </script>
 
 <style scoped>
@@ -136,6 +136,7 @@ const userEmail = ref('')
 }
 .contct-hdng h4 {
   font-size: 26px;
+  max-width: 350px;
 }
 .footer-content-box > .row {
   border-bottom: 2px solid rgb(216 222 230 / 10%);
@@ -144,103 +145,99 @@ const userEmail = ref('')
   font-size: 14px;
   padding: 0 20px;
 }
-.ftrlink-row{
+.ftrlink-row {
   padding-top: 40px;
   padding-bottom: 60px;
   padding-left: 50px;
 }
-.footer-title , .footer-subtitle{
+.footer-title,
+.footer-subtitle {
   font-size: 17px;
   font-weight: 600;
   color: var(--bs-white);
-
-
 }
-.footer-list{
+.footer-list {
   padding: 0;
   list-style-type: none;
   margin-top: 28px;
 }
-.footer-link{
+.footer-link {
   font-size: 16px;
-  color: #E7EDF3;
+  color: #e7edf3;
   transition: var(--bs-transition);
   letter-spacing: -3%;
 }
-.footer-link:hover{
+.footer-link:hover {
   color: var(--bs-primary);
 }
-.footer-link.router-link-exact-active{
+.footer-link.router-link-exact-active {
   color: var(--bs-primary);
 }
-.footer-list li + li{
+.footer-list li + li {
   margin-top: 14px;
 }
 .ftrcontent-box {
-    padding-left: 0;
-    width: 71%;
+  padding-left: 0;
+  width: 71%;
 }
 .footer-content-box .row {
-    padding-left: 50px;
+  padding-left: 50px;
 }
-.ftrlink-row .col-lg-3{
+.ftrlink-row .col-lg-3 {
   padding-left: 30px;
 }
-.ftrlink-row .col-lg-3:first-child{
+.ftrlink-row .col-lg-3:first-child {
   padding-left: 0;
 }
-.ftrlink-row .col-lg-3:last-child{
+.ftrlink-row .col-lg-3:last-child {
   padding-left: 45px;
 }
 .ftr-wrap > .col-md-4.col-12 {
-    width: 29%;
+  width: 29%;
 }
 .footer-email .footer-link {
-    font-size: 14px;
+  font-size: 14px;
 }
 .copyrightWrp {
-    border-top: 2px solid rgb(216 222 230 / 10%);
-    padding-block: 18px;
+  border-top: 2px solid rgb(216 222 230 / 10%);
+  padding-block: 18px;
 }
 .policy-lists {
-    margin: 0;
-
+  margin: 0;
 }
 .policy-lists li {
-    list-style-type: none;
+  list-style-type: none;
 }
-.policy-lists .policy-links{
+.policy-lists .policy-links {
   font-size: 15px;
-  color: #E7EDF3;
+  color: #e7edf3;
   letter-spacing: -3%;
 }
 .footer-copy {
-    font-size: 15px;
-    color: #E7EDF3;
-    letter-spacing: -3%;
+  font-size: 15px;
+  color: #e7edf3;
+  letter-spacing: -3%;
 }
-.policy-lists li{
+.policy-lists li {
   position: relative;
   padding-right: 9px;
 }
-.policy-lists li + li{
+.policy-lists li + li {
   padding-inline: 9px;
 }
-.policy-lists li::before{
-  content: "";
+.policy-lists li::before {
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
   width: 2px;
-  background-color: #E7EDF3;
+  background-color: #e7edf3;
   height: 100%;
 }
-.policy-lists li:last-child{
+.policy-lists li:last-child {
   padding-right: 0;
 }
-.policy-lists li:first-child::before{
+.policy-lists li:first-child::before {
   display: none;
 }
-
-
 </style>
