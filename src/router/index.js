@@ -1,43 +1,43 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // Lazy-loaded Views
-const HomeView = () => import('@/views/HomeView.vue')
-const AboutView = () => import('@/views/AboutView.vue')
-const EventsView = () => import('@/views/EventsView.vue')
-const ContactView = () => import('@/views/ContactUs.vue')
+const HomeView = () => import('@/views/Home/HomeView.vue')
+const AboutView = () => import('@/views/About/AboutView.vue')
+const EventsView = () => import('@/views/Events/EventsView.vue')
+const ContactView = () => import('@/views/Contact/ContactView.vue')
 
 // Solutions Nested Group
-const SolutionsView = () => import('@/views/SolutionsView.vue')
-const SolutionsMain = () => import('@/views/solutions/SolutionsMain.vue')
-const AiStrategyGovernance = () => import('@/views/solutions/AiStrategyGovernance.vue')
-const AiImplementationScaling = () => import('@/views/solutions/AiImplementationScaling.vue')
-const FinanceSharedServices = () => import('@/views/solutions/FinanceSharedServices.vue')
-const DigitalOperatingModel = () => import('@/views/solutions/DigitalOperatingModel.vue')
-const DataAnalytics = () => import('@/views/solutions/DataAnalytics.vue')
+const SolutionsView = () => import('@/views/Solutions/SolutionsView.vue')
+const SolutionsMain = () => import('@/views/Solutions/SolutionsMain.vue')
+const AiStrategyGovernance = () => import('@/views/Solutions/AiStrategyGovernance.vue')
+const AiImplementationScaling = () => import('@/views/Solutions/AiImplementationScaling.vue')
+const FinanceSharedServices = () => import('@/views/Solutions/FinanceSharedServices.vue')
+const DigitalOperatingModel = () => import('@/views/Solutions/DigitalOperatingModel.vue')
+const DataAnalytics = () => import('@/views/Solutions/DataAnalytics.vue')
 
 // AI Intelligence Nested Group
-const AiIntelligenceView = () => import('@/views/AiIntelligenceView.vue')
-const ToolCatalogue = () => import('@/views/ai-intelligence/ToolCatalogue.vue')
-const ToolDetails = () => import('@/views/ai-intelligence/ToolDetails.vue')
-const ToolsShortlist = () => import('@/views/ai-intelligence/ToolsShortlist.vue')
-const ToolsComparison = () => import('@/views/ai-intelligence/ToolsComparison.vue')
-const StackGenerator = () => import('@/views/ai-intelligence/StackGenerator.vue')
-const OutcomeView = () => import('@/views/ai-intelligence/OutcomeView.vue')
+const AiIntelligenceView = () => import('@/views/AiIntelligence/AiIntelligenceView.vue')
+const ToolCatalogue = () => import('@/views/AiIntelligence/ToolCatalogue.vue')
+const ToolDetails = () => import('@/views/AiIntelligence/ToolDetails.vue')
+const ToolsShortlist = () => import('@/views/AiIntelligence/ToolsShortlist.vue')
+const ToolsComparison = () => import('@/views/AiIntelligence/ToolsComparison.vue')
+const StackGenerator = () => import('@/views/AiIntelligence/StackGenerator.vue')
+const OutcomeView = () => import('@/views/AiIntelligence/OutcomeView.vue')
 
 // Case Studies Nested Group
-const CaseStudiesView = () => import('@/views/CaseStudiesView.vue')
-const CaseStudiesList = () => import('@/views/case-studies/CaseStudiesList.vue')
-const CaseStudyDetail = () => import('@/views/case-studies/CaseStudyDetail.vue')
+const CaseStudiesView = () => import('@/views/CaseStudies/CaseStudiesView.vue')
+const CaseStudiesList = () => import('@/views/CaseStudies/CaseStudiesList.vue')
+const CaseStudyDetail = () => import('@/views/CaseStudies/CaseStudyDetail.vue')
 
 // Insights Nested Group
-const InsightsView = () => import('@/views/InsightsView.vue')
-const InsightsMain = () => import('@/views/insights/InsightsMain.vue')
-const Articles = () => import('@/views/insights/Articles.vue')
-const AiDeepDives = () => import('@/views/insights/AiDeepDives.vue')
-const PlaybooksView = () => import('@/views/insights/PlaybooksView.vue')
-const PlaybooksList = () => import('@/views/insights/playbooks/PlaybooksList.vue')
-const PlaybookDetail = () => import('@/views/insights/playbooks/PlaybookDetail.vue')
-const ConsortiumContributions = () => import('@/views/insights/ConsortiumContributions.vue')
+const InsightsView = () => import('@/views/Insights/InsightsView.vue')
+const InsightsMain = () => import('@/views/Insights/InsightsMain.vue')
+const Articles = () => import('@/views/Insights/Articles.vue')
+const AiDeepDives = () => import('@/views/Insights/AiDeepDives.vue')
+const PlaybooksView = () => import('@/views/Insights/PlaybooksView.vue')
+const PlaybooksList = () => import('@/views/Insights/playbooks/PlaybooksList.vue')
+const PlaybookDetail = () => import('@/views/Insights/playbooks/PlaybookDetail.vue')
+const ConsortiumContributions = () => import('@/views/Insights/ConsortiumContributions.vue')
 
 const routes = [
   {
@@ -203,7 +203,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_to, _from, savedPosition) {
     if (savedPosition) {
       return savedPosition
     } else {

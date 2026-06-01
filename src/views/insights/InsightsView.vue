@@ -1,5 +1,5 @@
 <template>
-  <div class="playbooks-wrapper">
+  <div class="insights-wrapper">
     <router-view />
   </div>
 </template>
