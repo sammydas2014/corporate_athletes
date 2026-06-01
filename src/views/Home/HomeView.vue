@@ -3,9 +3,7 @@
 
     <BannerSection />
 
-    
-
-    <Audiencesection />
+    <AudienceSection />
 
     <WhatWeDo />
 
@@ -31,10 +29,9 @@ import CorporateAthletes from './sections/CorporateAthletes.vue'
 import BaseInsightsSection from './sections/BaseInsightsSection.vue'
 import AiPlatformSection from './sections/AiPlatformSection.vue'
 import BannerSection from './sections/BannerSection.vue'
-import Audiencesection from './sections/Audiencesection.vue'
+import AudienceSection from './sections/AudienceSection.vue'
 import CaseStudySliderSection from './sections/CaseStudySliderSection.vue'
 
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
