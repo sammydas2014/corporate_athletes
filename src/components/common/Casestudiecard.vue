@@ -36,11 +36,7 @@
       </div>
 
       <router-link :to="to" class="casestudie-card__cta" :aria-label="`Learn more about ${title}`">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+        <i class="bi bi-arrow-up-right-circle-fill"></i>
       </router-link>
     </div>
   </article>
@@ -204,24 +200,25 @@ defineProps({
 
 .casestudie-card__cta {
   flex-shrink: 0;
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
   border: none;
-  background: var(--bs-primary);
-  color: var(--bs-white);
+  background: transparent;
+  color: var(--bs-primary);
+  font-size: 35px;
+  line-height: 1;
   cursor: pointer;
-  transition: var(--bs-transition, all 0.3s ease-in-out);
+  transition: var(--bs-transition);
   padding: 0;
   align-self: flex-end;
+  text-decoration: none;
 }
 
 .casestudie-card__cta:hover {
-  background: var(--bs-secondary);
-  transform: scale(1.08);
+  transform: rotate(45deg);
+  color: var(--bs-primary);
 }
 
 .btm_wrp_con {
