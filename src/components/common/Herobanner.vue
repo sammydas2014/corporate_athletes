@@ -120,6 +120,7 @@ const props = defineProps({
   bgImage: { type: String, default: '' },
 
   // ─── Overlay ──────────────────────────────────────────────────
+  overlay: { type: Boolean, default: false },
   overlayGradient: { type: String, default: '' },
   overlayColor: { type: String, default: '' },
 
@@ -158,7 +159,7 @@ const sectionStyle = computed(() => ({
 }))
 
 const showOverlay = computed(() => {
-  return !!props.overlayColor || (!!props.overlayGradient && props.overlayGradient.toLowerCase() !== 'none')
+  return props.overlay || !!props.overlayColor || (!!props.overlayGradient && props.overlayGradient.toLowerCase() !== 'none')
 })
 
 const mapCtaStyleToVariant = (style = '') => {

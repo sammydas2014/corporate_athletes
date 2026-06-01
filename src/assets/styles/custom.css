@@ -92,6 +92,15 @@ img {
   padding-bottom: 80px;
 }
 
+.hero-banner.aboutBnr .hero-banner__content {
+  max-width: 750px;
+  padding-bottom: 20px;
+}
+
+.hero-banner.aboutBnr .hero-banner__subtitle {
+  max-width: 665px;
+}
+
 .hero-banner.homeBnr .hero-banner__subtitle {
   max-width: 840px;
 }

@@ -1,17 +1,17 @@
 <template>
   <Herobanner :title="bannerData.title" :subtitle="bannerData.subtitle" :bg-image="bannerData.bgImage"
     :overlay="bannerData.overlay" :show-accent="bannerData.showAccent" :accent-color="bannerData.accentColor"
-    :min-height="bannerData.minHeight" :ctas="bannerData.ctas" class="homeBnr" />
+    :min-height="bannerData.minHeight" class="aboutBnr" />
 </template>
 
 <script setup>
 import Herobanner from '@/components/common/Herobanner.vue';
-import { bannerData } from '@/services/home.service.js';
+import { bannerData } from '@/services/about.service'
 </script>
 
 <style scoped>
-.hero-banner.homeBnr {
+.hero-banner.aboutBnr {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column-reverse;
 }
 </style>
