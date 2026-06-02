@@ -1,7 +1,8 @@
 <script setup>
-import {defineProps} from 'vue'
+import { defineProps } from 'vue'
+import BaseButton from './BaseButton.vue';
 defineProps({
-  logo:{
+  logo: {
     type: String,
     default: " "
   },
@@ -12,6 +13,14 @@ defineProps({
   details: {
     type: String,
     default: "Our advisors are former operators and transformation leaders."
+  },
+  btn: {
+    type: String,
+    default: ""
+  },
+  btnTo: {
+    type: [String, Object],
+    default: "/"
   }
 })
 </script>
@@ -21,15 +30,18 @@ defineProps({
     <div class="crd-img">
       <img :src="logo" alt="">
     </div>
-    <h5>{{ title }}</h5>
+    <h3>{{ title }}</h3>
     <p>
       {{ details }}
     </p>
+    <BaseButton v-if="btn" :to="btnTo" class="feature-crd__btn">
+      {{ btn }}
+    </BaseButton>
   </div>
 </template>
 
 <style scoped>
-.feature-crd{
+.feature-crd {
   padding: 45px 22px 36px 22px;
   background-color: var(--bs-white);
   border-radius: 12px;
@@ -37,9 +49,12 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(25% - 15px);
+  max-width: 400px;
+  text-align: center;
+  gap: 25px;
 }
-.feature-crd .crd-img{
+
+.feature-crd .crd-img {
   background-color: var(--bs-primary);
   width: 110px;
   height: 110px;
@@ -47,20 +62,15 @@ defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
-}
-.feature-crd h5{
-  font-size: 20px;
-  color: var(--color-dark-secondary);
-  letter-spacing: -5%;
-  font-weight: 600;
-  text-align: center;
-}
-.feature-crd p{
-  font-size: 16px;
-  line-height: 23px;
-  color: var(--bs-body-color);
-  text-align: center;
+  margin-bottom: 0;
 }
 
+.feature-crd h3 {
+  color: var(--color-dark-secondary);
+  margin-bottom: 0;
+}
+
+.feature-crd__btn {
+  margin-top: auto;
+}
 </style>

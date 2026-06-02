@@ -85,8 +85,6 @@ img {
   opacity: 0;
 }
 
-/* Start */
-
 .hero-banner.homeBnr .hero-banner__content {
   max-width: 890px;
   padding-bottom: 80px;
@@ -105,9 +103,56 @@ img {
   max-width: 840px;
 }
 
+.hero-banner.AIStrategyBnr .hero-banner__content {
+  max-width: 620px;
+}
+
+.hero-banner.AIStrategyBnr .hero-banner__subtitle {
+  max-width: 575px;
+}
+
+.hero-banner.solutionBnr .hero-banner__content {
+  max-width: 600px;
+}
+
+.hero-banner.solutionBnr .hero-banner__content h1 {
+  color: var(--color-dark-secondary);
+}
+
+.hero-banner.solutionBnr .hero-banner__content p {
+  color: var(--bs-body-color);
+}
+
+.hero-banner.solutionBnr .hero-banner_img {
+  margin-left: auto;
+}
+
 .audience-slider {
   background: var(--bs-body-bg);
   padding: var(--sec-gap) 0;
+}
+.AIStrategyBnr .hero-banner_img {
+  position: relative;
+}
+
+.AIStrategyBnr .hero-banner_img:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 75px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(4, 4, 5, 1) 0%, rgba(4, 4, 5, 0) 100%);
+  content: "";
+}
+
+.AIStrategyBnr .hero-banner_img::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 75px;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(4, 4, 5, 1) 0%, rgba(4, 4, 5, 0) 100%);
+  content: "";
 }
 
 .audience-slider__header {

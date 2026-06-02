@@ -28,7 +28,12 @@
               </ul>
             </template>
             <template v-else>
-              <router-link :to="item.to" class="nav-link" exact-active-class="active">{{ item.label }}</router-link>
+              <router-link
+              :to="item.to"
+              class="nav-link"
+              :exact-active-class="item.exact ? 'active' : ''"
+              :active-class="item.exact ? '' : 'active'"
+            >{{ item.label }}</router-link>
             </template>
           </li>
         </ul>
@@ -74,7 +79,7 @@ const { shortlistedTools } = useShortlist();
 const shortlistCount = computed(() => shortlistedTools.value.length);
 
 const navItems = [
-  { label: 'Home', to: '/' },
+  { label: 'Home', to: '/', exact: true },
   {
     label: 'Solutions',
     dropdown: [
@@ -152,7 +157,7 @@ function closeSearch() {
 .nav-link:hover,
 .nav-link:focus,
 .nav-link:hover {
-  color: var(--bs-primary) !important;
+  color: var(--bs-secondary) !important;
   line-height: 1;
   font-weight: 400 !important;
 }

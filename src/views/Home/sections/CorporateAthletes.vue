@@ -41,4 +41,8 @@ import { features } from '@/services/home.service.js'
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.fetaure-wrap .feature-crd {
+  width: calc(25% - 15px);
+}
 </style>
