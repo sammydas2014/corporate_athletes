@@ -1,6 +1,5 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { defineProps } from 'vue';
 import 'swiper/css'
 import MeasurableCard from "@/components/common/MeasurableCard.vue";
 

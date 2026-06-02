@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 import SolutionList from "@/components/common/SolutionList.vue"
 import OutCome from "@/components/common/OutCome.vue"
 defineProps({
