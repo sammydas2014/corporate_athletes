@@ -9,7 +9,7 @@ import Herobanner from '@/components/common/Herobanner.vue';
 import { bannerData } from '@/services/about.service'
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero-banner.aboutBnr {
   display: flex;
   flex-direction: column-reverse;

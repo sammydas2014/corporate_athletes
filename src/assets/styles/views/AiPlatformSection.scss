@@ -1,0 +1,26 @@
+.ai-platform {
+  padding: var(--sec-gap) 0;
+  background-color: var(--color-surface);
+
+  &__header {
+    margin-bottom: 20px;
+    max-width: 770px;
+    margin-inline: auto;
+  }
+
+  &__cta {
+    margin-top: 20px;
+    text-align: center;
+
+    .btn {
+      max-width: fit-content;
+      margin-inline: auto;
+    }
+  }
+
+  &__swiper {
+    .swiper-wrapper {
+      align-items: center;
+    }
+  }
+}

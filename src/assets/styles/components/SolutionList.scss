@@ -1,0 +1,65 @@
+@use '../base' as *;
+
+.solution-list-wrap {
+  & + .solution-list-wrap {
+    margin-top: 35px;
+  }
+
+  h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: $color-dark-secondary;
+    line-height: 26px;
+    letter-spacing: -3%;
+    text-transform: uppercase;
+    position: relative;
+    display: inline;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      width: 104px;
+      height: 1px;
+      background-color: $color-secondary;
+      left: 112%;
+    }
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: -3%;
+    margin-top: 15px;
+  }
+
+  ul {
+    padding: 0;
+    margin-top: 17px;
+
+    li {
+      padding-left: 27px;
+      font-size: 17px;
+      color: #6B7280;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -3%;
+      position: relative;
+
+      & + li {
+        margin-top: 24px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        background: url("../../images/golden-check.png") no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+}

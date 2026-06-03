@@ -8,7 +8,7 @@ import Herobanner from '@/components/common/Herobanner.vue';
 import { bannerData } from '@/services/solutions.service';
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero-banner.solutionBnr {
   display: flex;
   padding: 50px 0;

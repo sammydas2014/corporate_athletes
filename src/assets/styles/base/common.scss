@@ -1,0 +1,146 @@
+/* Global Reset and Normalizer Additions */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: var(--bs-body-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Image responsive standard */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.shadow-lg {
+  filter: drop-shadow(--bs-box-shadow-lg);
+}
+
+.overflow-x-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  /* Hide scrollbars for chrome/safari */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+
+  &-track {
+    background: var(--bs-light);
+  }
+
+  &-thumb {
+    background: var(--bs-primary);
+    border-radius: 4px;
+    transition: var(--transition-fast);
+
+    &:hover {
+      background: var(--bs-primary);
+    }
+  }
+}
+
+h1 {
+  color: var(--bs-white);
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: 25px;
+}
+
+.title__eyebrow {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid var(--bs-secondary);
+  border-radius: 50px;
+  margin-bottom: 30px;
+  color: var(--bs-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sec__title {
+  color: var(--color-dark-secondary);
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: 25px;
+}
+
+.sec__subtitle {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  margin-bottom: 0;
+}
+
+h3 {
+  color: var(--color-dark-secondary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+ul li,
+ol li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Transition utility for router-views */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

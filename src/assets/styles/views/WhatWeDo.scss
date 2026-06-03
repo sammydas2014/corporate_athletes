@@ -1,0 +1,62 @@
+@use '../base' as *;
+
+.whatwedo-sec {
+  background: $gradient-primary;
+  overflow: hidden;
+
+  .container {
+    padding-top: var(--sec-gap);
+    padding-bottom: 200px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: url(/src/assets/images/what-we-do-after-img.png) no-repeat;
+      background-position: bottom left;
+      background-size: contain;
+      width: 1200px;
+      height: 600px;
+      left: -660px;
+      bottom: 0;
+    }
+  }
+}
+
+.hdng-wrap {
+  padding-left: 96px;
+  padding-right: 65px;
+  width: 50%;
+  flex: 0 0 auto;
+
+  .sec__title {
+    color: var(--bs-body-bg);
+    max-width: 430px;
+  }
+
+  .sub-hdng {
+    position: relative;
+    color: #E9EEF2;
+    font-size: 18px;
+    letter-spacing: -2%;
+    line-height: 22px;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #E9EEF2;
+      width: 131px;
+      height: 1px;
+      top: 11px;
+      left: 113%;
+    }
+  }
+}
+
+.work-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 78px;
+  width: 50%;
+}

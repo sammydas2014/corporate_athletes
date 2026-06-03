@@ -1,0 +1,39 @@
+@use '../base' as *;
+
+.our-model-sec {
+  background: $gradient-primary;
+  padding: var(--sec-gap) 0;
+
+  .hdng {
+    max-width: 1080px;
+    margin: 0 auto 55px auto;
+    text-align: center;
+
+    h2 {
+      text-align: center;
+      color: #FAFAF8;
+    }
+
+    p {
+      text-align: center;
+      color: var(--bs-white);
+
+      & + p {
+        margin-top: 10px;
+      }
+    }
+  }
+  .hdng-btm{
+    margin-bottom: 0;
+  }
+}
+
+.cards-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+
+  .word-card {
+    width: calc(25% - 10px);
+  }
+}

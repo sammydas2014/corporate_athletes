@@ -1,0 +1,39 @@
+.engagement-sec {
+  padding: var(--sec-gap) 0;
+  background-color: var(--bs-light);
+}
+
+.smll-hdng {
+  font-size: 17px;
+  color: var(--bs-secondary);
+  line-height: 26px;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+.aboutpage-engagement {
+  .txt-wrap {
+    max-width: 490px;
+    padding-right: 0;
+  }
+
+  .soluction-wrap {
+    margin-top: 70px;
+    max-width: 450px;
+  }
+
+  .engagement-img-wrap {
+    min-width: 700px;
+  }
+}
+
+.engagement-img-wrap {
+  img {
+    margin-left: auto;
+  }
+}
+
+.txt-wrap {
+  padding-right: 60px;
+}

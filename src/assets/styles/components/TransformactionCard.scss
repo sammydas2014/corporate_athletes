@@ -1,0 +1,44 @@
+.transform-crd {
+  padding: 42px 0 45px 0;
+  background-color: transparent;
+
+  h3 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 27px;
+    color: var(--bs-body-color);
+    letter-spacing: -4%;
+  }
+}
+
+.transform-crd-icon-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .text-wrap {
+    width: 88%;
+  }
+
+  p {
+    max-width: 450px;
+  }
+}
+
+.icon-right-crd {
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: var(--bs-primary);
+  font-size: 35px;
+  line-height: 1;
+  border: none;
+  flex: 0 0 auto;
+  transition: var(--bs-transition);
+
+  &:hover {
+    transform: rotate(45deg);
+  }
+}

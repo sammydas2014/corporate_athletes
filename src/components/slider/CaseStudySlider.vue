@@ -155,7 +155,7 @@ onBeforeUnmount(() => {
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .slider-viewport {
   overflow: hidden;
   width: 100vw;
@@ -178,12 +178,12 @@ onBeforeUnmount(() => {
   transition:
     width 700ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 500ms ease;
-}
 
-.cs-card.active {
-  width: 810px;
-  opacity: 1;
-  max-width: calc(100dvw - 36px);
+  &.active {
+    width: 810px;
+    opacity: 1;
+    max-width: calc(100dvw - 36px);
+  }
 }
 
 .new_slide {
@@ -227,27 +227,24 @@ onBeforeUnmount(() => {
   left: 10px;
   right: 10px;
   border-radius: var(--border-radius-sm);
+
+  h3 {
+    font-weight: 600;
+    color: var(--bs-dark);
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin-bottom: 10px;
+    transition: var(--bs-transition);
+  }
+
+  p {
+    font-size: 15px;
+    color: var(--bs-body-color);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
 }
 
-.card-body h3 {
-  font-weight: 600;
-  color: var(--bs-dark);
-  line-height: 1.2;
-  letter-spacing: -0.05em;
-  margin-bottom: 10px;
-  transition: var(--bs-transition);
-}
-
-.card-body p {
-  font-size: 15px;
-  color: var(--bs-body-color);
-  line-height: 1.5;
-  margin-bottom: 0;
-}
-
-.arrow-btn > i {
-  color: var(--bs-primary);
-}
 .arrow-btn {
   flex-shrink: 0;
   border-radius: 50%;
@@ -256,9 +253,13 @@ onBeforeUnmount(() => {
   border: none;
   flex: 0 0 auto;
   transition: var(--bs-transition);
-}
 
-.arrow-btn:hover {
-  transform: rotate(45deg);
+  > i {
+    color: var(--bs-primary);
+  }
+
+  &:hover {
+    transform: rotate(45deg);
+  }
 }
 </style>

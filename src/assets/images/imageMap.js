@@ -4,6 +4,7 @@ export const imageMap = {
   aboutBnr: new URL("./about_bnr.png", import.meta.url).href,
   solutionBnr: new URL("./solution_bnr_img.png", import.meta.url).href,
   AIStrategyGovernanceBnr: new URL("./AIStrategyGovernance.png", import.meta.url).href,
+  AIImplementationBnr: new URL("./AIImplementationImg.png", import.meta.url).href,
   solutionBnrBg: new URL("./solution_bnr_bg.png", import.meta.url).href,
   audienceImg1: new URL("./audience-img-1.png", import.meta.url).href,
   audienceImg2: new URL("./audience-img-2.png", import.meta.url).href,
@@ -38,6 +39,7 @@ export const imageMap = {
   mentalHealth: new URL("./mental-health.png", import.meta.url).href,
   connection: new URL("./connection.png", import.meta.url).href,
   bubblesPartical: new URL("./bubbles-partical.png", import.meta.url).href,
+  financesharedBnr: new URL("./financesharedbnr.png", import.meta.url).href,
 
   avatars: {},
 

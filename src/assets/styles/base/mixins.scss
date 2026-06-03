@@ -1,0 +1,5 @@
+// Breakpoint mixins
+@mixin mobile           { @media (max-width: 767px)                         { @content; } }
+@mixin tablet           { @media (max-width: 991px)                         { @content; } }
+@mixin tablet-landscape { @media (max-width: 1023px)                        { @content; } }
+@mixin tablet-only      { @media (min-width: 768px) and (max-width: 1023px) { @content; } }

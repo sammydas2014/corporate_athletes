@@ -13,7 +13,7 @@
       <div class="row align-items-center g-0">
 
         <!-- Left: text content -->
-        <div :class="['hero-banner__content_col', hasVisual ? 'col-12 col-lg-6' : 'col-12']">
+        <div :class="['hero-banner__content_col', hasVisual ? 'col-12 col-lg-7' : 'col-12']">
           <div class="hero-banner__content">
             <!-- Breadcrumb -->
             <div v-if="breadcrumbs && breadcrumbs.length" class="hero-banner__breadcrumb-row">
@@ -96,7 +96,7 @@
         </div>
 
         <!-- Right: static image or custom slot -->
-        <div v-if="hasVisual" class="col-12 col-lg-6 hero-banner__visual-col">
+        <div v-if="hasVisual" class="col-12 col-lg-5 hero-banner__visual-col">
           <div class="hero-banner_img">
             <slot name="visual">
               <img v-if="imageUrl" :src="imageUrl" :alt="imageAlt || title" class="banner-inline-img" />

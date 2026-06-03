@@ -1,41 +1,41 @@
-// ─── 1. Bootstrap ────────────────────────────────────────────────────────────
-@import 'bootstrap/dist/css/bootstrap.min.css';
-@import 'bootstrap-icons/font/bootstrap-icons.css';
+// ─── 0. Variables & Mixins ───────────────────────────────────────────────────
+// Bootstrap CSS is imported in src/main.js (before this file) so Bootstrap
+// loads first in the bundle, allowing our :root overrides to cascade on top.
+@use './base' as *;
 
-// ─── 2. Base ─────────────────────────────────────────────────────────────────
-@import './base/var.css';
-@import './base/common.css';
-@import './base/fs.css';
-@import './base/additional.css';
+// ─── 1. Base ─────────────────────────────────────────────────────────────────
+@use './base/common';
+@use './base/fs';
+@use './base/additional';
 
-// ─── 3. Components ───────────────────────────────────────────────────────────
-@import './components/AppFooter.css';
-@import './components/AppNavbar.css';
-@import './components/BaseButton.css';
-@import './components/BaseAccelerate.css';
-@import './components/BaseInput.css';
-@import './components/Herobanner.css';
-@import './components/Casestudiecard.css';
-@import './components/Casestudiecardgrid.css';
-@import './components/OutCome.css';
-@import './components/FeatureCard.css';
-@import './components/BaseEngagement.css';
-@import './components/BaseEnterprice.css';
-@import './components/MeasurableCard.css';
-@import './components/SolutionList.css';
-@import './components/TransformactionCard.css';
-@import './components/WorkCard.css';
-@import './components/AiPlatformSlider.css';
-@import './components/Audienceslider.css';
+// ─── 2. Components ───────────────────────────────────────────────────────────
+@use './components/AppFooter';
+@use './components/AppNavbar';
+@use './components/BaseButton';
+@use './components/BaseAccelerate';
+@use './components/BaseInput';
+@use './components/Herobanner';
+@use './components/Casestudiecard';
+@use './components/Casestudiecardgrid';
+@use './components/OutCome';
+@use './components/FeatureCard';
+@use './components/BaseEngagement';
+@use './components/BaseEnterprice';
+@use './components/MeasurableCard';
+@use './components/SolutionList';
+@use './components/TransformactionCard';
+@use './components/WorkCard';
+@use './components/AiPlatformSlider';
+@use './components/Audienceslider';
 
-// ─── 4. Views ────────────────────────────────────────────────────────────────
-@import './views/AiPlatformSection.css';
-@import './views/WhatWeDo.css';
-@import './views/CorporateAthletes.css';
-@import './views/CaseStudySliderSection.css';
-@import './views/BaseInsightsSection.css';
-@import './views/OurModel.css';
-@import './views/ProfilecardSection.css';
-@import './views/CapabilityPillars.css';
-@import './views/ApproachSection.css';
-@import './views/MeasurableSection.css';
+// ─── 3. Views ────────────────────────────────────────────────────────────────
+@use './views/AiPlatformSection';
+@use './views/WhatWeDo';
+@use './views/CorporateAthletes';
+@use './views/CaseStudySliderSection';
+@use './views/BaseInsightsSection';
+@use './views/OurModel';
+@use './views/ProfilecardSection';
+@use './views/CapabilityPillars';
+@use './views/ApproachSection';
+@use './views/MeasurableSection';

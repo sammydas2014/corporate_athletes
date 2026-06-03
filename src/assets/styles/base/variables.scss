@@ -1,0 +1,70 @@
+// ─── SCSS Variables (compile-time) ───────────────────────────────────────────
+$color-primary:        #1f4e5f;
+$color-secondary:      #d6a85f;
+$color-dark-secondary: #1a1d21;
+$color-text-light:     #e7edf3;
+$gradient-primary:     linear-gradient(139.04deg, rgba(24.45, 67.72, 83.37, 1) 1.235%, rgba(31, 78, 95, 1) 49.426%);
+
+// ─── CSS Custom Properties (runtime) ─────────────────────────────────────────
+:root {
+  /* Bootstrap Theme Colors */
+  --bs-primary: #1f4e5f;
+  --bs-primary-rgb: 31, 78, 95;
+
+  --bs-secondary: #d6a85f;
+  --bs-secondary-rgb: 214, 168, 95;
+
+  --bs-success: #216250;
+  --bs-success-rgb: 33, 98, 80;
+
+  --bs-dark: #121417;
+  --bs-dark-rgb: 18, 20, 23;
+
+  --bs-light: #eef1f4;
+  --bs-light-rgb: 238, 241, 244;
+
+  --bs-white: #ffffff;
+  --bs-white-rgb: 255, 255, 255;
+
+  /* Additional Brand Colors */
+  --color-success-hover: #2f6b5a;
+  --color-dark-secondary: #1a1d21;
+  --color-surface: #f6f7f9;
+
+  /* Gray Scale */
+  --bs-gray-300: #c6d1d5;
+  --bs-gray-300-rgb: 198, 209, 213;
+
+  /* Borders */
+  --bs-border-color: #d8dee6;
+  --bs-border-color-rgb: 216, 222, 230;
+
+  /* Body */
+  --bs-body-bg: #fafaf8;
+  --bs-body-color: #6b7280;
+  --bs-body-font-family: 'Inter', -apple-system, sans-serif;
+
+  /* Typography */
+  --font-display: 'Sora', -apple-system, sans-serif;
+
+  /* Gradients */
+  --bs-primary-gradient: linear-gradient(
+    139.04deg,
+    rgb(24, 68, 83) 1.235%,
+    rgb(31, 78, 95) 49.426%
+  );
+
+  /* Transitions */
+  --bs-transition: all 0.3s ease-in-out;
+
+  /* Shadows */
+  --bs-box-shadow-lg: 0 8px 11px rgba(0, 0, 0, 0.25);
+
+  /* Border Radius */
+  --border-radius-sm: 10px;
+  --border-radius-md: 15px;
+  --border-radius-lg: 20px;
+  --bs-border-radius-pill: 50rem;
+
+  --sec-gap: 100px;
+}

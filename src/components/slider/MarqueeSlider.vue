@@ -51,7 +51,7 @@ const repeatedItems = [
 ]
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .marquee-wrapper {
   background: var(--bs-light);
   overflow: hidden;
@@ -85,10 +85,10 @@ const repeatedItems = [
   line-height: 0.8;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-}
 
-.slide-label.dim {
-  color: var(--bs-gray-300);
+  &.dim {
+    color: var(--bs-gray-300);
+  }
 }
 
 .slide-sep {

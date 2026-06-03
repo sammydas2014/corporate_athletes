@@ -28,12 +28,8 @@
               </ul>
             </template>
             <template v-else>
-              <router-link
-              :to="item.to"
-              class="nav-link"
-              :exact-active-class="item.exact ? 'active' : ''"
-              :active-class="item.exact ? '' : 'active'"
-            >{{ item.label }}</router-link>
+              <router-link :to="item.to" class="nav-link" :exact-active-class="item.exact ? 'active' : ''"
+                :active-class="item.exact ? '' : 'active'">{{ item.label }}</router-link>
             </template>
           </li>
         </ul>
@@ -132,7 +128,7 @@ function closeSearch() {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .navbar {
   border-bottom: 2px solid rgba(197, 155, 108, 0.2);
 }
@@ -144,16 +140,39 @@ function closeSearch() {
   transition: var(--bs-transition);
   color: var(--bs-dark);
   letter-spacing: -0.04em;
+
+  &:hover,
+  &:focus {
+    color: var(--bs-secondary) !important;
+    line-height: 1;
+    font-weight: 400 !important;
+  }
 }
 
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link.show,
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:hover {
-  color: var(--bs-secondary) !important;
-  line-height: 1;
-  font-weight: 400 !important;
+.navbar-nav {
+  .nav-link {
+
+    &.active,
+    &.show {
+      color: var(--bs-secondary) !important;
+      line-height: 1;
+      font-weight: 400 !important;
+    }
+  }
+
+  .dropdown-toggle {
+    &::after {
+      display: inline-block;
+      margin-left: 6px;
+      vertical-align: bottom;
+      content: "\F282";
+      font-family: 'bootstrap-icons';
+      border: none;
+      margin-bottom: 0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
 }
 
 .tracking-wide {
@@ -173,22 +192,24 @@ function closeSearch() {
   transition: var(--bs-transition);
   color: rgba(255, 255, 255, 0.75) !important;
   font-size: 15px;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--bs-secondary) !important;
+  }
+
+  &.active {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: var(--bs-secondary) !important;
+    font-weight: 600;
+  }
 }
 
-.dropdown-item:hover,
-.dropdown-item:focus {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  color: var(--bs-secondary) !important;
-}
-
-.dropdown-item.active {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  color: var(--bs-secondary) !important;
-  font-weight: 600;
-}
-
-.hover-gold:hover {
-  color: var(--bs-secondary) !important;
+.hover-gold {
+  &:hover {
+    color: var(--bs-secondary) !important;
+  }
 }
 
 .btn.call_btn {
@@ -198,18 +219,6 @@ function closeSearch() {
   padding-inline: 24px;
   font-weight: 600 !important;
   letter-spacing: 0.05em;
-}
-
-.navbar-nav .dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 6px;
-  vertical-align: bottom;
-  content: "\F282";
-  font-family: 'bootstrap-icons';
-  border: none;
-  margin-bottom: 0;
-  font-size: 12px;
-  font-weight: 600;
 }
 
 .search-overlay {
@@ -225,12 +234,11 @@ function closeSearch() {
   transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.35s;
   z-index: 99;
-}
 
-.search-overlay.open {
-  max-height: 72px;
-  /* enough for the input row */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  &.open {
+    max-height: 72px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
 }
 
 /* .container already constrains inner content */

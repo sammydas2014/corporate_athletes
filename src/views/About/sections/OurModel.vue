@@ -22,7 +22,7 @@ import {ourModelData} from "@/services/about.service.js"
             />
           </template>
         </div>
-        <div class="hdng">
+        <div class="hdng hdng-btm">
           <p>This allows organisations to start where it matters most and expand as value is proven.</p>
           <p>Engage across one or multiple components depending on your needs.</p>
         </div>

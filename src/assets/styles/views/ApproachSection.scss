@@ -1,0 +1,26 @@
+@use '../base' as *;
+
+.approach-sec {
+  background: $gradient-primary;
+  padding: var(--sec-gap) 0;
+
+  .hdng {
+    text-align: center;
+
+    h2 {
+      color: var(--bs-body-bg);
+    }
+  }
+
+  .cards-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+}
+
+.cards-wrap {
+  .word-card {
+    width: calc(25% - 10px);
+  }
+}

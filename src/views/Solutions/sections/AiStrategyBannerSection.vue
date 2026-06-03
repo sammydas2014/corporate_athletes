@@ -9,7 +9,7 @@ import Herobanner from '@/components/common/Herobanner.vue';
 import { BannerData } from '@/services/aistrategygovernance.service';
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero-banner.AIStrategyBnr {
   display: flex;
   padding: 0;

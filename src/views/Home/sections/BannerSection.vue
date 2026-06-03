@@ -9,7 +9,7 @@ import Herobanner from '@/components/common/Herobanner.vue';
 import { bannerData } from '@/services/home.service.js';
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero-banner.homeBnr {
   display: flex;
   align-items: flex-end;

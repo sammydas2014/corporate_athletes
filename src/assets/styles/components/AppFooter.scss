@@ -1,0 +1,152 @@
+@use '../base' as *;
+
+.footer-sec {
+  background-color: var(--bs-dark);
+}
+
+.logo-box {
+  padding-top: 78px;
+  padding-right: 41px;
+  border-right: 2px solid rgb(216 222 230 / 10%);
+  height: 100%;
+
+  p {
+    margin-top: 75px;
+    color: #c8d0d8;
+  }
+}
+
+.footer-content-box {
+  padding-top: 78px;
+
+  > .row {
+    border-bottom: 2px solid rgb(216 222 230 / 10%);
+  }
+
+  .row {
+    padding-left: 50px;
+  }
+}
+
+.contct-hdng {
+  h4 {
+    font-size: 26px;
+    max-width: 350px;
+  }
+}
+
+.suscrd-btn {
+  font-size: 14px;
+  padding: 0 20px;
+}
+
+.ftrlink-row {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  padding-left: 50px;
+
+  .col-lg-3 {
+    padding-left: 30px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-left: 45px;
+    }
+  }
+}
+
+.footer-title,
+.footer-subtitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--bs-white);
+}
+
+.footer-list {
+  padding: 0;
+  list-style-type: none;
+  margin-top: 28px;
+
+  li + li {
+    margin-top: 14px;
+  }
+}
+
+.footer-link {
+  font-size: 16px;
+  color: $color-text-light;
+  transition: var(--bs-transition);
+  letter-spacing: -3%;
+
+  &:hover,
+  &.router-link-exact-active {
+    color: var(--bs-primary);
+  }
+}
+
+.ftrcontent-box {
+  padding-left: 0;
+  width: 71%;
+}
+
+.ftr-wrap > .col-md-4.col-12 {
+  width: 29%;
+}
+
+.footer-email {
+  .footer-link {
+    font-size: 14px;
+  }
+}
+
+.copyrightWrp {
+  border-top: 2px solid rgb(216 222 230 / 10%);
+  padding-block: 18px;
+}
+
+.policy-lists {
+  margin: 0;
+
+  li {
+    list-style-type: none;
+    position: relative;
+    padding-right: 9px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: $color-text-light;
+      height: 100%;
+    }
+
+    & + li {
+      padding-inline: 9px;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:first-child::before {
+      display: none;
+    }
+  }
+
+  .policy-links {
+    font-size: 15px;
+    color: $color-text-light;
+    letter-spacing: -3%;
+  }
+}
+
+.footer-copy {
+  font-size: 15px;
+  color: $color-text-light;
+  letter-spacing: -3%;
+}

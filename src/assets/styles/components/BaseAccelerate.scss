@@ -1,0 +1,34 @@
+.accelerate-section {
+  padding: 83px 0;
+  background-color: var(--bs-dark);
+  border-bottom: 2px solid var(--bs-white);
+
+  > .row {
+    justify-content: space-between;
+  }
+
+  .row {
+    align-items: center;
+  }
+
+  .sec__title {
+    color: var(--bs-white);
+    margin: 0;
+  }
+}
+
+.btnWrp {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-outline-trnp {
+  background: transparent;
+  color: var(--bs-white);
+
+  &:hover {
+    background: var(--bs-white);
+    color: var(--bs-dark);
+  }
+}
