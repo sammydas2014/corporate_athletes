@@ -24,4 +24,3 @@ const props = defineProps({ id: { type: String, required: true } })
 const playbook = computed(() => ({ title: `Playbook ${props.id}`, subtitle: '' }))
 </script>
 
-<style scoped></style>

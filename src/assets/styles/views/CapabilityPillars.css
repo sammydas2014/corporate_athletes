@@ -1,0 +1,28 @@
+.capability-pillars-sec {
+  padding: var(--sec-gap) 0 75px 0;
+  background-color: var(--bs-light);
+}
+
+.capability-pillars-sec .hdng {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 45px;
+  margin-inline: auto;
+}
+
+.capability-pillars-sec .sec__subtitle {
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+
+.fetaure-wrap .feature-crd {
+  width: calc(33.333% - 20px);
+}
+
+.fetaure-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}

@@ -1,8 +1,0 @@
-/* Import Third-Party Styles from Node Modules */
-@import 'bootstrap/dist/css/bootstrap.min.css';
-@import 'bootstrap-icons/font/bootstrap-icons.css';
-
-/* Import Restructured Corporate Plain CSS Sheets */
-@import './styles/variables.css';
-@import './styles/global.css';
-@import './styles/custom.css';

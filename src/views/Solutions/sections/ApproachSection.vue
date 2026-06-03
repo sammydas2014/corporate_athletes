@@ -1,6 +1,6 @@
 <script setup>
 import {ourApproachData} from "@/services/aistrategygovernance.service.js"
-import WorkCard from "@/components/common/Work-Card.vue";
+import WorkCard from "@/components/common/WorkCard.vue";
 </script>
 <template>
   <section class="approach-sec">
@@ -21,23 +21,4 @@ import WorkCard from "@/components/common/Work-Card.vue";
     </div>
   </section>
 </template>
-<style scoped>
-.approach-sec{
-  background: linear-gradient(139.04deg, rgba(24.45, 67.72, 83.37, 1) 1.235%, rgba(31, 78, 95, 1) 49.426%);
-    padding: var(--sec-gap) 0
-}
-.approach-sec .hdng{
-  text-align: center;
-}
-.approach-sec .hdng h2{
-  color: var(--bs-body-bg);
-}
-.approach-sec .cards-wrap {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-}
-.cards-wrap .word-card {
-    width: calc(25% - 10px);
-}
-</style>
+<!-- styles moved to src/assets/styles/views/ApproachSection.css -->

@@ -22,14 +22,4 @@ import AppHeader from '@/components/layout/AppHeader.vue';
 import AppFooter from '@/components/layout/AppFooter.vue';
 </script>
 
-<style>
-/* Smooth View Transition fading */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s ease-in-out;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
+<!-- fade transition styles live in src/assets/styles/base/common.css -->

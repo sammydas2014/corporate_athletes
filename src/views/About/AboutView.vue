@@ -21,4 +21,3 @@ import BaseAccelerate from "@/components/common/BaseAccelerate.vue";
 import BaseEngagement from "@/components/common/BaseEngagement.vue";
 </script>
 
-<style scoped></style>

@@ -25,20 +25,4 @@ import AiPlatformSlider from '@/components/slider/AiPlatformSlider.vue';
 
 </script>
 
-<style scoped>
-.ai-platform__header {
-  margin-bottom: 20px;
-  max-width: 770px;
-  margin-inline: auto;
-}
-
-.ai-platform__cta {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.ai-platform__cta .btn {
-  max-width: fit-content;
-  margin-inline: auto;
-}
-</style>
+<!-- styles moved to src/assets/styles/views/AiPlatformSection.css -->

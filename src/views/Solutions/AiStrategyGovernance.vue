@@ -41,4 +41,3 @@ import {
 } from '@/services/aistrategygovernance.service.js';
 </script>
 
-<style scoped></style>

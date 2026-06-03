@@ -15,7 +15,7 @@
         :style="{ transition: cardTransition }"
         @click="onCardClick(i)"
       >
-        <div class="new_slide" style="position: relative">
+        <div class="new_slide">
           <img class="card-img" :src="card.img" :alt="card.tag" loading="lazy" />
           <span v-if="card.tag" class="card-tag">{{ card.tag }}</span>
         </div>
@@ -188,6 +188,7 @@ onBeforeUnmount(() => {
 
 .new_slide {
   height: 500px;
+  position: relative;
 }
 
 .card-img {

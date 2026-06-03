@@ -23,26 +23,4 @@ import { features } from '@/services/home.service.js'
   </section>
 </template>
 
-<style scoped>
-.why-corporate-athletes-sec {
-  padding: var(--sec-gap) 0 48px 0;
-  background-color: var(--bs-light);
-}
-
-.why-corporate-athletes-sec .hdng {
-  max-width: 630px;
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.fetaure-wrap {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.fetaure-wrap .feature-crd {
-  width: calc(25% - 15px);
-}
-</style>
+<!-- styles moved to src/assets/styles/views/CorporateAthletes.css -->

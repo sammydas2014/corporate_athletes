@@ -34,4 +34,3 @@ import CaseStudySliderSection from './sections/CaseStudySliderSection.vue'
 
 </script>
 
-<style scoped></style>

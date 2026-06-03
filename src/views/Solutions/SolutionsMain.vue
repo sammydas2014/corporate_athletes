@@ -14,4 +14,3 @@ import MarqueeSlider from '@/components/slider/MarqueeSlider.vue';
 import BannerSection from './sections/BannerSection.vue';
 </script>
 
-<style scoped></style>

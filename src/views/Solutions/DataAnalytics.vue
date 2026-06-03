@@ -19,4 +19,3 @@
 import HeroBanner from '@/components/common/Herobanner.vue'
 </script>
 
-<style scoped></style>

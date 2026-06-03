@@ -19,4 +19,3 @@ import Audienceslider from '@/components/slider/Audienceslider.vue';
 
 </script>
 
-<style scoped></style>

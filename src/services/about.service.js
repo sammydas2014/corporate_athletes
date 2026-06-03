@@ -105,13 +105,6 @@ export const solutionData = [
     title: "Practitioner-led",
     description:
       "Every engagement is led by an operator who has built and run what you are building.",
-    // list: [
-    //   'Conducted enterprise-wide AI inventory and maturity assessment across 12 business units',
-    //   'Designed a tiered governance framework with model risk classification and ethical review gates',
-    //   'Built a 3-year strategic roadmap prioritizing 15 high-value use cases',
-    //   'Established an AI Center of Excellence with embedded governance capabilities'
-
-    // ]
   },
   {
     title: "Curated, not staffed",

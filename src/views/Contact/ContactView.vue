@@ -22,5 +22,3 @@ import HeroBanner from '@/components/common/Herobanner.vue'
 import { imageMap } from '@/assets/images/imageMap.js'
 </script>
 
-<style scoped>
-</style>

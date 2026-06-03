@@ -10,13 +10,6 @@ defineProps({
   }
 })
 
-const onSwiper = (swiper) => {
-  console.log(swiper);
-};
-const onSlideChange = () => {
-  console.log('slide change');
-};
-
 
 </script>
 
@@ -31,7 +24,7 @@ const onSlideChange = () => {
     1024: {
       slidesPerView: 4
     }
-  }" @swiper="onSwiper" @slideChange="onSlideChange" class="audience-swiper">
+  }" class="audience-swiper">
     <SwiperSlide v-for="(item, index) in cards" :key="index">
       <MeasurableCard :heading="item.details" :result="item.result" />
     </SwiperSlide>
@@ -39,4 +32,3 @@ const onSlideChange = () => {
   </Swiper>
 </template>
 
-<style scoped></style>

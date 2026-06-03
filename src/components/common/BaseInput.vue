@@ -51,37 +51,4 @@ const emit = defineEmits(['update:modelValue'])
     </span>
   </div>
 </template>
-<style scoped>
-.form-floating{
-  position: relative;
-  background-color: #1D2328;
-  padding: 0 21px;
-  border-radius: 55px;
-  height: 56px;
-}
-.baseInpFld{
-  background: transparent;
-  border: none;
-  outline: none;
-  width: 100%;
-  font-size: 14px;
-  color: var(--bs-white);
-  font-weight: 400;
-  height: 100%;
-}
-.baseInpFld::placeholder{
-  color: var(--bs-white);
-}
-.slot-icon-left{
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.slot-icon-right{
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-</style>
+<!-- styles moved to src/assets/styles/components/BaseInput.css -->

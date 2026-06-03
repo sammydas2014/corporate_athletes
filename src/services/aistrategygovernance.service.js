@@ -83,13 +83,6 @@ export const solutionData = [
     title: "Situation",
     description:
       "A top-20 bank had 40+ AI experiments running without centralized oversight, creating compliance exposure and duplicated spend.",
-    // list: [
-    //   'Conducted enterprise-wide AI inventory and maturity assessment across 12 business units',
-    //   'Designed a tiered governance framework with model risk classification and ethical review gates',
-    //   'Built a 3-year strategic roadmap prioritizing 15 high-value use cases',
-    //   'Established an AI Center of Excellence with embedded governance capabilities'
-
-    // ]
   },
   {
     title: "What We Did",

@@ -23,39 +23,4 @@ defineProps({
 defineEmits(['card-click'])
 </script>
 
-<style scoped>
-.casestudie-grid {
-  display: grid;
-  gap: 30px;
-}
-
-.casestudie-grid--cols-1 {
-  grid-template-columns: 1fr;
-  max-width: 390px;
-  margin: 0 auto;
-}
-
-.casestudie-grid--cols-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.casestudie-grid--cols-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-@media (max-width: 767px) {
-
-  .casestudie-grid--cols-2,
-  .casestudie-grid--cols-3 {
-    grid-template-columns: 1fr;
-    max-width: 380px;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .casestudie-grid--cols-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-</style>
+<!-- styles moved to src/assets/styles/components/Casestudiecardgrid.css -->

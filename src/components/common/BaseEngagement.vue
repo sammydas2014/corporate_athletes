@@ -36,7 +36,7 @@ defineProps({
 <template>
   <section class="engagement-sec">
     <div class="container">
-      <div :class="['engagement-wrap',{ className }]">
+      <div :class="['engagement-wrap', className]">
         <div class="row">
           <div class="col-md-6">
             <div class="txt-wrap">
@@ -67,34 +67,4 @@ defineProps({
   </section>
 </template>
 
-<style scoped>
-.engagement-sec {
-  padding: var(--sec-gap) 0 35px 0;
-  background-color: var(--bs-light);
-}
-
-.smll-hdng {
-  font-size: 17px;
-  color: var(--bs-secondary);
-  line-height: 26px;
-  letter-spacing: -0.03em;
-  font-weight: 500;
-  margin-bottom: 35px;
-}
-
-.aboutpage-engagement .txt-wrap {
-  padding-right: 180px;
-}
-
-.aboutpage-engagement .soluction-wrap {
-  margin-top: 70px;
-}
-
-.aboutpage-engagement .engagement-img-wrap {
-  min-width: 700px;
-}
-
-.txt-wrap {
-  padding-right: 60px;
-}
-</style>
+<!-- styles moved to src/assets/styles/components/BaseEngagement.css -->

@@ -46,7 +46,7 @@
               {{ shortlistCount }}
             </span>
           </router-link>
-          <span class="search_icon  text-dark fw-semibold" @click="toggleSearch" style="cursor: pointer;">
+          <span class="search_icon text-dark fw-semibold" @click="toggleSearch">
             <i class="bi bi-search"></i>
           </span>
           <BaseButton to="/about" variant="secondary" class="call_btn">Book a Strategy Call</BaseButton>
@@ -95,14 +95,8 @@ const navItems = [
     label: 'AI Intelligence',
     dropdown: [
       { label: 'AI Intelligence Overview', to: '/ai-intelligence' },
-      // { label: 'AI Strategy & Governance', to: '/solutions/ai-strategy-governance' },
-      // { label: 'AI Implementation & Scaling', to: '/solutions/ai-implementation-scaling' },
-      // { label: 'Finance Shared Services', to: '/solutions/finance-shared-services' },
-      // { label: 'Digital Operating Model', to: '/solutions/digital-operating-model' },
-      // { label: 'Data & Analytics Practice', to: '/solutions/data-analytics' }
     ]
   },
-  // { label: 'AI Intelligence', to: '/ai-intelligence/tools' },
   { label: 'Case Studies', to: '/case-studies' },
   {
     label: 'Insights',
@@ -267,6 +261,10 @@ function closeSearch() {
   position: fixed;
   inset: 0;
   z-index: 98;
+}
+
+.search_icon {
+  cursor: pointer;
 }
 
 .btn_wraps {

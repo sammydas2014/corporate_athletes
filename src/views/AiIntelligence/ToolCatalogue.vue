@@ -8,4 +8,3 @@
 import AiPlatformSlider from '@/components/slider/AiPlatformSlider.vue'
 </script>
 
-<style scoped></style>

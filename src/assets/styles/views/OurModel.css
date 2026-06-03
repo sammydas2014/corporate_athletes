@@ -1,0 +1,29 @@
+.our-model-sec{
+    background: linear-gradient(139.04deg, rgba(24.45, 67.72, 83.37, 1) 1.235%, rgba(31, 78, 95, 1) 49.426%);
+    padding: var(--sec-gap) 0;
+}
+.cards-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+}
+.cards-wrap .word-card {
+    width: calc(25% - 10px);
+}
+.our-model-sec .hdng{
+  max-width: 1080px;
+  margin: 0 auto 55px auto;
+  text-align: center;
+}
+.our-model-sec .hdng h2{
+  text-align: center;
+  color: #FAFAF8;
+
+}
+.our-model-sec .hdng p{
+  text-align: center;
+  color: var(--bs-white);
+}
+.our-model-sec .hdng p + p{
+  margin-top: 10px;
+}

@@ -28,56 +28,9 @@
 </template>
 
 <script setup>
-import TransformactionCard from '@/components/common/Transformaction-Card.vue'
+import TransformactionCard from '@/components/common/TransformactionCard.vue'
 import { insights } from '@/services/home.service.js'
 import { imageMap } from '@/assets/images/imageMap.js'
 </script>
 
-<style scoped>
-.insights-sec {
-  padding: var(--sec-gap) 0;
-}
-
-.transformaction-wrap {
-  margin-top: 40px;
-}
-
-.transformaction-wrap .left-wrap {
-  width: 51%;
-}
-
-.transformaction-wrap .right-wrap {
-  width: 49%;
-}
-
-.transformaction-wrap .img-wrap {
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.transformaction-wrap .img-wrap img {
-  width: 100%;
-  height: 100%;
-}
-
-.right-wrap {
-  padding-left: 66px;
-}
-
-.right-wrap .transform-crd:first-child {
-  padding-top: 0;
-}
-
-.right-wrap .transform-crd:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.right-wrap .transform-crd {
-  border-bottom: 1px solid #D8DEE6;
-}
-
-.icon-right-crd a {
-  color: var(--bs-primary) !important;
-}
-</style>
+<!-- styles moved to src/assets/styles/views/BaseInsightsSection.css -->

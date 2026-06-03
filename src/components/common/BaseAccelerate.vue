@@ -27,33 +27,4 @@
 <script setup>
 import BaseButton from '@/components/common/BaseButton.vue';
 </script>
-<style scoped>
-.accelerate-section{
-  padding: 83px 0;
-  background-color: var(--bs-dark);
-  border-bottom: 2px solid var(--bs-white);
-}
-.accelerate-section > .row{
-  justify-content: space-between;
-}
-.btnWrp {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
-.accelerate-section .sec__title{
-  color: var(--bs-white);
-  margin: 0;
-}
-.accelerate-section .row {
-    align-items: center;
-}
-.btn-outline-trnp {
-    background: transparent;
-    color: var(--bs-white);
-}
-.btn-outline-trnp:hover{
-  background: var(--bs-white);
-  color: var(--bs-dark);
-}
-</style>
+<!-- styles moved to src/assets/styles/components/BaseAccelerate.css -->

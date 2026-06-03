@@ -24,14 +24,4 @@ defineProps({
     </div>
   </section>
 </template>
-<style scoped>
-.measurable-sec{
-  padding: var(--sec-gap) 0;
-  background-color: var(--color-surface);
-}
-.measurable-sec .hdng{
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-</style>
+<!-- styles moved to src/assets/styles/views/MeasurableSection.css -->
