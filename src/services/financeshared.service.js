@@ -15,3 +15,4 @@ export const bannerData = {
   ],
   imageAlt: "Finance visual",
 };
+
