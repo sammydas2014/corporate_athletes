@@ -20,6 +20,5 @@ const searchQuery = ref('')
 
 function handleSearch(query) {
   searchQuery.value = query
-  // filter your insights list here once data is available
 }
 </script>
