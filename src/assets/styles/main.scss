@@ -27,12 +27,12 @@
 @use './components/WorkCard';
 @use './components/AiPlatformSlider';
 @use './components/Audienceslider';
+@use './components/CaseStudySliderSection';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/AiPlatformSection';
 @use './views/WhatWeDo';
 @use './views/CorporateAthletes';
-@use './views/CaseStudySliderSection';
 @use './views/BaseInsightsSection';
 @use './views/OurModel';
 @use './views/ProfilecardSection';

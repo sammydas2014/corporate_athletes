@@ -51,4 +51,3 @@ const emit = defineEmits(['update:modelValue'])
     </span>
   </div>
 </template>
-<!-- styles moved to src/assets/styles/components/BaseInput.css -->

@@ -43,6 +43,16 @@ export const imageMap = {
   digitaloperatingBnr: new URL("./digitaloperatingbnr.png", import.meta.url).href,
   dataanalyticsBnr: new URL("./dataanalyticsbnr.png", import.meta.url).href,
   dataanalyticsBg: new URL("./dataanalyticsbg.png", import.meta.url).href,
+  challengeImplementactionImg: new URL("./challenge-implementaction.png", import.meta.url).href,
+  blueCurveImg: new URL("./blue-curve.png", import.meta.url).href,
+  financeMeetingImg: new URL("./finance-meeting-image.png", import.meta.url).href,
+  modelMeetingImg: new URL("./Group-model-meeting.png", import.meta.url).href,
+  loupeImg: new URL("./loupe.png", import.meta.url).href,
+  aimImg: new URL("./aim.png", import.meta.url).href,
+  routeImg: new URL("./route.png", import.meta.url).href,
+  graphTreeImg: new URL("./graph-tree.png", import.meta.url).href,
+  ladyAnalyticsImg: new URL("./lady-analytics.png", import.meta.url).href,
+  halfSpearImg: new URL("./half-spear.png", import.meta.url).href,
 
   avatars: {},
 

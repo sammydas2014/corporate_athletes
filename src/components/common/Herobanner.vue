@@ -63,6 +63,25 @@
             <!-- Subtitle -->
             <p v-if="subtitle" class="hero-banner__subtitle">{{ subtitle }}</p>
 
+            <!-- Search input -->
+            <div v-if="showSearch" class="hero-banner__search mt-4">
+              <BaseInput
+                v-model="searchQuery"
+                :placeholder="searchPlaceholder"
+                variant="banner"
+                @keydown.enter="$emit('search', searchQuery)"
+              >
+                <template #icon-left>
+                  <i class="bi bi-search"></i>
+                </template>
+                <template #icon-right>
+                  <BaseButton variant="primary" class="search-submit-btn" @click="$emit('search', searchQuery)">
+                    Search
+                  </BaseButton>
+                </template>
+              </BaseInput>
+            </div>
+
             <!-- CTA buttons -->
             <div v-if="ctas && ctas.length" class="d-flex flex-wrap btn_wrp mt-4">
               <BaseButton v-for="(cta, i) in ctas" :key="i" :href="cta.href || '#'"
@@ -110,8 +129,9 @@
 </template>
 
 <script setup>
-import { computed, useSlots } from 'vue'
+import { computed, ref, useSlots } from 'vue'
 import BaseButton from '@/components/common/BaseButton.vue'
+import BaseInput from '@/components/common/BaseInput.vue'
 
 const props = defineProps({
   // ─── Text ─────────────────────────────────────────────────────
@@ -147,9 +167,15 @@ const props = defineProps({
   meta: { type: Array, default: () => [] },
 
   minHeight: { type: String, default: '380px' },
+
+  // ─── Search ───────────────────────────────────────────────────
+  showSearch: { type: Boolean, default: false },
+  searchPlaceholder: { type: String, default: 'Search…' },
 })
 
-defineEmits(['cta-click'])
+defineEmits(['cta-click', 'search'])
+
+const searchQuery = ref('')
 
 const slots = useSlots()
 
@@ -172,5 +198,3 @@ const mapCtaStyleToVariant = (style = '') => {
   return style || 'primary'
 }
 </script>
-
-<!-- styles moved to src/assets/styles/components/Herobanner.css -->

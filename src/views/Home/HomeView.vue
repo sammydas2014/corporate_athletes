@@ -30,7 +30,7 @@ import CorporateAthletes from './sections/CorporateAthletes.vue'
 import BaseInsightsSection from './sections/BaseInsightsSection.vue'
 import AiPlatformSection from './sections/AiPlatformSection.vue'
 import AudienceSection from './sections/AudienceSection.vue'
-import CaseStudySliderSection from './sections/CaseStudySliderSection.vue'
+import CaseStudySliderSection from '@/components/common/CaseStudySliderSection.vue'
 import Herobanner from '@/components/common/Herobanner.vue'
 import { bannerData } from '@/services/home.service.js'
 

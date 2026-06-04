@@ -5,14 +5,17 @@
         <span class="title__eyebrow">Selected Case Study</span>
         <h2 class="sec__title">Real transformation outcomes</h2>
       </div>
-      <CaseStudySlider :cards="caseStudies" />
+      <CaseStudySlider :cards="cards" />
     </div>
   </section>
 </template>
 
 <script setup>
 import CaseStudySlider from '@/components/slider/CaseStudySlider.vue'
-import { caseStudies } from '@/services/home.service.js'
+defineProps({
+  cards: {
+    type: Array,
+    default: () => []
+  },
+})
 </script>
-
-<!-- styles moved to src/assets/styles/views/CaseStudySliderSection.css -->

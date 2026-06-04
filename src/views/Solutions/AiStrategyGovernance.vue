@@ -9,7 +9,9 @@
   <BaseEngagement :imageData="consortiumData.imageData" :tag="consortiumData.tag" :title="consortiumData.title"
     :subtitle="consortiumData.subtitle" :soluctionItems="solutionData" :outcome="outcomeData" />
   <MeasurableSection :cards="statergySlideData" />
-  <CaseStudySliderSection />
+  <CaseStudySliderSection 
+    :cards="caseStudies"
+  />
   <BaseAccelerate />
 </template>
 
@@ -18,7 +20,7 @@ import BaseEnterprice from '@/components/common/BaseEnterprice.vue';
 import ApproachSection from './sections/ApproachSection.vue';
 import BaseEngagement from '@/components/common/BaseEngagement.vue';
 import MeasurableSection from './sections/MeasurableSection.vue';
-import CaseStudySliderSection from '../Home/sections/CaseStudySliderSection.vue';
+import CaseStudySliderSection from '@/components/common/CaseStudySliderSection.vue';
 import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
 import {
   enterPriceChallengeData,
@@ -27,7 +29,8 @@ import {
   outcomeData,
   statergySlideData,
   ourApproachData,
-  BannerData
+  BannerData,
+  caseStudies
 } from '@/services/aistrategygovernance.service.js';
 import Herobanner from '@/components/common/Herobanner.vue';
 </script>

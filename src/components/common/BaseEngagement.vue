@@ -34,16 +34,16 @@ defineProps({
 </script>
 
 <template>
-  <section class="engagement-sec">
+  <section :class="['engagement-sec', className]">
     <div class="container">
-      <div :class="['engagement-wrap', className]">
-        <div class="row">
+      <div class="engagement-wrap">
+        <div class="row align-items-center">
           <div class="col-md-6">
             <div class="txt-wrap">
               <span class="title__eyebrow"> {{ tag }} </span>
               <h2 class="sec__title">{{ title }}</h2>
               <template v-if="subtitle">
-                <h6 class="smll-hdng">Global Financial Services Firm</h6>
+                <h6 class="smll-hdng">{{ subtitle }}</h6>
               </template>
               <div class="soluction-wrap" v-if="soluctionItems.length > 0">
                 <template v-for="(item, index) in soluctionItems" :key="index">
@@ -66,5 +66,3 @@ defineProps({
     </div>
   </section>
 </template>
-
-<!-- styles moved to src/assets/styles/components/BaseEngagement.css -->

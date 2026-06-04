@@ -2,12 +2,12 @@
 
 .enterprise-sec {
   padding: var(--sec-gap) 0;
-  background-color: #FAFAF8;
+  background-color: #fafaf8;
 }
 
 .ent_img {
   border-radius: 20px;
-  background-color: #1E4D5D;
+  background-color: #1e4d5d;
   overflow: hidden;
   position: relative;
   padding: 10px;
@@ -67,7 +67,7 @@
         letter-spacing: -4%;
 
         &::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 8px;
           left: 0;
@@ -83,10 +83,16 @@
 
 .strategy-governace-sec {
   .ent_content {
-    padding-right: 64px;
-
     h2.sec__title {
       max-width: 400px;
+    }
+  }
+}
+
+.impliment-scaling {
+  .ent_content {
+    .sec__title {
+      max-width: 390px;
     }
   }
 }

@@ -1,30 +1,20 @@
 <template>
   <div class="slider-viewport">
-    <div
-      class="slider-track"
-      ref="trackRef"
-      :style="{ transform: `translateX(-${offset}px)`, transition: trackTransition }"
-      @mouseenter="stopAutoplay"
-      @mouseleave="startAutoplay"
-    >
-      <div
-        v-for="(card, i) in fullData"
-        :key="i"
-        class="cs-card"
-        :class="{ active: i === cur }"
-        :style="{ transition: cardTransition }"
-        @click="onCardClick(i)"
-      >
+    <div class="slider-track" ref="trackRef"
+      :style="{ transform: `translateX(-${offset}px)`, transition: trackTransition }" @mouseenter="stopAutoplay"
+      @mouseleave="startAutoplay">
+      <div v-for="(card, i) in fullData" :key="i" class="cs-card" :class="{ active: i === cur }"
+        :style="{ transition: cardTransition }" @click="onCardClick(i)">
         <div class="new_slide">
-          <img class="card-img" :src="card.img" :alt="card.tag" loading="lazy" />
-          <span v-if="card.tag" class="card-tag">{{ card.tag }}</span>
+          <img class="card-img" :src="card?.img" :alt="card?.tag" loading="lazy" />
+          <span v-if="card?.tag" class="card-tag">{{ card?.tag }}</span>
         </div>
         <div class="card-body">
           <div>
-            <h3>{{ card.title }}</h3>
-            <p>{{ card.sub }}</p>
+            <h3>{{ card?.title }}</h3>
+            <p>{{ card?.sub }}</p>
           </div>
-          <RouterLink :to="card.to" class="arrow-btn">
+          <RouterLink :to="card?.to" class="arrow-btn">
             <i class="bi bi-arrow-up-right-circle-fill"></i>
           </RouterLink>
         </div>
@@ -40,7 +30,7 @@ import { RouterLink } from 'vue-router'
 const props = defineProps({
   cards: {
     type: Array,
-    required: true,
+    // default: () => []
   },
 })
 
@@ -254,7 +244,7 @@ onBeforeUnmount(() => {
   flex: 0 0 auto;
   transition: var(--bs-transition);
 
-  > i {
+  >i {
     color: var(--bs-primary);
   }
 

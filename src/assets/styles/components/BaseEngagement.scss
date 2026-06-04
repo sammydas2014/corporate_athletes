@@ -14,13 +14,11 @@
 
 .aboutpage-engagement {
   .txt-wrap {
-    max-width: 490px;
-    padding-right: 0;
+    padding-right: 180px;
   }
 
   .soluction-wrap {
     margin-top: 70px;
-    max-width: 450px;
   }
 
   .engagement-img-wrap {
@@ -36,4 +34,42 @@
 
 .txt-wrap {
   padding-right: 60px;
+}
+
+.impliment-engagement {
+  padding-bottom: 0;
+
+  .txt-wrap{
+    padding-bottom: var(--sec-gap);
+  }
+
+  .engagement-img-wrap {
+    margin-top: 0;
+    max-width: 600px;
+    margin-left: auto;
+  }
+}
+
+.digital-engagement-sec {
+  .engagement-img-wrap {
+    min-width: 700px;
+    margin-right: -100px;
+  }
+}
+
+.analytics-engagement-sec {
+  .engagement-img-wrap {
+    min-width: 700px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.fs_eng_sec {
+  .engagement-img-wrap {
+    margin-left: -50px;
+    margin-right: -50px;
+  }
 }

@@ -119,3 +119,36 @@ export const statergySlideData = [
     result: "$45M",
   },
 ];
+
+export const caseStudies = [
+  {
+    title: 'Global AP Transformation Across 40 Countries',
+    sub: 'Reduced invoice cycle time from 12 to 3 days',
+    img: imageMap.cstdImg1,
+    to: '/case-studies/consumer-goods',
+  },
+  {
+    title: 'Finance Shared Services Modernization',
+    sub: 'Achieved $20M savings through intelligent automation',
+    img: imageMap.cstdImg2,
+    to: '/case-studies/energy',
+  },
+  {
+    title: 'Real-Time Claims Processing Platform',
+    sub: 'Reduced business processing costs by 45%',
+    img: imageMap.cstdImg3,
+    to: '/case-studies/healthcare',
+  },
+  {
+    title: 'Supply Chain Intelligence & Forecasting',
+    sub: 'Increased forecast accuracy from 72% to 94%',
+    img: imageMap.cstdImg1,
+    to: '/case-studies/retail',
+  },
+  {
+    title: 'Enterprise Cloud Migration & Optimization',
+    sub: 'Reduced infrastructure costs by 38% in 6 months',
+    img: imageMap.cstdImg2,
+    to: '/case-studies/technology',
+  },
+]
