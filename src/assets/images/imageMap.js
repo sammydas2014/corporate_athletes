@@ -40,6 +40,9 @@ export const imageMap = {
   connection: new URL("./connection.png", import.meta.url).href,
   bubblesPartical: new URL("./bubbles-partical.png", import.meta.url).href,
   financesharedBnr: new URL("./financesharedbnr.png", import.meta.url).href,
+  digitaloperatingBnr: new URL("./digitaloperatingbnr.png", import.meta.url).href,
+  dataanalyticsBnr: new URL("./dataanalyticsbnr.png", import.meta.url).href,
+  dataanalyticsBg: new URL("./dataanalyticsbg.png", import.meta.url).href,
 
   avatars: {},
 

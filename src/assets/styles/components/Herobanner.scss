@@ -95,6 +95,8 @@
 
   // Variant modifiers
   &.homeBnr {
+    display: flex;
+    align-items: flex-end;
     .hero-banner__content {
       max-width: 890px;
       padding-bottom: 80px;
@@ -106,6 +108,8 @@
   }
 
   &.aboutBnr {
+    display: flex;
+    flex-direction: column-reverse;
     .hero-banner__content {
       max-width: 750px;
       padding-bottom: 20px;
@@ -133,6 +137,7 @@
   }
 
   &.solutionBnr {
+    padding: 50px 0;
     .hero-banner__content {
       max-width: 620px;
 
@@ -337,7 +342,7 @@
       content: "";
     }
   }
-  .hero-banner__content{
+  .hero-banner__content {
     max-width: 510px;
   }
 }
@@ -369,11 +374,55 @@
       content: "";
     }
   }
-  .hero-banner__content{
+  .hero-banner__content {
     max-width: 630px;
-    .hero-banner__subtitle{
+    .hero-banner__subtitle {
       max-width: 550px;
     }
+  }
+}
+
+// ─── Digital Operating Model Design image fade edges ────────────────────────────────────────────
+.digitaloperating_bnr {
+  .hero-banner_img {
+    position: relative;
+    margin-left: -100px;
+    margin-right: -100px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(4, 4, 5, 1) 0%, rgba(4, 4, 5, 0) 100%);
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(270deg, rgba(4, 4, 5, 1) 0%, rgba(4, 4, 5, 0) 100%);
+      content: "";
+    }
+  }
+  .hero-banner__content {
+    max-width: 550px;
+  }
+}
+
+// ─── Data & Analytics image fade edges ────────────────────────────────────────────
+.dataanalytics_bnr {
+  .hero-banner_img {
+    position: relative;
+    margin-left: -100px;
+    margin-right: -50px;
+  }
+  .hero-banner__content {
+    max-width: 550px;
   }
 }
 

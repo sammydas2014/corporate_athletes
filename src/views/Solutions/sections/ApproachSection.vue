@@ -1,6 +1,11 @@
 <script setup>
-import {ourApproachData} from "@/services/aistrategygovernance.service.js"
 import WorkCard from "@/components/common/WorkCard.vue";
+defineProps({
+  ourApproachData: {
+    type: Array,
+    default: () => []
+  }
+})
 </script>
 <template>
   <section class="approach-sec">
@@ -9,7 +14,7 @@ import WorkCard from "@/components/common/WorkCard.vue";
         <span class="title__eyebrow">Our Approach</span>
         <h2 class="sec__title">Our Approach</h2>
       </div>
-      <div class="cards-wrap">
+      <div class="cards-wrap" v-if="ourApproachData.length">
         <template v-for="(data, index) in ourApproachData" :key="index">
           <WorkCard
             :heading="data.title"
@@ -21,4 +26,3 @@ import WorkCard from "@/components/common/WorkCard.vue";
     </div>
   </section>
 </template>
-<!-- styles moved to src/assets/styles/views/ApproachSection.css -->
