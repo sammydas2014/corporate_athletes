@@ -34,6 +34,7 @@
 @use './components/BaseCardChip';
 @use './components/DeepDrive';
 @use './components/BaseSelect';
+@use './components/ReviewCard';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';
@@ -47,3 +48,4 @@
 @use './views/CapabilityPillars';
 @use './views/ApproachSection';
 @use './views/MeasurableSection';
+@use './views/AlintelligenceMain';

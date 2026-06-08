@@ -1,0 +1,49 @@
+@use "../base" as *;
+
+.review-crd {
+  background-color: #fff;
+  border: 1px solid rgba(216, 222, 230, 87%);
+  border-radius: 10px;
+  padding: 28px 28px 31px 25px;
+  display: flex;
+  flex-direction: column;
+  .card-headr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+
+    .cmpny-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      img {
+        max-width: 110px;
+      }
+      h6 {
+        margin: 0;
+        color: #000000;
+        font-size: 14px;
+        letter-spacing: -0.03em;
+      }
+    }
+    .rating-info {
+      i {
+        color: #f4b11f;
+      }
+    }
+  }
+  .card-body {
+    margin-bottom: 45px;
+  }
+  .card-footer {
+    padding-top: 19px;
+    border-top: 1px solid rgb(216 222 230 / 87%);
+    margin-top: auto;
+    p {
+      font-size: 15px;
+      color: #1a1d21;
+      font-weight: 500;
+    }
+  }
+}
