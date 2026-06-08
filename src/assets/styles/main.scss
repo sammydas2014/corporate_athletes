@@ -1,6 +1,3 @@
-// ─── 0. Variables & Mixins ───────────────────────────────────────────────────
-// Bootstrap CSS is imported in src/main.js (before this file) so Bootstrap
-// loads first in the bundle, allowing our :root overrides to cascade on top.
 @use './base' as *;
 
 // ─── 1. Base ─────────────────────────────────────────────────────────────────
@@ -28,13 +25,24 @@
 @use './components/AiPlatformSlider';
 @use './components/Audienceslider';
 @use './components/CaseStudySliderSection';
+@use './components/Basecheckbox';
+@use './components/Filtersidebar';
+@use './components/ResearchCard';
+@use './components/ResearchFrameworksSection';
+@use './components/ExploreHeading';
+@use './components/AitoolCard';
+@use './components/BaseCardChip';
+@use './components/DeepDrive';
+@use './components/BaseSelect';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
+@use './views/BenchmarkSurveysSection';
 @use './views/AiPlatformSection';
 @use './views/WhatWeDo';
 @use './views/CorporateAthletes';
 @use './views/BaseInsightsSection';
 @use './views/OurModel';
+@use './views/InsightsMain';
 @use './views/ProfilecardSection';
 @use './views/CapabilityPillars';
 @use './views/ApproachSection';

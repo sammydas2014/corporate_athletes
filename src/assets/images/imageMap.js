@@ -53,6 +53,11 @@ export const imageMap = {
   graphTreeImg: new URL("./graph-tree.png", import.meta.url).href,
   ladyAnalyticsImg: new URL("./lady-analytics.png", import.meta.url).href,
   halfSpearImg: new URL("./half-spear.png", import.meta.url).href,
+  aiintelligenceBnr: new URL("./aiintelligenceBnr.png", import.meta.url).href,
+  benchmarkBg: new URL("./benchmarkBg.png", import.meta.url).href,
+  brainImg: new URL("./brain-img.png", import.meta.url).href,
+  aiGlobeImg: new URL("./Ai-globe-img.png", import.meta.url).href,
+  openAiImg: new URL("./openAi-logo.png", import.meta.url).href,
 
   avatars: {},
 

@@ -1,0 +1,66 @@
+@use "../base" as *;
+
+.deepdrive-wrap{
+  background-color: #0C1323;
+  border-radius: 15px;
+  padding: 50px 50px 50px 50px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  .text-wrap{
+    max-width: 546px;
+    position: relative;
+    z-index: 2;
+    h3{
+      font-size: 30px;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: -0.05em;
+    }
+    p{
+      color: #E9EEF2;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+      line-height: 23px;
+    }
+    .statergy-wrap{
+      margin-top: 34px;
+      padding-top: 30px;
+      margin-bottom: 30px;
+      border-top: 1px solid rgba(217, 217, 217, 15%);
+      display: flex;
+      gap: 22px;
+      h6{
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: #E9EEF2;
+        margin: 0;
+        line-height: 36px;
+      }
+      p{
+        font-size: 17px;
+        line-height: 36px;
+        letter-spacing: -0.03em;
+        color: #E9EEF2;
+        max-width: 195px;
+      }
+    }
+    .btn{
+      height: 41px;
+      font-size: 13px;
+    }
+  }
+  .abs-img {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 1;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+}
+}

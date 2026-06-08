@@ -1,0 +1,38 @@
+@use "../base" as *;
+
+.insights-main {
+  .catalougue-sec {
+    padding: var(--sec-gap) 0;
+    background-color: #f6f7f9;
+    .reviweWRaper {
+      margin-top: 60px;
+      padding-top: 70px;
+      border-top: 1px solid #d8dee6;
+      margin-top: 40px;
+    }
+  }
+  .catalougue-list {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    .catalougue-list-left {
+      width: 260px;
+      flex: 0 0 auto;
+    }
+    .catalougue-list-wrap {
+      width: calc(100% - 264px);
+      .filter-area-hedng {
+        display: flex;
+        justify-content: space-between;
+      }
+      .crdWrp {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 18px;
+        row-gap: 10px;
+      }
+    }
+  }
+}

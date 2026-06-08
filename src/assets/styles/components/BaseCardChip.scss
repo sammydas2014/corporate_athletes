@@ -1,0 +1,18 @@
+@use "../base" as *;
+.base-chip{
+  background-color: #112131;
+  padding: 7px 14px;
+  font-size: 13px;
+  letter-spacing: -0.04em;
+  color: rgba(233, 238, 242, 80%);
+  border-radius: 7px;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 1;
+
+}
+.base-chip-secondary{
+  background-color: #EBF4F4;
+  color: #2B6069;
+  // color: #E9EEF2;
+}

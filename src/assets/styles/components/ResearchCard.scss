@@ -1,0 +1,42 @@
+.research-card {
+  background: var(--bs-white);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  transition: var(--bs-transition);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--bs-dark);
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  &__desc {
+    font-size: 17px;
+    color: var(--bs-body-color);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  &__btn.btn {
+    flex-shrink: 0;
+    height: 50px;
+    padding: 0 35px;
+    letter-spacing: 0.08em;
+  }
+}

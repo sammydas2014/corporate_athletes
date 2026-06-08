@@ -1,0 +1,42 @@
+@use '../base' as *;
+
+.heading-wrp {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  .hdng-dtls {
+    width: 75%;
+    flex: 0 0 auto;
+    p {
+      font-size: 17px;
+      line-height: 26px;
+      color: #6b7280;
+      margin-bottom: 38px;
+    }
+    ul{
+      padding: 0;
+      margin: 0;
+      li{
+        font-size: 16px;
+        line-height: 26px;
+        color: #1A1D21;
+        position: relative;
+        padding-left: 18px;
+        letter-spacing: -0.04em;
+        &::before{
+          content: "";
+          position: absolute;
+          top: 9px;
+          left: 0;
+          width: 7px;
+          height: 7px;
+          background-color: #D6A85F;
+          border-radius: 50%;
+        }
+      }
+      li + li{
+        margin-top: 20px;
+      }
+    }
+  }
+}

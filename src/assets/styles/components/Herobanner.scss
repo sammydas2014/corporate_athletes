@@ -6,6 +6,10 @@
   overflow: hidden;
   color: var(--banner-text);
 
+  .hero-banner_img {
+    height: 580px;
+  }
+
   &__bg {
     position: absolute;
     inset: 0;
@@ -137,7 +141,6 @@
   }
 
   &.solutionBnr {
-    padding: 50px 0;
     .hero-banner__content {
       max-width: 620px;
 
@@ -153,6 +156,9 @@
     .hero-banner_img {
       margin-left: -50px;
       margin-right: -50px;
+      img {
+        padding: 50px 0;
+      }
     }
   }
 }
@@ -414,6 +420,38 @@
   }
 }
 
+// ─── AI Intelligence image fade edges ────────────────────────────────────────────
+.aiintelligence_bnr {
+  .hero-banner_img {
+    position: relative;
+    margin-left: -100px;
+    margin-right: -100px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(1, 20, 37, 1) 0%, rgba(1, 20, 37, 0) 100%);
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(270deg, rgba(1, 20, 37, 1) 0%, rgba(1, 20, 37, 0) 100%);
+      content: "";
+    }
+  }
+  .hero-banner__content {
+    max-width: 550px;
+  }
+}
+
 // ─── Data & Analytics image fade edges ────────────────────────────────────────────
 .dataanalytics_bnr {
   .hero-banner_img {
@@ -423,6 +461,47 @@
   }
   .hero-banner__content {
     max-width: 550px;
+  }
+}
+
+// ─── Popular searches ────────────────────────────────────────────────────────
+.hero-banner__popular {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.popular-label {
+  font-size: 14px;
+  color: #e9eef2a6;
+  text-decoration: none;
+  margin-right: 2px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.popular-tag {
+  background: #112131;
+  border: none;
+  border-radius: 7px;
+  color: #e9eef2cc;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 6px 13px;
+  cursor: pointer;
+  transition: var(--bs-transition);
+  line-height: 1;
+
+  &:hover {
+    background: #1f4e5f87;
+    color: #2ea1ca;
+  }
+
+  &.active {
+    background: #1f4e5f87;
+    color: #2ea1ca;
   }
 }
 

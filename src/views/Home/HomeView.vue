@@ -14,7 +14,7 @@
 
     <AiPlatformSection />
 
-    <CaseStudySliderSection />
+    <CaseStudySliderSection :cards="caseStudies" />
 
     <BaseInsightsSection />
 
@@ -32,6 +32,6 @@ import AiPlatformSection from './sections/AiPlatformSection.vue'
 import AudienceSection from './sections/AudienceSection.vue'
 import CaseStudySliderSection from '@/components/common/CaseStudySliderSection.vue'
 import Herobanner from '@/components/common/Herobanner.vue'
-import { bannerData } from '@/services/home.service.js'
+import { bannerData, caseStudies } from '@/services/home.service.js'
 
 </script>

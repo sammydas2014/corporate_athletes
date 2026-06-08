@@ -31,7 +31,7 @@
                   <li v-for="(crumb, i) in breadcrumbs" :key="i" class="breadcrumb-item"
                     :class="{ active: i === breadcrumbs.length - 1 }">
                     <router-link v-if="crumb.href && i !== breadcrumbs.length - 1" :to="crumb.href">{{ crumb.label
-                      }}</router-link>
+                    }}</router-link>
                     <span v-else>{{ crumb.label }}</span>
                   </li>
                 </ol>
@@ -64,22 +64,25 @@
             <p v-if="subtitle" class="hero-banner__subtitle">{{ subtitle }}</p>
 
             <!-- Search input -->
-            <div v-if="showSearch" class="hero-banner__search mt-4">
-              <BaseInput
-                v-model="searchQuery"
-                :placeholder="searchPlaceholder"
-                variant="banner"
-                @keydown.enter="$emit('search', searchQuery)"
-              >
+            <div v-if="showSearch" class="hero-banner__search">
+              <BaseInput v-model="searchQuery" :placeholder="searchPlaceholder" variant="banner"
+                @keydown.enter="$emit('search', searchQuery)">
                 <template #icon-left>
                   <i class="bi bi-search"></i>
                 </template>
-                <template #icon-right>
-                  <BaseButton variant="primary" class="search-submit-btn" @click="$emit('search', searchQuery)">
-                    Search
-                  </BaseButton>
-                </template>
               </BaseInput>
+            </div>
+
+            <!-- Popular searches -->
+            <div v-if="showSearch && popularSearches && popularSearches.length" class="hero-banner__popular">
+              <span class="popular-label">Popular:</span>
+              <button
+                v-for="tag in popularSearches"
+                :key="tag"
+                class="popular-tag"
+                :class="{ active: searchQuery === tag }"
+                @click="onPopularTag(tag)"
+              >{{ tag }}</button>
             </div>
 
             <!-- CTA buttons -->
@@ -171,9 +174,10 @@ const props = defineProps({
   // ─── Search ───────────────────────────────────────────────────
   showSearch: { type: Boolean, default: false },
   searchPlaceholder: { type: String, default: 'Search…' },
+  popularSearches: { type: Array, default: () => [] },
 })
 
-defineEmits(['cta-click', 'search'])
+const emit = defineEmits(['cta-click', 'search'])
 
 const searchQuery = ref('')
 
@@ -190,6 +194,11 @@ const sectionStyle = computed(() => ({
 const showOverlay = computed(() => {
   return props.overlay || !!props.overlayColor || (!!props.overlayGradient && props.overlayGradient.toLowerCase() !== 'none')
 })
+
+function onPopularTag(tag) {
+  searchQuery.value = tag
+  emit('search', tag)
+}
 
 const mapCtaStyleToVariant = (style = '') => {
   if (style === 'outline') return 'outline-white'

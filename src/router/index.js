@@ -17,6 +17,7 @@ const DataAnalytics = () => import("@/views/Solutions/DataAnalytics.vue");
 
 // AI Intelligence Nested Group
 const AiIntelligenceView = () => import("@/views/AiIntelligence/AiIntelligenceView.vue");
+const AiIntelligenceMain = () => import("@/views/AiIntelligence/AiIntelligenceMain.vue");
 const ToolCatalogue = () => import("@/views/AiIntelligence/ToolCatalogue.vue");
 const ToolDetails = () => import("@/views/AiIntelligence/ToolDetails.vue");
 const ToolsShortlist = () => import("@/views/AiIntelligence/ToolsShortlist.vue");
@@ -83,12 +84,12 @@ const routes = [
   },
   {
     path: "/ai-intelligence",
-    component: InsightsView,
+    component: AiIntelligenceView,
     children: [
       {
         path: "",
-        name: "ai-catalogue",
-        component: InsightsMain,
+        name: "aiintelligence-main",
+        component: AiIntelligenceMain,
       },
       {
         path: "tools/:id",
