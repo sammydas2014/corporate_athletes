@@ -13,7 +13,8 @@
   <CaseStudySliderSection 
     :cards="caseStudies"
   />
-  <BaseAccelerate />
+  <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
+    :secondary-btn-label="accelerateData.secondaryBtnLabel" />
 </template>
 
 <script setup>
@@ -26,7 +27,8 @@ import {
   outcomeData,
   statergySlideData,
   ourApproachData,
-  caseStudies
+  caseStudies,
+  accelerateData
 } from '@/services/digitaloperating.service';
 import BaseEnterprice from '@/components/common/BaseEnterprice.vue';
 import ApproachSection from './sections/ApproachSection.vue';

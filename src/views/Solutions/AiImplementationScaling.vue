@@ -14,13 +14,14 @@
   <CaseStudySliderSection 
     :cards="caseStudies"
   />
-  <BaseAccelerate />
+  <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
+    :secondary-btn-label="accelerateData.secondaryBtnLabel" />
 </template>
 
 <script setup>
 import BaseEnterprice from '@/components/common/BaseEnterprice.vue';
 import HeroBanner from '@/components/common/Herobanner.vue'
-import { bannerData, consortiumData, enterPriceChallengeData, solutionData, outcomeData, statergySlideData, ourApproachData ,caseStudies } from '@/services/aiimplementation.service';
+import { bannerData, consortiumData, enterPriceChallengeData, solutionData, outcomeData, statergySlideData, ourApproachData, caseStudies, accelerateData } from '@/services/aiimplementation.service';
 import ApproachSection from './sections/ApproachSection.vue';
 import BaseEngagement from '@/components/common/BaseEngagement.vue';
 import MeasurableSection from './sections/MeasurableSection.vue';

@@ -452,6 +452,41 @@
   }
 }
 
+// ─── AI Intelligence image fade edges ────────────────────────────────────────────
+.toolCatalogue_bnr {
+  .hero-banner_img {
+    position: relative;
+    margin-left: -100px;
+    margin-right: -100px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(2, 4, 7, 1) 0%, rgba(2, 4, 7, 0) 100%);
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(270deg, rgba(2, 4, 7, 1) 0%, rgba(2, 4, 7, 0) 100%);
+      content: "";
+    }
+  }
+  .hero-banner__content {
+    max-width: 550px;
+    .hero-banner__subtitle{
+      max-width: 430px;
+    }
+  }
+}
+
 // ─── Data & Analytics image fade edges ────────────────────────────────────────────
 .dataanalytics_bnr {
   .hero-banner_img {

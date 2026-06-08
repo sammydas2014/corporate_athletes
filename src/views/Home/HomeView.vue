@@ -18,7 +18,8 @@
 
     <BaseInsightsSection />
 
-    <BaseAccelerate />
+    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
+      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
   </div>
 </template>
 
@@ -32,6 +33,6 @@ import AiPlatformSection from './sections/AiPlatformSection.vue'
 import AudienceSection from './sections/AudienceSection.vue'
 import CaseStudySliderSection from '@/components/common/CaseStudySliderSection.vue'
 import Herobanner from '@/components/common/Herobanner.vue'
-import { bannerData, caseStudies } from '@/services/home.service.js'
+import { bannerData, caseStudies, accelerateData } from '@/services/home.service.js'
 
 </script>

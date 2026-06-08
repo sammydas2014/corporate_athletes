@@ -35,6 +35,7 @@
 @use './components/DeepDrive';
 @use './components/BaseSelect';
 @use './components/ReviewCard';
+@use './components/AppPagination';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';
@@ -49,3 +50,4 @@
 @use './views/ApproachSection';
 @use './views/MeasurableSection';
 @use './views/AlintelligenceMain';
+@use './views/CatalougueList';

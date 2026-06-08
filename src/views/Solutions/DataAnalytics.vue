@@ -12,7 +12,8 @@
     className="analytics-engagement-sec" />
   <MeasurableSection :cards="statergySlideData" />
   <CaseStudySliderSection :cards="caseStudies" />
-  <BaseAccelerate />
+  <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
+    :secondary-btn-label="accelerateData.secondaryBtnLabel" />
 </template>
 
 <script setup>
@@ -26,7 +27,8 @@ import {
   outcomeData,
   statergySlideData,
   ourApproachData,
-  caseStudies
+  caseStudies,
+  accelerateData
 } from '@/services/dataanalytics.service';
 import CaseStudySliderSection from '@/components/common/CaseStudySliderSection.vue';
 import MeasurableSection from './sections/MeasurableSection.vue';

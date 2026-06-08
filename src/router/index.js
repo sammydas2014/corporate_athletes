@@ -92,6 +92,11 @@ const routes = [
         component: AiIntelligenceMain,
       },
       {
+        path: "toolcatalogue",
+        name: "toolcatalogue",
+        component: ToolCatalogue,
+      },
+      {
         path: "tools/:id",
         name: "tool-details",
         component: ToolDetails,

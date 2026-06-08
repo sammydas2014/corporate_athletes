@@ -58,6 +58,7 @@ export const imageMap = {
   brainImg: new URL("./brain-img.png", import.meta.url).href,
   aiGlobeImg: new URL("./Ai-globe-img.png", import.meta.url).href,
   openAiImg: new URL("./openAi-logo.png", import.meta.url).href,
+  catalogueBnr: new URL("./catalogueBnr.png", import.meta.url).href,
 
   avatars: {},
 

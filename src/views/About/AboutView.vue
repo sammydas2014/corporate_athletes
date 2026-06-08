@@ -9,12 +9,13 @@
     <BaseEngagement :imageData="consortiumData.imageData" :tag="consortiumData.tag" :title="consortiumData.title"
       :soluctionItems="solutionData" className="aboutpage-engagement" />
     <ProfilecardSection />
-    <BaseAccelerate />
+    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
+      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
   </div>
 </template>
 
 <script setup>
-import { consortiumData, solutionData, whoWeAreData } from "@/services/about.service.js";
+import { consortiumData, solutionData, whoWeAreData, accelerateData } from "@/services/about.service.js";
 import ProfilecardSection from "./sections/ProfilecardSection.vue";
 import OurModel from "./sections/OurModel.vue";
 import BaseEnterprice from "@/components/common/BaseEnterprice.vue";

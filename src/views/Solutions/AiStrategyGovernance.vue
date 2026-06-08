@@ -12,7 +12,8 @@
   <CaseStudySliderSection 
     :cards="caseStudies"
   />
-  <BaseAccelerate />
+  <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
+    :secondary-btn-label="accelerateData.secondaryBtnLabel" />
 </template>
 
 <script setup>
@@ -30,7 +31,8 @@ import {
   statergySlideData,
   ourApproachData,
   BannerData,
-  caseStudies
+  caseStudies,
+  accelerateData
 } from '@/services/aistrategygovernance.service.js';
 import Herobanner from '@/components/common/Herobanner.vue';
 </script>

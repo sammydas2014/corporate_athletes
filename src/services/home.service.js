@@ -122,3 +122,9 @@ export const insights = [
       'Understanding how leading finance organizations are implementing AI to drive efficiency and strategic insight.',
   },
 ]
+
+export const accelerateData = {
+  title: "Ready to accelerate performance with AI?",
+  primaryBtnLabel: "Book a Strategy Call",
+  secondaryBtnLabel: "Submit an rfp",
+};
