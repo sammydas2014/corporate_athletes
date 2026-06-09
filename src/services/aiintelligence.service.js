@@ -158,6 +158,41 @@ export const testimonials = [
   },
 ];
 
+export const testimonialSliderData = [
+  {
+    type: 'text',
+    name: 'Sarah Johnson',
+    role: 'Chief AI Officer, FinCorp',
+    quote: 'The AI Intelligence platform transformed how our finance team evaluates and adopts new tools. The vendor reviews are thorough, unbiased, and saved us months of research.',
+    date: 'May 2025',
+    rating: 5,
+  },
+  {
+    type: 'text',
+    name: 'Marcus Lee',
+    role: 'VP of Digital Operations, RetailGroup',
+    quote: 'Benchmark surveys gave us the confidence to make data-driven AI procurement decisions. The research frameworks are exactly what enterprise teams need.',
+    date: 'April 2025',
+    rating: 5,
+  },
+  {
+    type: 'text',
+    name: 'Priya Nair',
+    role: 'Head of Strategy, HealthNet',
+    quote: 'We went from AI confusion to clarity in weeks. The tool catalogue and deep-dive reports are an invaluable resource for any serious enterprise AI programme.',
+    date: 'March 2025',
+    rating: 4,
+  },
+  {
+    type: 'text',
+    name: 'David Chen',
+    role: 'Director of Innovation, TechCo',
+    quote: 'Corporate Athletes AI Intelligence is the only platform that combines rigorous vendor analysis with practical implementation guidance. Highly recommended.',
+    date: 'February 2025',
+    rating: 5,
+  },
+];
+
 export const categories = ref([
   {
     label: "Relevance",

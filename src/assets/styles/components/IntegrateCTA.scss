@@ -1,0 +1,32 @@
+@use "../base" as *;
+
+.integrate-cta-wrp {
+  background: #255f69;
+  padding: 70px 50px;
+  text-align: center;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 70px;
+
+  .integrate-cta__title {
+    font-family: var(--font-display, "Sora", sans-serif);
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--bs-white, #fff);
+    margin-bottom: 16px;
+  }
+
+  .integrate-cta__subtitle {
+    color: #C8D0D8;
+    max-width: 450px;
+    margin: 0 auto 40px;
+    letter-spacing: -0.03em;
+  }
+
+  .integrate-cta__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}

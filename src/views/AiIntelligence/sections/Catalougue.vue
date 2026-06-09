@@ -48,19 +48,11 @@ const selectedCategory = ref('')
 const isMobileOpen = ref(false)
 const activeFilters = ref(null)
 
-function handleSearch(query) {
-  searchQuery.value = query;
-}
 const searchQuery = ref('')
 
-
-// ── Active filter count for badge ──────────────
-const activeCount = computed(() => {
-  if (!activeFilters.value) return 0
-  return Object.values(activeFilters.value)
-    .flat()
-    .length
-})
+function handleSearch() {
+  // searchQuery.value already reflects the current input via v-model
+}
 
 function onChange(filters) {
   activeFilters.value = filters

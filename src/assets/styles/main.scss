@@ -36,6 +36,10 @@
 @use './components/BaseSelect';
 @use './components/ReviewCard';
 @use './components/AppPagination';
+@use './components/TestimonialSlider';
+@use './components/ImplementationView';
+@use './components/ComparableTools';
+@use './components/IntegrateCTA';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';

@@ -66,5 +66,7 @@ export const imageMap = {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
   },
 
-  icons: {},
+  videos: {
+    testiVideo: new URL("./testi_video.mp4", import.meta.url).href,
+  },
 };

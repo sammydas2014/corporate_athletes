@@ -32,6 +32,14 @@ const props = defineProps({
         default: null
     }
 })
+
+const emit = defineEmits(['click'])
+
+const handleClick = (event) => {
+    if (props.loading || props.disabled) return
+
+    emit('click', event)
+}
 </script>
 
 <template>
@@ -71,7 +79,7 @@ const props = defineProps({
         'btn',
         `btn-${props.variant}`,
         { 'btn-loading': props.loading }
-    ]">
+    ]" @click="handleClick">
         <span v-if="$slots.icon_left">
             <slot name="icon_left" />
         </span>
@@ -83,5 +91,3 @@ const props = defineProps({
         </span>
     </button>
 </template>
-
-<!-- styles moved to src/assets/styles/components/BaseButton.css -->
