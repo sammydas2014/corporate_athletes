@@ -1,13 +1,14 @@
 <script setup>
 import BaseButton from './BaseButton.vue';
 import BaseCardChip from './BaseCardChip.vue';
+import router from '@/router';
 
 defineProps({
-  title:{
+  title: {
     type: String,
     default: "InnovateAI"
   },
-  subtitle:{
+  subtitle: {
     type: String,
     default: "Generative AI Platform"
   },
@@ -15,27 +16,37 @@ defineProps({
     type: Array,
     default: () => []
   },
-  price:{
+  price: {
     type: String,
     default: ""
   },
-  icon:{
+  icon: {
     type: Object,
-    default: () => {}
+    default: () => { }
   },
-  iconBg:{
+  iconBg: {
     type: String,
     default: "#4C5B71"
+  }, 
+  itemId: {
+    type: [String, Number],
+    default: null
   }
 })
+
+function handelClick(itemId) {
+  if (itemId) {
+    router.push({ path: `/ai-intelligence/tools/${itemId}` })
+  }
+}
 </script>
 <template>
   <div class="crd-wrp">
     <div class="card-hdng">
-      <div v-if="icon.type == 'image'" class="crd-icon" :style="{backgroundColor: iconBg}">
+      <div v-if="icon.type == 'image'" class="crd-icon" :style="{ backgroundColor: iconBg }">
         <img :src="icon.value" alt="Ai Tools Icon">
       </div>
-      <div v-else class="crd-icon" :style="{backgroundColor: iconBg}">
+      <div v-else class="crd-icon" :style="{ backgroundColor: iconBg }">
         {{ icon.value }}
       </div>
       <div class="crd-title">
@@ -46,31 +57,23 @@ defineProps({
     <div class="card-body">
       <div v-if="tags.length" class="chip-tag-wrap">
         <template v-for="(item, index) in tags" :key="index">
-          <BaseCardChip
-            :title="item"
-            variant="secondary"
-          />
+          <BaseCardChip :title="item" variant="secondary" />
         </template>
       </div>
       <p class="priceVal">Starts at <span>{{ price }}</span></p>
     </div>
     <div class="card-footer">
-      <BaseButton
-        variant="outline-light"
-      >
+      <BaseButton variant="outline-light" @click="() => handelClick(itemId)">
         View Details
       </BaseButton>
-      <BaseButton
-        variant="outline-light-thin"
-      >
-      <span name=#icon-left>
-        <i class="bi bi-heart"></i>
-      </span>
+      <BaseButton variant="outline-light-thin">
+        <span name=#icon-left>
+          <i class="bi bi-heart"></i>
+        </span>
         shortlist
       </BaseButton>
     </div>
   </div>
 </template>
 
-<style>
-</style>
+<style></style>

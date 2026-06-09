@@ -19,7 +19,7 @@
       <div class="crdWrp">
         <template v-for="(item, index) in pagedTools" :key="index">
           <AitoolCard :title="item.title" :subtitle="item.description" :price="item.price" :tags="item.tags"
-            :icon="item.icon" :iconBg="item?.iconBg" />
+            :icon="item.icon" :iconBg="item?.iconBg" :itemId="item.id" />
         </template>
       </div>
     </div>
