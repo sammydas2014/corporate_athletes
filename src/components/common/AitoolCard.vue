@@ -27,7 +27,7 @@ defineProps({
   iconBg: {
     type: String,
     default: "#4C5B71"
-  }, 
+  },
   itemId: {
     type: [String, Number],
     default: null
@@ -36,7 +36,13 @@ defineProps({
 
 function handelClick(itemId) {
   if (itemId) {
-    router.push({ path: `/ai-intelligence/tools/${itemId}` })
+    // router.push({ path: `/ai-intelligence/tools/${itemId}` })
+    router.push({
+      name: 'tool-details',
+      params: {
+        id: itemId
+      }
+    })
   }
 }
 </script>

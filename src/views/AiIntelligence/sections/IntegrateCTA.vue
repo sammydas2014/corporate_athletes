@@ -8,7 +8,7 @@
           <BaseButton variant="secondary" :href="data.primaryBtnLink">
             {{ data.primaryBtnLabel }}
           </BaseButton>
-          <BaseButton variant="outline-white" :href="data.secondaryBtnLink">
+          <BaseButton variant="outline-white" :to="data.secondaryBtnLink">
             {{ data.secondaryBtnLabel }}
           </BaseButton>
         </div>

@@ -1,0 +1,22 @@
+@use "../base" as *;
+
+
+.summary-section{
+  padding-bottom: var(--sec-gap);
+  .sec-title{
+    font-size: 36px;
+    color: #1A1D21;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+  }
+  .card-wraper{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    .card-wrp{
+      width: calc(50% - 15px);
+    }
+  }
+}

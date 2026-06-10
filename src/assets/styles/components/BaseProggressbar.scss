@@ -1,0 +1,16 @@
+@use "../base" as *;
+.range-slider-wrp{
+  width: 100%;
+  position: relative;
+  height: 5px;
+  background: var(--bs-border-color);
+  border-radius: 999px;
+  overflow: hidden;
+  .range-slider__fill{
+    height: 100%;
+    background: var(--bs-primary);
+    border-radius: 999px;
+    transition: var(--bs-transition);
+  }
+
+}

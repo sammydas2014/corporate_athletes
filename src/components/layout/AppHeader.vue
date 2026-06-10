@@ -66,14 +66,13 @@
 </template>
 
 <script setup>
-import { ref, nextTick, computed } from 'vue'  // remove onMounted/onUnmounted
-import { useShortlist } from '@/composables/useShortlist';
+import { ref, nextTick } from 'vue'  // remove onMounted/onUnmounted
 import { imageMap } from '@/assets/images/imageMap';
 import BaseButton from '@/components/common/BaseButton.vue';
 import { navItems } from '@/config/hrader.config';
+import { shortlistedTools } from '@/services/shortlist.service';
 
-const { shortlistedTools } = useShortlist();
-const shortlistCount = computed(() => shortlistedTools.value.length);
+const shortlistCount = shortlistedTools.length;
 
 const searchOpen = ref(false)
 const searchQuery = ref('')

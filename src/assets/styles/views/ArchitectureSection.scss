@@ -1,0 +1,50 @@
+@use '../base' as *;
+
+.architecture-section{
+  padding-bottom: var(--sec-gap);
+  .sec-title{
+    font-size: 36px;
+    color: #1A1D21;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+  .architecture-wraper{
+        padding: 25px 23px 26px 25px;
+    border-radius: 10px;
+    background-color: var(--bs-white);
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    overflow-x: auto;
+    align-items: stretch;
+    width: 100%;
+    .architecture-card{
+      flex: 1 1 144px;
+          max-width: 148px;
+      position: relative;
+      &::after{
+        position: absolute;
+    content: "";
+    right: -28px;
+    width: 21px;
+    height: 6px;
+    background: url(/src/assets/images/line-vector.png) no-repeat center;
+    background-size: contain;
+    top: 50%;
+    transform: translateY(-50%);
+      }
+      &:last-child::after{
+        display: none;
+      }
+      &:last-child{
+        background-color: var(--bs-white);
+        border: 1px solid rgba(216, 222, 230 , 87%);
+      }
+      &:first-child{
+        background-color: var(--bs-white);
+        border: 1px solid rgba(216, 222, 230 , 87%);
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use "../base" as *;
+.breakdown-card{
+  background-color: #FFFFFF;
+  border: 1px solid rgba(216, 222, 230, 87%);
+  border-radius: 10px;
+  position: relative;
+  padding: 30px;
+  width: 33.33%;
+  .crd-hdr{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    h6{
+      color: #1A1D21;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      margin: 0;
+    }
+    .score{
+      color: #255F69;
+      font-size: 26px;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+
+    }
+  }
+  .crd-body{
+    .range-slider-wrp{
+      height: 10px;
+    }
+  }
+  .crd-ftr{
+    margin-top: 25px;
+    p{
+      color: #6B7280;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.03em;
+    }
+  }
+}

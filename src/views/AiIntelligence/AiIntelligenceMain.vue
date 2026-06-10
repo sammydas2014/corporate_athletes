@@ -15,11 +15,6 @@
     <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
       :secondary-btn-label="accelerateData.secondaryBtnLabel" />
 
-    <TestimonialSection />
-    <ImplementationView />
-    <ComparableTools />
-    <IntegrateCTA />
-
   </div>
 </template>
 
@@ -30,9 +25,6 @@ import BenchmarkSurveysSection from "./sections/BenchmarkSurveysSection.vue";
 import { bannerData, researchData, accelerateData } from "@/services/aiintelligence.service";
 import CatalougueSection from "./sections/CatalougueSection.vue";
 import BaseAccelerate from "@/components/common/BaseAccelerate.vue";
-import TestimonialSection from "./sections/TestimonialSection.vue";
-import ImplementationView from "./sections/ImplementationView.vue";
-import ComparableTools from "./sections/ComparableTools.vue";
-import IntegrateCTA from "./sections/IntegrateCTA.vue";
+
 
 </script>

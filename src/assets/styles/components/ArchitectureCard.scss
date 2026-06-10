@@ -1,0 +1,38 @@
+@use '../base' as *;
+.architecture-card{
+  background-color: rgba(43, 96, 105 , 4%);
+  border-radius: 10px;
+  border: 1px solid #99C1C8;
+  padding: 40px 22px 23px 22px;
+  .stage{
+    font-size: 13px;
+    color: #2B6069;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+    line-height: 26px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .items{
+    .item{
+      font-size: 13px;
+      line-height: 22px;
+      letter-spacing: 0;
+      text-align: center;
+    }
+  }
+  .platform{
+    color: #2B6069;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 10px;
+    background-color: #E8F6F6;
+    border-radius: 44px;
+    border: 1px solid #B9D3D3;
+    margin-top: 13px;
+    text-align: center;
+    letter-spacing: -0.04em;
+  }
+}

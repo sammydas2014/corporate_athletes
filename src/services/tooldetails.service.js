@@ -1,5 +1,219 @@
 import { imageMap } from "@/assets/images/imageMap.js";
 
+// Top Part Data
+export const overViweData = {
+  title: "OpenAI",
+  shortDescription: "Enterprise-grade ML pipeline orchestration",
+  aboutData: "by NeuralFlow Inc. · Founded 2021 · San Francisco, CA",
+  priceData: [
+    {
+      title: "overallScore",
+      value: 4.6,
+    },
+    {
+      title: "priceRange",
+      value: "$99 - $456",
+    },
+  ],
+  tags: ["MLOps", "Pipeline Orchestration", "AutoML", "Enterprise AI"],
+};
+
+export const summaryData = [
+  {
+    logo: imageMap.ideaImg,
+    heading: "What It Does",
+    description:
+      "NeuralFlow automates the entire ML pipeline — from data ingestion to model deployment — with visual DAG builders, automated feature engineering, and one-click production deployment.",
+  },
+  {
+    logo: imageMap.puzzleImg,
+    heading: "Where It Fits",
+    description:
+      "Sits between your data infrastructure (warehouses, lakes) and your application layer. Replaces fragmented MLOps toolchains with a unified platform.",
+  },
+  {
+    logo: imageMap.ideaImg,
+    heading: "Best Use Cases",
+    description:
+      "Automated feature engineering at scale · Multi-model A/B testing in production · Real-time inference pipelines · Compliance-ready model governance",
+  },
+  {
+    logo: imageMap.puzzleImg,
+    heading: "Who It's For",
+    description:
+      "Data science teams (10+), ML engineers, and CTOs looking to reduce time-to-production from months to days.",
+  },
+];
+
+export const breakDownData = [
+  {
+    metric: "Ease of Implementation",
+    score: 3.5,
+    description: "Moderate setup effort",
+  },
+  {
+    metric: "Integration",
+    score: 4.2,
+    description: "Strong API support",
+  },
+  {
+    metric: "ROI Potential",
+    score: 4.6,
+    description: "High automation ROI",
+  },
+  {
+    metric: "Scalability",
+    score: 4.5,
+    description: "Scales well for large enterprises",
+  },
+  {
+    metric: "Enterprise Readiness",
+    score: 5.0,
+    description: "Highly secure & compliant",
+  },
+  {
+    metric: "Vendor Maturity",
+    score: 9.0,
+    description: "Highly secure & compliant",
+  },
+];
+
+export const stackDataList = [
+  {
+    role: "architecture_role",
+    title: "Orchestration Layer",
+    description: "Mid-stack — between data layer and serving layer",
+  },
+  {
+    role: "integration_type",
+    title: "API-first with native connectors",
+  },
+  {
+    role: "data_requirements",
+    title: "Structured & semi-structured data. Min 10GB for optimal AutoML.",
+  },
+  {
+    role: "Compatible Tools",
+    compatible_tools: [
+      {
+        name: "Snowflake",
+        category: "Data Warehouse",
+      },
+      {
+        name: "Databricks",
+        category: "Compute",
+      },
+      {
+        name: "Kubernetes",
+        category: "Infrastructure",
+      },
+      {
+        name: "MLflow",
+        category: "Experiment Tracking",
+      },
+      {
+        name: "Apache Kafka",
+        category: "Streaming",
+      },
+      {
+        name: "dbt",
+        category: "Transformation",
+      },
+    ],
+  },
+];
+
+export const architectureData = [
+  {
+    "stage": "DATA SOURCES",
+    "items": [
+      "Snowflake",
+      "S3",
+      "Kafka"
+    ],
+  },
+  {
+    "stage": "INGESTION",
+    "items": [
+      "NeuralFlow Connectors"
+    ],
+    "platform": "NeuralFlow AI"
+  },
+  {
+    "stage": "PROCESSING",
+    "items": [
+      "NeuralFlow Engine"
+    ],
+    "platform": "NeuralFlow AI"
+  },
+  {
+    "stage": "TRAINING",
+    "items": [
+      "NeuralFlow AutoML"
+    ],
+    "platform": "NeuralFlow AI"
+  },
+  {
+    "stage": "DEPLOYMENT",
+    "items": [
+      "NeuralFlow Serve"
+    ],
+    "platform": "NeuralFlow AI"
+  },
+  {
+    "stage": "MONITORING",
+    "items": [
+      "NeuralFlow Monitor"
+    ],
+    "platform": "NeuralFlow AI"
+  },
+  {
+    "stage": "APPLICATIONS",
+    "items": [
+      "Snowflake",
+      "S3",
+      "Kafka"
+    ],
+  }
+]
+
+export const useCasesData = [
+  {
+    logo: imageMap.dollerSign,
+    title: "Finance",
+    description: "Fraud detection models with real-time scoring and automated retraining on drift detection."
+  },
+  {
+    logo: imageMap.dollerSign,
+    title: " Sales",
+    description: "Lead scoring and churn prediction pipelines with CRM integration."
+  }
+]
+
+export const comparisonData = {
+  strengths: {
+    title: 'Strengths',
+    points: [
+      'Visual DAG builder reduces pipeline complexity by 60%',
+      'Built-in model governance and  audit trails',
+      'Auto-scaling inference with <50ms p99 latency',
+      '200+ pre-built connectors',
+      'SOC 2 Type II and HIPAA compliant'
+    ]
+  },
+  limitations: {
+    title: 'Limitations',
+    points: [
+      'Steep learning curve for non-Python teams',
+      'Limited support for unstructured data (images, video)',
+      'Pricing can escalate with high-volume inference',
+      'Custom model architectures require workarounds',
+      'Community edition lacks key enterprise features'
+    ]
+  }
+}
+// Top Part Data
+
 export const implementationData = {
   title: "Implementation View",
   metrics: [
@@ -32,7 +246,7 @@ export const integrateCTAData = {
   primaryBtnLabel: "Book a Strategy Call",
   secondaryBtnLabel: "Build Your Stack",
   primaryBtnLink: "#",
-  secondaryBtnLink: "#",
+  secondaryBtnLink: "/ai-intelligence/stack-generator",
 };
 
 export const comparableToolsData = {

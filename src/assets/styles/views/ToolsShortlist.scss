@@ -1,0 +1,64 @@
+@use "../base" as *;
+
+.tools-shortlist {
+  padding: 60px 0;
+
+  &__header {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    color: var(--color-dark-secondary);
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  &__layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__main {
+    width: calc(100% - 304px);
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__sidebar {
+    width: 365px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+    &--list {
+      grid-template-columns: 1fr;
+    }
+  }
+}

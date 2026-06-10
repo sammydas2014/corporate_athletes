@@ -61,6 +61,10 @@ const props = defineProps({
   varinat: {
     type: String,
     default: '',
+  },
+  helperText:{
+    type: String,
+    default: '',
   }
 })
 
@@ -112,6 +116,8 @@ const selectValue = computed({
         {{ option[labelKey] }}
       </option>
     </select>
+    
+
 
     <!-- Error -->
     <p
@@ -119,6 +125,12 @@ const selectValue = computed({
       class="base-select__error"
     >
       {{ errorMessage }}
+    </p>
+    <p
+      v-if="helperText"
+      class="base-select__helperText"
+    >
+      {{ helperText }}
     </p>
 
   </div>

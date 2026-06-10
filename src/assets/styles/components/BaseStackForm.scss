@@ -1,0 +1,62 @@
+@use '../base' as *;
+
+.stack-form-wrap{
+  max-width: 900px;
+    margin: 0 auto;
+    background-color: rgb(255 255 255 / 70%);
+    border-radius: 10px;
+    border: 1px solid rgb(216 222 230 / 87%);
+    padding: 48px 45px;
+    position: relative;
+  .form-hdn-btn{
+    position: absolute;
+    top: 48px;
+    right: 45PX;
+    .btn{
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      height: auto;
+      font-size: 14px;
+      color: #9197A2;
+      letter-spacing: -0.05em;
+      &:hover{
+        color: #0B1219;
+      }
+    }
+  }
+  .frm-ftr {
+    margin-top: 64px;
+        display: flex;
+    justify-content: space-between;
+    .left-prt{
+      width: 30%;
+      p{
+        color: #999BA1;
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 500;
+        letter-spacing: -0.05em;
+        span{
+          color: #347891;
+        }
+      }
+    }
+    .rght-prt{
+          width: 51%;
+          text-align: right;
+          .btn{
+            gap: 10px;
+          }
+          p{
+            text-align: center;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #76787C;
+            font-weight: 500;
+            line-height: 16px;
+          }
+
+    }
+}
+}

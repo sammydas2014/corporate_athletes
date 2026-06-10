@@ -59,6 +59,10 @@ export const imageMap = {
   aiGlobeImg: new URL("./Ai-globe-img.png", import.meta.url).href,
   openAiImg: new URL("./openAi-logo.png", import.meta.url).href,
   catalogueBnr: new URL("./catalogueBnr.png", import.meta.url).href,
+  ideaImg: new URL("./idea-img.png", import.meta.url).href,
+  puzzleImg: new URL("./pussle-img.png", import.meta.url).href,
+  dollerSign: new URL("./doller-sign.png", import.meta.url).href,
+  architectureBg: new URL("./architectureBg.png", import.meta.url).href,
 
   avatars: {},
 

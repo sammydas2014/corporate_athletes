@@ -1,0 +1,52 @@
+
+@use '../base' as *;
+.comparison-card{
+  width: 50%;
+  .comparison-wrapper{
+    h3{
+      padding: 17px 26px;
+      margin-bottom: 25px;
+    }
+    ul{
+      margin: 0;
+      padding: 0;
+      padding-left: 26px;
+      padding-right: 10px;
+      li{
+        display: flex;
+        gap: 12px;
+        min-height: 45px;
+        .grnIcon{
+          color: #2B6069;
+        }
+        .redIcon{
+          color: #C32121;
+        }
+        .text-item{
+          letter-spacing: -0.04em;
+          font-size: 15px;
+        }
+      }
+      li + li{
+        margin-top: 18px;
+      }
+    }
+  }
+  .comparison-wrapper-strengths{
+    h3{
+      background-color: #2B6069;
+      color: var(--bs-white);
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+  }
+  .comparison-wrapper-limitations{
+    h3{
+      background-color: #C32121;
+      color: var(--bs-white);
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+
+}

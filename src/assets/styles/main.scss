@@ -40,6 +40,23 @@
 @use './components/ImplementationView';
 @use './components/ComparableTools';
 @use './components/IntegrateCTA';
+// --new css
+@use './components/ToolsBannerSection.scss';
+@use './components/SummaryCard.scss';
+@use './components/BreakDownCard.scss';
+@use './components/BaseProggressbar.scss';
+@use './components/StackCard.scss';
+@use './components/BaseToolsChip.scss';
+@use './components/ArchitectureCard.scss';
+@use './components/BaseBox.scss';
+@use './components/UseCaseCard.scss';
+@use './components/ComparisonCard.scss';
+@use './components/BaseStackForm.scss';
+@use './components/BaseFormSection.scss';
+@use './components/ShortlistCard';
+@use './components/ShortlistToolbar';
+@use './components/ShortlistInsights';
+@use './components/ArchitecturePreview';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';
@@ -55,3 +72,11 @@
 @use './views/MeasurableSection';
 @use './views/AlintelligenceMain';
 @use './views/CatalougueList';
+// new css
+@use './views/SummarySection.scss';
+@use './views/BreakDownSection.scss';
+@use './views/StackSection.scss';
+@use './views/ArchitectureSection.scss';
+@use './views/UseCaseSection.scss';
+@use './views/StackGenerator.scss';
+@use './views/ToolsShortlist';

@@ -1,0 +1,20 @@
+@use "../base" as *;
+
+.breakdown-section{
+  padding-bottom: var(--sec-gap);
+  .sec-title{
+    margin-bottom: 25px;
+    color: #1A1D21;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+  }
+  .tab-wrap{
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    .breakdown-card{
+      width: calc(33.33% - 12px);
+    }
+  }
+}

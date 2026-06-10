@@ -1,0 +1,26 @@
+@use '../base' as *;
+
+.stack-section{
+  padding-bottom: var(--sec-gap);
+  position: relative;
+  .sec-title{
+    margin-bottom: 25px;
+    color: #1A1D21;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+
+  }
+  .stack-list{
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      .stack-card{
+        width: calc(33.33% - 12px);
+        &:has(.tools){
+          width: 100%;
+        }
+
+      }
+    }
+}

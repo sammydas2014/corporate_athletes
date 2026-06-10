@@ -1,0 +1,47 @@
+@use '../base' as *;
+
+.form-row-wrapper{
+  .form-row-hdng{
+    margin-bottom: 14px;
+    h6{
+      color: #0B1219;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      margin-bottom: 5px;
+    }
+    .subtitle{
+      font-size: 14px;
+      color: #9197A2;
+      letter-spacing: -0.05em;
+      line-height: 21px;
+    }
+  }
+  .form-row {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    .base-select{
+      width: 50%;
+    }
+  }
+  + .form-row-wrapper{
+    margin-top: 30px;
+  }
+  
+}
+.form-row-wrapper-one{
+  .form-row {
+    .base-select{
+      width: 100%;
+    }
+  }
+}
+.form-row-wrapper-three{
+  .form-row {
+    gap: 17px;
+    .base-select{
+      width: 33.33%;
+    }
+  }
+}
