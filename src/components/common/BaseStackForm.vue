@@ -1,6 +1,8 @@
 <script setup>
+import { ref } from "vue";
 import BaseButton from "./BaseButton.vue";
 import BaseFormSection from "./BaseFormSection.vue";
+import BaseObjectiveItem from "./BaseObjectiveItem.vue";
 import BaseSelect from "./BaseSelect.vue";
 import { businessContextFields, coreSystemFields, constraintFields, criticalConstraintFields } from "@/services/architectureFormData.service"
 const emit = defineEmits(['submit']);
@@ -9,29 +11,36 @@ const handleSubmit = () => {
   emit('submit');
 };
 
-// const businessContextFields = [
-//   {
-//     key: 'companySize',
-//     label: 'Company Size',
-//     placeholder: 'Select company size',
-//     options: [
-//       { label: 'Startup', value: 'startup' },
-//       { label: 'Mid-cap', value: 'mid-cap' },
-//       { label: 'Enterprise', value: 'enterprise' }
-//     ]
-//   },
 
-//   {
-//     key: 'functionFocus',
-//     label: 'Function Focus',
-//     placeholder: 'Select focus',
-//     options: [
-//       { label: 'Finance', value: 'finance' },
-//       { label: 'HR', value: 'hr' },
-//       { label: 'Marketing', value: 'marketing' }
-//     ]
-//   }
-// ]
+
+// Objective Data
+const options = ref([
+  { id: 1, label: 'Reduce manual finance workload'},
+  { id: 2, label: 'Improve forecasting accuracy' },
+  { id: 3, label: 'Accelerate close cycle'},
+  { id: 4, label: 'Enhance decision support (FP&A)'},
+  { id: 5, label: 'Automate operational workflows' },
+  { id: 6, label: 'Enable AI copilots for finance teams' },
+])
+
+const selectionIds = ref([])
+
+const isSelected = (id) => selectionIds.value.includes(id)
+
+const getSelectionIndex = (id) => {
+  const idx = selectionIds.value.indexOf(id)
+  return idx === -1 ? null : idx + 1
+}
+
+const toggleItem = (id) => {
+  const idx = selectionIds.value.indexOf(id)
+  if (idx === -1) {
+    selectionIds.value.push(id)
+  } else {
+    selectionIds.value.splice(idx, 1)
+  }
+}
+
 
 </script>
 <template>
@@ -46,6 +55,18 @@ const handleSubmit = () => {
         <BaseFormSection title="Business Context" subtitle="Defines scale and complexity of your target architecture">
           <BaseSelect v-for="data in businessContextFields" :key="data.key" :label="data.label"
             :placeholder="data.placeholder" :options="data.options" :name="data.key" v-model="data.value" />
+        </BaseFormSection>
+        <BaseFormSection
+          title="Objective"
+        >
+            <BaseObjectiveItem
+              v-for="item in options"
+              :key="item.id"
+              :label="item.label"
+              @toggle="() => toggleItem(item.id)"
+              :is-selected="isSelected(item.id)"
+              :selection-index="getSelectionIndex(item.id)"
+            />
         </BaseFormSection>
         <BaseFormSection title="Existing core system" subtitle="Select a core system you want to build around."
           variant="one">
@@ -72,7 +93,7 @@ const handleSubmit = () => {
           <p>Impact of your choices: <span>Open-source tools prioritised</span></p>
         </div>
         <div class="rght-prt">
-          <BaseButton variant="primary">
+          <BaseButton variant="primary"   type="submit">
             <span name=#icon-left>
 
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

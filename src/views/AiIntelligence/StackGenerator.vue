@@ -1,5 +1,12 @@
 <script setup>
   import BaseStackForm from "@/components/common/BaseStackForm.vue";
+  import { useRouter } from "vue-router";
+
+  const router = useRouter();
+  function handleFormSubmit(){
+    console.log('form Submit')
+    router.push("/ai-intelligence/outcome");
+  }
 </script>
 
 <template>
@@ -13,7 +20,7 @@
             Generate a tailored AI architecture based on your business context and existing systems
           </p>
         </div>
-        <BaseStackForm />
+        <BaseStackForm @submit="handleFormSubmit" />
       </div>
     </section>
   </main>

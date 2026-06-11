@@ -1,0 +1,89 @@
+@use "../base" as *;
+
+.comparison-value {
+  &__chip {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    line-height: 1.3;
+
+    color: #1a1d21;
+font-size: 14px;
+font-weight: 500;
+
+    &--good {
+      background-color: #eaf7ee;
+      color: #2b9166;
+    }
+
+    &--warn {
+      background-color: #fdf3e7;
+      color: #d2691e;
+    }
+
+    &--bad {
+      background-color: #fbeaea;
+      color: #c0392b;
+    }
+  }
+
+  &__score {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .range-slider-wrp {
+      flex: 1;
+    }
+
+    &-label {
+      flex: 0 0 auto;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-dark-secondary);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--color-dark-secondary);
+
+      i {
+        flex: 0 0 auto;
+        font-size: 14px;
+        margin-top: 2px;
+      }
+    }
+
+    &--positive i {
+      color: #2b9166;
+    }
+
+    &--negative i {
+      color: #d2691e;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: var(--color-dark-secondary);
+  }
+}

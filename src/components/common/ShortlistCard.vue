@@ -1,9 +1,10 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import BaseCardChip from './BaseCardChip.vue';
 import BaseSelect from './BaseSelect.vue';
 import { preferredOptions } from '@/services/shortlist.service';
 import BaseButton from './BaseButton.vue';
+import { useComparisonSelection } from '@/composables/useComparisonSelection';
 
 const props = defineProps({
   tool: {
@@ -14,7 +15,12 @@ const props = defineProps({
 
 defineEmits(['remove']);
 
-const checked = ref(true);
+const { isSelected, setSelected } = useComparisonSelection();
+const checked = computed({
+  get: () => isSelected(props.tool.id),
+  set: (value) => setSelected(props.tool.id, value),
+});
+
 const preferred = ref(props.tool.preferred);
 </script>
 

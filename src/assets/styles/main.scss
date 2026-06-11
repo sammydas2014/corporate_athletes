@@ -57,6 +57,10 @@
 @use './components/ShortlistToolbar';
 @use './components/ShortlistInsights';
 @use './components/ArchitecturePreview';
+@use './components/ComparisonValue';
+@use './components/ComparisonTable';
+@use './components/ComparisonToolbar';
+@use './components/BaseObjectiveItem';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';
@@ -80,3 +84,4 @@
 @use './views/UseCaseSection.scss';
 @use './views/StackGenerator.scss';
 @use './views/ToolsShortlist';
+@use './views/ToolsComparison';

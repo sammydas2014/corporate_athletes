@@ -40,14 +40,25 @@ const handleClick = (event) => {
 
     emit('click', event)
 }
+
+const handleLinkClick = (event) => {
+    if (props.disabled || props.loading) {
+        event.preventDefault()
+        event.stopPropagation()
+        return
+    }
+
+    emit('click', event)
+}
 </script>
 
 <template>
     <RouterLink v-if="props.to" :to="props.to" :class="[
         'btn',
         `btn-${props.variant}`,
-        { 'btn-loading': props.loading }
-    ]">
+        { 'btn-loading': props.loading, 'btn-disabled': props.disabled }
+    ]" :aria-disabled="props.disabled || undefined" :tabindex="props.disabled ? -1 : undefined"
+        @click="handleLinkClick">
         <span v-if="$slots.icon_left">
             <slot name="icon_left" />
         </span>

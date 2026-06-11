@@ -3,6 +3,9 @@ import { ref } from 'vue';
 import BaseButton from './BaseButton.vue';
 import BaseSelect from './BaseSelect.vue';
 import { sortOptions } from '@/services/shortlist.service';
+import { useComparisonSelection } from '@/composables/useComparisonSelection';
+
+const { selectedForComparison } = useComparisonSelection();
 
 defineProps({
   summary: {
@@ -33,7 +36,8 @@ function setView(value) {
       </div>
 
       <div class="shortlist-toolbar__actions">
-        <BaseButton variant="outline-light-thin" class="btn_first">Compare Tools</BaseButton>
+        <BaseButton :to="{ name: 'tools-comparison' }" variant="outline-light-thin" class="btn_first"
+          :disabled="!selectedForComparison.length">Compare Tools</BaseButton>
         <BaseButton variant="primary">Build AI Stack</BaseButton>
         <BaseButton variant="outline-light-thin">Export</BaseButton>
       </div>

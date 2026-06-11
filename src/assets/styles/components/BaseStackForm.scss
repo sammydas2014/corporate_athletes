@@ -47,6 +47,14 @@
           text-align: right;
           .btn{
             gap: 10px;
+            svg{
+              path{
+                transition: var(--bs-transition);
+              }
+            }
+            &:hover svg path{
+              fill: var(--bs-btn-hover-color);
+            }
           }
           p{
             text-align: center;

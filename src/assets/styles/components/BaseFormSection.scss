@@ -19,16 +19,20 @@
   }
   .form-row {
     display: flex;
-    gap: 30px;
     justify-content: space-between;
+    row-gap: 10px;
+    flex-wrap: wrap;
     .base-select{
-      width: 50%;
+      width: calc(50% - 15px);
+    }
+    .option{
+      width: calc(50% - 5px);
     }
   }
   + .form-row-wrapper{
     margin-top: 30px;
   }
-  
+
 }
 .form-row-wrapper-one{
   .form-row {
@@ -41,7 +45,7 @@
   .form-row {
     gap: 17px;
     .base-select{
-      width: 33.33%;
+      width: calc(33.33% - 12px);
     }
   }
 }
