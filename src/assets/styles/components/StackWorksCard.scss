@@ -1,0 +1,29 @@
+
+.stackinnr-wrp{
+  .title{
+    margin-bottom: 24px;
+    strong{
+      color: #454A53;
+    }
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 24px;
+    li{
+      position: relative;
+      padding-left: 12px;
+      &::before{
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #15A3A3;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

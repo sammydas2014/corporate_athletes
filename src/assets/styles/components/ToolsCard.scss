@@ -1,0 +1,90 @@
+@use '../base' as *;
+.cardWrp{
+  background-color: var(--bs-white);
+  border: 1px solid rgba(216, 222, 230, 87%);
+  border-radius: 10px;
+  padding: 27px 18px 25px 18px;
+  .catagory{
+    font-size: 12px;
+    color: #7E8A9A;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    border: 1px solid rgba(194, 203, 215, 78%);
+    border-radius: 88px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 15px;
+    margin-bottom: 15px;
+  }
+  p{
+    font-size: 15px;
+  }
+  .list-wrp{
+    margin-top: 35px;
+    margin-bottom: 20px;
+    h4{
+      color: #484F58;
+      font-size: 12px;
+      line-height: 26px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        position: relative;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: -0.04em;
+        padding-left: 25px;
+        &::before{
+          content: "";
+          position: absolute;
+          top: 4px;
+          left: 0;
+          width: 15px;
+          height: 15px;
+          background: url(@/assets/images/greenTick.png) no-repeat center;
+          background-size: contain;
+        }
+      }
+      li + li{
+        margin-top: 10px;
+      }
+    }
+  }
+  .list-wrp-alter{
+    margin-bottom: 22px;
+    padding-top: 20px;
+    margin-top: 0;
+    border-top: 1px solid #D8DEE6;
+  ul{
+    li{
+      display: flex;
+      gap: 3px;
+      color: #16171B;
+      span{
+        color: #6B7280;
+      }
+    padding: 0;
+    &::before{
+      display: none;
+    }
+  }
+  li + li{
+    margin-top: 3px;
+  }
+  }
+
+
+}
+.tags-wrp{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+}
+
+

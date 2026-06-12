@@ -12,7 +12,22 @@
         <div class="card-body">
           <div>
             <h3>{{ card?.title }}</h3>
-            <p>{{ card?.sub }}</p>
+
+            <div class="btm_wrp_con">
+              <p v-if="card?.sub" class="casestudie-card__desc">{{ card?.sub }}</p>
+
+              <div v-if="card?.meta || card?.badges?.length"
+                class="casestudie-card__meta d-flex align-items-center flex-wrap">
+                <span v-if="card?.meta" class="casestudie-card__meta-label">{{ card?.meta }}</span>
+                <component :is="badge.route ? 'router-link' : 'span'" v-for="badge in card?.badges" :key="badge.label"
+                  :to="badge.route || undefined" class="casestudie-card__badge"
+                  :class="`casestudie-card__badge--${badge.type || 'default'}`">
+                  <i v-if="badge.type === 'down'" class="bi bi-arrow-down-short me-1"></i>
+                  <i v-else-if="badge.type === 'up'" class="bi bi-arrow-up-short me-1"></i>
+                  {{ badge.label }}
+                </component>
+              </div>
+            </div>
           </div>
           <RouterLink :to="card?.to" class="arrow-btn">
             <i class="bi bi-arrow-up-right-circle-fill"></i>
@@ -225,13 +240,6 @@ onBeforeUnmount(() => {
     letter-spacing: -0.05em;
     margin-bottom: 10px;
     transition: var(--bs-transition);
-  }
-
-  p {
-    font-size: 15px;
-    color: var(--bs-body-color);
-    line-height: 1.5;
-    margin-bottom: 0;
   }
 }
 

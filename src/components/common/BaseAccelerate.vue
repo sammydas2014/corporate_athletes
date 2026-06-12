@@ -1,5 +1,5 @@
 <template>
-  <section class="accelerate-section">
+  <section class="accelerate-section" v-bind="$attrs">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -22,7 +22,9 @@
 </template>
 <script setup>
 import BaseButton from '@/components/common/BaseButton.vue';
-
+defineOptions({
+  inheritAttrs: false,
+})
 defineProps({
   title: { type: String, default: 'Ready to accelerate performance with AI?' },
   primaryBtnLabel: { type: String, default: 'Book a Strategy Call' },

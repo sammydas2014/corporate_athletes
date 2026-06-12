@@ -1,0 +1,16 @@
+@use '../base' as *;
+
+.base-stack-sec{
+  padding-top: 70px;
+  .hdr-wrp{
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .sec-title{
+      color: #1A1D21;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+}

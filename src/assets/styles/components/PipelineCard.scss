@@ -1,0 +1,126 @@
+@use '../base' as *;
+.pipeline-crd{
+  border: 1px solid #D8DEE6;
+  background-color: var(--bs-white);
+  border-radius: 10px;
+  padding: 20px 19px 22px 19px;
+  .logo-wrap{
+    width: 34px;
+    height: 34px;
+    border-radius: 7px;
+    background-color: #E5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    img{
+      max-width: 24px;
+    }
+  }
+  .tagline{
+    font-size: 12px;
+    color: #484F58;
+    line-height: 26px;
+  }
+  h6{
+    color: #1A1D21;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 2px;
+  }
+  .subhdng{
+    color: #6B7280;
+    font-size: 13px;
+    letter-spacing: -0.04em;
+    line-height: 22px;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+
+    li{
+      font-size: 13px;
+      line-height: 17px;
+      letter-spacing: -0.04em;
+      color: #575F71;
+    }
+  }
+  .indicators{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 26px;
+    gap: 8px;
+    li{
+      width: calc(50% - 4px);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      .good{
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #00BC7D;
+        flex: 0 0 auto;
+        left: 0;
+      }
+      .warning{
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #FE9A00;
+        flex: 0 0 auto;
+        left: 0;
+      }
+      .danger{
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #FF4D4F;
+        flex: 0 0 auto;
+        left: 0;
+      }
+    }
+
+  }
+  .longList{
+    margin-top: 17px;
+    li{
+      display: flex;
+      align-items: start;
+      gap: 9px;
+      .good{
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        flex: 0 0 auto;
+        background-color: #00BC7D;
+        margin-top: 6px;
+        left: 0;
+      }
+      .warning{
+        width: 7px;
+        height: 7px;
+         flex: 0 0 auto;
+        border-radius: 50%;
+        background-color: #FE9A00;
+            margin-top: 6px;
+        left: 0;
+      }
+      .danger{
+        width: 7px;
+        height: 7px;
+         flex: 0 0 auto;
+        border-radius: 50%;
+        background-color: #FF4D4F;
+            margin-top: 6px;
+        left: 0;
+      }
+    }
+    li + li{
+      margin-top: 20px;
+    }
+
+  }
+}

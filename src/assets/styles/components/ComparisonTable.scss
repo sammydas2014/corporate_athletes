@@ -206,6 +206,10 @@
     background-color: var(--bs-white, #fff);
   }
 
+  &__card--popular {
+    border-color: var(--bs-success);
+  }
+
   &__card-header {
     display: flex;
     align-items: center;
@@ -215,6 +219,19 @@
     color: var(--color-dark-secondary);
     font-size: 16px;
     font-weight: 600;
+  }
+
+  &__badge {
+    margin-left: auto;
+    padding: 3px 10px;
+    border-radius: var(--bs-border-radius-pill);
+    background-color: var(--bs-success);
+    color: var(--bs-white, #fff);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
   &__icon {

@@ -110,11 +110,12 @@ function isHighestScore(section, row, tool) {
         </button>
       </div>
 
-      <div class="comparison-mobile__card">
+      <div class="comparison-mobile__card" :class="{ 'comparison-mobile__card--popular': activeTool.popular }">
         <div class="comparison-mobile__card-header">
           <span class="comparison-mobile__icon" :style="{ backgroundColor: activeTool.iconBg }">{{ activeTool.initials
           }}</span>
           {{ activeTool.name }}
+          <span v-if="activeTool.popular" class="comparison-mobile__badge">Most Popular</span>
         </div>
 
         <template v-for="section in sections" :key="section.key">

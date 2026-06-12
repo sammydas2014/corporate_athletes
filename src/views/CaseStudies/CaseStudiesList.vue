@@ -1,7 +1,17 @@
 <template>
-  <h1>Case Studies List Page</h1>
+  <CaseStudiesHeroSection />
+  <CaseStudiesFilterSection />
+  <CaseStudySliderSection :cards="caseStudies" />
+  <CaseStudiesGridSection />
+  <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
+    :secondary-btn-label="accelerateData.secondaryBtnLabel" class="cstd_base_acc" />
 </template>
 
 <script setup>
+import { caseStudies, accelerateData } from '@/services/casestudieslist.service';
+import CaseStudiesHeroSection from './sections/CaseStudiesHeroSection.vue';
+import CaseStudiesFilterSection from './sections/CaseStudiesFilterSection.vue';
+import CaseStudySliderSection from './sections/CaseStudySliderSection.vue';
+import CaseStudiesGridSection from './sections/CaseStudiesGridSection.vue';
+import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
 </script>
-

@@ -63,6 +63,13 @@ export const imageMap = {
   puzzleImg: new URL("./pussle-img.png", import.meta.url).href,
   dollerSign: new URL("./doller-sign.png", import.meta.url).href,
   architectureBg: new URL("./architectureBg.png", import.meta.url).href,
+  cstd_card_1: new URL("./cstd_card_1.png", import.meta.url).href,
+  cstd_card_2: new URL("./cstd_card_2.png", import.meta.url).href,
+  cstd_card_3: new URL("./cstd_card_3.png", import.meta.url).href,
+  cstd_card_4: new URL("./cstd_card_4.png", import.meta.url).href,
+  cstd_card_5: new URL("./cstd_card_5.png", import.meta.url).href,
+  cstd_card_6: new URL("./cstd_card_6.png", import.meta.url).href,
+  layersIcon: new URL("./layersIcon.png", import.meta.url).href,
 
   avatars: {},
 

@@ -1,0 +1,76 @@
+@use '../base' as *;
+
+.cardWrp{
+  border-radius: 10px;
+  background-color: var(--bs-white);
+  padding: 40px;
+  .optnsTxt{
+    color: #484F58;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .chip{
+    color: #009A9B;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    border-radius: 88px;
+    border: 1px solid rgba(0, 154, 155, 0.7);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 15px;
+    margin-bottom: 16px;
+  }
+  .buletLst{
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    li{
+      color: #6B7280;
+      position: relative;
+      padding-left: 18px;
+      &::before{
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        left: 0;
+        background-color: #6B7280;
+        top: 10px;
+      }
+
+    }
+    li + li{
+      margin-top: 10px;
+    }
+  }
+  .cardFtr{
+    padding-top: 20px;
+    border-top: 1px solid #D8DEE6;
+    p{
+      font-size: 14px;
+      font-weight: 500;
+      color: #16171B;
+      position: relative;
+      padding-left: 28px;
+      span{
+        color: #6B7280;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        width: 13px;
+        height: 10px;
+        left: 0;
+        background: url(../../images/goldenRightArw.png) no-repeat center;
+        background-size: contain;
+        top: 8px;
+      }
+    }
+  }
+}
