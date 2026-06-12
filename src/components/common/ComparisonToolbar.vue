@@ -14,9 +14,13 @@ const props = defineProps({
     type: Number,
     default: 5,
   },
+  activeToolId: {
+    type: [Number, String],
+    default: null,
+  },
 });
 
-const emit = defineEmits(['remove', 'add', 'clear-all']);
+const emit = defineEmits(['remove', 'add', 'clear-all', 'update:activeToolId']);
 
 const isOpen = ref(false);
 
@@ -39,11 +43,15 @@ function selectTool(tool) {
     <div class="comparison-toolbar__group">
       <span class="comparison-toolbar__label">Selected Tools ({{ selectedTools.length }} of {{ max }})</span>
 
-      <span v-for="tool in selectedTools" :key="tool.id" class="comparison-toolbar__chip">
-        <span class="comparison-toolbar__icon" :style="{ backgroundColor: tool.iconBg }">{{ tool.initials }}</span>
+      <span v-for="tool in selectedTools" :key="tool.id" class="comparison-toolbar__chip"
+        :class="{ 'is-active': tool.id === activeToolId }"
+        :style="{ '--chip-accent-bg': tool.accentBg, '--chip-accent-text': tool.accentText }"
+        @click="emit('update:activeToolId', tool.id)">
+        <span class="comparison-toolbar__icon" :style="{ backgroundColor: tool.iconBg, color: tool.accentText }">{{
+          tool.initials }}</span>
         {{ tool.name }}
         <button type="button" class="comparison-toolbar__remove" :aria-label="`Remove ${tool.name}`"
-          @click="emit('remove', tool.id)">
+          @click.stop="emit('remove', tool.id)">
           <i class="bi bi-x"></i>
         </button>
       </span>
@@ -58,8 +66,9 @@ function selectTool(tool) {
           <div class="comparison-toolbar__dropdown">
             <button v-for="tool in availableTools" :key="tool.id" type="button"
               class="comparison-toolbar__dropdown-item" @click="selectTool(tool)">
-              <span class="comparison-toolbar__icon" :style="{ backgroundColor: tool.iconBg }">{{ tool.initials
-              }}</span>
+              <span class="comparison-toolbar__icon"
+                :style="{ backgroundColor: tool.iconBg, color: tool.accentText }">{{ tool.initials
+                }}</span>
               {{ tool.name }}
             </button>
           </div>

@@ -27,6 +27,10 @@ defineProps({
     type: String,
     default: '',
   },
+  highest: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
@@ -36,7 +40,8 @@ defineProps({
     {{ value }}
   </span>
 
-  <div v-else-if="type === 'score'" class="comparison-value__score">
+  <div v-else-if="type === 'score'" class="comparison-value__score"
+    :class="{ 'comparison-value__score--highest': highest }">
     <BaseProggressBar :score="value" :max="5" />
     <span class="comparison-value__score-label">{{ value }}</span>
   </div>

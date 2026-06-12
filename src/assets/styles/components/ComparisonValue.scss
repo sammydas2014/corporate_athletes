@@ -8,8 +8,8 @@
     line-height: 1.3;
 
     color: #1a1d21;
-font-size: 14px;
-font-weight: 500;
+    font-size: 14px;
+    font-weight: 500;
 
     &--good {
       background-color: #eaf7ee;
@@ -31,16 +31,42 @@ font-weight: 500;
     display: flex;
     align-items: center;
     gap: 10px;
+      max-width: calc(100% - 30px);
+      margin-inline: auto;
 
     .range-slider-wrp {
       flex: 1;
+      background: #e0e9ea;
+      .range-slider__fill {
+        background: #9fb9c3;
+      }
     }
 
     &-label {
       flex: 0 0 auto;
       font-size: 13px;
       font-weight: 600;
-      color: var(--color-dark-secondary);
+      color: var(--bs-primary);
+    }
+
+    &--highest {
+      max-width: 100%;
+      padding: 5px 15px;
+      border-radius: var(--bs-border-radius-pill);
+      background-color: var(--bs-primary);
+
+      .range-slider-wrp {
+        height: 5px;
+        background: rgba(255, 255, 255, 0.25);
+
+        .range-slider__fill {
+          background: #fff;
+        }
+      }
+
+      .comparison-value__score-label {
+        color: #fff;
+      }
     }
   }
 
@@ -50,13 +76,15 @@ font-weight: 500;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 
     li {
       display: flex;
       align-items: flex-start;
       gap: 8px;
       font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.04em;
       line-height: 1.4;
       color: var(--color-dark-secondary);
 
@@ -68,11 +96,11 @@ font-weight: 500;
     }
 
     &--positive i {
-      color: #2b9166;
+      color: #23A84D;
     }
 
     &--negative i {
-      color: #d2691e;
+      color: #DE3A1E;
     }
   }
 
@@ -84,6 +112,8 @@ font-weight: 500;
 
   &__text {
     font-size: 14px;
+    font-weight: 500;
     color: var(--color-dark-secondary);
   }
 }
+

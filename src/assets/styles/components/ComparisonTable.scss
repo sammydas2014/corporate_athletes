@@ -78,10 +78,10 @@
     gap: 10px;
     background-color: #fafbfc;
     color: var(--bs-primary);
-font-size: 17px;
-font-weight: 600;
-line-height: 23px;
-letter-spacing: -0.04em;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.04em;
   }
 
   &__cell--popular {
@@ -118,12 +118,13 @@ letter-spacing: -0.04em;
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
     color: var(--bs-white, #fff);
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 600;
   }
 }
 
@@ -186,9 +187,11 @@ letter-spacing: -0.04em;
     border-radius: 7px;
     background-color: var(--bs-white, #fff);
     color: var(--color-dark-secondary);
-    font-size: 14px;
-    font-weight: 500;
     transition: var(--bs-transition);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
 
     &.is-active {
       border-color: var(--bs-primary) !important;

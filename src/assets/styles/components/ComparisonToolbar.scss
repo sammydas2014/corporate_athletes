@@ -9,7 +9,7 @@
   margin-bottom: 25px;
   padding: 20px 27px;
   border-radius: var(--border-radius-sm);
-  background-color: #EFF1F5;
+  background-color: #eff1f5;
 
   &__group {
     display: flex;
@@ -20,33 +20,41 @@
 
   &__label {
     color: #616b77;
-font-size: 13px;
-font-weight: 500;
-line-height: 1.5;
-letter-spacing: -0.03em;
-text-transform: uppercase;
-margin-right: 25px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-right: 25px;
   }
 
   &__chip {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 14px;
-    border: 1px solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius-pill);
-    background-color: var(--bs-white, #fff);
-    color: var(--color-dark-secondary);
-    font-size: 13px;
-    font-weight: 500;
+    padding: 8px 10px;
+
+    color: var(--bs-primary);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+
+    border: 1px solid rgba(196, 210, 215, 1);
+    border-radius: 7px;
+    background: #d0dce033;
   }
 
   &__chip--add {
     border-style: dashed;
-    color: var(--bs-body-color);
+      color: var(--bs-primary);
     cursor: pointer;
-    background-color: var(--bs-white, #fff);
+    background: #d0dce033;
     transition: var(--bs-transition);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    min-height: 42px;
 
     &:hover {
       border-color: var(--bs-primary);
@@ -61,8 +69,8 @@ margin-right: 25px;
     padding: 0;
     border: none;
     background: none;
-    color: var(--bs-body-color);
-    font-size: 12px;
+    color: var(--bs-primary);
+    font-size: 16px;
     line-height: 1;
     cursor: pointer;
     transition: var(--bs-transition);
@@ -72,8 +80,33 @@ margin-right: 25px;
     }
   }
 
+  @include tablet {
+    &__chip {
+      background-color: var(--chip-accent-bg, var(--bs-white, #fff));
+      color: var(--chip-accent-text, var(--color-dark-secondary));
+      cursor: pointer;
+
+      &:not(.comparison-toolbar__chip--add) {
+        border-color: transparent;
+
+        &.is-active {
+          border-color: var(--chip-accent-text, var(--bs-primary));
+        }
+      }
+    }
+
+    &__remove {
+      color: var(--chip-accent-text, var(--bs-primary));
+    }
+  }
+
   &__add {
     position: relative;
+    i{
+      font-size: 16px;
+      line-height: 1;
+      color: var(--bs-primary);
+    }
   }
 
   &__backdrop {

@@ -9,26 +9,29 @@
     justify-content: space-between;
     gap: 24px;
     flex-wrap: wrap;
-    margin-bottom: 24px;
+    margin-bottom: 45px;
   }
 
   &__title {
     color: var(--color-dark-secondary);
-    margin-bottom: 8px;
+    margin-bottom: 25px;
   }
 
   &__subtitle {
-    color: #8b929f;
-    font-size: 15px;
-    font-weight: 400;
+    color: #4D565E;
+    font-size: 20px;
     margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.2;
   }
 
   &__cta {
     flex: 0 0 auto;
-    height: 48px;
-    padding: 0 24px;
-    font-size: 12px;
     white-space: nowrap;
   }
+}
+
+.compare_inte_data h2{
+  max-width: 675px;
+  margin-inline: auto;
 }
