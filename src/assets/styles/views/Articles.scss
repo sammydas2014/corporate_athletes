@@ -1,0 +1,39 @@
+
+.editor-lence-wrap{
+  padding: var(--sec-gap) 0 60px 0;
+  position: relative;
+  .container{
+    display: flex;
+    justify-content: space-between;
+    .headng-prt{
+      width: 40%;
+    }
+    .lence-tools{
+      width: 60%;
+      display: flex;
+      column-gap: 80px;
+      padding-left: 50px;
+      row-gap: 10px;
+      flex-wrap: wrap;
+      .lensCrd{
+        width: 33.33%;
+        max-width: 179px;
+      }
+    }
+  }
+}
+.letst-artical-sec{
+  .container{
+    padding-top: 60px;
+    border-top: 1px solid #D8DEE6;
+
+    .thickWrap {
+      display: flex;
+      gap: 30px;
+      .crd-wrap{
+        width: calc(33.33% - 15px);
+      }
+  }
+  }
+
+}

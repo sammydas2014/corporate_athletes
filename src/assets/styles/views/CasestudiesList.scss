@@ -1,29 +1,33 @@
 .cstd_hero_sec {
   padding-top: var(--sec-gap);
+  margin-bottom: 40px;
 
-  .sec__title,
-  .sec__subtitle {
+  .hero-banner__title {
+    color: var(--color-dark-secondary);
     max-width: 700px;
   }
 
   .sec__subtitle {
     color: var(--bs-body-color);
+    max-width: 800px;
+    font-size: 20px;
+    letter-spacing: -0.04em;
+    font-weight: 400;
   }
 }
 
-.title__eyebrow--pill {
-  display: inline-flex;
-  padding: 6px 18px;
-  border: 1px solid var(--bs-secondary);
-  border-radius: var(--bs-border-radius-pill);
-  margin-bottom: 20px;
-}
-
 .cstd_filter_sec {
-  padding-bottom: var(--sec-gap);
-
   &__search {
     margin-bottom: 20px;
+
+    .baseInpFld {
+      font-size: 17px;
+      font-weight: 600;
+
+      &::placeholder {
+        color: var(--color-dark-secondary);
+      }
+    }
   }
 
   &__panel {
@@ -87,6 +91,7 @@
     font-size: 40px;
   }
 }
+
 .cstd_grid_sec.list_cstd {
   padding-bottom: var(--sec-gap);
 

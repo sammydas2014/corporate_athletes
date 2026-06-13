@@ -70,6 +70,12 @@ export const imageMap = {
   cstd_card_5: new URL("./cstd_card_5.png", import.meta.url).href,
   cstd_card_6: new URL("./cstd_card_6.png", import.meta.url).href,
   layersIcon: new URL("./layersIcon.png", import.meta.url).href,
+  PageNoteIcon: new URL("./page-note.png", import.meta.url).href,
+  thinkOneImg: new URL("./think-one.png", import.meta.url).href,
+  thinkTwoImg: new URL("./think-two.png", import.meta.url).href,
+  thinkThreeImg: new URL("./think-three.png", import.meta.url).href,
+  insight_bnr: new URL("./insight_bnr.png", import.meta.url).href,
+  article_bnr: new URL("./article_bnr.png", import.meta.url).href,
 
   avatars: {},
 

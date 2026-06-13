@@ -67,8 +67,14 @@
             <div v-if="showSearch" class="hero-banner__search">
               <BaseInput v-model="searchQuery" :placeholder="searchPlaceholder" variant="banner"
                 @keydown.enter="$emit('search', searchQuery)">
-                <template #icon-left>
+                <template v-if="searchIconPosition === 'left'" #icon-left>
                   <i class="bi bi-search"></i>
+                </template>
+                <template v-else #icon-right>
+                  <button type="button" class="search-submit-btn" aria-label="Search"
+                    @click="$emit('search', searchQuery)">
+                    <i class="bi bi-search"></i>
+                  </button>
                 </template>
               </BaseInput>
             </div>
@@ -175,6 +181,7 @@ const props = defineProps({
   showSearch: { type: Boolean, default: false },
   searchPlaceholder: { type: String, default: 'Search…' },
   popularSearches: { type: Array, default: () => [] },
+  searchIconPosition: { type: String, default: 'left' },
 })
 
 const emit = defineEmits(['cta-click', 'search'])

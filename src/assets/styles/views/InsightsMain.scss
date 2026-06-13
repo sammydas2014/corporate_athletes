@@ -1,0 +1,36 @@
+@use '../base' as *;
+.analysis-sec{
+  padding: var(--sec-gap) 0;
+  position: relative;
+  .main-wrap{
+    display: flex;
+    gap: 18px;
+    border-bottom: 1px solid #D8DEE6;
+    padding-bottom: 60px;
+    .analysisCrd{
+      width: calc(25% - 9px);
+    }
+  }
+  .editorial-wrper{
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .headng-prt{
+      width: 50%;
+      padding-right: 50px;
+      .sec__title{
+        margin: 0;
+      }
+    }
+    .editorial-txt{
+      width: 50%;
+      .editorialWrap{
+        border: 1px solid #D8DEE68A;
+        background-color: var(--bs-white);
+        border-radius: 10px;
+        padding: 40px 24px;
+      }
+    }
+  }
+}

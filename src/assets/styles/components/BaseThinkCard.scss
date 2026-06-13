@@ -1,0 +1,32 @@
+
+.crd-wrap{
+  .image-con{
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .data-prt{
+    padding-right: 25px;
+    .data{
+      font-size: 13px;
+      color: #D6A85F;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid #D6A85F;
+      padding: 10px 15px;
+      border-radius: 88px;
+      margin-bottom: 20px;
+    }
+    h3{
+      font-size: 26px;
+      line-height: 32px;
+      margin: 20px 0;
+      min-height: 95px;
+    }
+  }
+}

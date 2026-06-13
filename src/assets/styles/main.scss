@@ -68,6 +68,9 @@
 @use './components/ComparisonTable';
 @use './components/ComparisonToolbar';
 @use './components/BaseObjectiveItem';
+@use './components/BaseAnalysisCard';
+@use './components/LensCard';
+@use './components/BaseThinkCard';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';
@@ -76,7 +79,6 @@
 @use './views/CorporateAthletes';
 @use './views/BaseInsightsSection';
 @use './views/OurModel';
-@use './views/InsightsMain';
 @use './views/ProfilecardSection';
 @use './views/CapabilityPillars';
 @use './views/ApproachSection';
@@ -94,3 +96,5 @@
 @use './views/CasestudiesList';
 @use './views/OutcomeView';
 @use './views/BaseStacksSection';
+@use './views/Articles';
+@use './views/InsightsMain';

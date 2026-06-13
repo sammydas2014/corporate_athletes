@@ -1,4 +1,4 @@
-<template>
+  <template>
   <section class="cstd_filter_sec">
     <div class="container">
       <div class="cstd_filter_sec__search">
