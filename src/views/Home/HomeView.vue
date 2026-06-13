@@ -16,7 +16,10 @@
 
     <CaseStudySliderSection :cards="caseStudies" />
 
-    <BaseInsightsSection />
+    <BaseInsightsSection
+      subtitle="Insights"
+      title="Insights on AI and transformation"
+    />
 
     <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
       :secondary-btn-label="accelerateData.secondaryBtnLabel" />

@@ -49,6 +49,7 @@
         </div>
       </div>
     </section>
+    
     <BaseInsightsSection
       title="Featured articles"
     />
