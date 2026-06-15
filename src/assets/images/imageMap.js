@@ -76,6 +76,11 @@ export const imageMap = {
   thinkThreeImg: new URL("./think-three.png", import.meta.url).href,
   insight_bnr: new URL("./insight_bnr.png", import.meta.url).href,
   article_bnr: new URL("./article_bnr.png", import.meta.url).href,
+  threedModel: new URL("./3dModel.png", import.meta.url).href,
+  riskImg: new URL("./RiskImg.png", import.meta.url).href,
+  intrigationImg: new URL("./intrigation.png", import.meta.url).href,
+  settingsImg: new URL("./settings.png", import.meta.url).href,
+  deepdiveBnrImg: new URL("./deepDriveBnnrImg.png", import.meta.url).href,
 
   avatars: {},
 
