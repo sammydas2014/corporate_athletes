@@ -128,7 +128,6 @@ export const caseStudiesGrid = [
     title: "Global / 20+ countries",
     meta: "Close cycle",
     badges: [{ label: "85%", type: "down" }],
-    to: "/",
   },
   {
     id: 2,
@@ -137,7 +136,6 @@ export const caseStudiesGrid = [
     title: "£500m revenue business",
     meta: "Customer Conversion",
     badges: [{ label: "3%", type: "up" }],
-    to: "/",
   },
   {
     id: 3,
@@ -146,7 +144,6 @@ export const caseStudiesGrid = [
     title: "8-week delivery",
     meta: "Costs",
     badges: [{ label: "£2.1m", type: "down" }],
-    to: "/",
   },
   {
     id: 4,
@@ -155,7 +152,6 @@ export const caseStudiesGrid = [
     title: "£500m revenue business",
     meta: "Customer Conversion",
     badges: [{ label: "3%", type: "up" }],
-    to: "/",
   },
   {
     id: 5,
@@ -164,7 +160,6 @@ export const caseStudiesGrid = [
     title: "Global / 20+ countries",
     meta: "Close cycle",
     badges: [{ label: "85%", type: "down" }],
-    to: "/",
   },
   {
     id: 6,
@@ -173,7 +168,6 @@ export const caseStudiesGrid = [
     title: "Global / 20+ countries",
     meta: "Close cycle",
     badges: [{ label: "65%", type: "up" }],
-    to: "/",
   },
   {
     id: 7,
@@ -182,7 +176,6 @@ export const caseStudiesGrid = [
     title: "40-country AP rollout",
     meta: "Invoice cycle time",
     badges: [{ label: "75%", type: "down" }],
-    to: "/",
   },
   {
     id: 8,
@@ -191,7 +184,6 @@ export const caseStudiesGrid = [
     title: "$20M annual savings",
     meta: "Operating costs",
     badges: [{ label: "$20M", type: "up" }],
-    to: "/",
   },
   {
     id: 9,
@@ -200,7 +192,6 @@ export const caseStudiesGrid = [
     title: "94% forecast accuracy",
     meta: "Forecast accuracy",
     badges: [{ label: "94%", type: "up" }],
-    to: "/",
   },
 ];
 

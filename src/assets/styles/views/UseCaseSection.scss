@@ -1,35 +1,31 @@
-@use '../base' as *;
+@use "../base" as *;
 
-.useCase-sec{
-  .header-wraper{
+.useCase-sec {
+  .header-wraper {
     display: flex;
     justify-content: space-between;
-    .content-wrap{
+    .content-wrap {
       width: calc(50% - 15px);
-      .sec-title{
-    font-size: 36px;
-    color: #1A1D21;
-    letter-spacing: -0.05em;
-    font-weight: 600;
-    margin-bottom: 25px;
-  }
-  .base-box{
-    .use-case-card + .use-case-card{
-      margin-top: 20px;
-    }
-    .innr-wraper{
-      display: flex;
-      gap: 20px;
-      justify-content: space-between;
-      background-color: #F7F9F9;
-      border-radius: 10px;
-      padding-bottom: 50px;
-    }
-    // &:has(.comparison-card){
-
-    // }
-  }
+      .sec-title {
+        font-size: 36px;
+        color: #1a1d21;
+        letter-spacing: -0.05em;
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+      .base-box {
+        .use-case-card + .use-case-card {
+          margin-top: 20px;
+        }
+        .innr-wraper {
+          display: flex;
+          gap: 20px;
+          justify-content: space-between;
+          background-color: #f7f9f9;
+          border-radius: 10px;
+          padding-bottom: 50px;
+        }
+      }
     }
   }
-
 }

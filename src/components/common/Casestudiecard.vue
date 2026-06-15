@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <router-link :to="to" class="casestudie-card__cta" :aria-label="`Learn more about ${title}`">
+      <router-link :to="`/case-studies/${id}`" class="casestudie-card__cta" :aria-label="`Learn more about ${title}`">
         <i class="bi bi-arrow-up-right-circle-fill"></i>
       </router-link>
     </div>
@@ -43,7 +43,8 @@
 </template>
 
 <script setup>
-defineProps({
+
+const props = defineProps({
   image: { type: String, required: true },
   title: { type: String, required: true },
   speciality: { type: String, default: '' },
@@ -52,7 +53,8 @@ defineProps({
   meta: { type: String, default: '' },
   badges: { type: Array, default: () => [] },
   cardClass: { type: String, default: '' },
-  to: { type: [String, Object], default: '/' },
+  // to: { type: [String, Object], default: '/' },
+  id: { type: Number, required: true }
 })
 </script>
 
