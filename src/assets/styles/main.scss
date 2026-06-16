@@ -71,6 +71,7 @@
 @use './components/BaseAnalysisCard';
 @use './components/LensCard';
 @use './components/BaseThinkCard';
+@use './components/BaseToggleButton';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';
@@ -100,3 +101,4 @@
 @use './views/InsightsMain';
 @use './views/CaseStudyDetail';
 @use './views/AiDeepDives';
+@use './views/PlaybooksList';

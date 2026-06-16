@@ -62,8 +62,9 @@ defineProps({
     </p>
 
     <!-- Footer -->
-    <div class="card-footer">
+    <div v-if="footer" class="card-footer">
       <p>{{ footer }}</p>
     </div>
+    <slot></slot>
   </div>
 </template>

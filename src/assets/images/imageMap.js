@@ -81,6 +81,7 @@ export const imageMap = {
   intrigationImg: new URL("./intrigation.png", import.meta.url).href,
   settingsImg: new URL("./settings.png", import.meta.url).href,
   deepdiveBnrImg: new URL("./deepDriveBnnrImg.png", import.meta.url).href,
+  playBookImg: new URL("./playbook-img.png", import.meta.url).href,
 
   avatars: {},
 
