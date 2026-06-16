@@ -82,6 +82,10 @@ export const imageMap = {
   settingsImg: new URL("./settings.png", import.meta.url).href,
   deepdiveBnrImg: new URL("./deepDriveBnnrImg.png", import.meta.url).href,
   playBookImg: new URL("./playbook-img.png", import.meta.url).href,
+  approch_icon_1: new URL("./approch_icon_1.png", import.meta.url).href,
+  approch_icon_2: new URL("./approch_icon_2.png", import.meta.url).href,
+  approch_icon_3: new URL("./approch_icon_3.png", import.meta.url).href,
+  approch_icon_4: new URL("./approch_icon_4.png", import.meta.url).href,
 
   avatars: {},
 
