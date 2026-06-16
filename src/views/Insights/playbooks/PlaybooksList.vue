@@ -70,6 +70,8 @@
 
       </div>
     </section>
+    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
+      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
 
   </div>
 </template>
@@ -82,7 +84,9 @@ import BaseSelect from '@/components/common/BaseSelect.vue';
 import { bannerData, lensData, filterData, toolsData } from '@/services/playbooklists.service';
 import BaseToggleButton from '@/components/common/BaseToggleButton.vue';
 import BaseAnalysisCard from '@/components/common/BaseAnalysisCard.vue';
+import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
 import BaseButton from '@/components/common/BaseButton.vue';
+import {accelerateData } from '@/services/home.service.js'
 
 const aiEnabled = ref(true)
 </script>
