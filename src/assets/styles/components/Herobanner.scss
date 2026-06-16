@@ -481,7 +481,7 @@
   }
   .hero-banner__content {
     max-width: 550px;
-    .hero-banner__subtitle{
+    .hero-banner__subtitle {
       max-width: 430px;
     }
   }
@@ -558,6 +558,45 @@
   }
 }
 
+// ─── Playbook Detail banner ───────────────────────────────────────────────────
+.playbookDetail_bnr {
+  .hero-banner_img {
+    position: relative;
+    margin-left: -100px;
+    margin-right: -100px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(4, 14, 28, 1) 0%, rgba(4, 14, 28, 0) 100%);
+      content: "";
+      z-index: 1;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background: linear-gradient(270deg, rgba(4, 14, 28, 1) 0%, rgba(4, 14, 28, 0) 100%);
+      content: "";
+      z-index: 1;
+    }
+  }
+
+  .hero-banner__content {
+    max-width: 600px;
+
+    .hero-banner__subtitle {
+      max-width: 530px;
+    }
+  }
+}
+
 // ─── Data & Analytics image fade edges ────────────────────────────────────────────
 .dataanalytics_bnr {
   .hero-banner_img {
@@ -628,6 +667,115 @@
   &.active {
     background: #1f4e5f87;
     color: #2ea1ca;
+  }
+}
+
+// ─── Events banner ────────────────────────────────────────────────────────────
+.events_bnr {
+  .hero-banner_img {
+    position: relative;
+    margin-left: -100px;
+    margin-right: -100px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(4, 14, 28, 1) 0%, rgba(4, 14, 28, 0) 100%);
+      content: "";
+      z-index: 1;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background: linear-gradient(270deg, rgba(4, 14, 28, 1) 0%, rgba(4, 14, 28, 0) 100%);
+      content: "";
+      z-index: 1;
+    }
+  }
+
+  .hero-banner__content {
+    max-width: 100%;
+    .hero-banner__subtitle {
+      color: #e9eef2;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      max-width: 640px;
+    }
+  }
+}
+
+// ─── Top programme tag ────────────────────────────────────────────────────────
+.banner-top-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.85rem;
+  border-radius: 20px;
+  background: transparent;
+  color: var(--banner-accent-color);
+  border: 1px solid currentColor;
+
+  &--accent {
+    color: #e8a740;
+  }
+
+  &--teal {
+    color: #1b9aaa;
+  }
+}
+
+// ─── Multi-subtitle ───────────────────────────────────────────────────────────
+.subtitle-label {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--bs-secondary);
+  margin-right: 5px;
+}
+
+.hero-banner__subtitle--highlighted {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e9eef2;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+// ─── Filter tab buttons ───────────────────────────────────────────────────────
+.banner-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 5px;
+  color: #e9eef2bb;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.38rem 1rem;
+  cursor: pointer;
+  transition: var(--bs-transition);
+  line-height: 1;
+
+  &:hover {
+    background: rgba(27, 154, 170, 0.18);
+    border-color: rgba(27, 154, 170, 0.45);
+    color: #6dd5e3;
+  }
+
+  &.active {
+    background: rgba(27, 154, 170, 0.18);
+    border-color: rgba(27, 154, 170, 0.45);
+    color: #6dd5e3;
   }
 }
 

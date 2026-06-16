@@ -1,26 +1,18 @@
-﻿<template>
+<template>
   <div class="playbook-detail">
-    <HeroBanner
-      :title="playbook.title || 'Playbook'"
-      :subtitle="playbook.subtitle || ''"
-      bg-color="#040e1c"
-      min-height="380px"
-      :breadcrumbs="[
+    <HeroBanner class="playbookDetail_bnr" :title="bannersData.title" :subtitle="bannersData.subtitle"
+      :image-url="bannersData.imageUrl" :image-alt="bannersData.imageAlt" :tags="bannersData.tags"
+      :ctas="bannersData.ctas" :meta="bannersData.meta" bg-color="#02050A" min-height="580px" :breadcrumbs="[
         { label: 'Home', href: '/' },
         { label: 'Insights', href: '/insights' },
-        { label: 'Playbooks', href: '/insights/playbooks' },
-        { label: playbook.title || 'Detail' },
-      ]"
-    />
+        { label: 'Transformation playbooks', href: '/insights/playbooks' },
+        { label: bannersData.breadcrumbLabel },
+      ]" />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import HeroBanner from '@/components/common/Herobanner.vue'
+import { bannersData } from '@/services/playbookDetail.service'
 
-const props = defineProps({ id: { type: String, required: true } })
-
-const playbook = computed(() => ({ title: `Playbook ${props.id}`, subtitle: '' }))
 </script>
-
