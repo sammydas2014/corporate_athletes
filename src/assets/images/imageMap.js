@@ -86,6 +86,8 @@ export const imageMap = {
   approch_icon_2: new URL("./approch_icon_2.png", import.meta.url).href,
   approch_icon_3: new URL("./approch_icon_3.png", import.meta.url).href,
   approch_icon_4: new URL("./approch_icon_4.png", import.meta.url).href,
+  playbookDeatils_bnr: new URL("./playbookDeatils_bnr.png", import.meta.url).href,
+  events_bnr: new URL("./events_bnr.png", import.meta.url).href,
 
   avatars: {},
 

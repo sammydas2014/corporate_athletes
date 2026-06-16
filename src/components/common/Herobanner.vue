@@ -48,6 +48,13 @@
               </a>
             </div>
 
+            <!-- Top programme / event tag -->
+            <div v-if="topTag" class="mb-3">
+              <span class="banner-top-tag" :class="`banner-top-tag--${topTag.type || 'accent'}`">
+                {{ topTag.text }}
+              </span>
+            </div>
+
             <!-- Tag pills -->
             <div v-if="tags && tags.length" class="d-flex flex-wrap gap-2 mb-3">
               <span v-for="tag in tags" :key="tag.label" class="banner-tag"
@@ -57,11 +64,20 @@
               </span>
             </div>
 
+            <span v-if="eyebrow" class="title__eyebrow">{{ eyebrow }}</span>
+
             <!-- Title -->
             <h1 class="hero-banner__title" v-html="title"></h1>
 
-            <!-- Subtitle -->
-            <p v-if="subtitle" class="hero-banner__subtitle">{{ subtitle }}</p>
+            <!-- Subtitles (multiple blocks) -->
+            <template v-if="subtitles && subtitles.length">
+              <p v-for="(sub, i) in subtitles" :key="i" class="hero-banner__subtitle"
+                :class="sub.variant ? `hero-banner__subtitle--${sub.variant}` : ''">
+                <span v-if="sub.label" class="subtitle-label">{{ sub.label }} </span>{{ sub.text }}
+              </p>
+            </template>
+            <!-- Subtitle (single, backwards-compatible) -->
+            <p v-else-if="subtitle" class="hero-banner__subtitle">{{ subtitle }}</p>
 
             <!-- Search input -->
             <div v-if="showSearch" class="hero-banner__search">
@@ -120,6 +136,17 @@
                 <span class="meta-label">{{ item.label }}</span>
               </div>
             </div>
+
+            <!-- Filter tabs -->
+            <div v-if="filters && filters.length" class="hero-banner__filters d-flex flex-wrap gap-2 mt-4">
+              <button
+                v-for="filter in filters"
+                :key="filter.value || filter.label"
+                class="banner-filter-btn"
+                :class="{ active: activeFilter === (filter.value || filter.label) }"
+                @click="onFilter(filter)"
+              >{{ filter.label }}</button>
+            </div>
           </div>
         </div>
 
@@ -146,6 +173,7 @@ const props = defineProps({
   // ─── Text ─────────────────────────────────────────────────────
   title: { type: String, required: true },
   subtitle: { type: String, default: '' },
+  eyebrow: { type: String, default: '' },
 
   // ─── Background ───────────────────────────────────────────────
   bgColor: { type: String, default: '#040e1c' },
@@ -182,9 +210,18 @@ const props = defineProps({
   searchPlaceholder: { type: String, default: 'Search…' },
   popularSearches: { type: Array, default: () => [] },
   searchIconPosition: { type: String, default: 'left' },
+
+  // ─── Programme / event top tag ────────────────────────────────────────────
+  topTag: { type: Object, default: null },
+
+  // ─── Multiple subtitle blocks ─────────────────────────────────────────────
+  subtitles: { type: Array, default: () => [] },
+
+  // ─── Filter tabs ──────────────────────────────────────────────────────────
+  filters: { type: Array, default: () => [] },
 })
 
-const emit = defineEmits(['cta-click', 'search'])
+const emit = defineEmits(['cta-click', 'search', 'filter-change'])
 
 const searchQuery = ref('')
 
@@ -205,6 +242,15 @@ const showOverlay = computed(() => {
 function onPopularTag(tag) {
   searchQuery.value = tag
   emit('search', tag)
+}
+
+const activeFilter = ref(
+  props.filters.length ? (props.filters[0].value || props.filters[0].label) : ''
+)
+
+function onFilter(filter) {
+  activeFilter.value = filter.value || filter.label
+  emit('filter-change', filter)
 }
 
 const mapCtaStyleToVariant = (style = '') => {
