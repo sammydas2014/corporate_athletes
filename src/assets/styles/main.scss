@@ -73,6 +73,10 @@
 @use './components/BaseThinkCard';
 @use './components/EventCard';
 @use './components/BaseToggleButton';
+@use './components/RoundtableCard';
+@use './components/RoundtablesSection';
+@use './components/LookBackSection';
+@use './components/EventProgramsSection';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';

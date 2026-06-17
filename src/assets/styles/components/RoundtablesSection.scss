@@ -1,0 +1,161 @@
+@use "../base" as *;
+
+// ─── Roundtables Section ──────────────────────────────────────────────────────
+.roundtables-section {
+  padding: var(--sec-gap, 100px) 0;
+
+  // ─── Two-column header ──────────────────────────────────────────────────────
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 50px;
+  }
+
+  &__header-left {
+    flex: 0 0 auto;
+    max-width: 545px;
+
+    .title__eyebrow {
+      max-width: fit-content;
+    }
+    .sec__title {
+      margin-bottom: 0;
+    }
+  }
+
+  &__header-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  &__desc {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--bs-secondary-color, #6b7280);
+    max-width: 500px;
+    margin-bottom: 0;
+    letter-spacing: -0.04em;
+  }
+
+  // ─── Slider ─────────────────────────────────────────────────────────────────
+  &__slider {
+    .roundtables-swiper {
+      overflow: hidden;
+      padding-block: 3px;
+      .swiper-slide {
+        height: auto;
+      }
+    }
+  }
+
+  // ─── Footer: progress bar + nav ─────────────────────────────────────────────
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 32px;
+  }
+
+  &__progress-wrap {
+    flex: 1;
+    height: 4px;
+    background: #d8dee6;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  &__progress-bar {
+    height: 100%;
+    background: $color-primary;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+}
+
+// ─── Nav buttons ─────────────────────────────────────────────────────────────
+.rt-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid $color-primary;
+  background: transparent;
+  color: $color-primary;
+  font-size: 18px;
+  cursor: pointer;
+  transition: var(--bs-transition);
+
+  &:hover {
+    background: $color-primary;
+    color: #fff;
+  }
+}
+
+// ─── Dark background modifier ────────────────────────────────────────────────
+.roundtables-section--dark {
+  .roundtable-card {
+    background: #356678;
+  }
+
+  .sec__title {
+    color: #fff;
+  }
+
+  .roundtables-section__desc {
+    color: #e9eef2;
+  }
+
+  .roundtables-section__progress-wrap {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .roundtables-section__progress-bar {
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .rt-nav-btn {
+    border-color: rgba(255, 255, 255, 0.35);
+    color: #fff;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+// ─── Responsive ──────────────────────────────────────────────────────────────
+@include tablet {
+  .roundtables-section {
+    &__header {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__header-left {
+      max-width: 100%;
+    }
+  }
+}
+
+@include mobile {
+  .roundtables-section {
+    padding: 60px 0;
+
+    &__header {
+      margin-bottom: 36px;
+    }
+  }
+}

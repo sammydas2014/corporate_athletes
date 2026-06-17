@@ -23,8 +23,8 @@
           <div class="right-prt">
             <div class="filter-prt">
               <template v-for="(data, index) in filterData" :key="index">
-                <BaseSelect :label="data?.label" :options="data?.options" :model-value="data?.selected" :placeholder="data?.placeholder"
-                  class="filter-select" />
+                <BaseSelect :label="data?.label" :options="data?.options" :model-value="data?.selected"
+                  :placeholder="data?.placeholder" class="filter-select" />
               </template>
             </div>
           </div>
@@ -86,7 +86,7 @@ import BaseToggleButton from '@/components/common/BaseToggleButton.vue';
 import BaseAnalysisCard from '@/components/common/BaseAnalysisCard.vue';
 import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
 import BaseButton from '@/components/common/BaseButton.vue';
-import {accelerateData } from '@/services/home.service.js'
+import { accelerateData } from '@/services/home.service.js'
 
 const aiEnabled = ref(true)
 </script>
