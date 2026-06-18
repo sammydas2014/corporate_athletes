@@ -79,6 +79,14 @@
             <!-- Subtitle (single, backwards-compatible) -->
             <p v-else-if="subtitle" class="hero-banner__subtitle">{{ subtitle }}</p>
 
+            <!-- Tag Chips -->
+            <div v-if="tagChips && tagChips.length" class="tagChipwrap">
+              <div v-for="(chip, index) in tagChips" :key="index" class="tag-chip">
+                <span class="label">{{chip?.label}}</span><span class="text">{{chip?.data}}</span>
+              </div>
+            </div>
+            <!-- Tag Chips -->
+
             <!-- Search input -->
             <div v-if="showSearch" class="hero-banner__search">
               <BaseInput v-model="searchQuery" :placeholder="searchPlaceholder" variant="banner"
@@ -147,6 +155,14 @@
                 @click="onFilter(filter)"
               >{{ filter.label }}</button>
             </div>
+            <!-- Idea List -->
+      <ul v-if="ideaList.length" class="idealist">
+        <li v-for="(idea, index) in ideaList" :key="index">
+          <img :src="idea?.icon" alt="idea image" />
+          <span>{{ idea?.text }}</span>
+        </li>
+      </ul>
+      <!-- Idea List -->
           </div>
         </div>
 
@@ -159,7 +175,10 @@
           </div>
         </div>
 
+
       </div>
+
+
     </div>
   </section>
 </template>
@@ -219,6 +238,14 @@ const props = defineProps({
 
   // ─── Filter tabs ──────────────────────────────────────────────────────────
   filters: { type: Array, default: () => [] },
+  tagChips: {
+    type: Array,
+    default: () => []
+  },
+  ideaList: {
+    type: Array,
+    default: () => []
+  }
 })
 
 const emit = defineEmits(['cta-click', 'search', 'filter-change'])

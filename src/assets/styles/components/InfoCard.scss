@@ -1,0 +1,56 @@
+@use "../base" as *;
+
+.info-card{
+  border: 1px solid var(--bs-white);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 93%);
+  box-shadow:  0 4px 20.5px rgba(0, 0, 0, 0.25);
+  padding: 36px 30px 45px 30px;
+  .info-card__section{
+    margin-top: 28px;
+    .info-card__header{
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      .headText{
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 26px;
+      }
+    }
+    p{
+      padding-left: 36px;
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #191C22;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+    }
+    ul{
+      padding: 0;
+      margin: 0;
+      padding-left: 36px;
+      li{
+        font-size: 14px;
+        color: #191C22;
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        position: relative;
+        padding-left: 10px;
+        &::before{
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 8px;
+          width: 5px;
+          height: 5px;
+          background-color: #191C22;
+          border-radius: 50%;
+        }
+      }
+      li + li{
+        margin-top: 2px;
+      }
+    }
+  }
+}

@@ -32,7 +32,7 @@
         <div class="tools-cards-wrap">
           <template v-for="value in toolsData" :key="value.id">
             <BaseAnalysisCard :number="value?.step" :title="value?.title" :description="value?.description"
-              :badge="value?.tag">
+              :badge="value?.tag" :itemId="value?.id" >
               <ul v-if="value?.checklist.length > 0" class="checklist">
                 <li v-for="(item, index) in value?.checklist" :key="index">
                   <span>

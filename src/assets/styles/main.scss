@@ -73,6 +73,11 @@
 @use './components/BaseThinkCard';
 @use './components/EventCard';
 @use './components/BaseToggleButton';
+@use './components/BaseStepList';
+@use './components/PlayBookCard';
+@use './components/InfoCard';
+@use './components/PlayBookStackCard.scss';
+
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';
@@ -105,3 +110,5 @@
 @use './views/EventsSection';
 @use './views/InsightsConsortium';
 @use './views/PlaybooksList';
+@use './views/PlaybookDetails';
+

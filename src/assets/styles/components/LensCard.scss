@@ -23,4 +23,27 @@
   p{
     margin-top: 22px;
   }
+  ul{
+    padding: 0;
+    list-style: none;
+    margin-top: 22px;
+    li{
+      position: relative;
+      letter-spacing: -0.04em;
+      padding-left: 20px;
+      &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #6B7280;
+      }
+    }
+    li + li{
+      margin-top: 5px;
+    }
+  }
 }

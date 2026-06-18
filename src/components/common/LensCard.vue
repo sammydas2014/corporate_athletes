@@ -12,6 +12,10 @@ defineProps({
   description: {
     type: String,
     default:""
+  },
+  listItem:{
+    type: Array,
+    default: () => []
   }
 })
 </script>
@@ -25,6 +29,11 @@ defineProps({
     <p v-if="description">
       {{ description }}
     </p>
+    <ul v-if="listItem.length > 0">
+      <li v-for="(item, index) in listItem" :key="index">
+        {{ item }}
+      </li>
+    </ul>
 
   </div>
 </template>

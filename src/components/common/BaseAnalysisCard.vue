@@ -1,5 +1,8 @@
 <script setup>
 import BaseButton from './BaseButton.vue';
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
 defineProps({
   number: {
     type: [String, Number],
@@ -30,7 +33,22 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  itemId:{
+    type: [String, Number],
+    default: '',
+  }
 })
+function handelCLick(itemId){
+  if (itemId) {
+    // router.push({ path: `/ai-intelligence/tools/${itemId}` })
+    router.push({
+      name: 'playbook-detail',
+      params: {
+        id: itemId
+      }
+    })
+  }
+}
 </script>
 <template>
   <div class="analysisCrd">
@@ -41,7 +59,7 @@ defineProps({
         {{ number }}
       </h2>
 
-      <BaseButton class="card-arrow">
+      <BaseButton class="card-arrow" @click="() => handelCLick(itemId)">
         <i class="bi bi-arrow-up-right"></i>
       </BaseButton>
     </div>

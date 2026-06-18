@@ -88,6 +88,11 @@ export const imageMap = {
   approch_icon_4: new URL("./approch_icon_4.png", import.meta.url).href,
   playbookDeatils_bnr: new URL("./playbookDeatils_bnr.png", import.meta.url).href,
   events_bnr: new URL("./events_bnr.png", import.meta.url).href,
+  whatYouGetImg: new URL("./what-you-get-img.png", import.meta.url).href,
+  clockImg: new URL("./clock-img.png", import.meta.url).href,
+  trendImg: new URL("./trend-img.png", import.meta.url).href,
+  playbookDtlsBnnrImg: new URL("./playbookDtls-bnnr-img.png", import.meta.url).href,
+  GoldenIdea: new URL("./golden-idea.png", import.meta.url).href,
 
   avatars: {},
 
