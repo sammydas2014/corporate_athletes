@@ -197,6 +197,13 @@
     border: 1px solid rgba(33, 98, 80, 0.25);
     color: #1a6a50;
   }
+
+  &--outline {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    color: #5a6a78;
+    border-radius: 20px;
+  }
 }
 
 // ─── Responsive ──────────────────────────────────────────────────────────────

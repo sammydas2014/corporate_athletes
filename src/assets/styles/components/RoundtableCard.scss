@@ -1,0 +1,187 @@
+@use "../base" as *;
+
+// ─── Roundtable Card ──────────────────────────────────────────────────────────
+.roundtable-card {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background: $color-primary;
+  display: flex;
+  flex-direction: column;
+  transition: var(--bs-transition);
+  height: 100%;
+  gap: 12px;
+  padding: 12px;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  // ─── Image area ─────────────────────────────────────────────────────────────
+  &__image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    aspect-ratio: 15 / 11;
+    background-color: rgba($color-primary, 0.08);
+    border-radius: var(--border-radius-md);
+  }
+
+  // ─── Date badge ─────────────────────────────────────────────────────────────
+  &__date {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    border-radius: var(--border-radius-sm);
+    padding: 10px 15px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 64px;
+    background: var(--bs-primary);
+
+    .date-day {
+      display: block;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--bs-white);
+      line-height: 1;
+      font-family: var(--font-display);
+    }
+
+    .date-month {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--bs-white);
+      margin-top: 2px;
+    }
+  }
+
+  // ─── Body ───────────────────────────────────────────────────────────────────
+  &__body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    border: 1px solid rgba(216, 222, 230, 1);
+    border-radius: var(--border-radius-md);
+    background: var(--bs-white);
+  }
+
+  // ─── Tags ───────────────────────────────────────────────────────────────────
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  // ─── Title ──────────────────────────────────────────────────────────────────
+  &__title {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--color-dark-secondary, #1a1d21);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    margin-bottom: 15px;
+  }
+
+  // ─── Description ────────────────────────────────────────────────────────────
+  &__desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-secondary-color, #6b7280);
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+    flex: 1;
+  }
+
+  // ─── Who attends ────────────────────────────────────────────────────────────
+  &__who {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(164, 177, 184, 0.5);
+    margin-bottom: 20px;
+
+    .who-label {
+      display: block;
+      color: #636A78;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .who-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .who-item {
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 500;
+      color: $color-primary;
+      background: rgba(31, 78, 95, 0.08);
+      border: 1px solid rgba(31, 78, 95, 0.2);
+      border-radius: 4px;
+      padding: 3px 9px;
+    }
+  }
+
+  // ─── CTA ────────────────────────────────────────────────────────────────────
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--bs-primary);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: var(--bs-transition);
+
+    svg {
+      transition: transform 0.22s ease;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+// ─── Responsive ──────────────────────────────────────────────────────────────
+@include tablet {
+  .roundtable-card {
+    &__image {
+      height: 180px;
+    }
+    &__body {
+      padding: 20px;
+    }
+  }
+}
+
+@include mobile {
+  .roundtable-card {
+    &__image {
+      height: 200px;
+    }
+  }
+}

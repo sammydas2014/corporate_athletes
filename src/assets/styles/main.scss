@@ -78,6 +78,11 @@
 @use './components/InfoCard';
 @use './components/PlayBookStackCard.scss';
 
+@use './components/RoundtableCard';
+@use './components/RoundtablesSection';
+@use './components/LookBackSection';
+@use './components/EventProgramsSection';
+@use './components/ContactFormSection';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';

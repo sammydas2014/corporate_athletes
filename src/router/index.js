@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const HomeView = () => import("@/views/Home/HomeView.vue");
 const AboutView = () => import("@/views/About/AboutView.vue");
 const EventsView = () => import("@/views/Events/EventsView.vue");
+const LookBackDetail = () => import("@/views/Events/LookBackDetail.vue");
 const ContactView = () => import("@/views/Contact/ContactView.vue");
 
 // Solutions Nested Group
@@ -193,6 +194,12 @@ const routes = [
     path: "/events",
     name: "events",
     component: EventsView,
+  },
+  {
+    path: "/events/look-back/:id",
+    name: "look-back-detail",
+    component: LookBackDetail,
+    props: true,
   },
   {
     path: "/contact",
