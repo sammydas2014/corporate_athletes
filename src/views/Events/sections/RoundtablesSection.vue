@@ -16,7 +16,7 @@
         <Swiper :modules="modules" :slides-per-view="1.2" :space-between="20" :grab-cursor="true" :loop="loopEnabled"
           :breakpoints="breakpoints" class="roundtables-swiper" @swiper="onSwiper" @slideChange="onSlideChange">
           <SwiperSlide v-for="item in items" :key="item.id">
-            <RoundtableCard :card="item" :extra-class="cardClass" :card-bg="cardBg" />
+            <RoundtableCard :card="item" :extra-class="cardClass" :card-bg="cardBg"  />
           </SwiperSlide>
         </Swiper>
       </div>

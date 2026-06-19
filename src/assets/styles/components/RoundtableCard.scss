@@ -150,6 +150,11 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     transition: var(--bs-transition);
+    height: auto;
+    background-color: transparent;
+    border: none;
+        width: fit-content;
+    padding: 0;
 
     svg {
       transition: transform 0.22s ease;

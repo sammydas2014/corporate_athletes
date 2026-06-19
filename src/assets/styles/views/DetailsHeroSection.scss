@@ -1,0 +1,93 @@
+
+.dtlsHero-sec{
+  padding: 70px 0;
+  position: relative;
+  .hero-wrap{
+    display: flex;
+    justify-content: space-between;
+    .hero-left{
+      width: 52%;
+      .hdngWrp{
+        h1{
+          color: #0B1219;
+        }
+        p{
+          font-size: 18px;
+          color: #4D565E;
+          line-height: 30px;
+          letter-spacing: -0.04em;
+          max-width: 600px;
+        }
+      }
+      .evntDtls{
+        padding: 0;
+        margin: 0;
+        margin-top: 54px;
+        li{
+          display: flex;
+          align-items: center;
+          gap: 19px;
+          font-size: 18px;
+          color: #262C31;
+          font-weight: 500;
+          img{
+            flex: 0 0 auto;
+          }
+        }
+        li + li{
+          margin-top: 16px;
+        }
+      }
+      .btn{
+        margin-top: 28px;
+      }
+    }
+    .hero-right{
+      width: 48%;
+      padding-left: 74px;
+      .heroImg{
+        border-radius: 15px;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .eventGoalWra{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .innr-wrap{
+          width: 50%;
+          padding-right: 27px;
+          padding-block: 3px;
+          h5{
+            color: #1A1D21;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: -0.03em;
+            margin-bottom: 10px;
+          }
+          ul{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 2px;
+            flex-wrap: wrap;
+            align-items: center;
+            li{
+              letter-spacing: -0.03em;
+            }
+          }
+        }
+        .innr-wrap + .innr-wrap{
+          padding-left: 40px;
+          border-left: 1px solid #D9D9D9;
+        }
+
+      }
+    }
+  }
+}

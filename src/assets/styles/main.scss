@@ -83,6 +83,9 @@
 @use './components/LookBackSection';
 @use './components/EventProgramsSection';
 @use './components/ContactFormSection';
+@use './components/DiscussionCard';
+@use './components/FacilitatedCard';
+@use './components/SessionCard';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';
@@ -116,4 +119,7 @@
 @use './views/InsightsConsortium';
 @use './views/PlaybooksList';
 @use './views/PlaybookDetails';
+@use './views/DetailsHeroSection.scss';
+@use './views/EventDetails.scss';
+
 

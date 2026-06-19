@@ -113,6 +113,20 @@ export const imageMap = {
   event_glry_5: new URL("./event_glry_5.png", import.meta.url).href,
   event_programs_1: new URL("./event-programs-1.png", import.meta.url).href,
   event_programs_2: new URL("./event-programs-2.png", import.meta.url).href,
+  eventDtls_bnnr_img: new URL("./eventDtls-bnnr-img.png", import.meta.url).href,
+  event_calender: new URL("./event-calender.png", import.meta.url).href,
+  event_time: new URL("./event-time.png", import.meta.url).href,
+  event_location: new URL("./event-location.png", import.meta.url).href,
+  event_id: new URL("./event-id.png", import.meta.url).href,
+  event_seat: new URL("./event-seat.png", import.meta.url).href,
+  bigBulbImg: new URL("./big-bulb.png", import.meta.url).href,
+  facilitatedOne: new URL("./facilitatedOne.png", import.meta.url).href,
+  facilitatedTwo: new URL("./facilitatedTwo.png", import.meta.url).href,
+  formatImg: new URL("./format.png", import.meta.url).href,
+  chairOfficeImg: new URL("./chair-office.png", import.meta.url).href,
+  rulesAltImg: new URL("./rules-alt.png", import.meta.url).href,
+  usersAltImg: new URL("./users-alt.png", import.meta.url).href,
+
 
   avatars: {},
 

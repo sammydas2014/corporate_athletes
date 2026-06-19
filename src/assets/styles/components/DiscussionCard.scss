@@ -1,0 +1,54 @@
+
+.discussionCard{
+  background-color: var(--bs-white);
+  border: 1px solid #D8DEE6;
+  border-radius: 10px;
+  padding: 50px 40px 60px 40px;
+  .title-wrap{
+    h2{
+      font-size: 34px;
+      line-height: 50px;
+      color: #1A1D21;
+      letter-spacing: -0.03em;
+      font-weight: 600;
+
+    }
+    margin-bottom: 30px;
+  }
+  .crdBody{
+    ul{
+      padding: 0;
+      margin: 0;
+      li{
+        position: relative;
+        padding-left: 24px;
+        &::before{
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #5393AA;
+        }
+
+      }
+      li + li{
+        margin-top: 20px;
+      }
+      .bullet-list--check{
+        padding-left: 40px;
+        &::before{
+          content: "";
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background: url(../../images/green-check.png) no-repeat center;
+        }
+
+      }
+    }
+  }
+}

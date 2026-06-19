@@ -18,7 +18,7 @@
         <router-link
           v-for="item in items"
           :key="item.id"
-          :to="{ name: 'look-back-detail', params: { id: item.id } }"
+          :to="{ name: 'event-details', params: { id: item.id } }"
           class="lb-card"
           :class="{ 'lb-card--feature': item.feature }"
         >

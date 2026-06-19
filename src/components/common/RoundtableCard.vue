@@ -31,13 +31,22 @@
         </div>
       </div>
 
-      <a :href="card.ctaLink || '#'" class="roundtable-card__cta">
+      <!-- <a :href="card.ctaLink || '#'" class="roundtable-card__cta">
         {{ card.ctaLabel || 'Request Invitation' }}
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
         </svg>
-      </a>
+      </a> -->
+      <BaseButton @click="() => handleInviteClick(card?.id)" class="roundtable-card__cta">
+        {{ card.ctaLabel || 'Request Invitation' }}
+        <template #icon_right>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+        </svg>
+        </template>
+      </BaseButton>
 
     </div>
   </article>
@@ -45,6 +54,10 @@
 
 <script setup>
 import { computed } from 'vue'
+import BaseButton from './BaseButton.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const props = defineProps({
   card:       { type: Object, required: true },
@@ -55,4 +68,8 @@ const props = defineProps({
 const imageBg = computed(() => ({
   backgroundImage: props.card.bgImage ? `url(${props.card.bgImage})` : undefined,
 }))
+
+function handleInviteClick(){
+  router.push({ name: 'event-details', params: { id: props.card.id } });
+}
 </script>

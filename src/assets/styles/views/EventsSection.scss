@@ -24,7 +24,7 @@
   &__header-left {
     display: flex;
     flex-direction: column;
-    
+
     .title__eyebrow{
       max-width: fit-content;
     }
@@ -143,7 +143,7 @@
 
 // ─── Swiper overrides ────────────────────────────────────────────────────────
 .events-swiper {
-  overflow: visible;
+  overflow: visible !important;
 
   .swiper-slide {
     height: auto;

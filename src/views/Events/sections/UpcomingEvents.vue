@@ -18,7 +18,6 @@
           :space-between="20"
           :grab-cursor="true"
           :loop="true"
-          :breakpoints="breakpoints"
           class="events-swiper"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
