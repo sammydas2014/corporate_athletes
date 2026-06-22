@@ -86,6 +86,8 @@
 @use './components/DiscussionCard';
 @use './components/FacilitatedCard';
 @use './components/SessionCard';
+@use './components/AgendaTab.scss';
+@use './components/AgendaTimeline.scss';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use './views/BenchmarkSurveysSection';
