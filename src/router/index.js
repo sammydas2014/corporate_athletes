@@ -6,6 +6,7 @@ const AboutView = () => import("@/views/About/AboutView.vue");
 const EventsView = () => import("@/views/Events/EventsView.vue");
 const EventDetails = () => import("@/views/Events/EventDetails.vue");
 const ContactView = () => import("@/views/Contact/ContactView.vue");
+const Registration = () => import("@/views/Registration/Registration.vue");
 
 // Solutions Nested Group
 const SolutionsView = () => import("@/views/Solutions/SolutionsView.vue");
@@ -180,7 +181,7 @@ const routes = [
       },
       {
         path: "consortium-contributions",
-        name: "insights-consortium",
+        name: "guest-consortium-contributions",
         component: ConsortiumContributions,
       },
     ],
@@ -205,6 +206,11 @@ const routes = [
     path: "/contact",
     name: "contact",
     component: ContactView,
+  },
+  {
+    path: "/registration",
+    name: "registration",
+    component: Registration,
   },
   // Catch-all fallback
   {

@@ -126,9 +126,12 @@ export const imageMap = {
   chairOfficeImg: new URL("./chair-office.png", import.meta.url).href,
   rulesAltImg: new URL("./rules-alt.png", import.meta.url).href,
   usersAltImg: new URL("./users-alt.png", import.meta.url).href,
-
-
-  avatars: {},
+  calendar: new URL("./calendar-day.svg", import.meta.url).href,
+  document: new URL("./document.svg", import.meta.url).href,
+  lunch: new URL("./lunch-box.svg", import.meta.url).href,
+  resources: new URL("./fraud-prevention.svg", import.meta.url).href,
+  users: new URL("./users.svg", import.meta.url).href,
+  contributionBnr: new URL("./contribution_bnr.png", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,

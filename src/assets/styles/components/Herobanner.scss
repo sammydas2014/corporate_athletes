@@ -487,6 +487,39 @@
   }
 }
 
+// ─── Guest Consortium Contributions image fade edges ───────────────────────
+.consortium_bnr {
+  .hero-banner_img {
+    position: relative;
+    margin-left: -100px;
+    margin-right: -100px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(9, 7, 6, 1) 0%, rgba(9, 7, 6, 0) 100%);
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(270deg, rgba(9, 7, 6, 1) 0%, rgba(9, 7, 6, 0) 100%);
+      content: "";
+    }
+  }
+
+  .hero-banner__subtitle {
+    max-width: 520px;
+  }
+}
+
 // ─── Insights image fade edges ────────────────────────────────────────────
 .insights_bnr {
   .hero-banner_img {

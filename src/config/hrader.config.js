@@ -23,7 +23,7 @@ export const navItems = [
       { label: "Advisory Articles", to: "/insights/articles" },
       { label: "AI Deep Dives", to: "/insights/deep-dives" },
       { label: "Transformation Playbooks", to: "/insights/playbooks" },
-      { label: "Consortium Contributions", to: "/insights/consortium-contributions" },
+      { label: "Guest Consortium Contributions", to: "/insights/consortium-contributions" },
     ],
   },
   { label: "About", to: "/about" },
