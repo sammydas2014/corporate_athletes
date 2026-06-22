@@ -72,11 +72,31 @@
       </section>
      <!-- Session Details Section -->
 
-     <!-- Sedule Adenda Section -->
+     <!-- Sedule Agenda Section -->
       <section class="agandaSec">
+        <div class="container">
+          <div class="agendaWr">
+            <div class="agendaDtls">
+              <h2 class="sec__title">{{ agendaData?.title }}</h2>
+              <p>{{ agendaData?.description }}</p>
+              <BaseButton variant="outline-light">
+                {{ agendaData?.button?.text }}
+              </BaseButton>
+            </div>
+            <div class="agendaTab">
+              <AgendaTab
+                :days="agendaData.days"
+                v-model="activeTab"
+              />
+              <AgendaContent
+                :day="currentDay"
+              />
 
+            </div>
+          </div>
+        </div>
       </section>
-     <!-- Sedule Adenda Section -->
+     <!-- Sedule Agenda Section -->
 
      <!-- Attend Section -->
       <section class="attendSec">
@@ -108,14 +128,60 @@
       </section>
      <!-- Discussion Topic Section -->
 
+     <!-- View All Events Section -->
+      <section class="viewall-events-sec">
+        <div class="container">
+          <div class="events-wrapper">
+            <div class="hdng">
+              <h2 class="sec__title">{{ interestedEventsData?.title }}</h2>
+            </div>
+            <div class="event-btn">
+              <BaseButton :to="interestedEventsData?.ctaButton?.link">
+                {{ interestedEventsData?.ctaButton?.label }}
+              </BaseButton>
+            </div>
+          </div>
+          <div class="cards-wrapper">
+            <template v-for="card in interestedEventsData?.items" :key="card?.id">
+              <RoundtableCard :card="card" />
+            </template>
+          </div>
+
+        </div>
+      </section>
+     <!-- View All Events Section -->
+      <IntegrateCTA
+        :data="integrateCTAData"
+        class="evnt-dtls-intrgate"
+      />
+     <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
+      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+
   </main>
 </template>
 
 <script setup>
+import { ref , computed } from "vue";
   import DetailsHeroSection from "./sections/DetailsHeroSection.vue";
   import DiscussionCard from "@/components/common/DiscussionCard.vue";
   import FacilitationCard from "@/components/common/FacilitatedCard.vue";
   import SessionCard from "@/components/common/SessionCard.vue";
   import BaseCardChip from "@/components/common/BaseCardChip.vue";
-  import { heroData, discussionHighlights , contentCards , facilitatorSection , sessionDetails , whoShouldAttend , discussData } from "@/services/eventDetails.service";
+  import BaseButton from "@/components/common/BaseButton.vue";
+  import RoundtableCard from "@/components/common/RoundtableCard.vue";
+  import BaseAccelerate from "@/components/common/BaseAccelerate.vue";
+  import IntegrateCTA from "../AiIntelligence/sections/IntegrateCTA.vue";
+  import AgendaTab from "@/components/common/AgendaTab.vue";
+  import AgendaContent from "@/components/common/AgendaContent.vue";
+  import { heroData, discussionHighlights , contentCards , facilitatorSection , sessionDetails , whoShouldAttend , discussData , interestedEventsData , integrateCTAData , agendaData } from "@/services/eventDetails.service";
+  import { accelerateData } from "@/services/home.service";
+
+
+  const activeTab = ref(0);
+  console.log(activeTab.value)
+
+
+const currentDay = computed(() => {
+  return agendaData.days[activeTab.value];
+});
 </script>

@@ -86,6 +86,16 @@
 @use "./components/DiscussionCard";
 @use "./components/FacilitatedCard";
 @use "./components/SessionCard";
+@use './components/RoundtableCard';
+@use './components/RoundtablesSection';
+@use './components/LookBackSection';
+@use './components/EventProgramsSection';
+@use './components/ContactFormSection';
+@use './components/DiscussionCard';
+@use './components/FacilitatedCard';
+@use './components/SessionCard';
+@use './components/AgendaTab.scss';
+@use './components/AgendaTimeline.scss';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use "./views/BenchmarkSurveysSection";

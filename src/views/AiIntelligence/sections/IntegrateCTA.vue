@@ -5,10 +5,10 @@
         <h2 class="integrate-cta__title">{{ data.title }}</h2>
         <p v-if="data.subtitle" class="integrate-cta__subtitle">{{ data.subtitle }}</p>
         <div class="integrate-cta__actions">
-          <BaseButton variant="secondary" :href="data.primaryBtnLink">
+          <BaseButton v-if="data?.primaryBtnLabel" variant="secondary" :href="data.primaryBtnLink">
             {{ data.primaryBtnLabel }}
           </BaseButton>
-          <BaseButton variant="outline-white" :to="data.secondaryBtnLink">
+          <BaseButton v-if="data?.secondaryBtnLabel" variant="outline-white" :to="data.secondaryBtnLink">
             {{ data.secondaryBtnLabel }}
           </BaseButton>
         </div>

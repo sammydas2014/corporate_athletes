@@ -98,3 +98,57 @@
     }
   }
 }
+
+.viewall-events-sec{
+  padding-bottom: 80px;
+  .events-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2{
+      font-size: 34px;
+      line-height: 44px;
+      margin: 0;
+    }
+  }
+  .cards-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 10px;
+    .roundtable-card{
+      width: calc(33.33% - 20px);
+      height: auto;
+    }
+  }
+}
+
+.evnt-dtls-intrgate{
+  .integrate-cta__subtitle{
+    max-width: 600px;
+  }
+}
+
+.agandaSec{
+  padding-bottom: 70px;
+  .agendaWr{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .agendaDtls{
+      width: 30%;
+      h2{
+        font-size: 34px;
+        line-height: 44px;
+      }
+      p{
+        color: #4D565E;
+        margin-bottom: 30px;
+      }
+    }
+    .agendaTab{
+      width: 70%;
+          padding-left: 140px;
+    }
+  }
+}
