@@ -10,7 +10,9 @@
   .integrate-cta__title {
     font-family: var(--font-display, "Sora", sans-serif);
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    line-height: 1;
     color: var(--bs-white, #fff);
     margin-bottom: 16px;
   }

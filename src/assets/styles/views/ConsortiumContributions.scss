@@ -61,12 +61,153 @@
   &:hover {
     background: $color-primary;
     border-color: $color-primary;
-    color: var(--bs-white); 
+    color: var(--bs-white);
   }
 
   &--active {
     background: $color-primary;
     border-color: $color-primary;
     color: var(--bs-white);
+  }
+}
+
+.fetured-con-sec {
+  background-color: #eef1f4bf;
+  padding-block: var(--sec-gap);
+  .cards-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .cards-wrapper .roundtable-card:first-child {
+    width: calc(66.666% - 10px);
+    .roundtable-card__image {
+      aspect-ratio: 7 / 3;
+    }
+  }
+  .cards-wrapper .roundtable-card {
+    width: calc(33.333% - 20px);
+    height: auto;
+  }
+}
+
+// ─── Theme rankings ────────────────────────────────────────────────────────────
+.theme-rankings-sec {
+  padding-block: var(--sec-gap);
+}
+
+.theme-rankings-hdng {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.theme-rankings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ─── Practitioner Signals ───────────────────────────────────────────────────────
+.signals-sec {
+  background: $color-primary;
+  padding-block: var(--sec-gap);
+
+  .sec__title {
+    color: var(--bs-white);
+  }
+}
+
+.signals-hdng {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.signals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.signal-card {
+  background: var(--bs-white);
+  border-radius: var(--border-radius-md);
+  padding: 45px 34px 70px;
+  text-align: center;
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: $color-primary;
+    color: var(--bs-white);
+    margin-bottom: 30px;
+    img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+    }
+  }
+
+  &__quote {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.05em;
+    color: $color-dark-secondary;
+    margin: 0 auto;
+    max-width: 310px;
+  }
+}
+
+.acc_resource .roundtable-card__desc {
+  margin-bottom: 25px;
+}
+
+.stand_sec {
+  .analysisCrd {
+    padding: 30px 20px;
+    margin-top: 25px;
+    .card-description {
+      margin-bottom: 10px;
+    }
+    .card-arrow {
+      top: 25px;
+      right: 15px;
+    }
+    .card-number {
+      line-height: 1;
+      margin-bottom: 0;
+    }
+    .card-title{
+      margin-top: 40px;
+      margin-bottom: 70px;
+    }
+  }
+}
+
+.consortium-view{
+  .integrate-cta{
+    h2{
+      max-width: 800px;
+      margin-inline: auto;
+    }
+    p{
+      max-width: 535px;
+    }
   }
 }
