@@ -9,8 +9,8 @@
           <h2 class="sec__title">{{ title }}</h2>
         </div>
         <p v-if="description" class="roundtables-section__desc">{{ description }}</p>
-        <BaseButton v-if="headingBtn" :to="headingBtn?.ctaButton?.link">
-          {{ headingBtn?.ctaButton?.label }}
+        <BaseButton v-if="Object.keys(headingBtn).length > 0" :to="headingBtn?.link">
+          {{ headingBtn?.label }}
         </BaseButton>
       </div>
 
@@ -61,7 +61,7 @@ const props = defineProps({
   sectionClass: { type: [String, Array, Object], default: '' },
   cardClass: { type: [String, Array, Object], default: '' },
   cardBg: { type: String, default: '' },
-  headingBtn: { type: Object, default: {} },
+  headingBtn: { type: Object, default: () => ({}) }
 })
 
 const modules = [FreeMode]

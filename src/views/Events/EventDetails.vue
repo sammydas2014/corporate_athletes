@@ -128,32 +128,15 @@
       </section>
      <!-- Discussion Topic Section -->
 
-     <!-- View All Events Section -->
-      <section class="viewall-events-sec">
-        <div class="container">
-          <div class="events-wrapper">
-            <div class="hdng">
-              <h2 class="sec__title">{{ interestedEventsData?.title }}</h2>
-            </div>
-            <div class="event-btn">
-              <BaseButton :to="interestedEventsData?.ctaButton?.link">
-                {{ interestedEventsData?.ctaButton?.label }}
-              </BaseButton>
-            </div>
-          </div>
-          <div class="cards-wrapper">
-            <template v-for="card in interestedEventsData?.items" :key="card?.id">
-              <RoundtableCard :card="card" />
-            </template>
-          </div>
-
-        </div>
-      </section>
-     <!-- View All Events Section -->
+     
 
      <!-- Demo Event Data -->
-      <RoundtablesSection :eyebrow="roundtablesData.eyebrow" :title="roundtablesData.title"
-      :description="roundtablesData.description" :items="roundtablesData.items" :desktop-cols="3" />
+      <RoundtablesSection
+        :title="roundtablesData.title"
+        :items="roundtablesData.items"
+        :desktop-cols="3"
+        :heading-btn="roundtablesData.ctaButton"
+      />
      <!-- Demo Event Data -->
       <IntegrateCTA
         :data="integrateCTAData"
@@ -173,12 +156,11 @@ import { ref , computed } from "vue";
   import SessionCard from "@/components/common/SessionCard.vue";
   import BaseCardChip from "@/components/common/BaseCardChip.vue";
   import BaseButton from "@/components/common/BaseButton.vue";
-  import RoundtableCard from "@/components/common/RoundtableCard.vue";
   import BaseAccelerate from "@/components/common/BaseAccelerate.vue";
   import IntegrateCTA from "../AiIntelligence/sections/IntegrateCTA.vue";
   import AgendaTab from "@/components/common/AgendaTab.vue";
   import AgendaContent from "@/components/common/AgendaContent.vue";
-  import { heroData, discussionHighlights , contentCards , facilitatorSection , sessionDetails , whoShouldAttend , discussData , interestedEventsData , integrateCTAData , agendaData , roundtablesData } from "@/services/eventDetails.service";
+  import { heroData, discussionHighlights , contentCards , facilitatorSection , sessionDetails , whoShouldAttend , discussData  , integrateCTAData , agendaData , roundtablesData } from "@/services/eventDetails.service";
   import { accelerateData } from "@/services/home.service";
   import RoundtablesSection from "./sections/RoundtablesSection.vue";
   // import { roundtablesData } from "@/services/events.service";

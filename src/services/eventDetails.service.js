@@ -227,52 +227,6 @@ export const discussData =  [ {
     ]
   }];
 
-
-// View All Events
-
-export const interestedEventsData = {
-  title: "You May Also Be Interested In",
-  ctaButton:{
-    label: "VIEW ALL EVENTS",
-    link: "/events"
-  },
-  items: [
-    {
-      id: 1,
-      day: "09",
-      month: "Sep",
-      bgImage: imageMap.roundTable_2,
-      tags: [
-        { label: "In-person", type: "muted" },
-        { label: "14 seats", type: "muted" },
-        { label: "New York", type: "muted" },
-      ],
-      title: "AI Cost Discipline for the Office of the CFO",
-      description: "How CFOs of $1bn+ enterprises are imposing capital discipline on AI spend.",
-      whoAttends: ["CFOs", "Group Controllers", "FP&A Leads"],
-      ctaLabel: "View details",
-      ctaLink: "#",
-    },
-    {
-      id: 2,
-      day: "12",
-      month: "Jun",
-      bgImage: imageMap.roundTable_3,
-      tags: [
-        { label: "In-person", type: "muted" },
-        { label: "12 seats", type: "muted" },
-        { label: "Zurich", type: "muted" },
-      ],
-      title: "Governing Agentic Workflows in Regulated Industries",
-      description:
-        "Audit, risk and second-line perspectives on agent autonomy in financial services and healthcare.",
-      whoAttends: ["CROs", "Heads of Compliance", "CIOs"],
-      ctaLabel: "View details",
-      ctaLink: "#",
-    },
-  ]
-};
-
 // Intregate Cta
 export const integrateCTAData = {
   title: "Ready to Join the Conversation?",
@@ -427,10 +381,11 @@ export const agendaData = {
 
 //
 export const roundtablesData = {
-  eyebrow: "Quarterly",
-  title: "Executive Roundtables",
-  description:
-    "Chatham House peer sessions, 12–16 operators per room. Closed peer convenings for senior operators working on the same class of problem. No vendors, no observers, no press.",
+  title: "You May Also Be Interested In",
+  ctaButton:{
+    label: "VIEW ALL EVENTS",
+    link: "/events"
+  },
   items: [
     {
       id: 1,

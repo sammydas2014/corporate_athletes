@@ -99,26 +99,14 @@
   }
 }
 
-.viewall-events-sec{
-  padding-bottom: 80px;
-  .events-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    h2{
-      font-size: 34px;
-      line-height: 44px;
-      margin: 0;
-    }
-  }
-  .cards-wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 10px;
-    .roundtable-card{
-      width: calc(33.33% - 20px);
-      height: auto;
+.roundtables-section{
+  .roundtables-section__header{
+    .roundtables-section__header-left{
+      .sec__title{
+        margin: 0;
+    font-size: 34px;
+    line-height: 44px;
+      }
     }
   }
 }
