@@ -150,6 +150,11 @@
         </div>
       </section>
      <!-- View All Events Section -->
+
+     <!-- Demo Event Data -->
+      <RoundtablesSection :eyebrow="roundtablesData.eyebrow" :title="roundtablesData.title"
+      :description="roundtablesData.description" :items="roundtablesData.items" :desktop-cols="3" />
+     <!-- Demo Event Data -->
       <IntegrateCTA
         :data="integrateCTAData"
         class="evnt-dtls-intrgate"
@@ -173,8 +178,10 @@ import { ref , computed } from "vue";
   import IntegrateCTA from "../AiIntelligence/sections/IntegrateCTA.vue";
   import AgendaTab from "@/components/common/AgendaTab.vue";
   import AgendaContent from "@/components/common/AgendaContent.vue";
-  import { heroData, discussionHighlights , contentCards , facilitatorSection , sessionDetails , whoShouldAttend , discussData , interestedEventsData , integrateCTAData , agendaData } from "@/services/eventDetails.service";
+  import { heroData, discussionHighlights , contentCards , facilitatorSection , sessionDetails , whoShouldAttend , discussData , interestedEventsData , integrateCTAData , agendaData , roundtablesData } from "@/services/eventDetails.service";
   import { accelerateData } from "@/services/home.service";
+  import RoundtablesSection from "./sections/RoundtablesSection.vue";
+  // import { roundtablesData } from "@/services/events.service";
 
 
   const activeTab = ref(0);

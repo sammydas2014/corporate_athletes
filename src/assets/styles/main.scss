@@ -88,6 +88,8 @@
 @use "./components/SessionCard";
 @use './components/AgendaTab';
 @use './components/AgendaTimeline';
+@use './components/BaseTextArea';
+@use './components/BaseCheckboxGroup';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use "./views/BenchmarkSurveysSection";

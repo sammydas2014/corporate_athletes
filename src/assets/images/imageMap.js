@@ -132,6 +132,7 @@ export const imageMap = {
   resources: new URL("./fraud-prevention.svg", import.meta.url).href,
   users: new URL("./users.svg", import.meta.url).href,
   contributionBnr: new URL("./contribution_bnr.png", import.meta.url).href,
+  bigGoldenCheck: new URL("./biggolden-check.png", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
