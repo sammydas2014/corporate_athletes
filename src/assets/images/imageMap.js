@@ -132,6 +132,15 @@ export const imageMap = {
   resources: new URL("./fraud-prevention.svg", import.meta.url).href,
   users: new URL("./users.svg", import.meta.url).href,
   contributionBnr: new URL("./contribution_bnr.png", import.meta.url).href,
+  quarterly_1: new URL("./quarterly_1.png", import.meta.url).href,
+  quarterly_2: new URL("./quarterly_2.png", import.meta.url).href,
+  quarterly_3: new URL("./quarterly_3.png", import.meta.url).href,
+  quarterly_4: new URL("./quarterly_4.png", import.meta.url).href,
+  quarterly_5: new URL("./quarterly_5.png", import.meta.url).href,
+  bi_cpu: new URL("./bi-cpu.png", import.meta.url).href,
+  bi_robot: new URL("./bi-robot.png", import.meta.url).href,
+  bi_pie: new URL("./bi-pie.png", import.meta.url).href,
+  user_icon: new URL("./user_icon.svg", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,

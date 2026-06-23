@@ -24,10 +24,20 @@
       <h3 class="roundtable-card__title">{{ card.title }}</h3>
       <p class="roundtable-card__desc">{{ card.description }}</p>
 
+      <div v-if="card.topics?.length" class="roundtable-card__topics">
+        <span v-for="topic in card.topics" :key="topic" class="event-tag event-tag--outline">{{ topic }}</span>
+      </div>
+
       <div v-if="card.whoAttends?.length" class="roundtable-card__who">
         <span class="who-label">WHO ATTENDS</span>
         <div class="who-list">
           <span v-for="person in card.whoAttends" :key="person" class="who-item">{{ person }}</span>
+        </div>
+      </div>
+
+      <div v-if="card.meta?.length" class="roundtable-card__who roundtable-card__who--meta">
+        <div class="who-list">
+          <span v-for="item in card.meta" :key="item" class="who-item who-item--muted">{{ item }}</span>
         </div>
       </div>
 

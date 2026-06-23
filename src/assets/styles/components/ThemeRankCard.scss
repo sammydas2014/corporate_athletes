@@ -1,0 +1,44 @@
+@use "../base" as *;
+
+// ─── Theme Rank Card ───────────────────────────────────────────────────────────
+.theme-rank-card {
+  background: var(--bs-white);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 30px;
+
+  &__number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 40px;
+    line-height: 0.9;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    color: #66707e;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: $color-dark-secondary;
+    margin: 0 0 15px;
+  }
+
+  &__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 500;
+    color: #009a9b;
+
+    img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+  }
+}

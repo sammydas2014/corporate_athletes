@@ -9,6 +9,9 @@
           <h2 class="sec__title">{{ title }}</h2>
         </div>
         <p v-if="description" class="roundtables-section__desc">{{ description }}</p>
+        <BaseButton v-if="headingBtn" :to="headingBtn?.ctaButton?.link">
+          {{ headingBtn?.ctaButton?.label }}
+        </BaseButton>
       </div>
 
       <!-- Swiper slider -->
@@ -16,7 +19,7 @@
         <Swiper :modules="modules" :slides-per-view="1.2" :space-between="20" :grab-cursor="true" :loop="loopEnabled"
           :breakpoints="breakpoints" class="roundtables-swiper" @swiper="onSwiper" @slideChange="onSlideChange">
           <SwiperSlide v-for="item in items" :key="item.id">
-            <RoundtableCard :card="item" :extra-class="cardClass" :card-bg="cardBg"  />
+            <RoundtableCard :card="item" :extra-class="cardClass" :card-bg="cardBg" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -46,6 +49,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { FreeMode } from 'swiper/modules'
 import 'swiper/css'
 import RoundtableCard from '@/components/common/RoundtableCard.vue'
+import BaseButton from '@/components/common/BaseButton.vue'
 
 const props = defineProps({
   eyebrow: { type: String, default: '' },
@@ -57,6 +61,7 @@ const props = defineProps({
   sectionClass: { type: [String, Array, Object], default: '' },
   cardClass: { type: [String, Array, Object], default: '' },
   cardBg: { type: String, default: '' },
+  headingBtn: { type: Object, default: {} },
 })
 
 const modules = [FreeMode]

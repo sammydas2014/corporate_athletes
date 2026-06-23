@@ -101,7 +101,15 @@
     flex: 1;
   }
 
-  // ─── Who attends ────────────────────────────────────────────────────────────
+  // ─── Topics (outline pills under the description) ──────────────────────────
+  &__topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  // ─── Who attends / meta ─────────────────────────────────────────────────────
   &__who {
     margin-top: 35px;
     padding-top: 20px;
@@ -135,6 +143,17 @@
       border: 1px solid rgba(31, 78, 95, 0.2);
       border-radius: 4px;
       padding: 3px 9px;
+
+      &--muted {
+        color: #6b7280;
+        background: rgba(0, 0, 0, 0.045);
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    // meta variant follows directly after a topics row — tighten the gap
+    &--meta {
+      margin-top: 20px;
     }
   }
 
