@@ -144,6 +144,10 @@ export const imageMap = {
   upcoming_event_1: new URL("./upcoming_event_1.png", import.meta.url).href,
   upcoming_event_2: new URL("./upcoming_event_2.png", import.meta.url).href,
   user_icon: new URL("./user_icon.svg", import.meta.url).href,
+  badge_icon: new URL("./badge.png", import.meta.url).href,
+  chair_icon: new URL("./chair.png", import.meta.url).href,
+  note_page: new URL("./note-page.png", import.meta.url).href,
+  lunch_box: new URL("./lunch-box.png", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,

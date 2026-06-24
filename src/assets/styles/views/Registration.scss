@@ -114,9 +114,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
+    gap: 50px;
     .form-wrap {
-      width: calc(66.666% - 15px);
+          width: calc(63% - 25px);
       padding: 50px 45px 39px 45px;
       background-color: #ffffffb2;
       border: 1px solid #d8dee6de;
@@ -313,6 +313,28 @@
           }
         }
       }
+    }
+    .summaryPart{
+width: calc(37% - 25px);
+.principalss-wrap{
+  margin-top: 30px;
+  .discussionCard{
+    .title-wrap{
+      margin-bottom: 25px;
+      h2{
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+    .bullet-list--check{
+      li{
+        &::before{
+          background: url(/src/assets/images/dark-check.png) no-repeat center;
+        }
+      }
+    }
+  }
+}
     }
   }
 }
