@@ -161,6 +161,18 @@
               </div>
             </form>
           </div>
+          <div class="summaryPart">
+            <RegistrationCard
+              :data="summaryData"
+            />
+            <div class="principalss-wrap">
+              <DiscussionCard
+                v-for="card in discussData"
+              :key="card.id"
+              :card="card"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -180,7 +192,10 @@ import BaseTextArea from '@/components/common/BaseTextArea.vue'
 import BaseCheckboxGroup from '@/components/common/BaseCheckboxGroup.vue'
 import BaseButton from "@/components/common/BaseButton.vue";
 import BaseAccelerate from "@/components/common/BaseAccelerate.vue";
+import RegistrationCard from "@/components/common/RegistrationCard.vue";
 import { accelerateData } from "@/services/home.service";
+import DiscussionCard from "@/components/common/DiscussionCard.vue";
+import { imageMap } from "@/assets/images/imageMap";
 
 const firstname = ref("");
 const lastName = ref("");
@@ -348,6 +363,66 @@ const consernData = [
   'I understand this is an invitation-only event and submission does not guarantee participation.',
   'I agree to receive event-related communications.'
 ]
+
+const summaryData = {
+  "id": 1,
+  "title": "AI Cost Discipline for the Office of the CFO",
+  "date": {
+    "day": "09",
+    "month": "SEP",
+    "fullDate": "09 Sept 2026 (Wednesday)",
+    "dateIcon": imageMap.event_calender,
+  },
+  "time": "10:00 AM-12:00 PM (Local Time)",
+  "timeIcon": imageMap.event_time,
+  "location": "London, UK",
+  "locationIcon": imageMap.event_location,
+  "registrationType": "Fee - Based Registration",
+  "registractionBadge": imageMap.badge_icon,
+  "image": imageMap.roundTable_2,
+  "price": {
+    "amount": "€1,250",
+    "vat": "+ VAT",
+    "label": "Per person"
+  },
+  "seats": {
+    "remaining": 14,
+    "total": 40,
+    "seatIcon": imageMap.chair_icon
+  },
+  "benefits": [
+    {
+      "icon": imageMap.event_calender,
+      "text": "Full event access"
+    },
+    {
+      "icon": imageMap.note_page,
+      "text": "Workshop materials"
+    },
+    {
+      "icon": imageMap.lunch_box,
+      "text": "Networking lunch"
+    },
+    {
+      "icon": imageMap.event_id,
+      "text": "Post-event resources"
+    }
+  ]
+}
+
+const discussData =  [ {
+    id: 1,
+    title: "PARTICIPATION PRINCIPLES",
+    type: "bullet",
+    bulletStyle: "check",
+    content: [
+      "Closed-door discussion",
+      "No vendors",
+      "No observers",
+      "Chatham House Rule",
+      "Peer-to-peer exchange",
+    ]
+  }]
 
 function handleSubmit() {
   console.log("form Submited!");

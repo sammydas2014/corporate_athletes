@@ -142,6 +142,10 @@ export const imageMap = {
   bi_robot: new URL("./bi-robot.png", import.meta.url).href,
   bi_pie: new URL("./bi-pie.png", import.meta.url).href,
   user_icon: new URL("./user_icon.svg", import.meta.url).href,
+  badge_icon: new URL("./badge.png", import.meta.url).href,
+  chair_icon: new URL("./chair.png", import.meta.url).href,
+  note_page: new URL("./note-page.png", import.meta.url).href,
+  lunch_box: new URL("./lunch-box.png", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
