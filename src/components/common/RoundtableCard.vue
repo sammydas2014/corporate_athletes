@@ -40,14 +40,7 @@
           <span v-for="item in card.meta" :key="item" class="who-item who-item--muted">{{ item }}</span>
         </div>
       </div>
-
-      <!-- <a :href="card.ctaLink || '#'" class="roundtable-card__cta">
-        {{ card.ctaLabel || 'Request Invitation' }}
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-        </svg>
-      </a> -->
+      
       <BaseButton @click="() => handleInviteClick(card?.id)" class="roundtable-card__cta">
         {{ card.ctaLabel || 'Request Invitation' }}
         <template #icon_right>

@@ -24,7 +24,6 @@
         </Swiper>
       </div>
 
-      <!-- Footer: progress bar + nav (only when cards exceed visible count) -->
       <div v-if="showFooter" class="roundtables-section__footer">
         <div class="roundtables-section__progress-wrap">
           <div class="roundtables-section__progress-bar" :style="{ width: progressWidth }"></div>

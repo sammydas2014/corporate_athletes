@@ -141,6 +141,8 @@ export const imageMap = {
   bi_cpu: new URL("./bi-cpu.png", import.meta.url).href,
   bi_robot: new URL("./bi-robot.png", import.meta.url).href,
   bi_pie: new URL("./bi-pie.png", import.meta.url).href,
+  upcoming_event_1: new URL("./upcoming_event_1.png", import.meta.url).href,
+  upcoming_event_2: new URL("./upcoming_event_2.png", import.meta.url).href,
   user_icon: new URL("./user_icon.svg", import.meta.url).href,
 
   mask: {

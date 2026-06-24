@@ -89,7 +89,7 @@
     </section>
 
     <RoundtablesSection :eyebrow="academyResourcesData.eyebrow" :title="academyResourcesData.title"
-      :items="academyResourcesData.items" :heading-btn="academyResourcesData.headingBtn" :desktop-cols="3"
+      :items="academyResourcesData.items" :heading-btn="academyResourcesData.headingBtn.ctaButton"   :desktop-cols="3"
       class="acc_resource" />
 
     <section class="surfaceSec stand_sec">
