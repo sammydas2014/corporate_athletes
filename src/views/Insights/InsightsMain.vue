@@ -31,8 +31,7 @@
           </div>
         </div>
       </section>
-      <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+      <BaseAccelerate />
 
   </div>
 </template>
@@ -44,7 +43,6 @@ import BaseAnalysisCard from '../../components/common/BaseAnalysisCard.vue';
 import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
 
 import { bannerData, analysisData } from '@/services/insights.service'
-import {accelerateData} from "@/services/home.service"
 
 
 </script>

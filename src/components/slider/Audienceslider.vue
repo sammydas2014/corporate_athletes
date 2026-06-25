@@ -45,15 +45,14 @@
 
     <div class="audience-slider__nav">
 
-      <button class="audience-slider__btn" :disabled="isBeginning" @click="swiperInstance?.slidePrev()">
+      <button class="audience-slider__btn" :disabled="isBeginning" @click="slidePrev">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
           <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" />
         </svg>
       </button>
 
-      <button class="audience-slider__btn audience-slider__btn--next" :disabled="isEnd"
-        @click="swiperInstance?.slideNext()">
+      <button class="audience-slider__btn audience-slider__btn--next" :disabled="isEnd" @click="slideNext">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
           <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" />
@@ -67,12 +66,12 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
 import 'swiper/css'
 
 import { imageMap } from '@/assets/images/imageMap'
+import { useSliderNav } from '@/composables/useSliderNav'
 
 const props = defineProps({
   cards: {
@@ -117,59 +116,11 @@ const props = defineProps({
   },
 })
 
-const swiperInstance = ref(null)
-const activeIndex = ref(0)
-const visibleCount = ref(3)
-
-const updateVisibleCount = () => {
-  const width = window.innerWidth
-
-  if (width < 640) {
-    visibleCount.value = 1
-  } else if (width < 1024) {
-    visibleCount.value = 2
-  } else {
-    visibleCount.value = 3
-  }
-}
-
-const onSwiper = (swiper) => {
-  swiperInstance.value = swiper
-}
-
-const onSlideChange = (swiper) => {
-  activeIndex.value = swiper.activeIndex
-}
-
-onMounted(() => {
-  updateVisibleCount()
-  window.addEventListener('resize', updateVisibleCount)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', updateVisibleCount)
-})
-
-const isBeginning = computed(() => {
-  return activeIndex.value === 0
-})
-
-const isEnd = computed(() => {
-  return (
-    activeIndex.value >=
-    props.cards.length - visibleCount.value
-  )
-})
-
-const progressWidth = computed(() => {
-  const maxSlides =
-    props.cards.length - visibleCount.value
-
-  if (maxSlides <= 0) {
-    return '100%'
-  }
-
-  return `${((activeIndex.value + 1) / (maxSlides + 1)) * 100}%`
+const { onSwiper, onSlideChange, slidePrev, slideNext, isBeginning, isEnd, progressWidth } = useSliderNav({
+  total: () => props.cards.length,
+  desktopCols: 3,
+  loop: false,
+  getVisibleCount: (w) => (w < 640 ? 1 : w < 1024 ? 2 : 3),
 })
 </script>
 

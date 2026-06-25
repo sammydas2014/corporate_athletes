@@ -14,8 +14,7 @@
         <AppPagination v-model="currentPage" :total-pages="totalPages" />
       </div>
     </div>
-    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+    <BaseAccelerate />
   </div>
 </template>
 
@@ -23,7 +22,7 @@
 import { computed, ref } from 'vue';
 import AppPagination from '@/components/common/Apppagination.vue';
 import Catalougue from './sections/Catalougue.vue';
-import { aiTools, toolCatalogueBannerData, accelerateData } from '@/services/aiintelligence.service';
+import { aiTools, toolCatalogueBannerData } from '@/services/aiintelligence.service';
 import Herobanner from '@/components/common/Herobanner.vue';
 import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
 

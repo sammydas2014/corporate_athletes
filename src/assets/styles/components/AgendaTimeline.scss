@@ -16,7 +16,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #D6A85F;
+    background-color: var(--bs-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,7 +32,7 @@
   .content{
     flex: 1;
     h4{
-      color: #1A1D21;
+      color: var(--color-dark-secondary);
       font-size: 18px;
       line-height: 35px;
       letter-spacing: -0.02em;
@@ -48,7 +48,7 @@
     left: calc(0% + 220px);
     width: 1px;
     height: 100%;
-    background-color: #D6A85F;
+    background-color: var(--bs-secondary);
     z-index: 1;
   }
 }

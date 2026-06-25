@@ -18,13 +18,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid #1F4E5F;
-      background-color: #FAFAF8;
+      border: 1px solid var(--bs-primary);
+      background-color: var(--bs-body-bg);
       position: absolute;
       top: 15px;
       right: 14px;
       i{
-        color: #1F4E5F;
+        color: var(--bs-primary);
         transition: var(--bs-trastion);
         font-size: 12px;
       }
@@ -37,9 +37,9 @@
     }
   }
   .card-badge{
-    background-color: #D6A85F;
+    background-color: var(--bs-secondary);
     border-radius: 5px;
-    color: #1A1D21;
+    color: var(--color-dark-secondary);
     font-size: 12px;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -50,7 +50,7 @@
     width: fit-content;
   }
   .card-title{
-    color: #1A1D21;
+    color: var(--color-dark-secondary);
     letter-spacing: -0.04em;
     font-weight: 600;
     margin-top: 17px;
@@ -67,7 +67,7 @@
     padding-top: 20px;
     border-top: 1px solid #E1E4E9;
     p{
-      color: #1F4E5F;
+      color: var(--bs-primary);
       font-size: 13px;
       font-weight: 600;
       letter-spacing: -0.02em;

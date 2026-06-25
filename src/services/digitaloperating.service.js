@@ -152,10 +152,3 @@ export const caseStudies = [
   },
 ];
 
-
-
-export const accelerateData = {
-  title: "Ready to accelerate performance with AI?",
-  primaryBtnLabel: "Book a Strategy Call",
-  secondaryBtnLabel: "Submit an rfp",
-};

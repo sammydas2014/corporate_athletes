@@ -59,14 +59,13 @@
           <h2 class="sec__title">{{ themeRankingsData.title }}</h2>
         </div>
         <div class="theme-rankings-grid">
-          <div v-for="(item, index) in themeRankingsData.items" :key="index" class="theme-rank-card">
-            <span class="theme-rank-card__number">{{ item.number }}</span>
-            <h3 class="theme-rank-card__title">{{ item.title }}</h3>
-            <span class="theme-rank-card__meta">
-              <img :src="imageMap.user_icon" alt="">
-              {{ item.count }}
-            </span>
-          </div>
+          <ThemeRankCard
+            v-for="(item, index) in themeRankingsData.items"
+            :key="index"
+            :number="item.number"
+            :title="item.title"
+            :count="item.count"
+          />
         </div>
       </div>
     </section>
@@ -106,8 +105,7 @@
 
     <IntegrateCTA :data="applyCTAData" class="" />
 
-    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+    <BaseAccelerate />
   </div>
 </template>
 
@@ -119,9 +117,8 @@ import RoundtablesSection from '@/views/Events/sections/RoundtablesSection.vue'
 import BaseAnalysisCard from '@/components/common/BaseAnalysisCard.vue'
 import IntegrateCTA from '@/views/AiIntelligence/sections/IntegrateCTA.vue'
 import BaseAccelerate from '@/components/common/BaseAccelerate.vue'
+import ThemeRankCard from '@/components/common/ThemeRankCard.vue'
 import { bannerData, featuredContributionsData, perspectivesData, themesData, themeRankingsData, practitionerSignalsData, academyResourcesData, contributionStandardsData, applyCTAData } from '@/services/consortiumContributions.service'
-import { accelerateData } from '@/services/home.service'
-import { imageMap } from '@/assets/images/imageMap'
 import RoundtableCard from '@/components/common/RoundtableCard.vue'
 
 const selectedThemes = ref([])

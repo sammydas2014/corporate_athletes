@@ -48,53 +48,21 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { FreeMode } from 'swiper/modules'
 import 'swiper/css'
 import EventCard from './EventCard.vue'
 import { upcomingEventsData } from '@/services/events.service.js'
+import { useSliderNav } from '@/composables/useSliderNav'
 
 const data = upcomingEventsData
 
 const modules = [FreeMode]
-const swiperInstance = ref(null)
-const activeIndex = ref(0)
-const visibleCount = ref(1.5)
 
-// const breakpoints = {
-//   640:  { slidesPerView: 1.2, spaceBetween: 16 },
-//   768:  { slidesPerView: 1.6, spaceBetween: 20 },
-//   1024: { slidesPerView: 2,   spaceBetween: 24 },
-//   1280: { slidesPerView: 2.2, spaceBetween: 28 },
-// }
-
-const updateVisibleCount = () => {
-  const w = window.innerWidth
-  if      (w < 640)  visibleCount.value = 1.2
-  else if (w < 768)  visibleCount.value = 1.2
-  else if (w < 1024) visibleCount.value = 1.5
-  else if (w < 1280) visibleCount.value = 1.5
-  else               visibleCount.value = 1.5
-}
-
-const progressWidth = computed(() => {
-  const total = data.events.length
-  if (total <= 1) return '100%'
-  return `${((activeIndex.value % total) + 1) / total * 100}%`
-})
-
-function onSwiper(swiper)      { swiperInstance.value = swiper }
-function onSlideChange(swiper) { activeIndex.value = swiper.realIndex }
-function slidePrev()           { swiperInstance.value?.slidePrev() }
-function slideNext()           { swiperInstance.value?.slideNext() }
-
-onMounted(() => {
-  updateVisibleCount()
-  window.addEventListener('resize', updateVisibleCount)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', updateVisibleCount)
+const { onSwiper, onSlideChange, slidePrev, slideNext, progressWidth } = useSliderNav({
+  total: () => data.events.length,
+  desktopCols: 1.5,
+  loop: true,
+  getVisibleCount: (w) => (w < 768 ? 1.2 : 1.5),
 })
 </script>

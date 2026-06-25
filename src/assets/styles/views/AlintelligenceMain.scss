@@ -2,11 +2,11 @@
 
   .catalougue-sec {
     padding: var(--sec-gap) 0;
-    background-color: #f6f7f9;
+    background-color: var(--color-surface);
     .reviweWRaper {
       margin-top: 60px;
       padding-top: 70px;
-      border-top: 1px solid #d8dee6;
+      border-top: 1px solid var(--bs-border-color);
       margin-top: 40px;
     }
   }

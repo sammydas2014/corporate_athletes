@@ -50,7 +50,7 @@
   &__progress-wrap {
     flex: 1;
     height: 4px;
-    background: #d8dee6;
+    background: var(--bs-border-color);
     border-radius: 999px;
     overflow: hidden;
   }

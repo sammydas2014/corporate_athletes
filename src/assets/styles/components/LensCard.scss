@@ -8,14 +8,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1F4E5F;
+    background-color: var(--bs-primary);
     margin-bottom: 26px;
     img{
       max-width: 24px;
     }
   }
   h3{
-    color: #1A1D21;
+    color: var(--color-dark-secondary);
     letter-spacing: -0.04em;
     line-height: 24px;
     margin: 0;
@@ -39,7 +39,7 @@
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        background-color: #6B7280;
+        background-color: var(--bs-body-color);
       }
     }
     li + li{

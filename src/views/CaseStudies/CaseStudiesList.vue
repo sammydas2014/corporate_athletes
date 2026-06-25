@@ -4,8 +4,7 @@
   <CaseStudiesFilterSection />
   <CaseStudySliderSection :cards="caseStudies" />
   <CaseStudiesGridSection />
-  <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-    :secondary-btn-label="accelerateData.secondaryBtnLabel" class="cstd_base_acc" />
+  <BaseAccelerate :title="accelerateData.title" class="cstd_base_acc" />
   </main>
 </template>
 

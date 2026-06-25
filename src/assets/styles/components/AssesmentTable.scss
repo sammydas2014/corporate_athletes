@@ -12,7 +12,7 @@
     .table-title{
       width: 42%;
       p{
-        color: #1A1D21;
+        color: var(--color-dark-secondary);
         font-weight: 600;
         font-size: 17px;
         letter-spacing: -0.04em;
@@ -25,7 +25,7 @@
     }
 }
 .table-row:nth-child(even){
-  background-color: #F6F7F9;
+  background-color: var(--color-surface);
 
 }
 .noteData{

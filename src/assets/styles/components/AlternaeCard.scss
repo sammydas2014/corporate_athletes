@@ -30,7 +30,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
     li{
-      color: #6B7280;
+      color: var(--bs-body-color);
       position: relative;
       padding-left: 18px;
       &::before{
@@ -40,7 +40,7 @@
         height: 5px;
         border-radius: 50%;
         left: 0;
-        background-color: #6B7280;
+        background-color: var(--bs-body-color);
         top: 10px;
       }
 
@@ -51,7 +51,7 @@
   }
   .cardFtr{
     padding-top: 20px;
-    border-top: 1px solid #D8DEE6;
+    border-top: 1px solid var(--bs-border-color);
     p{
       font-size: 14px;
       font-weight: 500;
@@ -59,7 +59,7 @@
       position: relative;
       padding-left: 28px;
       span{
-        color: #6B7280;
+        color: var(--bs-body-color);
       }
       &::before{
         content: "";

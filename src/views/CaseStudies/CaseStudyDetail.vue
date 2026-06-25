@@ -154,8 +154,7 @@
       </div>
     </section>
 
-    <BaseAccelerate :title="integrateCTAData.title" :primary-btn-label="integrateCTAData.primaryBtnLabel"
-      :secondary-btn-label="integrateCTAData.secondaryBtnLabel" class="cstd_base_acc" />
+    <BaseAccelerate :title="integrateCTAData.title" class="cstd_base_acc" />
   </div>
 </template>
 

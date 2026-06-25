@@ -144,7 +144,7 @@
             .inpWrp {
               width: calc(50% - 10px);
               label {
-                color: #1a1d21;
+                color: var(--color-dark-secondary);
                 font-size: 15px;
                 font-weight: 500;
                 letter-spacing: -0.04em;
@@ -221,7 +221,7 @@
               padding-left: 30px;
               position: relative;
               font-size: 14px;
-              color: #1a1d21;
+              color: var(--color-dark-secondary);
               font-weight: 500;
               letter-spacing: -0.04em;
               line-height: 20px;
@@ -272,7 +272,7 @@
             .valPrc{
               font-size: 15px;
               font-weight: 500;
-              color: #1a1d21;
+              color: var(--color-dark-secondary);
               letter-spacing: -0.04em;
             }
           }

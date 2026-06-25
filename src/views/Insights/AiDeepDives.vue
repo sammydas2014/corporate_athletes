@@ -39,8 +39,7 @@
         </div>
       </div>
     </section>
-    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+    <BaseAccelerate />
   </div>
 </template>
 
@@ -50,6 +49,5 @@ import LensCard from '@/components/common/LensCard.vue';
 import BaseAnalysisCard from '@/components/common/BaseAnalysisCard.vue';
 import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
 import { lensData , analysisData , bannerData } from '@/services/deepdrive.service';
-import { accelerateData } from '@/services/home.service';
 </script>
 

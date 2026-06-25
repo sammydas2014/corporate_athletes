@@ -3,7 +3,7 @@
 // ─── Insights from the Consortium ─────────────────────────────────────────────
 .insights-consortium {
   padding: var(--sec-gap, 100px) 0;
-  background: #EEF1F4;
+  background: var(--bs-light);
 
   // ─── Header ───────────────────────────────────────────────────────────────
   &__header {
@@ -15,7 +15,7 @@
   }
 
   &__subtitle {
-    color: var(--bs-secondary-color, #6b7280);
+    color: var(--bs-body-color);
     max-width: 850px;
   }
 

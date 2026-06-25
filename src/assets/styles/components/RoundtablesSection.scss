@@ -35,7 +35,7 @@
   &__desc {
     font-size: 17px;
     line-height: 1.65;
-    color: var(--bs-secondary-color, #6b7280);
+    color: var(--bs-body-color);
     max-width: 500px;
     margin-bottom: 0;
     letter-spacing: -0.04em;
@@ -63,7 +63,7 @@
   &__progress-wrap {
     flex: 1;
     height: 4px;
-    background: #d8dee6;
+    background: var(--bs-border-color);
     border-radius: 2px;
     overflow: hidden;
   }

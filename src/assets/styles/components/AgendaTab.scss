@@ -66,14 +66,14 @@
   }
   .active{
     h3{
-      color: #1A1D21;
+      color: var(--color-dark-secondary);
     }
     .btmwrap{
       .date{
-        color: #1A1D21;
+        color: var(--color-dark-secondary);
       }
       .month{
-        color: #1A1D21;
+        color: var(--color-dark-secondary);
       }
     }
     &::after{

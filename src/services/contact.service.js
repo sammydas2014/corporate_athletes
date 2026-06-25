@@ -23,9 +23,3 @@ export const offices = [
 
 export const responseTimeText =
   "Advisory and event enquiries are reviewed daily. Consortium and partnership proposals are reviewed weekly by the partnership committee.";
-
-export const accelerateData = {
-  title: "Ready to accelerate performance with AI?",
-  primaryBtnLabel: "Book a Strategy Call",
-  secondaryBtnLabel: "Submit an rfp",
-};

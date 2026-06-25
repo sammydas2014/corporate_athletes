@@ -120,9 +120,3 @@ export const solutionData = [
     description: "Commercial structure tied to performance milestones, not utilisation.",
   },
 ];
-
-export const accelerateData = {
-  title: "Ready to accelerate performance with AI?",
-  primaryBtnLabel: "Book a Strategy Call",
-  secondaryBtnLabel: "Submit an rfp",
-};

@@ -4,7 +4,7 @@ import ShortlistToolbar from '@/components/common/ShortlistToolbar.vue';
 import ShortlistCard from '@/components/common/ShortlistCard.vue';
 import ShortlistInsights from '@/components/common/ShortlistInsights.vue';
 import ArchitecturePreview from '@/components/common/ArchitecturePreview.vue';
-import { shortlistedTools, shortlistSummary, shortlistPageHeader, MAX_SHORTLIST_ITEMS, accelerateData } from '@/services/shortlist.service';
+import { shortlistedTools, shortlistSummary, shortlistPageHeader, MAX_SHORTLIST_ITEMS } from '@/services/shortlist.service';
 import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
 
 const tools = ref(shortlistedTools.slice(0, MAX_SHORTLIST_ITEMS));
@@ -39,6 +39,5 @@ function handleRemove(toolId) {
       </div>
     </div>
   </section>
-  <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-    :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+  <BaseAccelerate />
 </template>

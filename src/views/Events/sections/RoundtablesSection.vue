@@ -43,12 +43,13 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { FreeMode } from 'swiper/modules'
 import 'swiper/css'
 import RoundtableCard from '@/components/common/RoundtableCard.vue'
 import BaseButton from '@/components/common/BaseButton.vue'
+import { useSliderNav } from '@/composables/useSliderNav'
 
 const props = defineProps({
   eyebrow: { type: String, default: '' },
@@ -64,9 +65,6 @@ const props = defineProps({
 })
 
 const modules = [FreeMode]
-const swiperInstance = ref(null)
-const activeIndex = ref(0)
-const visibleCount = ref(props.desktopCols)
 
 const breakpoints = computed(() => ({
   0: { slidesPerView: 1.2, spaceBetween: 16 },
@@ -75,34 +73,24 @@ const breakpoints = computed(() => ({
   1024: { slidesPerView: props.desktopCols, spaceBetween: 24 },
 }))
 
-const updateVisibleCount = () => {
-  const w = window.innerWidth
-  if (w < 640) visibleCount.value = 1.2
-  else if (w < 768) visibleCount.value = 1.5
-  else if (w < 1024) visibleCount.value = Math.min(2, props.desktopCols)
-  else visibleCount.value = props.desktopCols
-}
+// loopEnabled depends on visibleCount, which comes from useSliderNav below —
+// so it's tracked as a ref and kept in sync via watchEffect rather than
+// being passed in as a plain boolean.
+const loopEnabled = ref(false)
 
-const showFooter = computed(() => props.items.length > Math.floor(visibleCount.value))
-const loopEnabled = computed(() => props.items.length > Math.ceil(visibleCount.value))
-
-const progressWidth = computed(() => {
-  const total = props.items.length
-  if (total <= 1) return '100%'
-  return `${((activeIndex.value % total) + 1) / total * 100}%`
+const { onSwiper, onSlideChange, slidePrev, slideNext, visibleCount, showFooter, progressWidth } = useSliderNav({
+  total: () => props.items.length,
+  desktopCols: props.desktopCols,
+  loop: loopEnabled,
+  getVisibleCount: (w) => {
+    if (w < 640) return 1.2
+    if (w < 768) return 1.5
+    if (w < 1024) return Math.min(2, props.desktopCols)
+    return props.desktopCols
+  },
 })
 
-function onSwiper(swiper) { swiperInstance.value = swiper }
-function onSlideChange(swiper) { activeIndex.value = swiper.realIndex }
-function slidePrev() { swiperInstance.value?.slidePrev() }
-function slideNext() { swiperInstance.value?.slideNext() }
-
-onMounted(() => {
-  updateVisibleCount()
-  window.addEventListener('resize', updateVisibleCount)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', updateVisibleCount)
+watchEffect(() => {
+  loopEnabled.value = props.items.length > Math.ceil(visibleCount.value)
 })
 </script>

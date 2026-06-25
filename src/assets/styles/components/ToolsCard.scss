@@ -59,14 +59,14 @@
     margin-bottom: 22px;
     padding-top: 20px;
     margin-top: 0;
-    border-top: 1px solid #D8DEE6;
+    border-top: 1px solid var(--bs-border-color);
   ul{
     li{
       display: flex;
       gap: 3px;
       color: #16171B;
       span{
-        color: #6B7280;
+        color: var(--bs-body-color);
       }
     padding: 0;
     &::before{

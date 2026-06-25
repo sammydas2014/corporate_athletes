@@ -693,9 +693,3 @@ export const aiTools = [
     rating: 4.9,
   },
 ];
-
-export const accelerateData = {
-  title: "Ready to accelerate performance with AI?",
-  primaryBtnLabel: "Book a Strategy Call",
-  secondaryBtnLabel: "Submit an rfp",
-};

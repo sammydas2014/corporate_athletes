@@ -10,7 +10,7 @@
     p {
       font-size: 17px;
       line-height: 26px;
-      color: #6b7280;
+      color: var(--bs-body-color);
       margin-bottom: 38px;
     }
     ul{
@@ -19,7 +19,7 @@
       li{
         font-size: 16px;
         line-height: 26px;
-        color: #1A1D21;
+        color: var(--color-dark-secondary);
         position: relative;
         padding-left: 18px;
         letter-spacing: -0.04em;
@@ -30,7 +30,7 @@
           left: 0;
           width: 7px;
           height: 7px;
-          background-color: #D6A85F;
+          background-color: var(--bs-secondary);
           border-radius: 50%;
         }
       }

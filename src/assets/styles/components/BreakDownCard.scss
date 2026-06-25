@@ -13,7 +13,7 @@
     justify-content: space-between;
     margin-bottom: 25px;
     h6{
-      color: #1A1D21;
+      color: var(--color-dark-secondary);
       font-size: 17px;
       font-weight: 600;
       letter-spacing: -0.04em;
@@ -35,7 +35,7 @@
   .crd-ftr{
     margin-top: 25px;
     p{
-      color: #6B7280;
+      color: var(--bs-body-color);
       font-size: 16px;
       line-height: 24px;
       letter-spacing: -0.03em;

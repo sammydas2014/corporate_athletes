@@ -54,8 +54,7 @@
       title="Featured articles"
     />
 
-    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+    <BaseAccelerate />
   </div>
 </template>
 
@@ -66,7 +65,6 @@ import BaseThinkCard from "@/components/common/BaseThinkCard.vue"
 import BaseInsightsSection from '../Home/sections/BaseInsightsSection.vue';
 import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
 import { bannerData, lensData , thinkData } from '@/services/articles.service';
-import {accelerateData} from "@/services/home.service"
 
 </script>
 

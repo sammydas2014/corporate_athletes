@@ -142,8 +142,7 @@
         :data="integrateCTAData"
         class="evnt-dtls-intrgate"
       />
-     <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+     <BaseAccelerate />
 
   </main>
 </template>
@@ -161,7 +160,6 @@ import { ref , computed } from "vue";
   import AgendaTab from "@/components/common/AgendaTab.vue";
   import AgendaContent from "@/components/common/AgendaContent.vue";
   import { heroData, discussionHighlights , contentCards , facilitatorSection , sessionDetails , whoShouldAttend , discussData  , integrateCTAData , agendaData , roundtablesData } from "@/services/eventDetails.service";
-  import { accelerateData } from "@/services/home.service";
   import RoundtablesSection from "./sections/RoundtablesSection.vue";
   // import { roundtablesData } from "@/services/events.service";
 

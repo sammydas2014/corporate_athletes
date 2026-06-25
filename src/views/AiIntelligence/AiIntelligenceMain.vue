@@ -12,8 +12,7 @@
     <ResearchFrameworksSection :eyebrow="researchData.eyebrow" :heading="researchData.heading"
       :cards="researchData.cards" :submit-label="researchData.submitLabel" :submit-link="researchData.submitLink" />
 
-    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+    <BaseAccelerate />
 
   </div>
 </template>
@@ -22,7 +21,7 @@
 import HeroBanner from "@/components/common/Herobanner.vue";
 import ResearchFrameworksSection from "./sections/ResearchFrameworksSection.vue";
 import BenchmarkSurveysSection from "./sections/BenchmarkSurveysSection.vue";
-import { bannerData, researchData, accelerateData } from "@/services/aiintelligence.service";
+import { bannerData, researchData } from "@/services/aiintelligence.service";
 import CatalougueSection from "./sections/CatalougueSection.vue";
 import BaseAccelerate from "@/components/common/BaseAccelerate.vue";
 

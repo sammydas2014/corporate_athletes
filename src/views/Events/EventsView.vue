@@ -32,15 +32,14 @@
 
     <EventProgramsSection />
 
-    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+    <BaseAccelerate />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import HeroBanner from '@/components/common/Herobanner.vue'
-import { bannerData, roundtablesData, academyWorkshopsData, aiTransformationForumsData, vendorBriefingsData, aiOperatorSessionsData, accelerateData, lookBackData } from '@/services/events.service'
+import { bannerData, roundtablesData, academyWorkshopsData, aiTransformationForumsData, vendorBriefingsData, aiOperatorSessionsData, lookBackData } from '@/services/events.service'
 import UpcomingEvents from './sections/UpcomingEvents.vue'
 import InsightsConsortium from './sections/InsightsConsortium.vue'
 import RoundtablesSection from './sections/RoundtablesSection.vue'

@@ -176,10 +176,7 @@
         </div>
       </div>
     </section>
-    <BaseAccelerate
-      :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel"
-    />
+    <BaseAccelerate />
   </div>
 </template>
 
@@ -193,7 +190,6 @@ import BaseCheckboxGroup from '@/components/common/BaseCheckboxGroup.vue'
 import BaseButton from "@/components/common/BaseButton.vue";
 import BaseAccelerate from "@/components/common/BaseAccelerate.vue";
 import RegistrationCard from "@/components/common/RegistrationCard.vue";
-import { accelerateData } from "@/services/home.service";
 import DiscussionCard from "@/components/common/DiscussionCard.vue";
 import { imageMap } from "@/assets/images/imageMap";
 

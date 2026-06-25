@@ -65,7 +65,7 @@
   }
   .card-wrapper {
     background-color: var(--bs-white);
-    border: 1px solid #d8dee6;
+    border: 1px solid var(--bs-border-color);
     border-radius: 10px;
     padding: 30px 30px 40px 30px;
     display: flex;

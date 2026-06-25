@@ -204,8 +204,7 @@
       :data="integrateCTAData"
       class="outcomeCta-dtls"
     />
-    <BaseAccelerate :title="accelerateData.title" :primary-btn-label="accelerateData.primaryBtnLabel"
-      :secondary-btn-label="accelerateData.secondaryBtnLabel" />
+    <BaseAccelerate />
   </div>
 </template>
 
@@ -222,7 +221,6 @@ import InfoCard from '@/components/common/InfoCard.vue';
 import PlayBookSlider from '@/components/slider/PlayBookSlider.vue';
 import IntegrateCTA from '@/views/AiIntelligence/sections/IntegrateCTA.vue';
 import { whenToUseData, whatYouGetData, executeData , playbookData , lensData , pitfallData , aiStackData , relatedData , integrateCTAData , bannerData} from '@/services/playbookDetail.service'
-import {accelerateData } from '@/services/home.service.js'
 import { ref, computed } from 'vue';
 
 

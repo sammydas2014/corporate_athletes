@@ -51,7 +51,7 @@
           }
 
           .val {
-            color: #1f4e5f;
+            color: var(--bs-primary);
             font-size: 30px;
             font-weight: 600;
             letter-spacing: -0.05em;

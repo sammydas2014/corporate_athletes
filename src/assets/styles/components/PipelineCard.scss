@@ -1,6 +1,6 @@
 @use '../base' as *;
 .pipeline-crd{
-  border: 1px solid #D8DEE6;
+  border: 1px solid var(--bs-border-color);
   background-color: var(--bs-white);
   border-radius: 10px;
   padding: 20px 19px 22px 19px;
@@ -23,13 +23,13 @@
     line-height: 26px;
   }
   h6{
-    color: #1A1D21;
+    color: var(--color-dark-secondary);
     font-size: 14px;
     font-weight: 600;
     margin: 2px;
   }
   .subhdng{
-    color: #6B7280;
+    color: var(--bs-body-color);
     font-size: 13px;
     letter-spacing: -0.04em;
     line-height: 22px;

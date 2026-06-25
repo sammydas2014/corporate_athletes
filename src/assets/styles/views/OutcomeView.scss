@@ -4,7 +4,7 @@
   position: relative;
   .container {
     padding-bottom: 78px;
-    border-bottom: 1px solid #d8dee6;
+    border-bottom: 1px solid var(--bs-border-color);
     h1 {
       color: #0b1219;
       max-width: 930px;
@@ -18,7 +18,7 @@
     .architecture-wrp {
       background-color: var(--bs-white);
       border-radius: 10px;
-      border: 1px solid #d8dee6;
+      border: 1px solid var(--bs-border-color);
       padding: 30px 20px 40px 20px;
       .hdr-tlltwrap {
         display: flex;
@@ -91,7 +91,7 @@
     }
     .stackWrp{
       background-color: var(--bs-white);
-      border: 1px solid #D8DEE6;
+      border: 1px solid var(--bs-border-color);
       border-radius: 10px;
       padding: 32px 34px;
     }
@@ -134,7 +134,7 @@
     }
     .revrst-table{
       .table-row:nth-child(odd){
-  background-color: #F6F7F9;
+  background-color: var(--color-surface);
 
 }
 .table-row:nth-child(even){

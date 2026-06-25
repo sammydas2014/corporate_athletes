@@ -1,6 +1,6 @@
 @use '../base' as *;
 .highlight-card{
-  border: 1px solid #D8DEE6;
+  border: 1px solid var(--bs-border-color);
   border-radius: 10px;
   background-color: var(--bs-white);
   padding: 30px;
@@ -67,7 +67,7 @@
 }
 .estimate-wrp {
     padding-left: 30px;
-    border-left: 1px solid #D8DEE6;
+    border-left: 1px solid var(--bs-border-color);
     ul{
       padding: 0;
       li{
