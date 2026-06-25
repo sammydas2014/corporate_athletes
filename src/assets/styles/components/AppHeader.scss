@@ -9,13 +9,33 @@
     .navbar-toggler {
       display: block !important;
     }
-
     .navbar-collapse {
-      display: none !important;
-      flex-basis: 100%;
+      display: block !important;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 85vw);
+      flex-basis: auto;
+      background: var(--bs-white);
+      box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
+      padding: 90px 24px 24px;
+      overflow-y: auto;
+      z-index: 1045;
+      transform: translateX(100%);
+      visibility: hidden;
+      transition: var(--bs-transition) !important;
 
       &.show {
-        display: block !important;
+        transform: translateX(0);
+        visibility: visible;
+      }
+
+      &.collapsing {
+        height: auto !important;
+        transition:
+          transform 0.35s ease,
+          visibility 0s linear 0s;
       }
     }
 
@@ -23,8 +43,73 @@
       flex-direction: column;
     }
 
+    // On this breakpoint Bootstrap/Popper never runs at all (see the
+    // `:data-bs-toggle` binding in AppHeader.vue) — submenus are opened
+    // purely via the `.dropdown-menu--open` class, driven by Vue state.
     .navbar-nav .dropdown-menu {
-      position: static !important;
+      position: static;
+      display: none;
+
+      &.dropdown-menu--open {
+        display: block;
+      }
+    }
+  }
+}
+
+.navbar-close-btn {
+  display: none;
+}
+
+@include tablet-landscape {
+  .navbar-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-surface, #f6f7f9);
+    color: var(--bs-dark);
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+.header-mobile-icons {
+  display: none !important;
+  gap: 25px;
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.navbar-backdrop {
+  display: none;
+}
+
+@include tablet-landscape {
+  .navbar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.35s ease,
+      visibility 0s linear 0.35s;
+    z-index: 1040;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transition:
+        opacity 0.35s ease,
+        visibility 0s linear 0s;
     }
   }
 }
@@ -228,6 +313,14 @@
   border: none;
 }
 
+.navbar-toggler-icon {
+  width: auto;
+  height: auto;
+  background: transparent;
+  font-size: 30px;
+  color: var(--bs-primary);
+}
+
 @include nav-collapsed {
   .navbar-brand {
     max-width: 120px;
@@ -253,5 +346,82 @@
   }
   .dropdown-menu {
     top: 64px !important;
+  }
+}
+
+@include mini-desktop {
+  .navbar-brand {
+    max-width: 100px;
+  }
+
+  .btn_wraps {
+    gap: 15px;
+    margin-left: 15px;
+  }
+
+  .badge {
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 10px !important;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .navbar-nav .dropdown-toggle::after {
+    margin-left: 5px;
+    margin-bottom: 1px;
+    font-size: 9px;
+  }
+
+  .navbar-nav {
+    gap: 2px !important;
+  }
+
+  .dropdown-menu {
+    top: 57px !important;
+  }
+
+  .dropdown-item {
+    font-size: 12px;
+    padding: 8px 20px;
+  }
+
+  .btn.call_btn {
+    font-size: 10px;
+    height: 35px;
+    padding-inline: 15px;
+    font-weight: 500 !important;
+    letter-spacing: 0;
+  }
+}
+
+@include tablet-landscape {
+  .header-mobile-icons {
+    display: flex;
+  }
+  .navbar-brand {
+    max-width: 120px;
+  }
+
+  .btn_wraps__icon {
+    display: none !important;
+  }
+  .btn_wraps {
+    gap: 0;
+    margin-left: 0;
+    border: none !important;
+  }
+  .header-mobile-icons {
+    display: inline-flex !important;
+  }
+
+  .dropdown-menu {
+    background-color: transparent !important;
+    box-shadow: none;
+  }
+  .dropdown-item {
+    color: var(--bs-body-color) !important;
   }
 }
