@@ -1,3 +1,5 @@
+@use "../base" as *;
+
 .accelerate-section {
   padding: 83px 0;
   background-color: var(--bs-dark);
@@ -15,12 +17,26 @@
     color: var(--bs-white);
     margin: 0;
   }
+
+  @include mobile {
+    padding: 40px 0;
+
+    .sec__title {
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+  }
 }
 
 .btnWrp {
   display: flex;
   gap: 10px;
   justify-content: flex-end;
+
+  @include mobile {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
 
 .btn-outline-trnp {
