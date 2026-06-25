@@ -20,6 +20,12 @@
   }
 }
 
+@mixin mini-desktop {
+  @media (max-width: 1199.98px) {
+    @content;
+  }
+}
+
 @mixin nav-collapsed {
   @media (max-width: 1399.98px) {
     @content;
