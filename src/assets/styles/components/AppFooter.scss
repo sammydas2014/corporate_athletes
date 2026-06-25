@@ -232,6 +232,7 @@
       margin: 0;
       @include mobile{
         justify-content: center !important;
+        padding: 0;
       }
 
       li {
@@ -266,6 +267,9 @@
         font-size: 15px;
         color: $color-text-light;
         letter-spacing: -3%;
+        @include mobile{
+          font-size: 13px;
+        }
 
       }
     }
