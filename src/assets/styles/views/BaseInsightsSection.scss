@@ -1,16 +1,27 @@
+@use "../base" as *;
 .insights-sec {
   padding: var(--sec-gap) 0;
 }
 
 .transformaction-wrap {
   margin-top: 40px;
+  @include mobile{
+    flex-direction: column;
+  }
 
   .left-wrap {
     width: 51%;
+    @include mobile{
+      width: 100%;
+    }
   }
 
   .right-wrap {
     width: 49%;
+    @include mobile{
+      width: 100%;
+      padding-left: 0;
+    }
   }
 
   .img-wrap {
@@ -26,12 +37,20 @@
 
 .right-wrap {
   padding-left: 66px;
+  @include mini-desktop{
+    padding-left: 35px;
+  }
+
 
   .transform-crd {
     border-bottom: 1px solid var(--bs-border-color);
 
     &:first-child {
       padding-top: 0;
+      @include mobile{
+        padding-top: 35px;
+        border-top: 1px solid var(--bs-border-color);
+      }
     }
 
     &:last-child {

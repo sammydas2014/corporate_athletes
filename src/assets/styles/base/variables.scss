@@ -1,3 +1,5 @@
+@use "./mixins";
+
 // ─── SCSS Variables (compile-time) ───────────────────────────────────────────
 $color-primary:        #1f4e5f;
 $color-secondary:      #d6a85f;
@@ -67,4 +69,16 @@ $gradient-primary:     linear-gradient(139.04deg, rgba(24.45, 67.72, 83.37, 1) 1
   --bs-border-radius-pill: 50rem;
 
   --sec-gap: 100px;
+
+  @include mixins.mini-desktop{
+    --sec-gap: 80px;
+  }
+
+  @include mixins.tablet{
+    --sec-gap: 50px;
+  }
+
+  @include mixins.mobile{
+    --sec-gap: 40px;
+  }
 }
