@@ -27,6 +27,7 @@
 @use "./components/AiPlatformSlider";
 @use "./components/Audienceslider";
 @use "./components/CaseStudySliderSection";
+@use "./components/CaseStudySlider";
 @use "./components/Basecheckbox";
 @use "./components/Filtersidebar";
 @use "./components/ResearchCard";
@@ -94,7 +95,7 @@
 @use './components/BaseTextArea';
 @use './components/BaseCheckboxGroup';
 @use './components/RegistrationCard';
-// @use './components/MarqueeSlider';
+@use './components/MarqueeSlider';
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use "./views/BenchmarkSurveysSection";

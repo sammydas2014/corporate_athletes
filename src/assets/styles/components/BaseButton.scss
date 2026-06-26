@@ -32,6 +32,11 @@
     letter-spacing: 0.05em;
   }
 
+  @include mini-mobile {
+    height: 46px;
+    font-size: 14px;
+  }
+
   span {
     display: flex;
     align-items: center;

@@ -149,11 +149,27 @@
     @include tablet {
       min-height: 600px !important;
     }
+
+    @include mini-mobile {
+      min-height: 100dvh !important;
+    }
     .hero-banner__content {
       max-width: 890px;
       padding-bottom: 80px;
       @include tablet {
         padding-block: 50px;
+      }
+      @include mobile {
+        text-align: center;
+      }
+      .btn_wrp {
+        @include mobile {
+          justify-content: center;
+
+          > * {
+            width: 100%;
+          }
+        }
       }
     }
 
@@ -983,7 +999,7 @@
 // ─── Responsive ──────────────────────────────────────────────────────────────
 @include mobile {
   .hero-banner__title {
-    font-size: clamp(2rem, 7vw, 2.5rem);
+    font-size: clamp(36px, 7vw, 45px);
   }
 
   .hero-banner__subtitle {
