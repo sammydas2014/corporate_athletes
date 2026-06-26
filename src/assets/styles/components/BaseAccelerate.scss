@@ -4,6 +4,9 @@
   padding: 83px 0;
   background-color: var(--bs-dark);
   border-bottom: 2px solid var(--bs-white);
+  @include mini-desktop{
+    padding: 60px 0;
+  }
 
   > .row {
     justify-content: space-between;
@@ -11,20 +14,28 @@
 
   .row {
     align-items: center;
+    @include mini-desktop {
+      flex-direction: column;
+    }
+    .col-md-6{
+      @include mini-desktop{
+        width: 100%;
+      }
+    }
+
+
   }
 
   .sec__title {
     color: var(--bs-white);
     margin: 0;
+    @include mini-desktop{
+      text-align: center;
+    }
   }
 
   @include mobile {
     padding: 40px 0;
-
-    .sec__title {
-      margin-bottom: 20px;
-      font-size: 26px;
-    }
   }
 }
 
@@ -32,9 +43,12 @@
   display: flex;
   gap: 10px;
   justify-content: flex-end;
+    @include mini-desktop{
+      justify-content: center;
+      margin-top: 35px;
+    }
 
   @include mobile {
-    justify-content: flex-start;
     flex-wrap: wrap;
   }
 }
