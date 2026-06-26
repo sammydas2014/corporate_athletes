@@ -43,16 +43,12 @@
       flex-direction: column;
     }
 
-    // On this breakpoint Bootstrap/Popper never runs at all (see the
-    // `:data-bs-toggle` binding in AppHeader.vue) — submenus are opened
-    // purely via the `.dropdown-menu--open` class, driven by Vue state.
+    // Submenus are static/inline within the slide-in panel instead of
+    // floating; open/closed display is handled globally below since
+    // dropdowns are fully custom (no Bootstrap Dropdown/Popper) at every
+    // breakpoint now.
     .navbar-nav .dropdown-menu {
       position: static;
-      display: none;
-
-      &.dropdown-menu--open {
-        display: block;
-      }
     }
   }
 }
@@ -172,11 +168,18 @@
   letter-spacing: 0.05em;
 }
 
+// Dropdowns are fully custom now (no Bootstrap Dropdown/Popper, see
+// AppHeader.vue) — Bootstrap's own `.dropdown-menu { display: none }` still
+// applies by default; `.dropdown-menu--open` is the only thing that opens it.
 .dropdown-menu {
   background-color: var(--bs-primary) !important;
   border-radius: 0;
   padding: 0.5rem 0;
   min-width: 220px;
+
+  &.dropdown-menu--open {
+    display: block;
+  }
 }
 
 .dropdown-item {
@@ -308,8 +311,13 @@
   color: var(--bs-secondary) !important;
 }
 
+// `.dropdown-menu` is `position: absolute` from Bootstrap's base CSS, but
+// since we never attach Popper (no `data-bs-toggle="dropdown"` anymore),
+// Bootstrap's `[data-bs-popper]`-scoped `top: 100%; left: 0;` reset never
+// applies either — both have to be set explicitly here instead.
 .navbar-expand-lg .navbar-nav .dropdown-menu {
   top: 68px;
+  left: 0;
   border: none;
 }
 
