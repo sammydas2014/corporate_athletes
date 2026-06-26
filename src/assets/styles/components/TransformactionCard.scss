@@ -1,9 +1,20 @@
+@use "../base" as *;
+
 .transform-crd {
   padding: 42px 0 45px 0;
   background-color: transparent;
+  @include mobile{
+    padding: 35px 0 35px 0;
+  }
 
   h3 {
     font-size: 26px;
+    @include nav-collapsed{
+      font-size: 22px;
+    }
+    @include tablet{
+      font-size: 20px;
+    }
   }
 
   p {
@@ -11,6 +22,10 @@
     line-height: 27px;
     color: var(--bs-body-color);
     letter-spacing: -4%;
+    @include tablet{
+      font-size: 15px;
+      line-height: 24px;
+    }
   }
 }
 
@@ -18,6 +33,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include tablet{
+    gap: 20px;
+    align-items: flex-start;
+  }
 
   .text-wrap {
     width: 88%;
