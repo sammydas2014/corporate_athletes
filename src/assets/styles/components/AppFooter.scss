@@ -96,10 +96,13 @@
                 justify-content: flex-start !important;
               }
               .form-floating {
+                @include nav-collapsed{
+                  height: 50px;
+                }
                 @include mini-desktop {
                   padding: 0 18px;
                   border-radius: 30px;
-                  height: 50px;
+
                 }
                 @include mobile{
                   width: 75%;

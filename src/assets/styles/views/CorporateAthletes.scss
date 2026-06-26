@@ -1,3 +1,5 @@
+@use '../base' as *;
+
 .why-corporate-athletes-sec {
   padding: var(--sec-gap) 0 48px 0;
   background-color: var(--bs-light);
@@ -7,6 +9,9 @@
     margin: 0 auto;
     text-align: center;
     margin-bottom: 45px;
+    @include mini-desktop{
+      max-width: 500px;
+    }
   }
 }
 
@@ -14,8 +19,20 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  row-gap: 30px;
+
+  @include mini-mobile{
+    row-gap: 20px;
+  }
 
   .feature-crd {
     width: calc(25% - 15px);
+    @include tablet{
+      width: calc(50% - 15px);
+    }
+    @include mini-mobile{
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }

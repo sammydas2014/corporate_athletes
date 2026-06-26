@@ -1,4 +1,9 @@
 // Breakpoint mixins
+@mixin mini-mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
 @mixin mobile {
   @media (max-width: 767px) {
     @content;

@@ -8,6 +8,14 @@
     padding-top: var(--sec-gap);
     padding-bottom: 200px;
     position: relative;
+    @include mobile{
+      padding-bottom: 320px;
+    }
+    .whatdo-wrap{
+      @include mobile{
+        flex-direction: column;
+      }
+    }
 
     &::after {
       content: "";
@@ -19,6 +27,17 @@
       height: 600px;
       left: -660px;
       bottom: 0;
+
+      @include mini-desktop{
+        width: 1100px;
+      }
+      @include tablet{
+        width: 600px;
+        left: -350px;
+      }
+      @include mini-mobile{
+        left: -120px;
+      }
     }
   }
 }
@@ -28,6 +47,12 @@
   padding-right: 65px;
   width: 50%;
   flex: 0 0 auto;
+  @include tablet{
+    padding: 0;
+  }
+  @include mobile{
+    width: 100%;
+  }
 
   .sec__title {
     color: var(--bs-body-bg);
@@ -41,6 +66,9 @@
     letter-spacing: -2%;
     line-height: 22px;
     display: inline-block;
+    @include tablet{
+      font-size: 15px;
+    }
 
     &::after {
       content: "";
@@ -50,6 +78,9 @@
       height: 1px;
       top: 11px;
       left: 113%;
+      @include tablet{
+        width: 61px;
+      }
     }
   }
 }
@@ -59,4 +90,13 @@
   flex-wrap: wrap;
   padding-top: 78px;
   width: 50%;
+  @include tablet{
+    padding-top: 48px;
+  }
+  @include mobile{
+    width: 100%;
+  }
+  @include mini-mobile{
+    row-gap: 20px;
+  }
 }
