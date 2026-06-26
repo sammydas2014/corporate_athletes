@@ -52,6 +52,7 @@ const repeatedItems = [
 </script>
 
 <style lang="scss" scoped>
+
 .marquee-wrapper {
   background: var(--bs-light);
   overflow: hidden;

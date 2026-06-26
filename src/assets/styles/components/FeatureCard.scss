@@ -1,3 +1,5 @@
+@use '../base' as *;
+
 .feature-crd {
   padding: 45px 22px 36px 22px;
   background-color: var(--bs-white);
@@ -9,6 +11,9 @@
   max-width: 400px;
   text-align: center;
   gap: 25px;
+  @include mini-desktop{
+    padding: 30px 18px;
+  }
 
   .crd-img {
     background-color: var(--bs-primary);
@@ -19,11 +24,44 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 0;
+
+    @include nav-collapsed{
+      width: 80px;
+      height: 80px;
+    }
+    @include mini-desktop{
+      width: 60px;
+      height: 60px;
+    }
+    img{
+      @include nav-collapsed{
+        max-width: 35px;
+      }
+      @include mini-desktop{
+        max-width: 25px;
+      }
+    }
   }
 
   h3 {
     color: var(--color-dark-secondary);
     margin-bottom: 0;
+    @include mini-desktop{
+      font-size: 17px;
+    }
+    @include mini-mobile{
+      font-size: 20px;
+    }
+  }
+  p{
+    @include mini-desktop{
+      font-size: 15px;
+      line-height: 20px;
+    }
+    @include mini-mobile{
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
 
   &__btn {

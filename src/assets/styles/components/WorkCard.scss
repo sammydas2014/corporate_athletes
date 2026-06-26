@@ -1,8 +1,13 @@
+@use '../base' as *;
+
 .word-card {
   padding: 32px 26px 20px 26px;
   border-radius: 10px;
   border: 1px solid rgba(214, 168, 95, 25%);
   width: 50%;
+  @include mini-mobile{
+    width: 100%;
+  }
 
   .img-wrap {
     max-width: 40px;
@@ -17,6 +22,16 @@
     margin-bottom: 12px;
     font-weight: 600;
     min-height: 43px;
+    @include mini-desktop{
+      font-size: 15px;
+      line-height: 18px;
+      min-height: 37px;
+    }
+    @include mini-mobile{
+      font-size: 18px;
+        line-height: 28px;
+        min-height: 27px;
+    }
   }
 
   p {
@@ -24,5 +39,13 @@
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -3%;
+    @include mini-desktop{
+      font-size: 14px;
+    line-height: 20px;
+    }
+    @include mini-mobile{
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
 }
