@@ -13,9 +13,30 @@
   @include tablet {
     min-height: 450px !important;
   }
+  &:has(.hero-banner_img) {
+    .hero-banner__content {
+      padding-bottom: 0;
+    }
+  }
 
   .hero-banner_img {
     height: 580px;
+
+    @include nav-collapsed {
+      min-height: 500px !important;
+      height: auto;
+      margin-inline: 0 !important;
+      display: flex;
+      max-width: 450px;
+    }
+
+    @include tablet {
+      min-height: 450px !important;
+    }
+
+    @include mobile {
+      min-height: 0 !important;
+    }
   }
 
   &__bg {
@@ -52,6 +73,10 @@
   &__breadcrumb-row {
     padding-top: 0;
     padding-bottom: 30px;
+
+    @include mobile {
+      padding-bottom: 20px;
+    }
   }
 
   &__back-row {
@@ -60,6 +85,9 @@
 
   &__content {
     padding-block: 50px;
+    > *:last-child {
+      margin-bottom: 0;
+    }
 
     > * {
       animation: fadeUp 0.5s ease both;
@@ -80,6 +108,10 @@
     > *:nth-child(5) {
       animation-delay: 0.36s;
     }
+
+    @include tablet {
+      max-width: 100% !important;
+    }
   }
 
   &__subtitle {
@@ -96,6 +128,7 @@
 
   &__visual-col {
     min-height: 280px;
+    position: relative;
 
     @include tablet {
       min-height: 240px;
@@ -135,6 +168,9 @@
     .hero-banner__content {
       max-width: 750px;
       padding-bottom: 20px;
+      @include nav-collapsed {
+        padding-bottom: 50px;
+      }
     }
 
     .hero-banner__subtitle {
@@ -189,11 +225,16 @@
 .breadcrumb {
   display: flex;
   align-items: center;
+  row-gap: 10px;
 }
 
 .breadcrumb-item {
   font-size: 15px;
   line-height: 1;
+
+  @include mobile {
+    font-size: 12px;
+  }
 
   a {
     color: #e9eef28f;
@@ -220,6 +261,10 @@
   font-family: "bootstrap-icons";
   font-size: 13px;
   margin-top: 1px;
+  @include mobile {
+    font-size: 12px;
+    margin-top: 0;
+  }
 }
 
 .breadcrumb-home {
@@ -230,6 +275,10 @@
   svg {
     width: 16px;
     height: 16px;
+    @include mobile {
+      width: 13px;
+      height: 13px;
+    }
   }
 }
 
@@ -310,10 +359,29 @@
   object-fit: cover;
   object-position: center;
   display: block;
+
+  @include nav-collapsed {
+    height: auto;
+  }
 }
 
 // ─── AI Strategy image fade edges ────────────────────────────────────────────
 .AIStrategyBnr {
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgb(4 4 5) 0%, rgba(4, 4, 5, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
   .hero-banner_img {
     position: relative;
 
@@ -341,6 +409,21 @@
 
 // ─── AI Implementation and Scaling image fade edges ────────────────────────────────────────────
 .aimplementation_bnr {
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgb(4 4 5) 0%, rgba(4, 4, 5, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -373,6 +456,21 @@
 
 // ─── AI Implementation and Scaling image fade edges ────────────────────────────────────────────
 .financeshared_bnr {
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(178deg, rgb(4 4 5) 0%, rgba(4, 4, 5, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -408,6 +506,21 @@
 
 // ─── Digital Operating Model Design image fade edges ────────────────────────────────────────────
 .digitaloperating_bnr {
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgb(4 4 5) 0%, rgba(4, 4, 5, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -440,6 +553,21 @@
 
 // ─── AI Intelligence image fade edges ────────────────────────────────────────────
 .aiintelligence_bnr {
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(1, 20, 37) 0%, rgba(4, 4, 5, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -654,6 +782,15 @@
     position: relative;
     margin-left: -100px;
     margin-right: -50px;
+    @include tablet {
+      min-height: 0 !important;
+    }
+    .banner-inline-img {
+      object-fit: contain;
+    }
+    @include tablet {
+      margin-top: 25px;
+    }
   }
   .hero-banner__content {
     max-width: 550px;
@@ -853,9 +990,5 @@
     max-width: 100%;
     font-size: 15px;
     letter-spacing: 0;
-  }
-
-  .banner-inline-img {
-    max-height: 220px;
   }
 }

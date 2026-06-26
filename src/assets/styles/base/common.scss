@@ -23,6 +23,8 @@ body {
   font-family: var(--bs-body-font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
 }
 
 body {
@@ -84,6 +86,7 @@ h1 {
 
   @include nav-collapsed {
     font-size: 45px;
+    line-height: 1.1;
   }
   @include mobile {
     margin-bottom: 15px;

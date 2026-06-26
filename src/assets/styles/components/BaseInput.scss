@@ -1,3 +1,4 @@
+@use "../base" as *;
 .form-floating {
   position: relative;
   background-color: #1d2328;
@@ -36,8 +37,8 @@
 }
 
 .form-floating-filter {
-  background: #FFF;
-  border: 1px solid #DFE6ED;
+  background: #fff;
+  border: 1px solid #dfe6ed;
   /* color: #697380; */
   padding-left: 39px;
   border-radius: 7px;
@@ -57,7 +58,6 @@
     color: #697380;
   }
 }
-
 
 .form-floating-cstd {
   background: var(--bs-white);
@@ -114,6 +114,9 @@
   .hero-banner__search {
     max-width: 490px;
     margin-top: 45px;
+    @include tablet {
+      margin-top: 25px;
+    }
   }
 
   .slot-icon-left {
