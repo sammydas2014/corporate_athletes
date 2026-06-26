@@ -11,11 +11,13 @@
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     }"
+
     :modules="modules"
     :breakpoints="{
       0: { slidesPerView: 1, spaceBetween: 10 },
+      767: { slidesPerView: 1.8, spaceBetween: 15 },
       768: { slidesPerView: 1.4, spaceBetween: 15 },
-      1024: { slidesPerView: 3, spaceBetween: 15 },
+      1200: { slidesPerView: 2, spaceBetween: 15 },
     }"
     @swiper="onSwiper"
     @slideChange="onSlideChange"
@@ -57,6 +59,7 @@
       </div>
     </SwiperSlide>
   </Swiper>
+
 </template>
 
 <script setup>
