@@ -6,6 +6,14 @@
   overflow: hidden;
   color: var(--banner-text);
 
+  @include nav-collapsed {
+    min-height: 500px !important;
+  }
+
+  @include tablet {
+    min-height: 450px !important;
+  }
+
   .hero-banner_img {
     height: 580px;
   }
@@ -81,7 +89,7 @@
     line-height: 1.5;
     letter-spacing: -0.04em;
     margin-bottom: 30px;
-    @include mobile{
+    @include mobile {
       margin-bottom: 20px;
     }
   }
