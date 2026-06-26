@@ -51,6 +51,15 @@
   @include mobile {
     flex-wrap: wrap;
   }
+  @include mini-mobile{
+    row-gap: 14px;
+
+  }
+  .btn{
+    @include mini-mobile{
+      width: 100%;
+    }
+  }
 }
 
 .btn-outline-trnp {
