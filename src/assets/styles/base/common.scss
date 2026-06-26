@@ -81,6 +81,14 @@ h1 {
   line-height: 1;
   letter-spacing: -0.05em;
   margin-bottom: 25px;
+
+  @include nav-collapsed {
+    font-size: 45px;
+  }
+  @include mobile {
+    margin-bottom: 15px;
+    letter-spacing: -0.03em;
+  }
 }
 
 .title__eyebrow {
@@ -130,6 +138,15 @@ h1 {
   line-height: 1.5;
   letter-spacing: -0.04em;
   margin-bottom: 0;
+
+  @include nav-collapsed {
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+
+  @include nav-collapsed {
+    margin-bottom: 20px;
+  }
 }
 
 h3 {

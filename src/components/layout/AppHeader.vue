@@ -32,12 +32,11 @@
           <li v-for="item in navItems" :key="item.label" :class="['nav-item', { dropdown: item.dropdown }]">
             <template v-if="item.dropdown">
               <span class="nav-link dropdown-toggle" :id="`${item.label.toLowerCase().replace(/\s+/g, '-')}-dropdown`"
-                role="button" :data-bs-toggle="isCompact ? null : 'dropdown'"
-                :aria-expanded="isCompact ? openDropdown === item.label : false"
-                @click="isCompact && toggleDropdown(item.label)">
+                role="button" :aria-expanded="openDropdown === item.label"
+                @click.stop="toggleDropdown(item.label)">
                 {{ item.label }}
               </span>
-              <ul class="dropdown-menu bg-primary shadow-lg" :class="{ 'dropdown-menu--open': isCompact && openDropdown === item.label }"
+              <ul class="dropdown-menu bg-primary shadow-lg" :class="{ 'dropdown-menu--open': openDropdown === item.label }"
                 :aria-labelledby="`${item.label.toLowerCase().replace(/\s+/g, '-')}-dropdown`">
                 <li v-for="child in item.dropdown" :key="child.label">
                   <router-link :to="child.to" class="dropdown-item hover-gold" exact-active-class="active">
@@ -105,17 +104,28 @@ const searchInputRef = ref(null)
 const navbarCollapseRef = ref(null)
 const navOpen = ref(false)
 
-const compactQuery = window.matchMedia('(max-width: 1023px)')
-const isCompact = ref(compactQuery.matches)
-
-function updateIsCompact(e) {
-  isCompact.value = e.matches
-}
-
+// Bootstrap's Dropdown (Popper-positioned) turned out unreliable here even
+// on desktop, so nav-item submenus are fully custom at every breakpoint:
+// plain Vue state + the `.dropdown-menu--open` class. CSS alone tells them
+// apart visually (floating on desktop, inline in the slide-in panel).
 const openDropdown = ref(null)
 
 function toggleDropdown(label) {
   openDropdown.value = openDropdown.value === label ? null : label
+}
+
+function closeDropdown() {
+  openDropdown.value = null
+}
+
+function handleOutsideClick(e) {
+  if (openDropdown.value && !e.target.closest('.nav-item.dropdown')) {
+    closeDropdown()
+  }
+}
+
+function handleEscape(e) {
+  if (e.key === 'Escape') closeDropdown()
 }
 
 function toggleSearch() {
@@ -147,17 +157,20 @@ function closeNav() {
 
 watch(() => route.fullPath, () => {
   if (navOpen.value) closeNav()
+  closeDropdown()
 })
 
 onMounted(() => {
   navbarCollapseRef.value?.addEventListener('show.bs.collapse', setNavOpen)
   navbarCollapseRef.value?.addEventListener('hidden.bs.collapse', setNavClosed)
-  compactQuery.addEventListener('change', updateIsCompact)
+  document.addEventListener('click', handleOutsideClick)
+  document.addEventListener('keydown', handleEscape)
 })
 
 onUnmounted(() => {
   navbarCollapseRef.value?.removeEventListener('show.bs.collapse', setNavOpen)
   navbarCollapseRef.value?.removeEventListener('hidden.bs.collapse', setNavClosed)
-  compactQuery.removeEventListener('change', updateIsCompact)
+  document.removeEventListener('click', handleOutsideClick)
+  document.removeEventListener('keydown', handleEscape)
 })
 </script>
