@@ -311,12 +311,8 @@
   color: var(--bs-secondary) !important;
 }
 
-// `.dropdown-menu` is `position: absolute` from Bootstrap's base CSS, but
-// since we never attach Popper (no `data-bs-toggle="dropdown"` anymore),
-// Bootstrap's `[data-bs-popper]`-scoped `top: 100%; left: 0;` reset never
-// applies either — both have to be set explicitly here instead.
 .navbar-expand-lg .navbar-nav .dropdown-menu {
-  top: 68px;
+  top: 71px;
   left: 0;
   border: none;
 }
@@ -353,7 +349,7 @@
     letter-spacing: 0;
   }
   .dropdown-menu {
-    top: 64px !important;
+    top: 66px !important;
   }
 }
 
@@ -388,7 +384,7 @@
   }
 
   .dropdown-menu {
-    top: 57px !important;
+    top: 59px !important;
   }
 
   .dropdown-item {
