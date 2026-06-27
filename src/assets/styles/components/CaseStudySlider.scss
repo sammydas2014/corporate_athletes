@@ -22,14 +22,20 @@
   transition:
     width 700ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 500ms ease;
-  // @include tablet {
-  //   width: 300px;
-  // }
+
 
   &.active {
     width: 810px;
     opacity: 1;
     max-width: calc(100dvw - 36px);
+
+    @include tablet {
+      max-width: 75vw;
+    }
+
+    @include mini-mobile {
+      max-width: calc(100dvw - 36px);
+    }
   }
 
   .new_slide {
@@ -93,7 +99,7 @@
     flex: 0 0 auto;
     transition: var(--bs-transition);
 
-    > i {
+    >i {
       color: var(--bs-primary);
     }
 

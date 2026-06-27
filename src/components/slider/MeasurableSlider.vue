@@ -18,7 +18,7 @@ defineProps({
     0: {
       slidesPerView: 1
     },
-    640: {
+    560: {
       slidesPerView: 2
     },
     992: {
