@@ -1,3 +1,5 @@
+@use '../base' as *;
+
 .engagement-sec {
   padding: var(--sec-gap) 0;
   background-color: var(--bs-light);
@@ -15,14 +17,29 @@
 .aboutpage-engagement {
   .txt-wrap {
     padding-right: 180px;
+    @include mini-desktop{
+      padding-right: 60px;
+    }
+    @include mobile{
+      padding: 0;
+    }
   }
 
   .soluction-wrap {
     margin-top: 70px;
+    @include mini-desktop{
+      margin-top: 35px;
+    }
   }
 
   .engagement-img-wrap {
     min-width: 700px;
+    @include mini-desktop{
+      min-width: 100%;
+    }
+    @include mobile{
+      margin-top: 30px;
+    }
   }
 }
 
@@ -34,6 +51,9 @@
 
 .txt-wrap {
   padding-right: 60px;
+  @include mobile{
+    padding: 0;
+  }
 }
 
 .impliment-engagement {
@@ -51,21 +71,47 @@
 }
 
 .digital-engagement-sec {
-  .engagement-img-wrap {
+  .engagement-wrap{
+    .row{
+      @include mini-desktop{
+
+        align-items: flex-start !important;
+      }
+      .engagement-img-wrap {
     min-width: 700px;
     margin-right: -100px;
+    @include mini-desktop{
+      min-width: 100%;
+      margin: 0;
+    }
   }
+    }
+  }
+
 }
 
 .analytics-engagement-sec {
-  .engagement-img-wrap {
+  .engagement-wrap{
+    .row{
+      @include mini-desktop{
+
+        align-items: flex-start !important;
+      }
+      .engagement-img-wrap {
     min-width: 700px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: -150px;
+    @include mini-desktop{
+      min-width: 100%;
+      margin: 0;
+    }
   }
+    }
+  }
+
 }
 
 .fs_eng_sec {

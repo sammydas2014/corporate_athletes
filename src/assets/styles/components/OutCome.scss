@@ -4,6 +4,10 @@
   margin-top: 38px;
   padding-left: 30px;
   position: relative;
+  @include mobile{
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
 
   &::before {
     content: "";

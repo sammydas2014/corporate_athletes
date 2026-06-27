@@ -8,6 +8,12 @@
     max-width: 1080px;
     margin: 0 auto 55px auto;
     text-align: center;
+    @include nav-collapsed{
+      max-width: 750px;
+    }
+    @include tablet{
+      margin-bottom: 30px;
+    }
 
     h2 {
       text-align: center;
@@ -26,14 +32,26 @@
   .hdng-btm{
     margin-bottom: 0;
   }
-}
-
-.cards-wrap {
+  .cards-wrap {
   display: flex;
   justify-content: space-between;
   margin-bottom: 45px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  @include tablet{
+    margin-bottom: 30px;
+  }
 
   .word-card {
     width: calc(25% - 10px);
+    @include tablet{
+      width: calc(50% - 10px);
+    }
+    @include mini-mobile{
+      width: 100%;
+    }
   }
 }
+}
+
+

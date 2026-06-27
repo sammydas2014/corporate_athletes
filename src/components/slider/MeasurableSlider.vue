@@ -21,7 +21,10 @@ defineProps({
     640: {
       slidesPerView: 2
     },
-    1024: {
+    992: {
+      slidesPerView: 3
+    },
+    1200:{
       slidesPerView: 4
     }
   }" class="audience-swiper">

@@ -3,6 +3,9 @@
 .solution-list-wrap {
   & + .solution-list-wrap {
     margin-top: 35px;
+    @include mini-desktop{
+      margin-top: 20px;
+    }
   }
 
   h4 {
@@ -31,6 +34,9 @@
     line-height: 26px;
     letter-spacing: -3%;
     margin-top: 15px;
+    @include mini-desktop{
+      margin-top: 10px;
+    }
   }
 
   ul {
@@ -45,6 +51,9 @@
       line-height: 24px;
       letter-spacing: -3%;
       position: relative;
+      @include mobile{
+        font-size: 16px;
+      }
 
       & + li {
         margin-top: 24px;
