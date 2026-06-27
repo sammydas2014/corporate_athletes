@@ -12,12 +12,14 @@
 
   @include tablet {
     min-height: 450px !important;
-  }
-  &:has(.hero-banner_img) {
-    .hero-banner__content {
-      padding-bottom: 0;
+
+    &:has(.hero-banner_img) {
+      .hero-banner__content {
+        padding-bottom: 0;
+      }
     }
   }
+
 
   .hero-banner_img {
     height: 580px;
@@ -55,14 +57,12 @@
     width: 100%;
     height: 100%;
     left: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(20, 22, 23, 0) 2.708%,
-      rgba(20, 22, 23, 0) 26.926%,
-      rgba(20, 22, 23, 0) 49.512%,
-      rgba(20, 22, 23, 0.71) 81.145%,
-      rgba(20, 22, 23, 1) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(20, 22, 23, 0) 2.708%,
+        rgba(20, 22, 23, 0) 26.926%,
+        rgba(20, 22, 23, 0) 49.512%,
+        rgba(20, 22, 23, 0.71) 81.145%,
+        rgba(20, 22, 23, 1) 100%);
   }
 
   &__container {
@@ -85,32 +85,45 @@
 
   &__content {
     padding-block: 50px;
-    > *:last-child {
+
+    >*:last-child {
       margin-bottom: 0;
     }
 
-    > * {
+    >* {
       animation: fadeUp 0.5s ease both;
     }
 
-    > *:nth-child(1) {
+    >*:nth-child(1) {
       animation-delay: 0.05s;
     }
-    > *:nth-child(2) {
+
+    >*:nth-child(2) {
       animation-delay: 0.12s;
     }
-    > *:nth-child(3) {
+
+    >*:nth-child(3) {
       animation-delay: 0.2s;
     }
-    > *:nth-child(4) {
+
+    >*:nth-child(4) {
       animation-delay: 0.28s;
     }
-    > *:nth-child(5) {
+
+    >*:nth-child(5) {
       animation-delay: 0.36s;
     }
 
     @include tablet {
       max-width: 100% !important;
+    }
+  }
+
+  &__title {
+    @include tablet {
+      br {
+        display: none;
+      }
     }
   }
 
@@ -121,6 +134,11 @@
     line-height: 1.5;
     letter-spacing: -0.04em;
     margin-bottom: 30px;
+
+    @include tablet {
+      max-width: 100% !important;
+    }
+
     @include mobile {
       margin-bottom: 20px;
     }
@@ -142,6 +160,7 @@
   &.homeBnr {
     display: flex;
     align-items: flex-end;
+
     @include nav-collapsed {
       min-height: 650px !important;
     }
@@ -153,20 +172,24 @@
     @include mini-mobile {
       min-height: 100dvh !important;
     }
+
     .hero-banner__content {
       max-width: 890px;
       padding-bottom: 80px;
+
       @include tablet {
         padding-block: 50px;
       }
+
       @include mobile {
         text-align: center;
       }
+
       .btn_wrp {
         @include mobile {
           justify-content: center;
 
-          > * {
+          >* {
             width: 100%;
           }
         }
@@ -181,9 +204,11 @@
   &.aboutBnr {
     display: flex;
     flex-direction: column-reverse;
+
     .hero-banner__content {
       max-width: 750px;
       padding-bottom: 20px;
+
       @include nav-collapsed {
         padding-bottom: 50px;
       }
@@ -204,6 +229,7 @@
     .hero-banner__subtitle {
       max-width: 575px;
     }
+
     .hero-banner_img {
       margin-left: -150px;
       margin-right: -100px;
@@ -226,6 +252,7 @@
     .hero-banner_img {
       margin-left: -50px;
       margin-right: -50px;
+
       img {
         padding: 50px 0;
       }
@@ -268,15 +295,16 @@
 }
 
 .breadcrumb-item,
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
   color: #e9eef28f;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
   content: " \F285 " !important;
   font-family: "bootstrap-icons";
   font-size: 13px;
   margin-top: 1px;
+
   @include mobile {
     font-size: 12px;
     margin-top: 0;
@@ -291,6 +319,7 @@
   svg {
     width: 16px;
     height: 16px;
+
     @include mobile {
       width: 13px;
       height: 13px;
@@ -386,6 +415,7 @@
   @include tablet {
     .hero-banner__visual-col {
       margin-top: 25px;
+
       &::before {
         position: absolute;
         left: 0;
@@ -398,6 +428,7 @@
       }
     }
   }
+
   .hero-banner_img {
     position: relative;
 
@@ -428,6 +459,7 @@
   @include tablet {
     .hero-banner__visual-col {
       margin-top: 25px;
+
       &::before {
         position: absolute;
         left: 0;
@@ -440,6 +472,7 @@
       }
     }
   }
+
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -465,6 +498,7 @@
       content: "";
     }
   }
+
   .hero-banner__content {
     max-width: 510px;
   }
@@ -475,6 +509,7 @@
   @include tablet {
     .hero-banner__visual-col {
       margin-top: 25px;
+
       &::before {
         position: absolute;
         left: 0;
@@ -487,6 +522,7 @@
       }
     }
   }
+
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -512,8 +548,10 @@
       content: "";
     }
   }
+
   .hero-banner__content {
     max-width: 630px;
+
     .hero-banner__subtitle {
       max-width: 550px;
     }
@@ -525,6 +563,7 @@
   @include tablet {
     .hero-banner__visual-col {
       margin-top: 25px;
+
       &::before {
         position: absolute;
         left: 0;
@@ -537,6 +576,7 @@
       }
     }
   }
+
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -562,6 +602,7 @@
       content: "";
     }
   }
+
   .hero-banner__content {
     max-width: 550px;
   }
@@ -572,6 +613,7 @@
   @include tablet {
     .hero-banner__visual-col {
       margin-top: 25px;
+
       &::before {
         position: absolute;
         left: 0;
@@ -584,6 +626,7 @@
       }
     }
   }
+
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -609,6 +652,7 @@
       content: "";
     }
   }
+
   .hero-banner__content {
     max-width: 550px;
   }
@@ -641,16 +685,93 @@
       content: "";
     }
   }
+
   .hero-banner__content {
     max-width: 550px;
+
     .hero-banner__subtitle {
       max-width: 430px;
     }
   }
 }
 
+// ─── Playbook details banner ───────────────────────
+.playbookdtls-bnnr {
+
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(2, 5, 10, 1) 0%, rgba(2, 5, 10, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
+
+  .hero-banner_img {
+    position: relative;
+    margin-left: -100px;
+    margin-right: -100px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(2, 5, 10, 1) 0%, rgba(2, 5, 10, 0) 100%);
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(270deg, rgba(2, 5, 10, 1) 0%, rgba(2, 5, 10, 0) 100%);
+      content: "";
+    }
+  }
+
+  // .hero-banner__subtitle {
+  //   max-width: 520px;
+  // }
+
+  @include mini-mobile {
+    .btn_wrp>* {
+      width: 100%;
+    }
+  }
+}
+
 // ─── Guest Consortium Contributions image fade edges ───────────────────────
 .consortium_bnr {
+
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(9, 7, 6, 1) 0%, rgba(9, 7, 6, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
+
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -680,10 +801,33 @@
   .hero-banner__subtitle {
     max-width: 520px;
   }
+
+  @include mini-mobile {
+    .btn_wrp>* {
+      width: 100%;
+    }
+  }
 }
 
 // ─── Insights image fade edges ────────────────────────────────────────────
 .insights_bnr {
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
+
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -717,6 +861,24 @@
 
 // ─── Articles image fade edges ────────────────────────────────────────────
 .articles_bnr {
+
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(4, 14, 28, 1) 0%, rgba(4, 14, 28, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
+
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
@@ -750,6 +912,58 @@
   .hero-banner__search {
     max-width: 100%;
     margin-top: 35px;
+  }
+}
+
+// ─── Deepdrive banner ───────────────────────────────────────────────────
+
+.deepdrive-bnnr {
+
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgb(0 0 0) 0%, rgba(4, 14, 28, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
+
+  .hero-banner__content {
+    max-width: 580px;
+
+    .hero-banner__subtitle {
+      max-width: 450px;
+    }
+  }
+
+  .hero-banner_img {
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 125px;
+      height: 100%;
+      background: linear-gradient(90deg, rgb(0 0 0) 0%, rgba(4, 14, 28, 0) 100%);
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 75px;
+      height: 100%;
+      background: linear-gradient(270deg, rgb(0 0 0) 0%, rgba(4, 14, 28, 0) 100%);
+      content: "";
+    }
   }
 }
 
@@ -798,16 +1012,20 @@
     position: relative;
     margin-left: -100px;
     margin-right: -50px;
+
     @include tablet {
       min-height: 0 !important;
     }
+
     .banner-inline-img {
       object-fit: contain;
     }
+
     @include tablet {
       margin-top: 25px;
     }
   }
+
   .hero-banner__content {
     max-width: 550px;
   }
@@ -876,10 +1094,29 @@
 
 // ─── Events banner ────────────────────────────────────────────────────────────
 .events_bnr {
+
+  @include tablet {
+    .hero-banner__visual-col {
+      margin-top: 25px;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(4, 14, 28, 1) 0%, rgba(4, 14, 28, 0) 100%);
+        content: "";
+        z-index: 2;
+      }
+    }
+  }
+
   .hero-banner_img {
     position: relative;
     margin-left: -100px;
     margin-right: -100px;
+
 
     &::before {
       position: absolute;
@@ -906,6 +1143,7 @@
 
   .hero-banner__content {
     max-width: 100%;
+
     .hero-banner__subtitle {
       color: #e9eef2;
       font-size: 14px;

@@ -2,7 +2,7 @@
   <div class="playbook-detail">
     <HeroBanner :title="bannerData.title" :subtitle="bannerData.subtitle" :bg-color="bannerData.bgColor"
       :min-height="bannerData.minHeight" :image-url="bannerData.imageUrl" :image-alt="bannerData.imageAlt"
-      :breadcrumbs="bannerData.breadcrumbs" :ctas="bannerData.ctas" :tagChips="bannerData?.tags" :ideaList="bannerData?.ideas" class="deepdrive-bnnr articles_bnr playbookdtls-bnnr" />
+      :breadcrumbs="bannerData.breadcrumbs" :ctas="bannerData.ctas" :tagChips="bannerData?.tags" :ideaList="bannerData?.ideas" class=" playbookdtls-bnnr" />
 
     <section class="whenweUse-sec">
       <div class="container">
