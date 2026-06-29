@@ -17,6 +17,12 @@
       flex-wrap: wrap;
       .stack-card{
         width: calc(33.33% - 12px);
+        @include tablet{
+          width: calc(50% - 12px);
+        }
+        @include mini-mobile{
+          width: 100%;
+        }
         &:has(.tools){
           width: 100%;
         }

@@ -6,11 +6,17 @@
   border: 1px solid var(--bs-border-color);
   padding: 33px 47px 45px 40px;
   width: 50%;
+  @include tablet{
+    padding: 30px 25px;
+  }
   .card-header{
     display: flex;
     gap: 19px;
     align-items: center;
     margin-bottom: 24px;
+    @include tablet{
+      margin-bottom: 14px;
+    }
     .card-icon{
       width: 50px;
       height: 50px;
@@ -37,5 +43,8 @@
     font-size: 17px;
     line-height: 26px;
     letter-spacing: -0.04em;
+    @include mini-desktop{
+      font-size: 16px;
+    }
   }
 }

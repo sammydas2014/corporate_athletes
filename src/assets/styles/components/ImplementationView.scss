@@ -3,11 +3,11 @@
 .implementation-view {
   margin-bottom: 70px;
   &__title {
-  font-family: var(--font-display, "Sora", sans-serif);
-  color: var(--color-dark-secondary);
-  letter-spacing: -0.05em;
-  font-size: 36px;
-  font-weight: 600;
+    font-family: var(--font-display, "Sora", sans-serif);
+    color: var(--color-dark-secondary);
+    letter-spacing: -0.05em;
+    font-size: 36px;
+    font-weight: 600;
     margin-bottom: 40px;
   }
 
@@ -20,6 +20,10 @@
     gap: 15px;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include mini-mobile{
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
   &__metric {
@@ -29,13 +33,16 @@
     flex: 1;
     flex-grow: 1;
     max-width: 265px;
+    @include mini-mobile{
+      max-width: 100%;
+    }
   }
 
   &__icon {
     width: 56px;
-height: 56px;
+    height: 56px;
     min-width: 56px;
-    background: #E4EAED;
+    background: #e4eaed;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -43,6 +50,14 @@ height: 56px;
     font-size: 20px;
     font-weight: 700;
     color: var(--color-dark-secondary);
+    @include tablet{
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 8px;
+      font-size: 16px;
+
+    }
   }
 
   &__content {

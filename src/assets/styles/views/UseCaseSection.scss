@@ -4,8 +4,15 @@
   .header-wraper {
     display: flex;
     justify-content: space-between;
+    @include tablet{
+      flex-direction: column;
+      gap: 30px;
+    }
     .content-wrap {
       width: calc(50% - 15px);
+      @include tablet{
+        width: 100%;
+      }
       .sec-title {
         font-size: 36px;
         color: var(--color-dark-secondary);
@@ -14,8 +21,24 @@
         margin-bottom: 25px;
       }
       .base-box {
+        @include tablet{
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        .use-case-card{
+          @include tablet{
+            width: calc(50% - 10px);
+          }
+          @include mini-mobile{
+            width: 100%;
+          }
+        }
         .use-case-card + .use-case-card {
           margin-top: 20px;
+          @include tablet{
+            margin: 0;
+          }
         }
         .innr-wraper {
           display: flex;
@@ -24,6 +47,21 @@
           background-color: #f7f9f9;
           border-radius: 10px;
           padding-bottom: 50px;
+          @include mini-mobile{
+            flex-direction: column;
+          }
+        }
+      }
+    }
+    .content-wrap + .content-wrap{
+      .base-box{
+        @include mobile{
+          padding: 0;
+        }
+        .innr-wraper{
+          @include mobile{
+              background-color: var(--bs-white);
+          }
         }
       }
     }

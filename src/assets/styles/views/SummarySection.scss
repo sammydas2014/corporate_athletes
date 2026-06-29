@@ -15,8 +15,17 @@
     justify-content: space-between;
     row-gap: 30px;
     flex-wrap: wrap;
+    @include mobile{
+      row-gap: 20px;
+    }
     .card-wrp{
       width: calc(50% - 15px);
+      @include mobile{
+        width: calc(50% - 10px);
+      }
+      @include mini-mobile{
+        width: 100%;
+      }
     }
   }
 }

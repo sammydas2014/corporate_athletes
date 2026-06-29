@@ -1,16 +1,16 @@
-@use '../base' as *;
+@use "../base" as *;
 
-.architecture-section{
+.architecture-section {
   padding-bottom: var(--sec-gap);
-  .sec-title{
+  .sec-title {
     font-size: 36px;
     color: var(--color-dark-secondary);
     letter-spacing: -0.05em;
     font-weight: 600;
     margin-bottom: 25px;
   }
-  .architecture-wraper{
-        padding: 25px 23px 26px 25px;
+  .architecture-wraper {
+    padding: 25px 23px 26px 25px;
     border-radius: 10px;
     background-color: var(--bs-white);
     display: flex;
@@ -19,32 +19,83 @@
     overflow-x: auto;
     align-items: stretch;
     width: 100%;
-    .architecture-card{
+    @include mobile{
+      overflow-x: hidden;
+      flex-wrap: wrap;
+      column-gap: 60px;
+      row-gap: 30px;
+    }
+    @include mini-mobile{
+      padding: 25px 20px;
+    }
+    @include super-mini-mobile{
+      padding: 18px 10px;
+    }
+    .architecture-card {
       flex: 1 1 144px;
-          max-width: 148px;
+      max-width: 148px;
       position: relative;
-      &::after{
-        position: absolute;
-    content: "";
-    right: -28px;
-    width: 21px;
-    height: 6px;
-    background: url(/src/assets/images/line-vector.png) no-repeat center;
-    background-size: contain;
-    top: 50%;
-    transform: translateY(-50%);
+
+      @include nav-collapsed {
+        min-width: 148px;
       }
-      &:last-child::after{
+      @include mobile{
+        max-width: none;
+        width: calc(50% - 30px);
+        min-width: unset;
+        flex: 0 0 auto;
+        &:nth-child(even)::after{
+          display: none;
+        }
+      }
+      @include super-mini-mobile{
+        &:nth-child(even)::after{
+          display: block;
+        }
+      }
+      @include mini-mobile{
+        padding: 40px 18px 22px 18px;
+        min-width: 144px;
+      }
+      @include super-mini-mobile{
+        width: 100%;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        right: -28px;
+        width: 21px;
+        height: 6px;
+        background: url(/src/assets/images/line-vector.png) no-repeat center;
+        background-size: contain;
+        top: 50%;
+        transform: translateY(-50%);
+        @include nav-collapsed {
+          right: -24px;
+        }
+        @include mobile{
+          right: -40px;
+        }
+        @include super-mini-mobile{
+          right: unset;
+        transform: rotate(90deg);
+        bottom: -19px;
+        top: unset;
+        left: 45%;
+        }
+      }
+      &:last-child::after {
         display: none;
       }
-      &:last-child{
+      &:last-child {
         background-color: var(--bs-white);
-        border: 1px solid rgba(216, 222, 230 , 87%);
+        border: 1px solid rgba(216, 222, 230, 87%);
       }
-      &:first-child{
+      &:first-child {
         background-color: var(--bs-white);
-        border: 1px solid rgba(216, 222, 230 , 87%);
+        border: 1px solid rgba(216, 222, 230, 87%);
       }
+
     }
   }
 }

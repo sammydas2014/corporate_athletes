@@ -6,15 +6,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include mobile{
+      flex-direction: column;
+      row-gap: 30px;
+    }
     .tools-hdng {
       width: 50%;
       flex: 0 0 auto;
       padding-right: 110px;
+      @include tablet{
+        padding-right: 35px;
+      }
+      @include mobile{
+        width: 100%;
+        padding: 0;
+      }
       .top-tag {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin-bottom: 25px;
+        @include tablet{
+          margin-bottom: 15px;
+        }
         .base-chip {
           background-color: #e8f6f6;
           border: 1px solid #cfe2e2;
@@ -23,12 +37,19 @@
       }
       h1 {
         color: #0b1219;
+        @include mini-desktop{
+          margin-bottom: 15px;
+        }
       }
       p {
         color: #4d565e;
         font-size: 20px;
         line-height: 30px;
         letter-spacing: -0.04em;
+        @include mini-desktop{
+          font-size: 16px;
+          line-height: 26px;
+        }
       }
       .sub-desp {
         color: #747a80;
@@ -38,6 +59,9 @@
       }
       .price-wrap {
         margin-top: 29px;
+        @include tablet{
+          margin-top: 10px;
+        }
         p {
           display: flex;
           align-items: center;
@@ -48,6 +72,10 @@
             letter-spacing: -0.04em;
             line-height: 30px;
             min-width: 106px;
+            @include mini-desktop{
+              font-size: 15px;
+              min-width: 90px;
+            }
           }
 
           .val {
@@ -56,21 +84,35 @@
             font-weight: 600;
             letter-spacing: -0.05em;
             font-family: var(--font-display);
+            @include mini-desktop{
+              font-size: 22px;
+            }
           }
         }
         p + p {
           margin-top: 12px;
+          @include tablet{
+            margin-top: 0;
+          }
         }
       }
       .btnwrap{
         display: flex;
         gap: 16px;
         margin-top: 30px;
+        @include tablet{
+          flex-direction: column;
+        }
         .btn{
           span{
             i{
               font-size: 16px;
             }
+          }
+          @include mini-desktop{
+            height: 45px;
+            font-size: 13px;
+            padding: 0 20px;
           }
         }
       }
@@ -78,6 +120,9 @@
     .tools-data {
       width: 50%;
       flex: 0 0 auto;
+      @include mobile{
+        width: 100%;
+      }
       .chart-card{
         box-shadow: 0px 4px 33.2px 0px rgba(171, 191, 199, 0.24);
         border-radius: 15px;
@@ -87,7 +132,10 @@
           font-weight: 400;
           line-height: 30px;
           margin-bottom: 0;
-      }
+        }
+        // .apexcharts-inner{
+        //     transform: translate(10%, 10%);
+        // }
       }
 
     }
