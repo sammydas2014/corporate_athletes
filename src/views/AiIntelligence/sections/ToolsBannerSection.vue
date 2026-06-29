@@ -69,7 +69,7 @@ const chartOptions = ref({
       breakpoint: 576,
       options: {
         chart: {
-          height: 300
+          height: 360
         },
         markers: {
           size: 4
