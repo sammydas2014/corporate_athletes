@@ -1,5 +1,5 @@
 @use "../base" as *;
-.base-chip{
+.base-chip {
   background-color: #112131;
   padding: 7px 14px;
   font-size: 13px;
@@ -9,10 +9,14 @@
   text-align: center;
   text-transform: capitalize;
   line-height: 1;
-
+  @include mobile {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
 }
-.base-chip-secondary{
-  background-color: #EBF4F4;
-  color: #2B6069;
+.base-chip-secondary {
+  background-color: #ebf4f4;
+  color: #2b6069;
   // color: #E9EEF2;
 }

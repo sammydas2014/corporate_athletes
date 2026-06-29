@@ -57,6 +57,11 @@
   i {
     color: #697380;
   }
+
+  @media (max-width: 1024px) {
+    width: auto;
+    flex: 1 1 auto;
+  }
 }
 
 .form-floating-cstd {
@@ -97,6 +102,11 @@
     border: 1px solid #1d2b3a;
     border-radius: var(--border-radius-sm);
     background: #112131;
+    @include mini-mobile {
+      padding: 0 15px 0 40px;
+      height: 45px;
+      border-radius: 7px;
+    }
   }
 
   .baseInpFld {
@@ -121,5 +131,9 @@
 
   .slot-icon-left {
     left: 20px;
+
+    @include mini-mobile {
+      left: 12px;
+    }
   }
 }

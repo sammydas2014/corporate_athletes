@@ -5,6 +5,14 @@
   margin-top: 50px;
   justify-content: center;
 
+  @include tablet-landscape {
+    margin-top: 40px;
+  }
+
+  @include mobile {
+    margin-top: 30px;
+  }
+
   &__list {
     display: flex;
     align-items: center;
@@ -12,6 +20,10 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    
+    @include mobile {
+      gap: 7px;
+    }
   }
 
   &__btn {
@@ -35,6 +47,10 @@
     letter-spacing: -0.04em;
     text-align: center;
     flex: 0 0 auto;
+    @include mobile {
+      min-width: 35px;
+      height: 35px;
+    }
 
     &--number {
       min-width: 44px;
@@ -42,6 +58,9 @@
       color: var(--bs-dark);
       font-size: 16px;
       font-weight: 600;
+      @include mobile {
+        min-width: 35px;
+      }
     }
 
     &--label {
@@ -49,6 +68,10 @@
       color: var(--bs-dark);
       font-size: 14px;
       font-weight: 500;
+      @include mobile {
+        padding: 0 20px;
+        font-size: 13px;
+      }
     }
 
     &--active,

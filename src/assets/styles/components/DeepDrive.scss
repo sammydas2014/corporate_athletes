@@ -1,52 +1,113 @@
 @use "../base" as *;
 
-.deepdrive-wrap{
-  background-color: #0C1323;
+.deepdrive-wrap {
+  background-color: #0c1323;
   border-radius: 15px;
-  padding: 50px 50px 50px 50px;
+  padding: 50px;
   overflow: hidden;
   position: relative;
   margin-bottom: 20px;
-  .text-wrap{
+  @include tablet {
+    padding: 30px;
+  }
+  @include mobile {
+    padding: 0;
+  }
+  .text-wrap {
     max-width: 546px;
     position: relative;
     z-index: 2;
-    h3{
+    @include mini-desktop {
+      max-width: 435px;
+    }
+    @include mobile {
+      padding: 30px;
+      max-width: 100%;
+    }
+    @include mini-mobile {
+      padding: 25px;
+      max-width: 100%;
+    }
+    h3 {
       font-size: 30px;
       font-weight: 600;
-      color: #FFFFFF;
+      color: #ffffff;
       letter-spacing: -0.05em;
+      @include mini-desktop {
+        font-size: 25px;
+        letter-spacing: 0;
+      }
+      @include mobile {
+        font-size: 18px;
+      }
     }
-    p{
-      color: #E9EEF2;
+    p {
+      color: #e9eef2;
       font-size: 17px;
       letter-spacing: -0.02em;
       line-height: 23px;
+      @include mini-desktop {
+        font-size: 16px;
+        letter-spacing: 0;
+        font-weight: normal;
+      }
+      @include mobile {
+        font-size: 14px;
+      }
     }
-    .statergy-wrap{
+    .statergy-wrap {
       margin-top: 34px;
       padding-top: 30px;
       margin-bottom: 30px;
       border-top: 1px solid rgba(217, 217, 217, 15%);
       display: flex;
       gap: 22px;
-      h6{
+      @include mini-desktop {
+        margin-block: 25px;
+        padding-top: 20px;
+      }
+      @include mobile {
+        flex-direction: column;
+        gap: 10px;
+        margin-block: 15px;
+        padding-top: 15px;
+      }
+      h6 {
         font-size: 17px;
         font-weight: 500;
         letter-spacing: 0.03em;
-        color: #E9EEF2;
+        color: #e9eef2;
         margin: 0;
         line-height: 36px;
+        @include mini-desktop {
+          font-size: 16px;
+          line-height: 1.2;
+        }
+        @include mobile {
+          font-size: 15px;
+          line-height: 1.1;
+          flex: 0 0 auto;
+        }
       }
-      p{
+      p {
         font-size: 17px;
         line-height: 36px;
         letter-spacing: -0.03em;
-        color: #E9EEF2;
+        color: #e9eef2;
         max-width: 195px;
+        @include mini-desktop {
+          font-size: 15px;
+          line-height: 1.5;
+          letter-spacing: 0;
+        }
+        @include mobile {
+          font-size: 13px;
+          max-width: 100%;
+          font-weight: normal;
+        }
       }
     }
-    .btn{
+    .btn {
       height: 41px;
       font-size: 13px;
     }
@@ -58,9 +119,52 @@
     bottom: 0;
     height: 100%;
     z-index: 1;
-    img{
+
+    @include tablet {
+      max-width: 75%;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 75px;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(13, 19, 35) 0%, rgba(1, 20, 37, 0) 100%);
+        content: "";
+      }
+    }
+
+    @include mobile {
+      max-width: unset;
+      position: relative;
+      margin-left: -50%;
+      &::before {
+        position: absolute;
+        right: 0;
+        left: unset;
+        top: 0;
+        width: 75px;
+        height: 100%;
+        background: linear-gradient(270deg, rgba(13, 19, 35) 0%, rgba(1, 20, 37, 0) 100%);
+        content: "";
+      }
+      &::after {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(13, 19, 35) 0%, rgba(1, 20, 37, 0) 100%);
+        content: "";
+      }
+    }
+    img {
       width: 100%;
       height: 100%;
+
+      @include tablet {
+        object-fit: cover;
+      }
     }
-}
+  }
 }

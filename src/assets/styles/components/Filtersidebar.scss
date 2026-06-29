@@ -3,12 +3,12 @@
 .filter-overlay {
   display: none;
 
-  @include mobile {
+  @media (max-width: 1024px) {
     display: block;
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.4);
-    z-index: 99;
+    z-index: 1025;
     backdrop-filter: blur(2px);
   }
 }
@@ -24,7 +24,7 @@
   overflow: hidden;
   font-family: var(--bs-body-font-family);
 
-  @include mobile {
+  @media (max-width: 1024px) {
     position: fixed;
     top: 0;
     left: 0;
@@ -35,10 +35,10 @@
     transform: translateX(-100%);
     transition: var(--bs-transition);
     box-shadow: var(--bs-box-shadow-lg);
+    z-index: 1029;
 
     &.is-open {
       transform: translateX(0);
-      z-index: 1029;
     }
   }
 }
@@ -50,6 +50,9 @@
   padding: 20px;
   padding-bottom: 0;
   padding-right: 15px;
+  @include tablet-landscape {
+    padding-top: 40px;
+  }
 }
 
 .filter-title {
@@ -75,7 +78,7 @@
     color: var(--bs-dark);
   }
 
-  @include mobile {
+  @media (max-width: 1024px) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,7 +153,7 @@
   border-top: 1px solid var(--bs-border-color);
   gap: 10px;
 
-  @include mobile {
+  @media (max-width: 1024px) {
     display: flex;
   }
 

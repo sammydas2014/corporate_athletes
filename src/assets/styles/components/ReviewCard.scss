@@ -7,39 +7,78 @@
   padding: 28px 28px 31px 25px;
   display: flex;
   flex-direction: column;
+  @include mini-mobile {
+    padding: 20px;
+  }
   .card-headr {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 35px;
-
+    @include mini-desktop {
+      margin-bottom: 20px;
+    }
+    @include mini-mobile {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
     .cmpny-info {
       display: flex;
       align-items: center;
       gap: 8px;
       img {
         max-width: 110px;
+        @include mini-desktop {
+          max-width: 85px;
+        }
       }
       h6 {
         margin: 0;
         color: #000000;
         font-size: 14px;
         letter-spacing: -0.03em;
+        @include mini-desktop {
+          font-size: 12px;
+        }
       }
     }
     .rating-info {
+      display: flex;
+      gap: 5px;
+      line-height: 1;
+      flex: 0 0 auto;
+      @include mini-desktop {
+        gap: 3px;
+      }
       i {
         color: #f4b11f;
+        @include mini-desktop {
+          font-size: 12px;
+        }
       }
     }
   }
   .card-body {
     margin-bottom: 45px;
+    @include mini-desktop {
+      margin-bottom: 35px;
+    }
+    @include mini-mobile {
+      margin-bottom: 25px;
+    }
+    p {
+      @include mini-desktop {
+        font-size: 15px;
+      }
+    }
   }
   .card-footer {
     padding-top: 19px;
     border-top: 1px solid rgb(216 222 230 / 87%);
     margin-top: auto;
+    @include mini-mobile {
+      padding-top: 10px;
+    }
     p {
       font-size: 15px;
       color: var(--color-dark-secondary);

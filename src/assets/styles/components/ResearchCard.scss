@@ -1,3 +1,5 @@
+@use "../base" as *;
+
 .research-card {
   background: var(--bs-white);
   border: 1px solid var(--bs-border-color);
@@ -8,7 +10,12 @@
   justify-content: space-between;
   gap: 24px;
   transition: var(--bs-transition);
-
+  @include mobile {
+    padding: 25px;
+    gap: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   &__content {
     display: flex;
     flex-direction: column;
@@ -24,6 +31,9 @@
     margin: 0;
     line-height: 1;
     margin-bottom: 0;
+    @include mobile {
+      font-size: 20px;
+    }
   }
 
   &__desc {
@@ -31,6 +41,9 @@
     color: var(--bs-body-color);
     margin: 0;
     line-height: 1.5;
+    @include mobile {
+      font-size: 15px;
+    }
   }
 
   &__btn.btn {
@@ -38,5 +51,10 @@
     height: 50px;
     padding: 0 35px;
     letter-spacing: 0.08em;
+
+    @include mini-desktop {
+      height: 40px;
+      padding: 0 25px;
+    }
   }
 }

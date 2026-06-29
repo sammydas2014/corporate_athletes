@@ -1,3 +1,5 @@
+@use "../base" as *;
+
 .base-select {
   width: 100%;
 
@@ -79,5 +81,9 @@
     font-size: 14px;
     color: var(--bs-body-color);
     margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
   }
 }

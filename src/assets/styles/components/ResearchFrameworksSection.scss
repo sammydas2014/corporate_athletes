@@ -16,6 +16,10 @@
   gap: 4px;
   margin-bottom: 50px;
 
+  @include mobile {
+    margin-bottom: 30px;
+  }
+
   .title__eyebrow {
     margin-bottom: 12px;
   }
@@ -30,9 +34,17 @@
   flex-direction: column;
   gap: 10px;
   margin-bottom: 44px;
+  @include mobile {
+    margin-bottom: 30px;
+  }
 }
 
 .research-fw-footer {
   display: flex;
   justify-content: center;
+  .btn{
+    @include mini-mobile{
+      flex: 1;
+    }
+  }
 }
