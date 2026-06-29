@@ -2,6 +2,9 @@
 
 .implementation-view {
   margin-bottom: 70px;
+  @include tablet{
+    margin-bottom: 50px;
+  }
   &__title {
     font-family: var(--font-display, "Sora", sans-serif);
     color: var(--color-dark-secondary);
@@ -9,6 +12,10 @@
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 40px;
+    @include tablet{
+      margin-bottom: 25px;
+      font-size: 30px;
+    }
   }
 
   &__card {
