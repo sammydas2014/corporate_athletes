@@ -20,6 +20,64 @@ const chartOptions = ref({
     },
     background: 'transparent'
   },
+  responsive: [
+    {
+      breakpoint: 1200,
+      options: {
+        chart: {
+          height: 450,
+          overflowX: 'visible',
+        },
+        xaxis: {
+          labels: {
+            style: {
+              fontSize: "13px",
+            }
+          }
+        }
+      }
+    },
+    {
+      breakpoint: 992,
+      options: {
+        chart: {
+          height: 380,
+          overflowX: 'visible',
+        },
+        markers: {
+          size: 4,
+          strokeWidth: 1,
+        }
+      }
+    },
+    {
+      breakpoint: 768,
+      options: {
+        chart: {
+          height: 420
+        },
+        xaxis: {
+          labels: {
+            style: {
+              fontSize: "13px"
+            }
+          }
+        }
+      }
+    },
+    {
+      breakpoint: 576,
+      options: {
+        chart: {
+          height: 300
+        },
+        markers: {
+          size: 4
+        }
+      }
+    }
+  ],
+
   series: [
     {
       name: 'Performance',

@@ -2,10 +2,16 @@
 @use '../base' as *;
 .comparison-card{
   width: 50%;
+  @include mini-mobile{
+    width: 100%;
+  }
   .comparison-wrapper{
     h3{
       padding: 17px 26px;
       margin-bottom: 25px;
+      @include mini-desktop{
+        font-size: 18px;
+      }
     }
     ul{
       margin: 0;
@@ -38,6 +44,10 @@
       color: var(--bs-white);
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
+      @include mobile{
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+      }
     }
   }
   .comparison-wrapper-limitations{
@@ -46,6 +56,12 @@
       color: var(--bs-white);
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
+      @include mobile{
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
   }
 

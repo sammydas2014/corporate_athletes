@@ -15,6 +15,12 @@
     flex-wrap: wrap;
     .breakdown-card{
       width: calc(33.33% - 12px);
+      @include tablet{
+        width: calc(50% - 12px);
+      }
+      @include mini-mobile{
+        width: 100%;
+      }
     }
   }
 }

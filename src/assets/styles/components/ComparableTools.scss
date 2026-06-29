@@ -2,6 +2,9 @@
 
 .comparable-tools {
   margin-bottom: 70px;
+  @include mobile{
+    margin-bottom: 50px;
+  }
 
   &__title {
     font-family: var(--font-display, "Sora", sans-serif);
@@ -16,8 +19,10 @@
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    .comparable-tools_swiper{
+      padding-block: 10px;
+    }
   }
-
   &__card {
     flex: 1;
     min-width: 180px;

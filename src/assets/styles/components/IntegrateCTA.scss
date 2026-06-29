@@ -6,6 +6,10 @@
   text-align: center;
   border-radius: var(--border-radius-md);
   margin-bottom: 70px;
+  @include mobile{
+        padding: 35px 23px;
+        margin-bottom: 40px;
+  }
 
   .integrate-cta__title {
     font-family: var(--font-display, "Sora", sans-serif);
@@ -15,6 +19,9 @@
     line-height: 1;
     color: var(--bs-white, #fff);
     margin-bottom: 16px;
+    @include mobile{
+      font-size: 40px;
+    }
   }
 
   .integrate-cta__subtitle {
@@ -30,5 +37,13 @@
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+    @include mobile{
+      flex-direction: column;
+    }
+    .btn{
+      @include mobile{
+        width: 100%;
+      }
+    }
   }
 }

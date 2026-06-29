@@ -6,6 +6,9 @@
   position: relative;
   padding: 30px;
   width: 33.33%;
+  @include tablet{
+    padding: 20px;
+  }
   .crd-hdr{
     display: flex;
     align-items: center;
