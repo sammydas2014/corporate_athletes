@@ -1,8 +1,24 @@
-@use '../base' as *;
+@use "../base" as *;
 
 .engagement-sec {
   padding: var(--sec-gap) 0;
   background-color: var(--bs-light);
+  .engagement-wrap {
+    .row {
+      @include tablet {
+        align-items: flex-start !important;
+      }
+      @include mobile {
+        flex-direction: column-reverse;
+        gap: 35px;
+      }
+    }
+  }
+  .txt-wrap {
+    @include tablet {
+      padding-right: 0;
+    }
+  }
 }
 
 .smll-hdng {
@@ -12,33 +28,46 @@
   letter-spacing: -0.03em;
   font-weight: 500;
   margin-bottom: 35px;
+  @include tablet {
+    margin-bottom: 15px;
+  }
 }
 
 .aboutpage-engagement {
+  .engagement-wrap {
+    .row {
+      @include tablet {
+        align-items: flex-start !important;
+      }
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+    }
+  }
   .txt-wrap {
     padding-right: 180px;
-    @include mini-desktop{
+    @include mini-desktop {
       padding-right: 60px;
     }
-    @include mobile{
+    @include tablet {
       padding: 0;
     }
   }
 
   .soluction-wrap {
     margin-top: 70px;
-    @include mini-desktop{
+    @include mini-desktop {
       margin-top: 35px;
+    }
+    @include mobile {
+      margin-top: 20px;
     }
   }
 
   .engagement-img-wrap {
     min-width: 700px;
-    @include mini-desktop{
+    @include mini-desktop {
       min-width: 100%;
-    }
-    @include mobile{
-      margin-top: 30px;
     }
   }
 }
@@ -46,12 +75,17 @@
 .engagement-img-wrap {
   img {
     margin-left: auto;
+    @include mobile {
+      margin-left: unset;
+      max-width: 400px;
+      max-height: 500px;
+    }
   }
 }
 
 .txt-wrap {
   padding-right: 60px;
-  @include mobile{
+  @include mobile {
     padding: 0;
   }
 }
@@ -59,8 +93,11 @@
 .impliment-engagement {
   padding-bottom: 0;
 
-  .txt-wrap{
+  .txt-wrap {
     padding-bottom: var(--sec-gap);
+    @include tablet {
+      padding: 0;
+    }
   }
 
   .engagement-img-wrap {
@@ -71,52 +108,54 @@
 }
 
 .digital-engagement-sec {
-  .engagement-wrap{
-    .row{
-      @include mini-desktop{
-
+  .engagement-wrap {
+    .row {
+      @include mini-desktop {
         align-items: flex-start !important;
       }
       .engagement-img-wrap {
-    min-width: 700px;
-    margin-right: -100px;
-    @include mini-desktop{
-      min-width: 100%;
-      margin: 0;
+        min-width: 700px;
+        margin-right: -100px;
+        @include nav-collapsed {
+          min-width: 100%;
+          margin: 0;
+        }
+      }
     }
   }
-    }
-  }
-
 }
 
 .analytics-engagement-sec {
-  .engagement-wrap{
-    .row{
-      @include mini-desktop{
-
+  .engagement-wrap {
+    .row {
+      @include mini-desktop {
         align-items: flex-start !important;
       }
       .engagement-img-wrap {
-    min-width: 700px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: -150px;
-    @include mini-desktop{
-      min-width: 100%;
-      margin: 0;
+        min-width: 700px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: -150px;
+        @include mini-desktop {
+          min-width: 100%;
+          margin: 0;
+        }
+        @include mobile {
+          justify-content: flex-start;
+        }
+      }
     }
   }
-    }
-  }
-
 }
 
 .fs_eng_sec {
   .engagement-img-wrap {
     margin-left: -50px;
     margin-right: -50px;
+    @include mini-desktop {
+      margin: 0;
+    }
   }
 }

@@ -1,4 +1,4 @@
-@use '../base' as *;
+@use "../base" as *;
 
 .enterprise-sec {
   padding: var(--sec-gap) 0;
@@ -12,12 +12,14 @@
   position: relative;
   padding: 10px;
   margin-right: 120px;
-  @include mini-desktop{
-    margin-right: 30px;
+  @include mini-desktop {
+    margin-right: 10px;
   }
-  @include mobile{
+  @include mobile {
     margin: 0;
     margin-bottom: 30px;
+    max-width: 400px;
+    max-height: 500px;
   }
 
   img {
@@ -39,7 +41,7 @@
 
   p + p {
     margin-top: 25px;
-    @include mobile{
+    @include tablet {
       margin-top: 10px;
     }
   }
@@ -47,10 +49,7 @@
 
 .btm-wrap {
   margin-top: 55px;
-  @include tablet{
-    margin-top: 35px;
-  }
-  @include mobile{
+  @include mini-desktop {
     margin-top: 25px;
   }
 
@@ -60,23 +59,33 @@
     display: flex;
     justify-content: space-between;
     gap: 45px;
-    @include mini-desktop{
+    @include mini-desktop {
       gap: 20px;
     }
+    @include tablet {
+      gap: 10px;
+    }
 
-    li h3 {
-      font-size: 36px;
-      font-weight: 600;
-      color: #216279;
-      letter-spacing: -5%;
-      margin-bottom: 15px;
-      @include mini-desktop{
-        font-size: 30px;
-
+    li {
+      flex: 1;
+      h3 {
+        font-size: 36px;
+        font-weight: 600;
+        color: #216279;
+        letter-spacing: -0.05em;
+        margin-bottom: 15px;
+        @include mini-desktop {
+          font-size: 30px;
+        }
+        @include tablet {
+          font-size: 25px;
+          margin-bottom: 10px;
+        }
       }
-      p{
-        @include mini-desktop{
-          font-size: 15px;
+
+      p {
+        @include mini-desktop {
+          font-size: 14px;
         }
       }
     }
@@ -84,8 +93,12 @@
     &.py_list {
       flex-wrap: wrap;
       gap: 35px;
-      @include mini-desktop{
+      @include nav-collapsed{
+        gap: 10px;
+      }
+      @include mini-desktop {
         gap: 14px;
+        flex-wrap: wrap;
       }
 
       li {
@@ -96,7 +109,11 @@
         font-size: 16px;
         font-weight: 500;
         letter-spacing: -4%;
-        @include tablet{
+        @include mini-desktop {
+          width: calc(50% - 7px);
+          flex: 0 0 auto;
+        }
+        @include tablet {
           width: 100%;
         }
 

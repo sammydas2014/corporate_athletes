@@ -1,9 +1,9 @@
-@use '../base' as *;
+@use "../base" as *;
 
 .solution-list-wrap {
   & + .solution-list-wrap {
     margin-top: 35px;
-    @include mini-desktop{
+    @include mini-desktop {
       margin-top: 20px;
     }
   }
@@ -34,8 +34,11 @@
     line-height: 26px;
     letter-spacing: -3%;
     margin-top: 15px;
-    @include mini-desktop{
+    @include mini-desktop {
       margin-top: 10px;
+    }
+    @include tablet {
+      font-size: 16px;
     }
   }
 
@@ -51,12 +54,16 @@
       line-height: 24px;
       letter-spacing: -3%;
       position: relative;
-      @include mobile{
+      @include tablet {
         font-size: 16px;
       }
 
       & + li {
         margin-top: 24px;
+
+        @include tablet {
+          margin-top: 15px;
+        }
       }
 
       &::before {
