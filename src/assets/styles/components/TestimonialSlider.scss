@@ -20,6 +20,9 @@
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 0;
+  @include tablet{
+    font-size: 30px;
+  }
 }
 
 .testimonials-nav {

@@ -8,6 +8,9 @@
     font-size: 36px;
     font-weight: 600;
     letter-spacing: -0.05em;
+    @include tablet{
+      font-size: 30px;
+    }
   }
   .tab-wrap{
     display: flex;
