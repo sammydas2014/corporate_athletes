@@ -105,6 +105,9 @@
     line-height: 1.2;
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    @include mini-desktop{
+      font-size: 11px;
+    }
   }
 
   &__stat-value {
@@ -113,6 +116,9 @@
     color: var(--bs-primary);
     line-height: 1.2;
     letter-spacing: -0.04em;
+    @include mini-desktop{
+      font-size: 12px;
+    }
   }
 
   &__footer {

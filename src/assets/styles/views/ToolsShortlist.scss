@@ -5,6 +5,9 @@
 
   &__header {
     margin-bottom: 24px;
+    @include tablet{
+      margin-bottom: 16px;
+    }
   }
 
   &__title {
@@ -16,6 +19,9 @@
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 0;
+    @include tablet{
+      font-size: 16px;
+    }
   }
 
   &__layout {
@@ -43,6 +49,10 @@
     flex-direction: column;
     gap: 24px;
 
+    @include nav-collapsed{
+      width: 325px;
+    }
+
     @include tablet {
       width: 100%;
     }
@@ -53,9 +63,17 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 
-    @include tablet {
-      grid-template-columns: 1fr;
+    @include mini-desktop{
+      gap: 15px;
     }
+    @include mobile{
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    // // @include tablet {
+    //   grid-template-columns: 1fr;
+    // }
 
     &--list {
       grid-template-columns: 1fr;
