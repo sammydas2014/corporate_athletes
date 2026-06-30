@@ -10,12 +10,18 @@
   padding: 20px 27px;
   border-radius: var(--border-radius-sm);
   background-color: #eff1f5;
+  @include mini-desktop {
+    padding: 15px 20px;
+  }
 
   &__group {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    @include mini-desktop {
+      gap: 5px;
+    }
   }
 
   &__label {
@@ -26,6 +32,10 @@
     letter-spacing: -0.03em;
     text-transform: uppercase;
     margin-right: 25px;
+    @include mini-desktop {
+      font-size: 12px;
+      margin-right: 10px;
+    }
   }
 
   &__chip {
@@ -43,11 +53,17 @@
     border: 1px solid rgba(196, 210, 215, 1);
     border-radius: 7px;
     background: #d0dce033;
+    @include mini-desktop {
+      gap: 5px;
+      padding: 6px 7px;
+      font-size: 12px;
+      border-radius: 5px;
+    }
   }
 
   &__chip--add {
     border-style: dashed;
-      color: var(--bs-primary);
+    color: var(--bs-primary);
     cursor: pointer;
     background: #d0dce033;
     transition: var(--bs-transition);
@@ -59,6 +75,13 @@
     &:hover {
       border-color: var(--bs-primary);
       color: var(--bs-primary);
+    }
+    @include mini-desktop {
+      gap: 5px;
+      padding: 6px 7px;
+      font-size: 12px;
+      border-radius: 5px;
+      min-height: 38px;
     }
   }
 
@@ -102,7 +125,7 @@
 
   &__add {
     position: relative;
-    i{
+    i {
       font-size: 16px;
       line-height: 1;
       color: var(--bs-primary);

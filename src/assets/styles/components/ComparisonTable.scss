@@ -12,7 +12,7 @@
     user-select: none;
   }
 
-  @include tablet {
+  @include mobile {
     display: none;
   }
 }
@@ -167,7 +167,7 @@
 .comparison-mobile {
   display: none;
 
-  @include tablet {
+  @include mobile {
     display: block;
   }
 

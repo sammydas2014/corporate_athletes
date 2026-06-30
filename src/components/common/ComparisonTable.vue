@@ -65,14 +65,15 @@ function isHighestScore(section, row, tool) {
 
 <template>
   <template v-if="tools.length">
-    <div class="comparison-table__scroll" ref="scrollEl" :class="{ 'is-dragging': isDragging }"
-      @mousedown="startDrag" @mousemove="onDrag" @mouseup="stopDrag" @mouseleave="stopDrag">
+    <div class="comparison-table__scroll" ref="scrollEl" :class="{ 'is-dragging': isDragging }" @mousedown="startDrag"
+      @mousemove="onDrag" @mouseup="stopDrag" @mouseleave="stopDrag">
       <div class="comparison-table">
         <div class="comparison-table__row">
           <div class="comparison-table__cell comparison-table__cell--label"></div>
           <div v-for="tool in tools" :key="tool.id" class="comparison-table__cell comparison-table__cell--head"
             :class="{ 'comparison-table__cell--popular': tool.popular }">
-            <span class="comparison-table__icon" :style="{ backgroundColor: tool.iconBg, color: tool.accentText  }">{{ tool.initials }}</span>
+            <span class="comparison-table__icon" :style="{ backgroundColor: tool.iconBg, color: tool.accentText }">{{
+              tool.initials }}</span>
             {{ tool.name }}
             <span v-if="tool.popular" class="comparison-table__badge">Most Popular</span>
           </div>
@@ -103,17 +104,18 @@ function isHighestScore(section, row, tool) {
     </div>
 
     <div class="comparison-mobile">
-      <div class="comparison-mobile__chips">
+      <!-- <div class="comparison-mobile__chips">
         <button v-for="(tool, index) in tools" :key="tool.id" type="button" class="comparison-mobile__chip"
           :class="{ 'is-active': index === activeIndex }" @click="emit('update:activeToolId', tool.id)">
           {{ tool.name }}
         </button>
-      </div>
+      </div> -->
 
       <div class="comparison-mobile__card" :class="{ 'comparison-mobile__card--popular': activeTool.popular }">
         <div class="comparison-mobile__card-header">
-          <span class="comparison-mobile__icon" :style="{ backgroundColor: activeTool.iconBg }">{{ activeTool.initials
-          }}</span>
+          <span class="comparison-mobile__icon"
+            :style="{ backgroundColor: activeTool.iconBg, color: activeTool.accentText }">{{ activeTool.initials
+            }}</span>
           {{ activeTool.name }}
           <span v-if="activeTool.popular" class="comparison-mobile__badge">Most Popular</span>
         </div>
@@ -124,8 +126,9 @@ function isHighestScore(section, row, tool) {
             :class="{ 'comparison-mobile__row--stacked': ['list', 'tags'].includes(row.type) }">
             <span class="comparison-mobile__row-label">{{ row.label }}</span>
             <div class="comparison-mobile__row-value">
-              <ComparisonValue :type="row.type" :value="cellValue(activeTool, section.key, row.key)" :variant="row.variant"
-                :tone="cellTone(activeTool, section.key, row.key)" :accent-bg="row.accent ? activeTool.accentBg : ''"
+              <ComparisonValue :type="row.type" :value="cellValue(activeTool, section.key, row.key)"
+                :variant="row.variant" :tone="cellTone(activeTool, section.key, row.key)"
+                :accent-bg="row.accent ? activeTool.accentBg : ''"
                 :accent-text="row.accent ? activeTool.accentText : ''"
                 :highest="row.type === 'score' && isHighestScore(section, row, activeTool)" />
             </div>
