@@ -92,6 +92,10 @@ h1 {
     margin-bottom: 15px;
     letter-spacing: -0.03em;
   }
+  @include mini-mobile {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
 }
 
 .title__eyebrow {
@@ -106,10 +110,10 @@ h1 {
   line-height: 1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  @include nav-collapsed{
+  @include nav-collapsed {
     margin-bottom: 20px;
   }
-  @include tablet{
+  @include tablet {
     margin-bottom: 15px;
     padding: 8px 12px;
     border-radius: 35px;
@@ -125,13 +129,13 @@ h1 {
   line-height: 1;
   letter-spacing: -0.05em;
   margin-bottom: 25px;
-  @include nav-collapsed{
+  @include nav-collapsed {
     font-size: 45px;
     line-height: 50px;
   }
-  @include mini-desktop{
+  @include mini-desktop {
     font-size: 34px;
-        line-height: 40px;
+    line-height: 40px;
   }
 }
 
@@ -183,5 +187,3 @@ a {
 .fade-leave-to {
   opacity: 0;
 }
-
-
