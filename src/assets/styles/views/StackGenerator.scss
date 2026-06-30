@@ -6,6 +6,9 @@
     margin: 0 auto;
     text-align: center;
     margin-bottom: 50px;
+    @include mobile{
+      margin-bottom: 30px;
+    }
     h1{
       color: #0B1219;
     }
@@ -14,6 +17,10 @@
       line-height: 30px;
       color: #4D565E;
       letter-spacing: -0.04em;
+      @include mobile{
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
   }
 }

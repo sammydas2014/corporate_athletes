@@ -8,10 +8,17 @@
     border: 1px solid rgb(216 222 230 / 87%);
     padding: 48px 45px;
     position: relative;
+    @include mobile{
+      padding: 40px 20px;
+    }
   .form-hdn-btn{
     position: absolute;
     top: 48px;
     right: 45PX;
+    @include mobile{
+      top: 31px;
+    right: 20PX;
+    }
     .btn{
       background-color: transparent;
       border: none;
@@ -20,6 +27,9 @@
       font-size: 14px;
       color: #9197A2;
       letter-spacing: -0.05em;
+      @include mobile{
+        font-size: 12px;
+      }
       &:hover{
         color: #0B1219;
       }
@@ -29,8 +39,18 @@
     margin-top: 64px;
         display: flex;
     justify-content: space-between;
+    @include mobile{
+      margin-top: 30px;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+    }
     .left-prt{
       width: 30%;
+      @include mobile{
+        width: 100%;
+        text-align: center;
+      }
       p{
         color: #999BA1;
         font-size: 13px;
@@ -45,8 +65,20 @@
     .rght-prt{
           width: 51%;
           text-align: right;
+          display: flex;
+          flex-direction: column;
+          @include mobile{
+            width: 100%;
+          }
+
           .btn{
             gap: 10px;
+            @include tablet{
+              font-size: 12px;
+            }
+            @include mini-mobile{
+              font-size: 11px;
+            }
             svg{
               path{
                 transition: var(--bs-transition);

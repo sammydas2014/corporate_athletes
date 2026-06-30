@@ -22,11 +22,21 @@
     justify-content: space-between;
     row-gap: 10px;
     flex-wrap: wrap;
+    @include mobile{
+      flex-direction: column;
+      row-gap: 20px;
+    }
     .base-select{
       width: calc(50% - 15px);
+      @include mobile{
+        width: 100%;
+      }
     }
     .option{
       width: calc(50% - 5px);
+      @include mobile{
+        width: 100%;
+      }
     }
   }
   + .form-row-wrapper{
@@ -46,6 +56,12 @@
     gap: 17px;
     .base-select{
       width: calc(33.33% - 12px);
+      @include tablet{
+        width: calc(50% - 12px);
+      }
+      @include mobile{
+        width: 100%;
+      }
     }
   }
 }
