@@ -2,6 +2,9 @@
 
 .tools-comparison {
   padding: 60px 0;
+  @include mobile{
+    padding: 40px 0;
+  }
 
   &__header {
     display: flex;
