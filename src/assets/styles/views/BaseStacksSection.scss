@@ -2,11 +2,25 @@
 
 .base-stack-sec{
   padding-top: 70px;
+  @include mini-desktop{
+    padding-top: 50px;
+  }
+  @include mobile{
+    padding-top: 40px;
+  }
   .hdr-wrp{
     margin-bottom: 35px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include tablet{
+      margin-bottom: 25px;
+    }
+    @include mobile{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
     .sec-title{
       color: var(--color-dark-secondary);
       font-weight: 600;

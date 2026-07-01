@@ -1,5 +1,6 @@
-@use '../base' as *;
-.highlight-card{
+@use "../base" as *;
+
+.highlight-card {
   border: 1px solid var(--bs-border-color);
   border-radius: 10px;
   background-color: var(--bs-white);
@@ -7,9 +8,16 @@
   display: flex;
   align-items: center;
   margin-top: 35px;
-  
-  .score-prt{
-    background-color: #2B6069;
+  @include tablet {
+    padding: 25px;
+  }
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .score-prt {
+    background-color: #2b6069;
     min-width: 149px;
     max-width: 200px;
     border-radius: 10px;
@@ -19,7 +27,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    .score-val{
+    @include tablet {
+      min-width: 115px;
+      padding: 15px 10px 12px 10px;
+    }
+    @include mobile{
+      margin-bottom: 30px;
+    }
+    .score-val {
       font-size: 24px;
       font-weight: 600;
       line-height: 1;
@@ -27,75 +42,117 @@
       color: var(--bs-white);
       font-family: var(--font-display);
       margin-bottom: 6px;
+      @include tablet {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
     }
-    .label-itm{
+    .label-itm {
       font-size: 12px;
       font-weight: 500;
       text-transform: uppercase;
       color: var(--bs-white);
       line-height: 20px;
+      @include tablet {
+        font-size: 11px;
+        line-height: 16px;
+      }
     }
-
   }
   .higlight-list {
     width: 65%;
     margin-left: 75px;
-    ul{
+    @include nav-collapsed {
+      width: 62%;
+      margin-left: 45px;
+    }
+    @include mini-desktop {
+      width: 56%;
+    }
+    @include tablet {
+      width: 48%;
+    }
+    @include mobile{
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
+    ul {
       margin: 0;
-      li{
+      padding: 0;
+      li {
         display: flex;
         align-items: center;
         gap: 10px;
-        .listval{
-          color: #636A78;
+        @include tablet {
+          font-size: 14px;
         }
-        .tick-mark{
-          i{
-            color: #2B6069;
+        .listval {
+          color: #636a78;
+        }
+        .tick-mark {
+          i {
+            color: #2b6069;
           }
         }
-        .alert-cls{
-          i{
+        .alert-cls {
+          i {
             color: #9d5637;
           }
         }
       }
-      li + li{
+      li + li {
         margin-top: 6px;
       }
     }
-}
-.estimate-wrp {
+  }
+  .estimate-wrp {
     padding-left: 30px;
     border-left: 1px solid var(--bs-border-color);
-    ul{
+    @include mobile{
+      padding-left: 0;
+      padding-top: 26px;
+      border-left: none;
+      border-top: 1px solid var(--bs-border-color);
+      width: 100%;
+    }
+    ul {
       padding: 0;
-      li{
+      @include mobile{
+        display: flex;
+        gap: 50px;
+      }
+      @include super-mini-mobile{
+        gap: 16px;
+      }
+      li {
         display: flex;
         align-items: center;
         gap: 14px;
-        .estimate-val{
-          p{
+        .estimate-val {
+          p {
             font-size: 12px;
-          color: #636A78;
-          font-weight: 500;
-          line-height: 16px;
-          text-transform: uppercase;
+            color: #636a78;
+            font-weight: 500;
+            line-height: 16px;
+            text-transform: uppercase;
           }
 
-          .mode{
+          .mode {
             font-size: 14px;
-            color: #0B1219;
+            color: #0b1219;
             font-weight: 600;
             line-height: 1;
             font-family: var(--font-display);
           }
         }
       }
-      li + li{
+      li + li {
         margin-top: 14px;
+        @include mobile{
+          margin-top: 0;
+        }
       }
     }
-}
-
+  }
 }

@@ -23,6 +23,9 @@
   .list-wrp{
     margin-top: 35px;
     margin-bottom: 20px;
+    @include mini-desktop{
+      margin-top: 15px;
+    }
     h4{
       color: #484F58;
       font-size: 12px;
