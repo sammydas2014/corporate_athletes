@@ -18,12 +18,16 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
+  @include tablet {
+    gap: 20px;
+  }
+
   @include mobile {
+    gap: 16px;
+
     &--cols-2,
     &--cols-3 {
       grid-template-columns: 1fr;
-      max-width: 380px;
-      margin: 0 auto;
     }
   }
 

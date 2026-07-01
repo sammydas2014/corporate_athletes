@@ -2,14 +2,19 @@
   <section class="cstd_filter_sec">
     <div class="container">
       <div class="cstd_filter_sec__search">
-        <BaseInput v-model="searchQuery" variant="cstd" :placeholder="caseStudiesHeader.searchPlaceholder">
+        <BaseInput v-model="searchQuery" variant="cstd" :placeholder="caseStudiesHeader.searchPlaceholder" readonly>
           <template #icon-right>
-            <i class="bi bi-funnel"></i>
+            <i class="bi bi-funnel cstd-filter-trigger" @click="openPanel"></i>
           </template>
         </BaseInput>
       </div>
 
-      <div class="cstd_filter_sec__panel">
+      <div class="cstd_filter_overlay" :class="{ 'is-open': isPanelOpen }" @click="closePanel"></div>
+
+      <div class="cstd_filter_sec__panel" :class="{ 'is-open': isPanelOpen }">
+        <button type="button" class="cstd_filter_close" @click="closePanel" aria-label="Close filters">
+          <i class="bi bi-x-lg"></i>
+        </button>
         <div v-for="group in caseStudiesFilterGroups" :key="group.id" class="cstd_filter_sec__group">
           <span class="cstd_filter_sec__label">{{ group.label }}</span>
           <div class="cstd_filter_sec__chips">
@@ -30,6 +35,10 @@ import BaseInput from '@/components/common/BaseInput.vue';
 import { caseStudiesHeader, caseStudiesFilterGroups } from '@/services/casestudieslist.service';
 
 const searchQuery = ref('');
+const isPanelOpen = ref(false);
+
+function openPanel() { isPanelOpen.value = true; }
+function closePanel() { isPanelOpen.value = false; }
 
 const selected = reactive(
   caseStudiesFilterGroups.reduce((acc, group) => {

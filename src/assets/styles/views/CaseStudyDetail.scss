@@ -2,10 +2,24 @@
 
 .cstd_bnr {
   padding-top: 75px;
+
+  @include tablet {
+    padding-top: 50px;
+  }
+
+  @include mobile {
+    padding-top: 36px;
+  }
+
   h1 {
     color: $color-dark-secondary;
     max-width: 850px;
+
+    @include mini-mobile {
+      letter-spacing: -0.05em;
+    }
   }
+
   p {
     max-width: 580px;
     color: #4d565e;
@@ -19,10 +33,31 @@
   padding-top: 30px;
   padding-bottom: 50px;
   border-top: 1px solid var(--bs-border-color);
+
+  @include tablet {
+    gap: 20px 50px;
+    padding-bottom: 36px;
+  }
+
+  @include mobile {
+    gap: 20px 30px;
+    padding-bottom: 28px;
+  }
+
+  @include mini-mobile {
+    flex-wrap: wrap;
+    gap: 35px 20px;
+  }
+
   .info-item {
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    @include mini-mobile {
+      width: calc(50% - 10px);
+    }
+
     .info-label {
       color: #636a78;
       font-size: 13px;
@@ -30,6 +65,7 @@
       line-height: 1;
       text-transform: uppercase;
     }
+
     .info-value {
       color: $color-dark-secondary;
       font-size: 16px;
@@ -45,6 +81,17 @@
   border-radius: var(--border-radius-sm);
   padding: 30px 40px;
   margin-bottom: 50px;
+
+  @include mini-desktop {
+    padding: 25px 30px;
+    margin-bottom: 35px;
+  }
+
+  @include mobile {
+    padding: 20px;
+    margin-bottom: 28px;
+  }
+
   h6 {
     color: var(--bs-white);
     font-size: 14px;
@@ -52,35 +99,81 @@
     line-height: 1.2;
     text-transform: uppercase;
     margin-bottom: 35px;
+
+    @include mini-desktop {
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
+
   .impact_wrap {
     display: flex;
     // justify-content: space-between;
     flex-wrap: wrap;
+
+    @include mini-desktop {
+      gap: 30px;
+    }
+
+    @include mini-mobile {
+      gap: 35px 20px;
+    }
+
     .info-item {
       display: flex;
       flex-direction: column;
       width: 25%;
       gap: 10px;
+
+      @include mini-desktop {
+        width: calc(50% - 15px);
+      }
+
+      @include mini-mobile {
+        width: calc(50% - 10px);
+      }
+
       .info-label {
         color: var(--bs-white);
         font-size: 34px;
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0;
+
+        @include mini-desktop {
+          font-size: 28px;
+        }
+
+        @include mobile {
+          font-size: 22px;
+        }
       }
+
       .info-value {
         color: var(--bs-white);
         font-size: 16px;
         font-weight: 400;
         line-height: 1.2;
         letter-spacing: -0.04em;
+
+        @include mobile {
+          font-size: 14px;
+        }
       }
     }
   }
 }
+
 .approch_sec {
   margin-bottom: 50px;
+
+  @include mobile {
+    margin-bottom: 36px;
+  }
+
   h3 {
     margin-bottom: 35px;
     color: $color-dark-secondary;
@@ -88,24 +181,58 @@
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.04em;
+
+    @include mini-desktop {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+
+    @include mobile {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
   }
+
   .approch_wrap {
     display: flex;
     flex-wrap: wrap;
     gap: 60px;
+
+    @include mini-desktop {
+      gap: 30px;
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
+
     .info-item {
       display: flex;
       width: calc(25% - 45px);
       align-items: center;
       gap: 14px;
+
+      @include mini-desktop {
+        width: calc(50% - 15px);
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+
       .info-label {
-        letter-spacing: 0;
         color: #596171;
         font-size: 17px;
         font-weight: 500;
         line-height: 1.5;
         letter-spacing: -0.04em;
+
+        @include mini-mobile {
+          font-size: 16px;
+          letter-spacing: 0;
+        }
       }
+
       .info-icon {
         flex: 0 0 auto;
         width: 64px;
@@ -115,6 +242,12 @@
         align-items: center;
         border: 1px solid #50b1a7;
         border-radius: 50%;
+
+        @include mobile {
+          width: 50px;
+          height: 50px;
+        }
+
         img {
           max-width: 30px;
           object-fit: contain;
@@ -123,15 +256,32 @@
     }
   }
 }
+
 .narrative_sec {
   padding-bottom: 25px;
 
   .narrative_block {
     margin-bottom: 50px;
 
+    @include mini-desktop {
+      margin-bottom: 35px;
+    }
+
+    @include mobile {
+      margin-bottom: 28px;
+    }
+
+    @include mini-mobile {
+      margin-bottom: 20px;
+    }
+
     .wrap_grid {
       padding-left: 20px;
       border-left: 2px solid #009a9b;
+
+      @include mini-mobile {
+        padding-left: 15px;
+      }
     }
 
     h3 {
@@ -141,11 +291,25 @@
       font-weight: 600;
       line-height: 1.2;
       letter-spacing: -0.04em;
+
+      @include mini-desktop {
+        font-size: 25px;
+        margin-bottom: 25px;
+      }
+
+      @include mobile {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
     }
 
     p {
       line-height: 1.6;
       margin: 0;
+
+      @include mini-mobile {
+        font-size: 15px;
+      }
     }
   }
 
@@ -158,12 +322,22 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @include mini-mobile {
+      gap: 15px;
+      margin-top: 20px;
+    }
+
     li {
       position: relative;
       padding-left: 22px;
       color: #636a78;
       font-size: 16px;
       line-height: 1.5;
+
+      @include mini-mobile {
+        font-size: 15px;
+      }
 
       &::before {
         content: "";
@@ -208,6 +382,11 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     margin-bottom: 25px;
+
+    @include mini-mobile {
+      margin-bottom: 15px;
+      margin-top: 20px;
+    }
   }
 
   .intervention_grid {
@@ -216,10 +395,31 @@
     gap: 35px 60px;
     max-width: 600px;
 
+    @include tablet {
+      gap: 24px 30px;
+      max-width: 100%;
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
+
+    @include mini-mobile {
+      gap: 15px;
+    }
+
     .intervention_item {
       display: flex;
       width: calc(50% - 30px);
       gap: 16px;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      @include mini-mobile {
+        gap: 10px;
+      }
 
       .intv_number {
         flex: 0 0 auto;
@@ -227,6 +427,11 @@
         font-size: 22px;
         font-weight: 700;
         line-height: 1.3;
+
+        @include mini-mobile {
+          font-size: 15px;
+          line-height: 1.4;
+        }
       }
 
       .intv_content {
@@ -237,6 +442,10 @@
           line-height: 1.3;
           letter-spacing: -0.04em;
           margin-bottom: 6px;
+
+          @include mini-mobile {
+            margin-bottom: 3px;
+          }
         }
 
         p {
@@ -259,10 +468,29 @@
     gap: 30px;
     flex-wrap: wrap;
 
+    @include mini-desktop {
+      padding: 28px 30px;
+    }
+
+    @include tablet {
+      gap: 20px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px 20px;
+      gap: 20px;
+    }
+
     h3 {
       color: var(--bs-white);
       margin: 0;
       max-width: 600px;
+
+      @include mobile {
+        font-size: 22px;
+      }
     }
 
     .btn {
@@ -287,6 +515,10 @@
       color: $color-dark-secondary;
       font-weight: 600;
       font-size: 15px;
+
+      @include mobile {
+        flex: 0 0 110px;
+      }
     }
 
     .tc-value {
@@ -297,7 +529,11 @@
 
   .tech_choices {
     border: none;
-    margin: 50px 0 ;
+    margin: 50px 0;
+
+    @include mobile {
+      margin: 30px 0;
+    }
   }
 
   .rationale_text {
@@ -315,11 +551,27 @@
     gap: 15px;
     max-width: 840px;
 
+    @include tablet {
+      max-width: 100%;
+    }
+
     li {
       color: #636a78;
       font-style: italic;
       font-size: 20px;
       line-height: 1.5;
+
+      @include mini-desktop {
+        font-size: 17px;
+      }
+
+      @include mobile {
+        font-size: 17px;
+      }
+
+      @include mini-mobile {
+        font-size: 15px;
+      }
     }
   }
 
@@ -332,9 +584,35 @@
     border-radius: var(--border-radius-sm);
     background: var(--bs-white);
 
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    @include mobile {
+      gap: 16px;
+    }
+
+    @include mini-mobile {
+      gap: 40px;
+    }
+
     .pipeline-crd {
       width: calc(20% - 17px);
       position: relative;
+
+      @include tablet {
+        width: calc(33.333% - 14px);
+      }
+
+      @include mobile {
+        width: calc(50% - 8px);
+      }
+
+      @include mini-mobile {
+        width: 100%;
+      }
 
       h6 {
         margin: 0;
@@ -351,6 +629,18 @@
         top: 50%;
         transform: translateY(-50%);
         right: -38px;
+
+        @include tablet {
+          display: none;
+        }
+
+        @include mini-mobile {
+          display: block;
+          top: calc(100% + 18px);
+          transform: translateX(-50%) rotate(90deg);
+          right: unset;
+          left: 50%;
+        }
       }
 
       &:last-child::after {
@@ -363,6 +653,18 @@
 .other_engagements_sec {
   padding-bottom: 75px;
 
+  @include mini-desktop {
+    padding-bottom: 60px;
+  }
+
+  @include tablet {
+    padding-bottom: 50px;
+  }
+
+  @include mobile {
+    padding-bottom: 36px;
+  }
+
   h2 {
     color: $color-dark-secondary;
     font-size: 50px;
@@ -370,6 +672,19 @@
     line-height: 1.2;
     letter-spacing: -0.04em;
     margin-bottom: 35px;
+
+    @include mini-desktop {
+      font-size: 35px;
+    }
+
+    @include tablet {
+      margin-bottom: 25px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
   }
 
   .engagements_grid {
@@ -377,11 +692,29 @@
     flex-wrap: wrap;
     gap: 40px;
     justify-content: space-between;
+
+    @include tablet {
+      gap: 24px;
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
   }
 
   .engagement_item {
     width: calc(33.333% - 27px);
     max-width: 340px;
+
+    @include tablet {
+      width: calc(50% - 12px);
+      max-width: none;
+    }
+
+    @include mobile {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   .tag_pill {
@@ -397,6 +730,11 @@
     border-radius: var(--bs-border-radius-pill);
     padding: 7px 15px;
     margin-bottom: 20px;
+
+    @include mini-mobile {
+      margin-bottom: 15px;
+      font-size: 11px;
+    }
   }
 
   h4 {
