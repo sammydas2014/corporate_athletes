@@ -4,6 +4,9 @@
   border-radius: 10px;
   background-color: var(--bs-white);
   padding: 40px;
+  @include mini-desktop{
+    padding: 20px;
+  }
   .optnsTxt{
     color: #484F58;
     font-size: 12px;

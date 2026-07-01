@@ -48,6 +48,9 @@
     padding: 8px;
     margin-bottom: 15px;
     width: fit-content;
+    @include nav-collapsed{
+      font-size: 10px;
+    }
   }
   .card-title{
     color: var(--color-dark-secondary);

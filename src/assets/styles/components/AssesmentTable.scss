@@ -4,13 +4,22 @@
   background-color: var(--bs-white);
   border-radius: 10px;
   padding: 14px 20px 20px 20px;
+  @include tablet{
+    padding: 5px;
+  }
   .table-row {
     display: flex;
     justify-content: space-between;
         padding: 13px 39px;
         border-radius: 10px;
+        @include tablet{
+          padding-inline: 15px;
+        }
     .table-title{
       width: 42%;
+      @include tablet{
+        width: 52%;
+      }
       p{
         color: var(--color-dark-secondary);
         font-weight: 600;
@@ -22,6 +31,9 @@
     }
     .table-data{
       width: 58%;
+      @include tablet{
+        width: 48%;
+      }
     }
 }
 .table-row:nth-child(even){
