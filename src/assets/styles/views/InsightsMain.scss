@@ -7,8 +7,21 @@
     gap: 18px;
     border-bottom: 1px solid var(--bs-border-color);
     padding-bottom: 60px;
+    flex-wrap: wrap;
+    @include tablet{
+      padding-bottom: 30px;
+    }
     .analysisCrd{
-      width: calc(25% - 9px);
+      width: calc(25% - 14px);
+      @include mini-desktop{
+        width: calc(33.33% - 12px);
+      }
+      @include tablet{
+        width: calc(50% - 9px);
+      }
+      @include mini-mobile{
+        width: 100%;
+      }
     }
   }
   .editorial-wrper{
@@ -16,15 +29,29 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    @include tablet{
+      padding-top: 30px;
+    }
+    @include mobile{
+      flex-direction: column;
+    }
     .headng-prt{
       width: 50%;
       padding-right: 50px;
+      @include mobile{
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 25px;
+      }
       .sec__title{
         margin: 0;
       }
     }
     .editorial-txt{
       width: 50%;
+      @include mobile{
+        width: 100%;
+      }
       .editorialWrap{
         border: 1px solid #D8DEE68A;
         background-color: var(--bs-white);
