@@ -1,12 +1,23 @@
+@use "../base" as *;
 
 .editor-lence-wrap{
   padding: var(--sec-gap) 0 60px 0;
   position: relative;
+  @include mobile{
+    padding-bottom: 40px;
+  }
   .container{
     display: flex;
     justify-content: space-between;
+    @include tablet{
+      flex-direction: column;
+    }
     .headng-prt{
       width: 40%;
+      @include tablet{
+        width: 100%;
+        margin-bottom: 25px;
+      }
     }
     .lence-tools{
       width: 60%;
@@ -15,9 +26,25 @@
       padding-left: 50px;
       row-gap: 10px;
       flex-wrap: wrap;
+      @include nav-collapsed{
+        column-gap: 41px;
+      }
+      @include mini-desktop{
+        padding: 0;
+        column-gap: 12px;
+      }
+      @include tablet {
+        width: 100%;
+      }
+      @include mobile{
+        gap: 25px;
+      }
       .lensCrd{
         width: 33.33%;
         max-width: 179px;
+        @include mobile{
+          width: calc(50% - 13px);
+        }
       }
     }
   }
@@ -26,12 +53,28 @@
   .container{
     padding-top: 60px;
     border-top: 1px solid var(--bs-border-color);
+    @include mobile{
+      padding-top: 40px;
+    }
 
     .thickWrap {
       display: flex;
       gap: 30px;
+      flex-wrap: wrap;
+      @include tablet{
+        gap: 20px;
+      }
       .crd-wrap{
-        width: calc(33.33% - 15px);
+        width: calc(33.33% - 20px);
+        @include tablet{
+          width: calc(33.33% - 14px);
+        }
+        @include mobile{
+          width: calc(50% - 10px);
+        }
+        @include mini-mobile{
+          width: 100%;
+        }
       }
   }
   }

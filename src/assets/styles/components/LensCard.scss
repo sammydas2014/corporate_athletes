@@ -1,3 +1,4 @@
+@use "../base" as *;
 
 .lensCrd{
   position: relative;
@@ -10,6 +11,9 @@
     justify-content: center;
     background-color: var(--bs-primary);
     margin-bottom: 26px;
+    @include mini-desktop{
+      margin-bottom: 10px;
+    }
     img{
       max-width: 24px;
     }
@@ -19,6 +23,9 @@
     letter-spacing: -0.04em;
     line-height: 24px;
     margin: 0;
+    @include mini-desktop{
+      font-size: 18px;
+    }
   }
   p{
     margin-top: 22px;
