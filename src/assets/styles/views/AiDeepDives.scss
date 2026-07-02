@@ -7,8 +7,17 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @include mini-desktop{
+      row-gap: 20px;
+    }
     .lensCrd {
       max-width: 268px;
+      @include mobile{
+        max-width: 48%;
+      }
+      @include mini-mobile{
+        max-width: 100%;
+      }
       p {
         margin-top: 16px;
 

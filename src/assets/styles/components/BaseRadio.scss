@@ -1,0 +1,42 @@
+@use "../base" as *;
+
+.base-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    display: none;
+  }
+
+  .radio {
+        width: 16px;
+    height: 16px;
+    min-width: 16px;
+    border: 1.5px solid var(--bs-border-color);
+    border-radius: 4px;
+    background: var(--bs-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--bs-transition);
+  }
+
+  input:checked + .radio {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+  }
+
+
+
+  .label {
+    font-size: 14px;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
