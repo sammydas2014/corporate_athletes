@@ -21,8 +21,11 @@ defineProps({
     640: {
       slidesPerView: 2
     },
-    1024: {
-      slidesPerView: 4
+    1025:{
+      slidesPerView: 3
+    },
+    1200: {
+      spaceBetween: 20
     }
   }" class="audience-swiper">
     <SwiperSlide v-for="item in cards" :key="item?.id">
