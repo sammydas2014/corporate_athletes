@@ -37,6 +37,11 @@
   overflow: hidden;
   transition: box-shadow 0.3s ease;
 
+  @include mini-mobile {
+    flex-direction: column;
+    padding: 24px 20px;
+  }
+
   &:hover {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   }
@@ -49,6 +54,11 @@
     flex-direction: column;
     gap: 14px;
     max-width: 270px;
+
+    @include mini-mobile {
+      max-width: 100%;
+      gap: 10px;
+    }
   }
 
   &__tag {
@@ -96,6 +106,10 @@
     transition: gap 0.2s ease;
     margin-top: 10px;
 
+    @include mini-mobile {
+      margin-top: 0;
+    }
+
     &:hover {
       gap: 12px;
       color: $color-primary;
@@ -120,6 +134,10 @@
 
     @include mobile {
       width: 120px;
+    }
+
+    @include mini-mobile {
+      width: 200px;
     }
   }
 

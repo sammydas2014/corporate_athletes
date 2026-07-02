@@ -118,7 +118,7 @@
 
     .who-label {
       display: block;
-      color: #636A78;
+      color: #636a78;
       font-size: 13px;
       font-weight: 500;
       line-height: 1.2;
@@ -172,7 +172,7 @@
     height: auto;
     background-color: transparent;
     border: none;
-        width: fit-content;
+    width: fit-content;
     padding: 0;
 
     svg {
@@ -195,9 +195,11 @@
   .roundtable-card {
     &__image {
       height: 180px;
+      border-radius: var(--border-radius-sm);
     }
     &__body {
       padding: 20px;
+      border-radius: var(--border-radius-sm);
     }
   }
 }

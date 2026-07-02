@@ -115,6 +115,9 @@
 
   .roundtables-section__desc {
     color: #e9eef2;
+    @include mini-mobile {
+      font-size: 16px;
+    }
   }
 
   .roundtables-section__progress-wrap {
@@ -142,6 +145,7 @@
     &__header {
       flex-direction: column;
       gap: 20px;
+      align-items: flex-start;
     }
 
     &__header-left {
@@ -156,6 +160,20 @@
 
     &__header {
       margin-bottom: 36px;
+    }
+  }
+}
+
+@include mini-mobile {
+  .roundtables-section {
+    padding: 50px 0;
+
+    &__header {
+      margin-bottom: 30px;
+      gap: 10px;
+    }
+    &__desc {
+      font-size: 16px;
     }
   }
 }

@@ -1,9 +1,32 @@
 @use "../base" as *;
 
 .new-deepdrive-sec {
+  @include tablet-landscape {
+    padding-bottom: 50px;
+  }
   .deepdrive-inner {
+    @include mini-desktop {
+      gap: 20px;
+    }
+    @include mini-mobile {
+      gap: 30px;
+    }
     .lensCrd {
       max-width: 285px;
+      @include nav-collapsed {
+        max-width: 275px;
+      }
+      @include mini-desktop {
+        max-width: 100%;
+        width: calc(33.333% - 15px);
+      }
+      @include tablet {
+        max-width: 100%;
+        width: calc(50% - 10px);
+      }
+      @include mini-mobile {
+        width: 100%;
+      }
     }
   }
 }
@@ -14,8 +37,14 @@
 }
 .headng-prt {
   margin-bottom: 40px;
+  @include tablet {
+    margin-bottom: 20px;
+  }
   .sec__title {
     font-size: 36px;
+    @include tablet {
+      font-size: 30px;
+    }
   }
 }
 
@@ -24,6 +53,10 @@
   border: 1px solid var(--bs-border-color);
   border-radius: var(--border-radius-sm);
   padding: 30px;
+
+  @include tablet {
+    padding: 20px;
+  }
 
   &__label {
     display: block;
@@ -34,6 +67,10 @@
     text-transform: uppercase;
     color: $color-dark-secondary;
     margin-bottom: 15px;
+
+    @include tablet {
+      font-size: 13px;
+    }
   }
 
   &__list {
@@ -58,6 +95,12 @@
   transition: var(--bs-transition);
   border-radius: 7px;
 
+  @include tablet {
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+
   &:hover {
     background: $color-primary;
     border-color: $color-primary;
@@ -81,6 +124,9 @@
   }
   .cards-wrapper .roundtable-card:first-child {
     width: calc(66.666% - 10px);
+    @include tablet {
+      width: 100%;
+    }
     .roundtable-card__image {
       aspect-ratio: 7 / 3;
     }
@@ -88,6 +134,25 @@
   .cards-wrapper .roundtable-card {
     width: calc(33.333% - 20px);
     height: auto;
+    @include tablet {
+      width: calc(50% - 15px);
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  @include tablet {
+    .roundtables-section__header {
+      align-items: flex-start !important;
+      gap: 10px;
+      margin-bottom: 30px;
+      .roundtables-section__desc {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
   }
 }
 
@@ -99,6 +164,10 @@
 .theme-rankings-hdng {
   text-align: center;
   margin-bottom: 50px;
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
 }
 
 .theme-rankings-grid {
@@ -128,6 +197,10 @@
 .signals-hdng {
   text-align: center;
   margin-bottom: 40px;
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
 }
 
 .signals-grid {
@@ -136,6 +209,10 @@
   gap: 30px;
 
   @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mini-mobile {
     grid-template-columns: 1fr;
   }
 }
@@ -145,6 +222,9 @@
   border-radius: var(--border-radius-md);
   padding: 45px 34px 70px;
   text-align: center;
+  @include mini-desktop {
+    padding: 35px 25px;
+  }
 
   &__icon {
     display: inline-flex;
@@ -161,6 +241,16 @@
       height: 45px;
       object-fit: contain;
     }
+
+    @include mini-desktop {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
   }
 
   &__quote {
@@ -171,6 +261,11 @@
     color: $color-dark-secondary;
     margin: 0 auto;
     max-width: 310px;
+
+    @include mini-desktop {
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
 }
 
@@ -193,20 +288,24 @@
       line-height: 1;
       margin-bottom: 0;
     }
-    .card-title{
+    .card-title {
       margin-top: 40px;
       margin-bottom: 70px;
+      @include mini-mobile {
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
     }
   }
 }
 
-.consortium-view{
-  .integrate-cta{
-    h2{
+.consortium-view {
+  .integrate-cta {
+    h2 {
       max-width: 800px;
       margin-inline: auto;
     }
-    p{
+    p {
       max-width: 535px;
     }
   }
