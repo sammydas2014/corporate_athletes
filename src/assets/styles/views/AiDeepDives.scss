@@ -1,4 +1,4 @@
-@use '../base' as *;
+@use "../base" as *;
 
 .deepdrive-sec {
   padding: var(--sec-gap) 0 60px 0;
@@ -20,6 +20,10 @@
       }
       p {
         margin-top: 16px;
+
+        @include tablet {
+          margin-top: 10px;
+        }
       }
     }
   }
@@ -30,8 +34,17 @@
   .serfaceWrp {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
     .analysisCrd {
-      width: calc(33.33% - 15px);
+      width: calc(33.33% - 20px);
+      @include tablet {
+        width: calc(50% - 15px);
+        margin-top: 0;
+      }
+      @include mini-mobile {
+        width: 100%;
+        margin-top: 0;
+      }
       .card-top {
         .card-number {
           font-weight: 600;

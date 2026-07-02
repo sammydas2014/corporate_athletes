@@ -223,22 +223,16 @@
 
 @include mobile {
   .event-card {
-    height: auto;
 
     &__inner {
-      // On mobile: stretch full width, anchor to bottom so image shows at top
-      left: 12px;
-      right: 12px;
-      top: auto;
-      bottom: 12px;
-      max-width: calc(100% - 24px);
+      max-width: calc(100% - 30px);
       width: 100%;
     }
 
-    &__date {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-    }
+    // &__date {
+    //   position: absolute;
+    //   top: 16px;
+    //   left: 16px;
+    // }
   }
 }

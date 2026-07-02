@@ -18,6 +18,10 @@
           :space-between="20"
           :grab-cursor="true"
           :loop="true"
+          :breakpoints="{
+            0: { slidesPerView: 1, spaceBetween: 16 },
+            768: { slidesPerView: 1.5, spaceBetween: 20 },
+          }"
           class="events-swiper"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
@@ -63,6 +67,6 @@ const { onSwiper, onSlideChange, slidePrev, slideNext, progressWidth } = useSlid
   total: () => data.events.length,
   desktopCols: 1.5,
   loop: true,
-  getVisibleCount: (w) => (w < 768 ? 1.2 : 1.5),
+  getVisibleCount: (w) => (w < 768 ? 1 : 1.5),
 })
 </script>
