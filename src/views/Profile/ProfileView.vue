@@ -1,158 +1,103 @@
 <script setup>
-import BaseButton from '@/components/common/BaseButton.vue'
-import {
-  profileData,
-  profileStats,
-  focusAreas,
-  recentActivity,
-  savedContent,
-  planFeatures,
-} from '@/services/profile.service.js'
+import BaseButton from "@/components/common/BaseButton.vue";
+import BaseProfileAvatar from "@/components/common/BaseProfileAvatar.vue"
+import UserEventSlider from "@/components/slider/UserEventSlider.vue"
+import UpcommingEventCard from "@/components/common/UpcommingEventCard.vue";
+import { profileData } from "@/services/profile.service"
 </script>
 
 <template>
   <div class="profile-page">
-
-    <!-- ── Hero ─────────────────────────────────────────────────────────────── -->
-    <section class="profile-hero">
+    <section class="profile-banner-section">
       <div class="container">
-        <div class="profile-hero__inner">
+        <div class="profile-top-wrap">
+          <div class="innr-prt">
+            <div class="dtls-prt">
+              <div class="img-wrap">
+                <BaseProfileAvatar :current-image-url="profileData?.profile?.avatar" />
+              </div>
+              <div class="data-wrap">
+                <h1>{{ profileData?.profile?.fullName }}</h1>
+                <p class="post">
+                  {{ profileData?.profile?.designation }}
+                </p>
+                <p class="comp">
+                  {{ profileData?.profile?.company }}
+                </p>
+                <div class="location">
+                  <p>
+                    <span>
+                      <img :src="profileData?.profile?.locationIcon" alt="Location Icon" />
+                    </span>
+                    {{ profileData?.profile?.location }}
+                  </p>
+                  <p>
+                    <span>
+                      <img :src="profileData?.profile?.jobIcon" alt="Job Icon" />
+                    </span>
+                    {{ profileData?.profile?.industry }}
+                  </p>
+                </div>
+                <p class="duraction">
+                  Member since {{ profileData?.profile?.memberSince }}
+                </p>
 
-          <div class="profile-hero__identity">
-            <div class="profile-avatar">{{ profileData.initials }}</div>
-            <div class="profile-info">
-              <h1 class="profile-name">
-                {{ profileData.firstName }} {{ profileData.lastName }}
-              </h1>
-              <p class="profile-role">
-                {{ profileData.title }} · {{ profileData.organisation }}
-              </p>
-              <div class="profile-meta">
-                <span>
-                  <i class="bi bi-geo-alt"></i> {{ profileData.location }}
-                </span>
-                <span>
-                  <i class="bi bi-calendar3"></i> Member since {{ profileData.memberSince }}
-                </span>
               </div>
             </div>
-          </div>
-
-          <div class="profile-hero__right">
-            <div class="profile-stats">
-              <div class="profile-stat" v-for="stat in profileStats" :key="stat.label">
-                <span class="profile-stat__value">{{ stat.value }}</span>
-                <span class="profile-stat__label">{{ stat.label }}</span>
-              </div>
-            </div>
-            <div class="profile-hero__actions">
-              <span class="plan-badge">
-                <i class="bi bi-patch-check-fill"></i> {{ profileData.plan }} Member
-              </span>
-              <BaseButton variant="outline-white">Edit Profile</BaseButton>
+            <div class="editBtnWrap">
+              <BaseButton variant="outline-white">EDIT PROFILE</BaseButton>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ── Body ─────────────────────────────────────────────────────────────── -->
-    <section class="profile-body">
+    <section class="all-events-slider-sec">
       <div class="container">
-        <div class="profile-layout">
+        <UserEventSlider :cards="profileData?.statistics" />
+      </div>
+    </section>
+    <section class="data-sec">
+      <div class="container">
+        <div class="inner-container">
+          <div class="event-wrap">
+            <div class="upcomming-events">
+              <div class="hdng">
+                <h3>Upcoming Events</h3>
+                <BaseButton>
+                  View all events
+                  <template #icon_right>
 
-          <!-- Sidebar -->
-          <aside class="profile-sidebar">
-
-            <!-- Current Plan -->
-            <div class="profile-card">
-              <h6 class="profile-card__title">Current Plan</h6>
-              <div class="plan-info">
-                <span class="plan-name">{{ profileData.plan }}</span>
-                <span class="plan-price">£499<span>/mo</span></span>
-              </div>
-              <ul class="plan-features">
-                <li v-for="feature in planFeatures" :key="feature">
-                  <span class="radio">
-                    <svg class="checkbox-tick" viewBox="0 0 12 10" fill="none">
-                      <path d="M1 5L4.5 8.5L11 1.5" stroke="white" stroke-width="1.8"
-                        stroke-linecap="round" stroke-linejoin="round" />
+                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M0.677246 4.30729C0.303303 4.30729 0.000162721 4.61043 0.000162721 4.98438C0.000162721 5.35832 0.303303 5.66146 0.677246 5.66146V4.98438V4.30729ZM13.7949 5.46315C14.0593 5.19873 14.0593 4.77002 13.7949 4.5056L9.48597 0.196672C9.22156 -0.0677447 8.79285 -0.0677447 8.52843 0.196672C8.26402 0.46109 8.26402 0.889795 8.52843 1.15421L12.3586 4.98438L8.52843 8.81454C8.26402 9.07895 8.26402 9.50766 8.52843 9.77208C8.79285 10.0365 9.22156 10.0365 9.48597 9.77208L13.7949 5.46315ZM0.677246 4.98438V5.66146H13.3161V4.98438V4.30729H0.677246V4.98438Z"
+                        fill="#1F4E5F" />
                     </svg>
-                  </span>
-                  {{ feature }}
-                </li>
-              </ul>
-              <BaseButton variant="outline-light" :to="'/subscription'" class="plan-manage-btn">
-                Manage Plan
-              </BaseButton>
-            </div>
 
-            <!-- Contact -->
-            <div class="profile-card">
-              <h6 class="profile-card__title">Contact</h6>
-              <ul class="contact-list">
-                <li>
-                  <i class="bi bi-envelope"></i>
-                  <span>{{ profileData.email }}</span>
-                </li>
-                <li>
-                  <i class="bi bi-linkedin"></i>
-                  <span>{{ profileData.linkedin }}</span>
-                </li>
-                <li>
-                  <i class="bi bi-geo-alt"></i>
-                  <span>{{ profileData.location }}</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Focus Areas -->
-            <div class="profile-card">
-              <h6 class="profile-card__title">Focus Areas</h6>
-              <div class="focus-chips">
-                <span class="focus-chip" v-for="area in focusAreas" :key="area">{{ area }}</span>
+                  </template>
+                </BaseButton>
               </div>
+              <UpcommingEventCard v-for="event in profileData?.upcomingEvents" :key="event.id"
+                :image-logo="event.image"
+                :day="event.date.day"
+                :month="event.date.month"
+                :year="event.date.year"
+                :weekday="event.date.weekday"
+                :time="event.time"
+                :location="event.location"
+                :catagory="event.category"
+                :title="event?.title"
+                :btn-txt="event?.status"
+              />
             </div>
-
-          </aside>
-
-          <!-- Main content -->
-          <div class="profile-main">
-
-            <!-- Recent Activity -->
-            <div class="profile-card">
-              <h6 class="profile-card__title">Recent Activity</h6>
-              <ul class="activity-list">
-                <li v-for="item in recentActivity" :key="item.title" class="activity-item">
-                  <span class="activity-tag">{{ item.tag }}</span>
-                  <div class="activity-content">
-                    <p class="activity-title">{{ item.title }}</p>
-                    <span class="activity-date">{{ item.date }}</span>
-                  </div>
-                  <i class="bi bi-arrow-right activity-arrow"></i>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Saved Content -->
-            <div class="profile-card">
-              <h6 class="profile-card__title">Saved Content</h6>
-              <ul class="activity-list">
-                <li v-for="item in savedContent" :key="item.title" class="activity-item">
-                  <span class="activity-tag activity-tag--secondary">{{ item.tag }}</span>
-                  <div class="activity-content">
-                    <p class="activity-title">{{ item.title }}</p>
-                  </div>
-                  <i class="bi bi-bookmark activity-arrow"></i>
-                </li>
-              </ul>
-            </div>
+          </div>
+          <div class="summary-wrap">
 
           </div>
         </div>
       </div>
     </section>
+
 
   </div>
 </template>

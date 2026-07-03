@@ -99,6 +99,10 @@
 @use './components/BaseRadio';
 @use './components/PricingSection';
 @use './components/ProfilePage';
+@use './components/BaseProfileAvatar';
+@use './components/UserEventCard';
+@use './components/UpcommingEventCard';
+
 
 // ─── 3. Views ────────────────────────────────────────────────────────────────
 @use "./views/BenchmarkSurveysSection";
@@ -136,3 +140,4 @@
 @use "./views/EventDetails";
 @use "./views/Registration";
 @use "./views/ConsortiumContributions";
+@use "./views/ProfileView";

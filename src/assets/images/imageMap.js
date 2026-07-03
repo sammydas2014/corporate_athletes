@@ -148,6 +148,13 @@ export const imageMap = {
   chair_icon: new URL("./chair.png", import.meta.url).href,
   note_page: new URL("./note-page.png", import.meta.url).href,
   lunch_box: new URL("./lunch-box.png", import.meta.url).href,
+  location_white: new URL("./location-white.png", import.meta.url).href,
+  jobIcon: new URL("./job-icon.png", import.meta.url).href,
+  userImage: new URL("./userImage.png", import.meta.url).href,
+  blackCalender: new URL("./black-calender.png", import.meta.url).href,
+  blackBadge: new URL("./black-badge.png", import.meta.url).href,
+  blackNodes: new URL("./black-nodes.png", import.meta.url).href,
+
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
