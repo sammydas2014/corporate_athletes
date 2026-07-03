@@ -148,6 +148,8 @@ export const imageMap = {
   chair_icon: new URL("./chair.png", import.meta.url).href,
   note_page: new URL("./note-page.png", import.meta.url).href,
   lunch_box: new URL("./lunch-box.png", import.meta.url).href,
+  check_mark: new URL("./check-mark.svg", import.meta.url).href,
+  accepted: new URL("./accepted.svg", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
