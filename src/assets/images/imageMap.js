@@ -155,6 +155,8 @@ export const imageMap = {
   blackBadge: new URL("./black-badge.png", import.meta.url).href,
   blackNodes: new URL("./black-nodes.png", import.meta.url).href,
 
+  check_mark: new URL("./check-mark.svg", import.meta.url).href,
+  accepted: new URL("./accepted.svg", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
