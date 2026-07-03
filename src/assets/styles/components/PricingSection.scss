@@ -1,7 +1,7 @@
 @use '../base' as *;
 
 .pricing-section {
-  padding: var(--sec-gap) 0;
+  padding: var(--sec-gap) 0 50px;
   background-color: var(--bs-body-bg);
 }
 
