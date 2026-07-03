@@ -1,0 +1,397 @@
+@use '../base' as *;
+
+// ── Hero ──────────────────────────────────────────────────────────────────────
+.profile-hero {
+  background: var(--bs-primary-gradient);
+  padding: 60px 0 50px;
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__identity {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.profile-avatar {
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  border-radius: 50%;
+  background-color: var(--bs-secondary);
+  color: var(--bs-white);
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.03em;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+.profile-info {
+  color: var(--bs-white);
+}
+
+.profile-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--bs-white);
+  letter-spacing: -0.04em;
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+}
+
+.profile-role {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+.profile-meta {
+  display: flex;
+  gap: 20px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: -0.02em;
+
+    i {
+      font-size: 14px;
+    }
+  }
+}
+
+.profile-stats {
+  display: flex;
+  gap: 32px;
+}
+
+.profile-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  &__value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--bs-white);
+    font-family: var(--font-display);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  &__label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+}
+
+.plan-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: var(--bs-secondary);
+  color: var(--bs-white);
+  border-radius: var(--bs-border-radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  i {
+    font-size: 14px;
+  }
+}
+
+// ── Body Layout ───────────────────────────────────────────────────────────────
+.profile-body {
+  padding: 48px 0 var(--sec-gap);
+  background-color: var(--bs-body-bg);
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+// ── Shared Card ───────────────────────────────────────────────────────────────
+.profile-card {
+  background-color: var(--bs-white);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--border-radius-md);
+  padding: 28px;
+
+  + .profile-card {
+    margin-top: 20px;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+}
+
+// ── Plan Card ─────────────────────────────────────────────────────────────────
+.plan-info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.plan-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-dark-secondary);
+  letter-spacing: -0.04em;
+}
+
+.plan-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--bs-primary);
+  letter-spacing: -0.04em;
+  font-family: var(--font-display);
+
+  span {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--bs-body-color);
+  }
+}
+
+.plan-features {
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--color-dark-secondary);
+    letter-spacing: -0.02em;
+
+    // always-checked radio tick (reuses BaseRadio.scss .radio base styles)
+    .radio {
+      background-color: var(--bs-primary);
+      border-color: var(--bs-primary);
+      flex-shrink: 0;
+    }
+  }
+}
+
+.plan-manage-btn {
+  width: 100%;
+}
+
+// ── Contact List ──────────────────────────────────────────────────────────────
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    i {
+      font-size: 15px;
+      color: var(--bs-primary);
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 13px;
+      color: var(--color-dark-secondary);
+      letter-spacing: -0.02em;
+      word-break: break-all;
+    }
+  }
+}
+
+// ── Focus Chips ───────────────────────────────────────────────────────────────
+.focus-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.focus-chip {
+  display: inline-flex;
+  padding: 6px 12px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-dark-secondary);
+  letter-spacing: -0.02em;
+}
+
+// ── Activity / Saved List ─────────────────────────────────────────────────────
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--bs-border-color);
+  cursor: pointer;
+  transition: var(--bs-transition);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:hover .activity-title {
+    color: var(--bs-primary);
+  }
+}
+
+.activity-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background-color: rgba(31, 78, 95, 0.08);
+  color: var(--bs-primary);
+  border-radius: var(--bs-border-radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  min-width: 72px;
+  justify-content: center;
+
+  &--secondary {
+    background-color: rgba(214, 168, 95, 0.12);
+    color: var(--bs-secondary);
+  }
+}
+
+.activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-dark-secondary);
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-date {
+  font-size: 12px;
+  color: var(--bs-body-color);
+  letter-spacing: -0.02em;
+  margin-top: 3px;
+  display: block;
+}
+
+.activity-arrow {
+  font-size: 15px;
+  color: var(--bs-body-color);
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+
+  .activity-item:hover & {
+    color: var(--bs-primary);
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+@media (max-width: 991px) {
+  .profile-hero__inner {
+    flex-direction: column;
+  }
+
+  .profile-hero__right {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-sidebar .profile-card + .profile-card {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .profile-stats {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .profile-hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .activity-title {
+    white-space: normal;
+  }
+}

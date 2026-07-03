@@ -1,0 +1,259 @@
+@use '../base' as *;
+
+.pricing-section {
+  padding: var(--sec-gap) 0;
+  background-color: var(--bs-body-bg);
+}
+
+// ── Header ────────────────────────────────────────────────────────────────────
+.pricing-header {
+  max-width: 660px;
+  margin: 0 auto 40px;
+  text-align: center;
+
+  .sec__title {
+    margin-bottom: 16px;
+  }
+
+  .sec__subtitle {
+    color: var(--bs-body-color);
+  }
+}
+
+// ── Billing Toggle ────────────────────────────────────────────────────────────
+.pricing-toggle-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.save-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background-color: var(--bs-secondary);
+  color: var(--bs-white);
+  border-radius: var(--bs-border-radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+// ── Grid ──────────────────────────────────────────────────────────────────────
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+// ── Card ──────────────────────────────────────────────────────────────────────
+.pricing-card {
+  background-color: var(--bs-white);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+
+  &__top {
+    padding: 32px 32px 28px;
+  }
+
+  &__header {
+    margin-bottom: 24px;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-dark-secondary);
+    margin-bottom: 6px;
+    letter-spacing: -0.04em;
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: var(--bs-body-color);
+    letter-spacing: -0.03em;
+  }
+
+  &__cta {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  &__features {
+    padding: 24px 32px;
+    background-color: var(--color-surface);
+  }
+
+  // ── Featured (Executive) ──────────────────────────────────────────────────
+  &--featured {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+
+    .pricing-card__name {
+      color: var(--bs-white);
+    }
+
+    .pricing-card__desc {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .price-value {
+      color: var(--bs-secondary);
+    }
+
+    .price-currency {
+      color: var(--bs-secondary);
+    }
+
+    .price-period,
+    .price-billing {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .price-saving {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .pricing-card__features {
+      background-color: rgba(255, 255, 255, 0.07);
+    }
+
+    .features-label {
+      color: var(--bs-secondary);
+    }
+
+    .plan-feature {
+      span:last-child {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .radio {
+        background-color: var(--bs-secondary);
+        border-color: var(--bs-secondary);
+      }
+    }
+  }
+}
+
+// ── Price ─────────────────────────────────────────────────────────────────────
+.price-amount {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.price-currency {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-dark-secondary);
+  margin-top: 12px;
+  letter-spacing: -0.03em;
+}
+
+.price-value {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--color-dark-secondary);
+  font-family: var(--font-display);
+}
+
+.price-period {
+  font-size: 14px;
+  color: var(--bs-body-color);
+  align-self: flex-end;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  letter-spacing: -0.03em;
+}
+
+.price-billing {
+  font-size: 13px;
+  color: var(--bs-body-color);
+  letter-spacing: -0.03em;
+}
+
+.price-saving {
+  margin-left: 6px;
+  font-weight: 500;
+  color: var(--color-dark-secondary);
+}
+
+// ── Features list ─────────────────────────────────────────────────────────────
+.features-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--bs-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.plan-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // Force radio into always-checked visual state (reuses BaseRadio.scss .radio base styles)
+  .radio {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    flex-shrink: 0;
+  }
+
+  span:last-child {
+    font-size: 14px;
+    color: var(--color-dark-secondary);
+    letter-spacing: -0.03em;
+    line-height: 1.3;
+  }
+}
+
+// ── Guarantee ─────────────────────────────────────────────────────────────────
+.pricing-guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+  font-size: 13px;
+  color: var(--bs-body-color);
+  letter-spacing: -0.02em;
+
+  svg {
+    flex-shrink: 0;
+    color: var(--bs-body-color);
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+@media (max-width: 991px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .pricing-card__top,
+  .pricing-card__features {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .price-value {
+    font-size: 56px;
+  }
+}
