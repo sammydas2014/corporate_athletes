@@ -107,7 +107,7 @@ export const profileData = {
         "month": "JULY",
         "year": "2025"
       },
-      "image": "/images/events/past-event-1.jpg",
+      "image": imageMap.roundTable_1,
       "buttonText": "View Summary"
     },
     {
@@ -119,7 +119,7 @@ export const profileData = {
         "month": "JULY",
         "year": "2025"
       },
-      "image": "/images/events/past-event-2.jpg",
+      "image": imageMap.roundTable_2,
       "buttonText": "View Summary"
     },
     {
@@ -131,7 +131,7 @@ export const profileData = {
         "month": "JULY",
         "year": "2025"
       },
-      "image": "/images/events/past-event-3.jpg",
+      "image": imageMap.roundTable_3,
       "buttonText": "View Summary"
     }
   ],
@@ -159,7 +159,7 @@ export const profileData = {
     "type": "Consortium Member",
     "status": "Full Access",
     "joinedDate": "31 May 2023",
-    "avatar": "/images/membership/logo.png",
+    "avatar": "",
     "benefits": [
       {
         "title": "Exclusive Events",
@@ -181,25 +181,29 @@ export const profileData = {
       "id": 1,
       "title": "Event Invitations",
       "description": "Receive invitations to new events.",
-      "enabled": true
+      "enabled": true,
+      "icon": imageMap.blackCalender
     },
     {
       "id": 2,
       "title": "Event Reminders",
       "description": "Get reminders before events.",
-      "enabled": true
+      "enabled": true,
+      "icon": imageMap.bellIcon
     },
     {
       "id": 3,
       "title": "Consortium Updates",
       "description": "News, insights and membership updates.",
-      "enabled": true
+      "enabled": true,
+      "icon": imageMap.calenderUpdate
     },
     {
       "id": 4,
       "title": "Partner Communications",
       "description": "Updates from consortium partners.",
-      "enabled": false
+      "enabled": false,
+      "icon": imageMap.commentIcon
     }
   ],
 

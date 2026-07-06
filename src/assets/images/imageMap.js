@@ -157,6 +157,9 @@ export const imageMap = {
 
   check_mark: new URL("./check-mark.svg", import.meta.url).href,
   accepted: new URL("./accepted.svg", import.meta.url).href,
+  bellIcon: new URL("./bell.png", import.meta.url).href,
+  calenderUpdate: new URL("./calendar-update.png", import.meta.url).href,
+  commentIcon: new URL("./comment.png", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,

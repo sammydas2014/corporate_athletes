@@ -18,7 +18,7 @@ const billingMonthly = ref(false)
       </div>
 
       <div class="pricing-toggle-wrap">
-        <BaseToggleButton v-model="billingMonthly" left-label="Monthly" right-label="Yearly" />
+        <BaseToggleButton v-model="billingMonthly" leftLabel="Monthly" rightLabel="Yearly" />
         <span class="save-badge">Save 20%</span>
       </div>
 
