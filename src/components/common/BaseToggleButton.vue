@@ -12,7 +12,7 @@ const props = defineProps({
   },
   modelValue: {
     type: Boolean,
-    default: true,
+    default: false,
   },
 });
 
@@ -33,21 +33,21 @@ function toggle() {
     <span
       v-if="leftLabel.length"
       class="label label-left"
-      :class="{ active: checked }"
-      @click="checked = true"
+      :class="{ active: !checked }"
+      @click="checked = false"
     >
       {{ leftLabel }}
     </span>
 
     <button type="button" class="track" role="switch" :aria-checked="checked" @click="toggle">
-      <span class="thumb" :class="{ 'thumb-on': checked, 'thumb-off': !checked }" />
+      <span class="thumb" :class="{ 'thumb-on': checked }" />
     </button>
 
     <span
       v-if="rightLabel.length"
       class="label label-right"
-      :class="{ active: !checked }"
-      @click="checked = false"
+      :class="{ active: checked }"
+      @click="checked = true"
     >
       {{ rightLabel }}
     </span>

@@ -18,7 +18,7 @@
           <div class="left-prt">
             <span class="title__eyebrow"> Field-tested guides </span>
             <h2 class="sec__title">Operating mechanisms, not slideware</h2>
-            <BaseToggleButton v-model="aiEnabled" />
+            <BaseToggleButton v-model="aiEnabled" left-label="Non-AI" right-label="AI-enabled" />
           </div>
           <div class="right-prt">
             <div class="filter-prt">
