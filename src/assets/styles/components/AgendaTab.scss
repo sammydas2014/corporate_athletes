@@ -1,5 +1,5 @@
-
-.agenda-tabs{
+@use "../base" as *;
+.agenda-tabs {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,7 +7,18 @@
   padding-bottom: 35px;
   position: relative;
   margin-bottom: 45px;
-  &::after{
+  @include mobile {
+    overflow: auto;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    gap: 45px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 3px;
+    }
+  }
+  &::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -15,10 +26,14 @@
     right: 0;
     width: 100%;
     height: 3px;
-    background-color: #E4E6E9;
+    background-color: #e4e6e9;
     z-index: 1;
+
+    @include mobile {
+      display: none;
+    }
   }
-  .btn{
+  .btn {
     height: auto;
     background-color: transparent;
     padding: 0;
@@ -27,31 +42,59 @@
     display: block;
     text-align: left;
     position: relative;
-    h3{
-      color: rgba(27, 30, 34 , 49%);
-      transition: var(--bs-transition);
+    @include mobile {
+      flex: 0 0 auto;
     }
-    .btmwrap{
-      .date{
+    h3 {
+      color: rgba(27, 30, 34, 49%);
+      transition: var(--bs-transition);
+      @include mini-desktop {
+        font-size: 18px;
+        line-height: 1.2;
+      }
+      @include mobile {
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+    }
+    .btmwrap {
+      .date {
         font-size: 34px;
         line-height: 40px;
         letter-spacing: -0.01em;
         font-weight: bold;
-        color: rgba(26, 29, 33 , 49%);
+        color: rgba(26, 29, 33, 49%);
         display: inline;
-            margin-right: 3px;
-            transition: var(--bs-transition);
-
+        margin-right: 3px;
+        transition: var(--bs-transition);
+        @include mini-desktop {
+          font-size: 28px;
+          line-height: 1.2;
+        }
+        @include mobile {
+          font-size: 25px;
+          line-height: 1.2;
+        }
       }
-      .month{
-        color: rgba(26, 29, 33 , 49%);
+      .month {
+        color: rgba(26, 29, 33, 49%);
         font-weight: 500;
         display: inline;
         letter-spacing: -0.03em;
         transition: var(--bs-transition);
+        @include mini-desktop {
+          font-size: 13px;
+          line-height: 1.2;
+        }
+        @include mobile {
+          font-size: 12px;
+          line-height: 1.2;
+        }
       }
     }
-    &::after{
+    &::after {
       content: "";
       position: absolute;
       width: 100%;
@@ -62,24 +105,25 @@
       z-index: 2;
       background-color: transparent;
       transition: var(--bs-transition);
+      @include mobile {
+        display: none;
+      }
     }
   }
-  .active{
-    h3{
+  .active {
+    h3 {
       color: var(--color-dark-secondary);
     }
-    .btmwrap{
-      .date{
+    .btmwrap {
+      .date {
         color: var(--color-dark-secondary);
       }
-      .month{
+      .month {
         color: var(--color-dark-secondary);
       }
     }
-    &::after{
-      background-color: #6C727B;
-
+    &::after {
+      background-color: #6c727b;
     }
   }
-
 }

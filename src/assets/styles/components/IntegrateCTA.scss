@@ -32,6 +32,9 @@
     max-width: 450px;
     margin: 0 auto 40px;
     letter-spacing: -0.03em;
+    @include mini-mobile{
+      margin-bottom: 25px;
+    }
   }
 
   .integrate-cta__actions {
