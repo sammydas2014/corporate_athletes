@@ -32,7 +32,7 @@
                     placeholder="www.yourmail.com"
                     v-model="userEmail"
                   />
-                  <BaseButton type="submit" class="suscrd-btn"> Subscribe </BaseButton>
+                  <BaseButton type="submit" class="suscrd-btn" to="/subscription"> Subscribe </BaseButton>
                 </form>
               </div>
             </div>
