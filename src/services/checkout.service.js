@@ -5,7 +5,7 @@ export const paymentMethods = [
     id: 'card',
     label: 'Credit or Debit Card',
     subtitle: null,
-    icons: ['PayPal', 'VISA', 'amazon', 'Apple Pay', 'G Pay', 'MC'],
+    icons: [imageMap.payPal, imageMap.visa, imageMap.amazonPay, imageMap.applePay, imageMap.googlePay, imageMap.masterCard],
   },
   {
     id: 'bank-transfer',

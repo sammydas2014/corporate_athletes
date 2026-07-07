@@ -167,6 +167,12 @@ export const imageMap = {
   badge_avatar_2: new URL("./badge-avatar-2.png", import.meta.url).href,
   badge_avatar_3: new URL("./badge-avatar-3.png", import.meta.url).href,
   green_check: new URL("./green-check.png", import.meta.url).href,
+  payPal: new URL("./paypal.png", import.meta.url).href,
+  visa: new URL("./visa.png", import.meta.url).href,
+  amazonPay: new URL("./amazon-pay.png", import.meta.url).href,
+  applePay: new URL("./apple-pay.png", import.meta.url).href,
+  googlePay: new URL("./g-pay.png", import.meta.url).href,
+  masterCard: new URL("./master-card.png", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,

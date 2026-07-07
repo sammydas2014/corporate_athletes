@@ -161,7 +161,9 @@ function selectIcon(icon) {
                           { 'is-active': selectedIcon === icon }
                         ]"
                         @click.stop="selectIcon(icon)"
-                      >{{ icon }}</span>
+                      >
+                        <img :src="icon" alt="pay icon" />
+                      </span>
                     </div>
                   </div>
 
@@ -253,6 +255,20 @@ function selectIcon(icon) {
                       </div>
                     </div>
                   </transition>
+                </div>
+              </div>
+            </div>
+
+            <div class="trust-wrap">
+              <div class="trust-hdng">
+                <div class="trust-i">
+                  <img :src="imageMap.shieldBlackIcon" alt="trust badge">
+                </div>
+                <div class="text">
+                  <h6>Secure, encrypted and trusted</h6>
+                  <p>
+                    Your payment information is protected with 256-bit SSL encryption.
+                  </p>
                 </div>
               </div>
             </div>
