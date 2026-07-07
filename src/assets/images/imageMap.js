@@ -160,6 +160,8 @@ export const imageMap = {
   bellIcon: new URL("./bell.png", import.meta.url).href,
   calenderUpdate: new URL("./calendar-update.png", import.meta.url).href,
   commentIcon: new URL("./comment.png", import.meta.url).href,
+  greenCheckIcon: new URL("./green-check.png", import.meta.url).href,
+  shieldBlackIcon: new URL("./shield-check-black.png", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
