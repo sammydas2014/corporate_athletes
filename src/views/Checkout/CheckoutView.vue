@@ -1,118 +1,44 @@
 <script setup>
+import { ref } from 'vue'
+import BaseInput from '@/components/common/BaseInput.vue'
+import BaseButton from '@/components/common/BaseButton.vue'
+import BaseAccelerate from '@/components/common/BaseAccelerate.vue'
+import BaseRadio from '@/components/common/BaseRadio.vue'
+import { imageMap } from '@/assets/images/imageMap'
+import {
+  paymentMethods,
+  bankDetails,
+  invoiceDetails,
+  summaryData,
+} from '@/services/checkout.service'
 
-import { ref } from 'vue';
-import BaseInput from '@/components/common/BaseInput.vue';
-import BaseButton from '@/components/common/BaseButton.vue';
-import BaseAccelerate from '@/components/common/BaseAccelerate.vue';
-import { imageMap } from '@/assets/images/imageMap';
+// Billing form
+const firstname = ref('')
+const lastName = ref('')
+const workEmail = ref('')
+const jobTitle = ref('')
+const phoneNo = ref('')
+const organization = ref('')
+const country = ref('')
+const addressLine1 = ref('')
+const addressLine2 = ref('')
+const city = ref('')
+const postCode = ref('')
+const vatNo = ref('')
 
+// Payment accordion
+const selectedPayment = ref('card')
+const selectedIcon = ref('PayPal')
 
-const firstname = ref('');
-const lastName = ref('');
-const workEmail = ref('');
-const jobTitle = ref('');
-const phoneNo = ref('');
-const organization = ref('');
-const country = ref('');
-const addressLine1 = ref('');
-const addressLine2 = ref('');
-const city = ref('');
-const postCode = ref('');
-const vatNo = ref('');
+const cardForm = ref({
+  cardNumber: '',
+  expiry: '',
+  cvv: '',
+  nameOnCard: '',
+})
 
-// Summary Data
-const summaryData = {
-  "title": "Order Summary",
-  "editButton": {
-    "label": "Edit Cart",
-    "link": "/cart"
-  },
-  "membershipPlan": {
-    "title": "Membership Plan",
-    "icon": imageMap.GoldenIdea,
-    "name": "Executive Membership",
-    "price": {
-      "monthly": "£499",
-      "period": "/month",
-      "billing": "Billed annually"
-    },
-    "total": "£5,988.00"
-  },
-  "addons": {
-    "title": "Add-ons",
-    "items": [
-      {
-        "name": "Additional Team Members (1)",
-        "price": "£1,800.00"
-      },
-      {
-        "name": "Advisory Hours (5 hrs)",
-        "price": "£1,250.00"
-      }
-    ]
-  },
-  "pricing": {
-    "subtotal": "£9,038.00",
-    "vat": {
-      "label": "VAT (20%)",
-      "amount": "£1,807.60"
-    },
-    "total": {
-      "label": "Total",
-      "amount": "£10,845.60"
-    },
-    "dueToday": {
-      "label": "Total due today",
-      "amount": "£10,845.60"
-    }
-  },
-  "savingCard": {
-    "icon": imageMap.shieldBlackIcon,
-    "title": "You're saving",
-    "amount": "£1,224.00",
-    "description": "with annual billing"
-  },
-  "included": {
-    "title": "What's Included",
-    "items": [
-      {
-        "text": "All membership benefits",
-
-      },
-      {
-        "text": "Access to member community",
-
-      },
-      {
-        "text": "Event invitations & priority access",
-
-      },
-      {
-        "text": "Research & insights library",
-
-      },
-      {
-        "text": "Cancel anytime",
-
-      }
-    ]
-  },
-  "helpCard": {
-    "icon": imageMap.shieldBlackIcon,
-    "title": "Need Help?",
-    "description": "Our team is here to help you.",
-    "email": "hello@corporatelites.com",
-    "phone": "+44 20 1234 5678"
-  },
-  "checkoutButton": {
-    "label": "PAY SECURELY",
-    "amount": "£10,845.60"
-  },
-  "terms": {
-    "text": "By completing your purchase, you agree to our Terms of Use and Privacy Policy.",
-    "termsLink": "/terms",
-    "privacyLink": "/privacy"
-  }
+function selectIcon(icon) {
+  selectedIcon.value = icon
 }
 </script>
 
@@ -204,6 +130,133 @@ const summaryData = {
                 </p>
               </div>
             </form>
+
+            <!-- Payment Method -->
+            <div class="payment-method">
+              <div class="payment-method__hdng">
+                <h5>PAYMENT METHOD</h5>
+                <p>All transactions are secure and encrypted.</p>
+              </div>
+
+              <div class="payment-accordion">
+                <div
+                  v-for="method in paymentMethods"
+                  :key="method.id"
+                  class="payment-accordion__item"
+                  :class="{ 'is-open': selectedPayment === method.id }"
+                >
+                  <div class="payment-accordion__header" @click="selectedPayment = method.id">
+                    <BaseRadio v-model="selectedPayment" :value="method.id" name="payment" />
+                    <div class="payment-accordion__label">
+                      <span class="payment-accordion__title">{{ method.label }}</span>
+                      <span v-if="method.subtitle" class="payment-accordion__subtitle">{{ method.subtitle }}</span>
+                    </div>
+                    <div v-if="method.icons.length" class="payment-accordion__icons">
+                      <span
+                        v-for="icon in method.icons"
+                        :key="icon"
+                        class="pay-icon"
+                        :class="[
+                          `pay-icon--${icon.toLowerCase().replace(/\s+/g, '-')}`,
+                          { 'is-active': selectedIcon === icon }
+                        ]"
+                        @click.stop="selectIcon(icon)"
+                      >{{ icon }}</span>
+                    </div>
+                  </div>
+
+                  <!-- Credit / Debit Card -->
+                  <transition name="accordion">
+                    <div v-if="selectedPayment === method.id && method.id === 'card'" class="payment-accordion__body">
+                      <div class="inp-wrap">
+                        <div class="inp-innr-wrap-fl-wdth">
+                          <label>Card Number</label>
+                          <BaseInput v-model="cardForm.cardNumber" placeholder="1234 1234 1234 1234" />
+                        </div>
+                      </div>
+                      <div class="inp-wrap">
+                        <div class="inp-innr-wrap">
+                          <label>Expiry Date</label>
+                          <BaseInput v-model="cardForm.expiry" placeholder="MM/YY" />
+                        </div>
+                        <div class="inp-innr-wrap">
+                          <label>CVV</label>
+                          <BaseInput v-model="cardForm.cvv" placeholder="123" />
+                        </div>
+                      </div>
+                      <div class="inp-wrap">
+                        <div class="inp-innr-wrap-fl-wdth">
+                          <label>Name on Card</label>
+                          <BaseInput v-model="cardForm.nameOnCard" placeholder="Michael Anderson" />
+                        </div>
+                      </div>
+                    </div>
+                  </transition>
+
+                  <!-- Bank Transfer -->
+                  <transition name="accordion">
+                    <div v-if="selectedPayment === method.id && method.id === 'bank-transfer'" class="payment-accordion__body">
+                      <p class="pm-info-note">Transfer to the account below and use your order number as the payment reference. Allow 1–2 business days for funds to clear before access is granted.</p>
+                      <div class="pm-detail-grid">
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">Bank Name</span>
+                          <span class="pm-detail-row__val">{{ bankDetails.bankName }}</span>
+                        </div>
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">Account Name</span>
+                          <span class="pm-detail-row__val">{{ bankDetails.accountName }}</span>
+                        </div>
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">Sort Code</span>
+                          <span class="pm-detail-row__val">{{ bankDetails.sortCode }}</span>
+                        </div>
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">Account Number</span>
+                          <span class="pm-detail-row__val">{{ bankDetails.accountNumber }}</span>
+                        </div>
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">IBAN</span>
+                          <span class="pm-detail-row__val">{{ bankDetails.iban }}</span>
+                        </div>
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">SWIFT / BIC</span>
+                          <span class="pm-detail-row__val">{{ bankDetails.swift }}</span>
+                        </div>
+                      </div>
+                      <p class="pm-reference-note"><i class="bi bi-info-circle"></i> {{ bankDetails.reference }}</p>
+                    </div>
+                  </transition>
+
+                  <!-- Invoice -->
+                  <transition name="accordion">
+                    <div v-if="selectedPayment === method.id && method.id === 'invoice'" class="payment-accordion__body">
+                      <p class="pm-info-note">{{ invoiceDetails.note }}</p>
+                      <div class="pm-detail-grid">
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">Payment Terms</span>
+                          <span class="pm-detail-row__val">{{ invoiceDetails.paymentTerms }}</span>
+                        </div>
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">Currency</span>
+                          <span class="pm-detail-row__val">{{ invoiceDetails.currency }}</span>
+                        </div>
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">Eligibility</span>
+                          <span class="pm-detail-row__val">{{ invoiceDetails.minOrder }}</span>
+                        </div>
+                        <div class="pm-detail-row">
+                          <span class="pm-detail-row__label">Billing Contact</span>
+                          <span class="pm-detail-row__val">
+                            <a :href="`mailto:${invoiceDetails.contact}`">{{ invoiceDetails.contact }}</a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </div>
+
           </div>
           <div class="summary-wrap">
             <div class="hdng">

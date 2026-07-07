@@ -401,3 +401,294 @@
     }
   }
 }
+
+// ── Payment Method ────────────────────────────────────────────────────────────
+.payment-method {
+  margin-top: 40px;
+
+  &__hdng {
+    margin-bottom: 20px;
+
+    h5 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: $color-dark-secondary;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 14px;
+      color: #636a78;
+      margin: 0;
+    }
+  }
+}
+
+.payment-accordion {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2e6ec;
+  border-radius: 12px;
+  overflow: hidden;
+
+  &__item {
+    border-bottom: 1px solid #e2e6ec;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.is-open {
+      .payment-accordion__header {
+        background: #f8fafb;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #f8fafb;
+    }
+
+    .base-radio {
+      flex-shrink: 0;
+
+      input[type='radio'] {
+        display: none;
+      }
+
+      .radio {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #c4c9d2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: border-color 0.2s;
+
+        svg {
+          display: none;
+        }
+      }
+    }
+
+    // when this item is selected, fill the radio dot
+    .is-open & .base-radio .radio,
+    &:has(input:checked) .radio {
+      border-color: $color-primary;
+      background: $color-primary;
+    }
+  }
+
+  &__label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: 600;
+    color: $color-dark-secondary;
+    letter-spacing: -0.03em;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    color: $color-primary;
+    font-weight: 500;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  &__body {
+    padding: 20px 22px 24px;
+    border-top: 1px solid #edf0f4;
+    background: var(--bs-white);
+
+    .inp-wrap {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Accordion open state — radio dot filled
+.payment-accordion__item.is-open {
+  .payment-accordion__header .base-radio .radio {
+    border-color: $color-primary;
+    background: $color-primary;
+  }
+}
+
+// Bank Transfer / Invoice detail grid
+.pm-info-note {
+  font-size: 13px;
+  color: #636a78;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.pm-detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #e2e6ec;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.pm-detail-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #edf0f4;
+  gap: 16px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__label {
+    width: 160px;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9199a5;
+    letter-spacing: -0.02em;
+  }
+
+  &__val {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-dark-secondary;
+    letter-spacing: -0.02em;
+
+    a {
+      color: $color-primary;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+.pm-reference-note {
+  font-size: 13px;
+  color: #636a78;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+
+  .bi {
+    color: $color-primary;
+    flex-shrink: 0;
+  }
+}
+
+// Accordion enter/leave transition
+.accordion-enter-active,
+.accordion-leave-active {
+  transition: opacity 0.2s ease, max-height 0.25s ease;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.accordion-enter-from,
+.accordion-leave-to {
+  opacity: 0;
+  max-height: 0;
+}
+
+// Payment brand icon chips
+.pay-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  min-width: 40px;
+  padding: 0 7px;
+  border: 1px solid #d8dee6;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: $color-dark-secondary;
+  background: var(--bs-white);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.18s, box-shadow 0.18s;
+
+  &:hover {
+    border-color: $color-primary;
+  }
+
+  &.is-active {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+  }
+
+  &--apple-pay,
+  &--g-pay {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+  }
+
+  &--visa {
+    color: #1a1f71;
+    font-style: italic;
+  }
+
+  &--paypal {
+    color: #003087;
+  }
+
+  &--mc {
+    background: linear-gradient(to right, #eb001b 40%, #f79e1b 60%);
+    color: transparent;
+    font-size: 0;
+    width: 36px;
+    position: relative;
+    border: none;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      background: #eb001b;
+      left: 4px;
+    }
+
+    &::after {
+      background: #f79e1b;
+      right: 4px;
+    }
+  }
+}
