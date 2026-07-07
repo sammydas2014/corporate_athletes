@@ -32,11 +32,11 @@
           <li v-for="item in navItems" :key="item.label" :class="['nav-item', { dropdown: item.dropdown }]">
             <template v-if="item.dropdown">
               <span class="nav-link dropdown-toggle" :id="`${item.label.toLowerCase().replace(/\s+/g, '-')}-dropdown`"
-                role="button" :aria-expanded="openDropdown === item.label"
-                @click.stop="toggleDropdown(item.label)">
+                role="button" :aria-expanded="openDropdown === item.label" @click.stop="toggleDropdown(item.label)">
                 {{ item.label }}
               </span>
-              <ul class="dropdown-menu bg-primary shadow-lg" :class="{ 'dropdown-menu--open': openDropdown === item.label }"
+              <ul class="dropdown-menu bg-primary shadow-lg"
+                :class="{ 'dropdown-menu--open': openDropdown === item.label }"
                 :aria-labelledby="`${item.label.toLowerCase().replace(/\s+/g, '-')}-dropdown`">
                 <li v-for="child in item.dropdown" :key="child.label">
                   <router-link :to="child.to" class="dropdown-item hover-gold" exact-active-class="active">
@@ -64,6 +64,8 @@
             <i class="bi bi-search"></i>
           </span>
           <BaseButton to="/about" variant="secondary" class="call_btn">Book a Strategy Call</BaseButton>
+          <BaseButton to="/cart" variant="outline-light"><i class="bi bi-cart3"></i></BaseButton>
+
         </div>
       </div>
     </div>

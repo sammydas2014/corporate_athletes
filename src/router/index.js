@@ -5,6 +5,9 @@ const HomeView = () => import("@/views/Home/HomeView.vue");
 const AboutView = () => import("@/views/About/AboutView.vue");
 const EventsView = () => import("@/views/Events/EventsView.vue");
 const EventDetails = () => import("@/views/Events/EventDetails.vue");
+const EventSignUp = () => import("@/views/Events/EventSignUp.vue");
+const CartView = () => import("@/views/Cart/CartView.vue");
+const CheckoutView = () => import("@/views/Checkout/CheckoutView.vue");
 const ContactView = () => import("@/views/Contact/ContactView.vue");
 const Registration = () => import("@/views/Registration/Registration.vue");
 const SubscriptionView = () => import("@/views/Subscription/SubscriptionView.vue");
@@ -205,6 +208,11 @@ const routes = [
     props: true,
   },
   {
+    path: "/events/sign-up",
+    name: "event-sign-up",
+    component: EventSignUp,
+  },
+  {
     path: "/contact",
     name: "contact",
     component: ContactView,
@@ -223,6 +231,16 @@ const routes = [
     path: "/profile",
     name: "profile",
     component: ProfileView,
+  },
+  {
+    path: "/cart",
+    name: "cart",
+    component: CartView,
+  },
+  {
+    path: "/checkout",
+    name: "checkout",
+    component: CheckoutView,
   },
   // Catch-all fallback
   {
