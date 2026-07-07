@@ -163,6 +163,11 @@ export const imageMap = {
   greenCheckIcon: new URL("./green-check.png", import.meta.url).href,
   shieldBlackIcon: new URL("./shield-check-black.png", import.meta.url).href,
 
+  badge_avatar_1: new URL("./badge-avatar-1.png", import.meta.url).href,
+  badge_avatar_2: new URL("./badge-avatar-2.png", import.meta.url).href,
+  badge_avatar_3: new URL("./badge-avatar-3.png", import.meta.url).href,
+  green_check: new URL("./green-check.png", import.meta.url).href,
+
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
   },

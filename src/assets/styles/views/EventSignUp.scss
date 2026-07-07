@@ -2,8 +2,7 @@
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 .evtsignup-hero {
-  padding-top: var(--sec-gap);
-  padding-bottom: 50px;
+  padding-block: var(--sec-gap);
   text-align: center;
 
   @include tablet {
@@ -14,11 +13,10 @@
     padding-bottom: 28px;
   }
 
-  h1 {
+  .sec__title {
     color: $color-dark-secondary;
-    max-width: 680px;
+    max-width: 100%;
     margin-inline: auto;
-    margin-bottom: 16px;
 
     @include mobile {
       font-size: 28px;
@@ -31,11 +29,12 @@
   }
 
   &__sub {
-    max-width: 540px;
+    max-width: 600px;
     margin-inline: auto;
     color: #636a78;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.6;
+    letter-spacing: -0.05em;
     margin-bottom: 28px;
 
     @include mobile {
@@ -48,27 +47,21 @@
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: var(--bs-white);
+    background: var(--bs-primary);
     border: 1px solid var(--bs-border-color);
     border-radius: var(--bs-border-radius-pill);
-    padding: 8px 18px 8px 8px;
+    padding: 5px 20px 5px 8px;
 
     .badge-avatars {
       display: flex;
 
       .badge-avatar {
-        width: 28px;
-        height: 28px;
+        width: 29px;
+        height: 29px;
         border-radius: 50%;
-        background: $color-primary;
-        color: var(--bs-white);
-        font-size: 11px;
-        font-weight: 700;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid var(--bs-white);
-        margin-left: -8px;
+        object-fit: cover;
+        border: 1px solid var(--bs-white);
+        margin-left: -13px;
 
         &:first-child {
           margin-left: 0;
@@ -77,10 +70,11 @@
     }
 
     .badge-text {
-      font-size: 13px;
-      font-weight: 500;
-      color: $color-dark-secondary;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--bs-white);
       letter-spacing: -0.02em;
+      line-height: 1;
     }
   }
 }
@@ -92,7 +86,7 @@
 
 .evtsignup-layout {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   align-items: flex-start;
 
   @include mini-desktop {
@@ -114,8 +108,8 @@
 .evtsignup-card {
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid #d8dee6de;
-  border-radius: 10px;
-  padding: 45px;
+  border-radius: 15px;
+  padding: 50px 45px;
 
   @include mini-desktop {
     padding: 36px 32px;
@@ -126,17 +120,17 @@
   }
 
   &__heading {
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
     color: $color-dark-secondary;
-    margin-bottom: 6px;
+    margin-bottom: 15px;
   }
 
   &__desc {
-    font-size: 14px;
-    color: #636a78;
-    margin-bottom: 28px;
+    font-size: 16px;
+    color: #78828c;
+    margin-bottom: 40px;
     line-height: 1.5;
   }
 }
@@ -186,7 +180,7 @@
         letter-spacing: -0.03em;
 
         &::placeholder {
-          color: #a0a8b3;
+          color: #484f5b;
         }
       }
     }
@@ -280,18 +274,18 @@
 
 .evtsignup-privacy {
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   color: #a0a8b3;
   margin: 0;
 }
 
 // ── Sidebar ───────────────────────────────────────────────────────────────────
 .evtsignup-sidebar {
-  width: 340px;
+  width: 470px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 20px;
 
   @include mini-desktop {
     width: 300px;
@@ -306,16 +300,20 @@
 }
 
 .sidebar-heading {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: 20px;
+  font-weight: 600;
+  color: $color-dark-secondary;
   text-transform: uppercase;
   color: $color-dark-secondary;
-  margin-bottom: 22px;
+  margin-bottom: 30px;
 }
 
 // Event categories
 .evtsignup-categories {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(216, 222, 230, 0.87);
+  border-radius: 15px;
+  padding: 50px 45px;
   @include tablet {
     flex: 1 1 280px;
   }
@@ -324,25 +322,30 @@
 .category-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 30px;
 }
 
 .category-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 24px;
 }
 
 .category-icon {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   color: $color-dark-secondary;
+  background-color: $color-primary;
+  img {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .category-content {
@@ -352,21 +355,26 @@
 }
 
 .category-label {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   color: $color-dark-secondary;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
 }
 
 .category-desc {
-  font-size: 13px;
-  color: #636a78;
+  font-size: 16px;
+  color: #6b7280;
   line-height: 1.5;
   margin: 0;
+  letter-spacing: -0.03em;
 }
 
 // Why sign up
 .evtsignup-why {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(216, 222, 230, 0.87);
+  border-radius: 15px;
+  padding: 50px 45px;
   @include tablet {
     flex: 1 1 260px;
   }
@@ -382,20 +390,18 @@
 
   li {
     position: relative;
-    padding-left: 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
     font-size: 14px;
-    color: #636a78;
+    color: $color-dark-secondary;
+    font-weight: 600;
     line-height: 1.5;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 6px;
-      left: 0;
-      width: 8px;
-      height: 8px;
-      background-color: $color-primary;
-      border-radius: 50%;
+    img {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      object-fit: contain;
     }
   }
 }
