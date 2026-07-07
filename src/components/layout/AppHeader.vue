@@ -64,7 +64,7 @@
             <i class="bi bi-search"></i>
           </span>
           <BaseButton to="/about" variant="secondary" class="call_btn">Book a Strategy Call</BaseButton>
-          <BaseButton to="/cart" variant="outline-light"><i class="bi bi-cart3"></i></BaseButton>
+          <BaseButton to="/cart" variant="outline-light" class="cart_btn"><i class="bi bi-cart3"></i></BaseButton>
 
         </div>
       </div>

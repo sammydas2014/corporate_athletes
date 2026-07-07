@@ -161,6 +161,11 @@ export const imageMap = {
   calenderUpdate: new URL("./calendar-update.png", import.meta.url).href,
   commentIcon: new URL("./comment.png", import.meta.url).href,
 
+  badge_avatar_1: new URL("./badge-avatar-1.png", import.meta.url).href,
+  badge_avatar_2: new URL("./badge-avatar-2.png", import.meta.url).href,
+  badge_avatar_3: new URL("./badge-avatar-3.png", import.meta.url).href,
+  green_check: new URL("./green-check.png", import.meta.url).href,
+
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
   },
