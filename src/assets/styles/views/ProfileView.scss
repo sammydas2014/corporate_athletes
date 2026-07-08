@@ -7,15 +7,27 @@
     background-color: #0e221c;
     border-radius: 15px;
     padding: 50px 60px 58px 50px;
+    @include mini-mobile {
+      padding: 40px 30px;
+    }
     .innr-prt {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
       .dtls-prt {
         display: flex;
         align-items: center;
         gap: 50px;
         flex-wrap: wrap;
+        @include tablet {
+          gap: 30px;
+          max-width: 380px;
+        }
         .img-wrap {
           width: 210px;
           height: 210px;
@@ -50,14 +62,33 @@
             align-items: center;
             gap: 40px;
             margin-bottom: 24px;
+            @include mini-mobile {
+              gap: 15px;
+            }
             p {
               display: flex;
               align-items: center;
               gap: 7px;
+              @include mini-mobile {
+                font-size: 14px;
+              }
               img {
                 flex: 0 0 auto;
+                @include mini-mobile {
+                  max-width: 14px;
+                }
               }
             }
+          }
+        }
+      }
+      .editBtnWrap {
+        @include mini-mobile {
+          width: 100%;
+        }
+        .btn {
+          @include mini-mobile {
+            width: 100%;
           }
         }
       }
@@ -67,18 +98,30 @@
 .data-sec {
   padding: 50px 0 80px 0;
   position: relative;
+  @include mobile {
+    padding-bottom: 50px;
+  }
   .inner-container {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    @include mobile{
+      flex-direction: column;
+    }
     .event-wrap {
       width: calc(58% - 8px);
       flex: 0 0 auto;
+      @include mobile {
+        width: 100%;
+      }
       .upcomming-events {
         padding: 50px 30px 24px 40px;
         border: 1px solid #d8dee6de;
         border-radius: 15px;
         background-color: #ffffffb2;
+        @include tablet {
+          padding: 40px 25px;
+        }
         .hdng {
           display: flex;
           align-items: center;
@@ -99,6 +142,12 @@
             font-weight: 600;
             letter-spacing: 0.08em;
             gap: 9px;
+            span.btn-txt {
+              font-size: 13px;
+              @include tablet {
+                display: none;
+              }
+            }
           }
         }
         .crd-wrap {
@@ -113,6 +162,9 @@
       }
       .past-participation {
         margin-top: 15px;
+        @include mini-mobile {
+          padding: 30px 15px;
+        }
         .participationCrd {
           &:first-of-type {
             padding-top: 0;
@@ -125,6 +177,9 @@
       }
       .menbership-sec {
         margin-top: 15px;
+        @include mini-mobile {
+          padding: 30px 10px 30px 10px;
+        }
         .membership-crd-wrap {
           background-color: #ffffffb2;
           border-radius: 10px;
@@ -135,6 +190,10 @@
             display: flex;
             align-items: center;
             gap: 30px;
+            @include mini-mobile {
+              gap: 20px;
+              padding: 15px 18px;
+            }
             .logo-wrap {
               width: 65px;
               height: 65px;
@@ -142,6 +201,10 @@
               background-color: #dce4dc;
               overflow: hidden;
               flex: 0 0 auto;
+              @include mini-mobile {
+                width: 55px;
+                height: 55px;
+              }
               img {
                 width: 100%;
                 height: 100%;
@@ -169,8 +232,20 @@
               flex-wrap: wrap;
               margin: 0;
               padding: 0;
+              @include mini-desktop {
+                gap: 20px;
+              }
+              @include tablet {
+                flex-direction: column;
+              }
               li {
                 width: calc(33.33% - 40px);
+                @include mini-desktop {
+                  width: calc(33.33% - 14px);
+                }
+                @include tablet {
+                  width: 100%;
+                }
                 h6 {
                   color: #1a1d21;
                   font-size: 15px;
@@ -197,11 +272,17 @@
     .summary-wrap {
       width: calc(42% - 8px);
       flex: 0 0 auto;
+      @include mobile {
+        width: 100%;
+      }
       .upcomming-events {
         padding: 50px 30px 24px 40px;
         border: 1px solid rgba(216, 222, 230, 0.8705882353);
         border-radius: 15px;
         background-color: rgba(255, 255, 255, 0.6980392157);
+        @include tablet {
+          padding: 40px 20px;
+        }
         .hdng {
           display: flex;
           align-items: center;
@@ -237,104 +318,121 @@
               font-size: 18px;
               font-weight: 600;
               letter-spacing: -0.03em;
+              @include tablet {
+                font-size: 16px;
+              }
             }
           }
-          .smry-data + .smry-data{
+          .smry-data + .smry-data {
             margin-top: 20px;
+            @include tablet {
+              margin-top: 14px;
+            }
           }
         }
       }
-      .preferance-sec{
+      .preferance-sec {
         margin-top: 15px;
-        .preferance-data{
-          .data-wrap{
+        .preferance-data {
+          .data-wrap {
             max-width: 350px;
-            h6{
-              color: #1A1D21;
+            h6 {
+              color: #1a1d21;
               font-size: 15px;
               font-weight: 500;
               letter-spacing: -0.04em;
               margin-bottom: 16px;
             }
-            .topic-wrap{
+            .topic-wrap {
               display: flex;
               flex-wrap: wrap;
               gap: 10px;
-              .base-chip{
-                background-color: #E8F6F6;
-                border: 1px solid #CFE2E2;
+              .base-chip {
+                background-color: #e8f6f6;
+                border: 1px solid #cfe2e2;
               }
             }
-            ul{
+            ul {
               padding: 0;
               margin: 0;
               display: flex;
               align-items: center;
               gap: 10px;
               flex-wrap: wrap;
-              li{
+              li {
                 font-size: 18px;
-                color: #1A1D21;
+                color: #1a1d21;
                 letter-spacing: -0.03em;
               }
             }
           }
-          .data-wrap + .data-wrap{
+          .data-wrap + .data-wrap {
             margin-top: 25px;
           }
         }
       }
-      .notification-sec{
+      .notification-sec {
         margin-top: 15px;
-        .settings-wrap{
-          .settings-list{
+        .settings-wrap {
+          .settings-list {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 40px;
-            .left-prt{
+            @include tablet {
+              gap: 20px;
+            }
+            @include mobile {
+              flex-direction: row;
+            }
+            .left-prt {
               display: flex;
               align-items: flex-start;
               gap: 20px;
-              .icon-prt{
-                max-width: 18px;
+              @include tablet{
+                gap: 12px;
               }
-              .cntnt{
-                h6{
-                  color: #1A1D21;
+              .icon-prt {
+                max-width: 18px;
+                @include tablet {
+                  flex: 0 0 auto;
+                  max-width: 14px;
+                }
+              }
+              .cntnt {
+                h6 {
+                  color: #1a1d21;
                   font-size: 16px;
                   font-weight: 600;
                   letter-spacing: -0.02em;
                   margin-bottom: 5px;
                 }
-                p{
+                p {
                   font-size: 15px;
                   letter-spacing: -0.04em;
                 }
               }
             }
-            .rit-prt{
-              .ai-toggle{
-                .track{
+            .rit-prt {
+              .ai-toggle {
+                .track {
                   border: 1px solid transparent;
-                  background-color: #B4BEBF;
-                  .thumb{
+                  background-color: #b4bebf;
+                  .thumb {
                     background-color: var(--bs-white);
                   }
-                  &:has(.thumb-on){
-                    background-color: #217B3A;
+                  &:has(.thumb-on) {
+                    background-color: #217b3a;
                   }
                 }
               }
             }
-
           }
-          .settings-list + .settings-list{
+          .settings-list + .settings-list {
             margin-top: 30px;
           }
         }
       }
-
     }
   }
 }
