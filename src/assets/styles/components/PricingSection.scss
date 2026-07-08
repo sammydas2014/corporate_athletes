@@ -1,4 +1,4 @@
-@use '../base' as *;
+@use "../base" as *;
 
 .pricing-section {
   padding: var(--sec-gap) 0 50px;
@@ -12,10 +12,22 @@
 
   .sec__title {
     margin-bottom: 30px;
+    @include mini-desktop {
+      margin-bottom: 15px;
+    }
   }
 
   .sec__subtitle {
     color: var(--bs-body-color);
+    @include mini-desktop {
+      margin-bottom: 0;
+    }
+  }
+  @include mini-desktop {
+    margin-bottom: 35px;
+  }
+  @include mobile {
+    margin-bottom: 25px;
   }
 }
 
@@ -27,14 +39,38 @@
   gap: 12px;
   margin-bottom: 30px;
 
+  @include mini-mobile {
+    margin-bottom: 20px;
+  }
+
   .track {
     background: var(--color-dark-secondary);
     height: 40px;
+    @include mobile {
+      height: 34px;
+      width: 55px;
+    }
+  }
+
+  .thumb-on {
+    @include mobile {
+      transform: translateX(21px);
+    }
+  }
+
+  .ai-toggle {
+    @include mobile {
+      gap: 10px;
+    }
   }
 
   .thumb {
     background: var(--bs-white);
     top: 2px;
+    @include mobile {
+      width: 28px;
+      height: 28px;
+    }
   }
 }
 
@@ -48,6 +84,13 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
+
+  @include mini-mobile {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
 }
 
 // ── Grid ──────────────────────────────────────────────────────────────────────
@@ -55,6 +98,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
 }
 
 // ── Card ──────────────────────────────────────────────────────────────────────
@@ -65,13 +114,22 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  @include mini-desktop {
+    border-radius: var(--border-radius-md);
+  }
 
   &__top {
     padding: 40px 35px 25px;
+    @include mini-desktop {
+      padding: 25px 25px 20px;
+    }
   }
 
   &__header {
     margin-bottom: 50px;
+    @include mini-desktop {
+      margin-bottom: 30px;
+    }
   }
 
   &__name {
@@ -84,23 +142,36 @@
 
   &__desc {
     font-size: 16px;
-    color: #8F959F;
+    color: #8f959f;
     letter-spacing: -0.05em;
     font-weight: 500;
+    @include mini-desktop {
+      font-size: 15px;
+      letter-spacing: -0.03em;
+      font-weight: 400;
+    }
   }
 
   &__cta {
     width: 100%;
     margin-top: 24px;
+    @include mini-desktop {
+      height: 40px;
+    }
   }
 
   &__features {
     padding: 30px 22px;
-    background-color: #EEF3F5;
+    background-color: #eef3f5;
     border-radius: var(--border-radius-md);
     margin: 12px;
     margin-top: 0;
     flex: 1;
+
+    @include mini-desktop {
+      padding: 20px 15px;
+      border-radius: var(--border-radius-sm);
+    }
 
     ul {
       margin-bottom: 0;
@@ -147,9 +218,8 @@
     }
 
     .plan-feature {
-
       .radio {
-        background-color: #EEF3F5;
+        background-color: #eef3f5;
       }
     }
   }
@@ -166,7 +236,7 @@
 .price-currency {
   font-size: 16px;
   font-weight: 600;
-  color: #7F8593;
+  color: #7f8593;
   margin-top: 12px;
   letter-spacing: -0.03em;
   line-height: 1;
@@ -179,11 +249,15 @@
   letter-spacing: -0.05em;
   color: var(--color-dark-secondary);
   font-family: var(--font-display);
+
+  @include mini-desktop {
+    font-size: 40px;
+  }
 }
 
 .price-period {
   font-size: 16px;
-  color: #7F8593;
+  color: #7f8593;
   align-self: flex-end;
   margin-left: 4px;
   letter-spacing: -0.03em;
@@ -192,7 +266,7 @@
 
 .price-billing {
   font-size: 15px;
-  color: #7F8593;
+  color: #7f8593;
   letter-spacing: -0.03em;
 }
 
@@ -211,6 +285,10 @@
   line-height: 1.2;
   text-transform: uppercase;
   margin-bottom: 22px;
+
+  @include mini-desktop {
+    margin-bottom: 15px;
+  }
 }
 
 .plan-feature {
@@ -218,6 +296,10 @@
   align-items: center;
   gap: 15px;
   margin-bottom: 20px;
+
+  @include mini-desktop {
+    margin-bottom: 15px;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -254,30 +336,12 @@
   color: var(--bs-body-color);
   letter-spacing: -0.02em;
 
+  @include mini-desktop {
+    margin-top: 20px;
+  }
+
   svg {
     flex-shrink: 0;
     color: var(--bs-body-color);
-  }
-}
-
-// ── Responsive ────────────────────────────────────────────────────────────────
-@media (max-width: 991px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 575px) {
-
-  .pricing-card__top,
-  .pricing-card__features {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .price-value {
-    font-size: 56px;
   }
 }

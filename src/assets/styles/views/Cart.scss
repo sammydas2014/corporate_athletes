@@ -11,16 +11,39 @@
 // ── Header ────────────────────────────────────────────────────────────────────
 .cart-header {
   margin-bottom: 10px;
+  @include mini-mobile {
+    margin-bottom: 0;
+  }
+  .sec__title {
+    @include tablet {
+      margin-bottom: 10px;
+    }
+    @include mini-mobile {
+      text-align: center;
+    }
+  }
 
   .evtsignup-hero__sub {
     text-align: left;
     margin-left: 0;
+    @include tablet {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    @include mini-mobile {
+      text-align: center;
+    }
   }
 
   &__sub {
     font-size: 15px;
     color: #636a78;
     margin-bottom: 16px;
+    @include tablet {
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -37,6 +60,10 @@
   font-weight: 500;
   letter-spacing: -0.03em;
   color: $color-dark-secondary;
+
+  @include tablet {
+    padding: 15px 20px;
+  }
 
   .bi {
     font-size: 20px;
@@ -66,6 +93,9 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .cart-block {
@@ -74,8 +104,8 @@
   border-radius: 12px;
   padding: 45px 25px;
 
-  @include mobile {
-    padding: 20px 16px;
+  @include mini-desktop {
+    padding: 20px 15px;
   }
 
   &__label {
@@ -84,6 +114,11 @@
     letter-spacing: -0.04em;
     color: #1a1d21;
     margin-bottom: 30px;
+
+    @include mini-desktop {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -94,6 +129,10 @@
 
   @include mobile {
     flex-direction: column;
+  }
+
+  @include mini-mobile {
+    gap: 15px;
   }
 
   &__icon {
@@ -111,6 +150,16 @@
       width: 36px;
       height: 36px;
       object-fit: contain;
+
+      @include mini-desktop {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    @include mini-desktop {
+      width: 50px;
+      height: 50px;
     }
   }
 
@@ -124,6 +173,10 @@
     gap: 16px;
     justify-content: space-between;
     margin-bottom: 16px;
+
+    @include mini-desktop {
+      margin-bottom: 10px;
+    }
 
     @include mobile {
       flex-direction: column;
@@ -148,6 +201,10 @@
     font-weight: 600;
     color: $color-dark-secondary;
     letter-spacing: -0.04em;
+
+    @include mini-desktop {
+      font-size: 16px;
+    }
   }
 
   &__badge {
@@ -160,6 +217,17 @@
     border-radius: 7px;
     padding: 7px 12px;
     letter-spacing: -0.02em;
+
+    @include mini-desktop {
+      border-radius: 3px;
+      padding: 6px 10px;
+      letter-spacing: 0;
+    }
+
+    @include mini-mobile {
+      padding: 5px 6px;
+      font-size: 12px;
+    }
   }
 
   &__desc {
@@ -167,6 +235,15 @@
     color: #6b7280;
     margin-bottom: 25px;
     line-height: 1.5;
+
+    @include mini-desktop {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    @include mini-mobile {
+      margin-bottom: 15px;
+    }
   }
 
   &__benefits {
@@ -177,6 +254,10 @@
     flex-direction: column;
     gap: 15px;
 
+    @include mini-desktop {
+      gap: 8px;
+    }
+
     li {
       display: flex;
       align-items: center;
@@ -184,6 +265,10 @@
       font-size: 14px;
       color: #46525e;
       font-weight: 500;
+
+      @include mini-desktop {
+        font-size: 14px;
+      }
 
       .bi {
         color: $color-primary;
@@ -228,6 +313,10 @@
     font-size: 18px;
     font-weight: 500;
     color: #7f8593;
+
+    @include mini-desktop {
+      font-size: 14px;
+    }
   }
 
   &__amount {
@@ -236,6 +325,10 @@
     color: $color-dark-secondary;
     letter-spacing: -0.04em;
     line-height: 1;
+
+    @include mini-desktop {
+      font-size: 30px;
+    }
   }
 
   &__period {
@@ -244,6 +337,10 @@
     font-weight: 500;
     margin-left: 5px;
     white-space: nowrap;
+
+    @include mini-desktop {
+      font-size: 14px;
+    }
   }
 
   &__annual {
@@ -254,11 +351,22 @@
     font-weight: 500;
     max-width: 150px;
     text-align: left;
+
+    @include mini-desktop {
+      font-size: 13px;
+      max-width: 130px;
+      margin-top: 10px;
+    }
   }
 
   &__footer {
     display: flex;
     justify-content: flex-end;
+
+    @include mini-mobile {
+      justify-content: flex-start;
+      margin-top: 15px;
+    }
   }
 }
 
@@ -272,6 +380,13 @@
   font-size: 14px;
   text-transform: capitalize;
   letter-spacing: -0.03em;
+  @include mini-desktop {
+    padding: 8px 15px;
+    height: 35px;
+    border-radius: 5px;
+    gap: 5px;
+    font-size: 13px;
+  }
 
   &:hover {
     color: #ff1100;
@@ -299,9 +414,22 @@
     border-bottom: none;
   }
 
+  @include mini-desktop {
+    gap: 10px;
+    padding: 20px 0;
+  }
+
   @include mobile {
     flex-wrap: wrap;
     gap: 12px;
+  }
+
+  @include mini-mobile {
+    gap: 14px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
   }
 
   &__icon {
@@ -313,6 +441,21 @@
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
+    img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+
+      @include mini-desktop {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    @include mini-desktop {
+      width: 50px;
+      height: 50px;
+    }
   }
 
   &__info {
@@ -322,10 +465,15 @@
 
   &__title {
     font-size: 18px;
+    line-height: 1.2;
     font-weight: 600;
     color: var(--color-dark-secondary);
     letter-spacing: -0.05em;
     margin-bottom: 4px;
+
+    @include mini-desktop {
+      font-size: 16px;
+    }
   }
 
   &__desc {
@@ -334,6 +482,10 @@
     letter-spacing: -0.02em;
     margin: 0;
     font-weight: normal;
+
+    @include mini-desktop {
+      font-size: 14px;
+    }
   }
 
   &__controls {
@@ -342,6 +494,11 @@
     gap: 40px;
     flex-shrink: 0;
     min-width: 235px;
+
+    @include mini-desktop {
+      gap: 15px;
+      min-width: 185px;
+    }
   }
 
   &__price {
@@ -361,6 +518,11 @@
       font-weight: 500;
       color: $color-dark-secondary;
       letter-spacing: -0.03em;
+
+      @include mini-desktop {
+        font-size: 25px;
+        font-weight: 600;
+      }
     }
   }
 
@@ -368,6 +530,10 @@
     font-size: 16px;
     color: #9199a5;
     line-height: 1;
+
+    @include mini-desktop {
+      font-size: 14px;
+    }
   }
 
   &__remove {
@@ -381,6 +547,15 @@
     transition: color 0.2s;
     flex-shrink: 0;
     margin-left: 20px;
+
+    @include mini-desktop {
+      margin-left: 0;
+      position: absolute;
+      top: 15px;
+      right: 0;
+      border: 1px solid;
+      border-radius: 3px;
+    }
 
     &:hover {
       color: #e0453a;
@@ -397,6 +572,10 @@
   border-radius: 8px;
   overflow: hidden;
 
+  @include mini-desktop {
+    border-radius: 5px;
+  }
+
   &__btn {
     background: none;
     border: none;
@@ -409,6 +588,11 @@
     color: $color-dark-secondary;
     font-size: 16px;
     transition: background 0.15s;
+
+    @include mini-desktop {
+      width: 28px;
+      height: 30px;
+    }
 
     &:hover:not(:disabled) {
       background: #f5f6f8;
@@ -432,6 +616,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include mini-desktop {
+      min-width: 30px;
+      height: 30px;
+    }
   }
 }
 
@@ -447,6 +635,10 @@
   gap: 7px;
   padding: 16px 0 4px;
   transition: opacity 0.2s;
+
+  @include mini-desktop {
+    padding: 0;
+  }
 
   &:hover {
     opacity: 0.8;
@@ -476,8 +668,12 @@
   border-radius: 12px;
   padding: 40px 30px;
 
+  @include mini-desktop {
+    padding: 25px;
+  }
+
   @include mobile {
-    padding: 20px 16px;
+    padding: 20px 15px;
   }
 
   &__heading {
@@ -487,6 +683,10 @@
     text-transform: uppercase;
     color: $color-dark-secondary;
     margin-bottom: 30px;
+    @include mini-desktop {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
   }
 
   &__section {
@@ -500,6 +700,11 @@
     color: $color-dark-secondary;
     text-transform: capitalize;
     margin-bottom: 20px;
+
+    @include mini-desktop {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
   }
 
   &__row {
@@ -508,8 +713,14 @@
     align-items: baseline;
     gap: 12px;
     font-size: 14px;
+    line-height: 1.5;
     color: #484f5b;
     margin-bottom: 10px;
+    @include mini-desktop {
+      gap: 10px;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
 
     &--muted {
       color: #9199a5;
@@ -528,6 +739,9 @@
     height: 1px;
     background: #edf0f4;
     margin: 20px 0;
+    @include mini-desktop {
+      margin: 15px 0;
+    }
   }
 
   &__total {
@@ -539,6 +753,10 @@
     font-weight: 600;
     color: $color-primary;
     margin-bottom: 20px;
+    @include mini-desktop {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
   }
 
   &__total-val {
@@ -546,6 +764,10 @@
     font-weight: 800;
     letter-spacing: -0.04em;
     color: $color-primary;
+    @include mini-desktop {
+      font-size: 20px;
+      font-weight: 700;
+    }
   }
 
   &__saving {
@@ -560,6 +782,10 @@
     color: #2b6c67;
     margin-bottom: 20px;
     line-height: 1.4;
+    @include mini-desktop {
+      padding: 10px;
+      margin-bottom: 15px;
+    }
 
     .bi {
       font-size: 16px;
@@ -580,6 +806,11 @@
     letter-spacing: 0.06em;
     font-size: 15px;
     height: 49px;
+    @include mini-desktop {
+      margin-bottom: 15px;
+      font-size: 13px;
+      height: 45px;
+    }
   }
 
   &__continue {
