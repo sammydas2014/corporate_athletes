@@ -26,6 +26,9 @@ defineProps({
     },
     1200: {
       spaceBetween: 20
+    },
+    1400: {
+      slidesPerView: 4
     }
   }" class="audience-swiper">
     <SwiperSlide v-for="item in cards" :key="item?.id">

@@ -75,15 +75,15 @@ const notificationData = ref(
               <div class="hdng">
                 <h3>Upcoming Events</h3>
                 <BaseButton>
-                  View all events
+                  <span class="btn-txt">
+                    View all events
+                  </span>
                   <template #icon_right>
-
                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M0.677246 4.30729C0.303303 4.30729 0.000162721 4.61043 0.000162721 4.98438C0.000162721 5.35832 0.303303 5.66146 0.677246 5.66146V4.98438V4.30729ZM13.7949 5.46315C14.0593 5.19873 14.0593 4.77002 13.7949 4.5056L9.48597 0.196672C9.22156 -0.0677447 8.79285 -0.0677447 8.52843 0.196672C8.26402 0.46109 8.26402 0.889795 8.52843 1.15421L12.3586 4.98438L8.52843 8.81454C8.26402 9.07895 8.26402 9.50766 8.52843 9.77208C8.79285 10.0365 9.22156 10.0365 9.48597 9.77208L13.7949 5.46315ZM0.677246 4.98438V5.66146H13.3161V4.98438V4.30729H0.677246V4.98438Z"
                         fill="#1F4E5F" />
                     </svg>
-
                   </template>
                 </BaseButton>
               </div>
@@ -98,7 +98,10 @@ const notificationData = ref(
               <div class="hdng">
                 <h3>Past Participation</h3>
                 <BaseButton>
-                  View all
+                  <span class="btn-txt">
+                    View all
+                  </span>
+
                   <template #icon_right>
 
                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +121,10 @@ const notificationData = ref(
               <div class="hdng">
                 <h3>Membership</h3>
                 <BaseButton>
-                  View details
+                  <span class="btn-txt">
+                    View details
+                  </span>
+
                   <template #icon_right>
 
                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">

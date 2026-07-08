@@ -2,16 +2,27 @@
 
 .participationCrd {
   padding-block: 15px;
-  border-bottom: 1px solid #D8DEE6;
+  border-bottom: 1px solid #d8dee6;
   .card-innr {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+    @include mini-desktop {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
     .card-left {
       display: flex;
       align-items: center;
       gap: 32px;
+      @include mini-desktop {
+        align-items: flex-start;
+      }
+      @include mini-mobile {
+        gap: 10px;
+      }
       .card-img {
         max-width: 170px;
         position: relative;
@@ -19,6 +30,12 @@
         border-radius: 10px;
         overflow: hidden;
         flex: 0 0 auto;
+        @include nav-collapsed {
+          max-width: 140px;
+        }
+        @include mini-mobile {
+          max-width: 110px;
+        }
         img {
           width: 100%;
           height: 100%;
@@ -36,6 +53,9 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          @include mini-mobile {
+            width: 50px;
+          }
 
           p {
             font-weight: 600;
@@ -43,18 +63,27 @@
             color: #efefef;
             letter-spacing: -0.05em;
             font-family: var(--font-display);
+            @include mini-mobile {
+              font-size: 15px;
+            }
           }
-          span{
+          span {
             text-align: center;
             font-weight: 600;
             font-size: 13px;
             text-transform: uppercase;
             line-height: 18px;
-            color: #D6A85F;
+            color: #d6a85f;
             letter-spacing: -0.05em;
             font-family: var(--font-display);
-            .mnth{
+            @include mini-mobile {
+              font-size: 10px;
+            }
+            .mnth {
               color: #efefef;
+              @include mini-mobile {
+                display: block;
+              }
             }
           }
         }
@@ -68,15 +97,40 @@
           letter-spacing: -0.04em;
           font-family: var(--font-display);
           margin-bottom: 18px;
+          @include nav-collapsed {
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 10px;
+          }
+        }
+        p {
+          @include nav-collapsed {
+            font-size: 14px;
+          }
         }
       }
     }
     .card-right {
       flex: 0 0 auto;
+      @include mini-desktop {
+        padding-left: 170px;
+      }
+      @include mini-mobile {
+        padding-left: 120px;
+        margin-top: 8px;
+      }
       .btn {
         height: 39px;
         font-size: 13px;
         padding: 0 24px;
+        @include mini-desktop {
+          height: 34px;
+          font-size: 11px;
+          padding: 0 20px;
+        }
+        @include mini-mobile{
+          height: 30px;
+        }
       }
     }
   }

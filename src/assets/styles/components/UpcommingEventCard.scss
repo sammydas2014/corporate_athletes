@@ -1,25 +1,42 @@
 @use "../base" as *;
 
-.crd-wrap{
+.crd-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 35px;
   padding-block: 20px;
-  border-bottom: 1px solid #D8DEE6;
-  .img-wrap{
+  border-bottom: 1px solid #d8dee6;
+  @include mini-desktop {
+    gap: 15px;
+  }
+  @include tablet {
+    flex-direction: column;
+  }
+  @include mobile{
+    align-items: flex-start;
+  }
+  .img-wrap {
     position: relative;
     max-width: 223px;
     border-radius: 15px;
     overflow: hidden;
     flex: 0 0 auto;
-    img{
+    @include mini-desktop {
+      max-width: 170px;
+      border-radius: 10px;
+    }
+    @include tablet {
+      border-radius: 15px;
+      max-width: 100%;
+    }
+    img {
       width: 100%;
       height: 100%;
       z-index: 1;
     }
-    .date-box{
-      background-color: #1F4E5F;
+    .date-box {
+      background-color: #1f4e5f;
       border-radius: 9px;
       position: absolute;
       top: 8px;
@@ -28,16 +45,16 @@
       padding: 9px;
       min-width: 55px;
       text-align: center;
-      h4{
-        color: #EFEFEF;
+      h4 {
+        color: #efefef;
         font-size: 27px;
         font-weight: 600;
         letter-spacing: -0.05em;
         margin-bottom: 0;
         font-family: var(--font-display);
       }
-      p{
-        color: #EFEFEF;
+      p {
+        color: #efefef;
         font-size: 13px;
         font-weight: 500;
         letter-spacing: -0.05em;
@@ -48,11 +65,14 @@
       }
     }
   }
-  .content-wrap{
+  .content-wrap {
     flex: 1;
-    .badge-crd{
-      border: 1px solid #D6A85F;
-      color: #D6A85F;
+    @include tablet {
+      width: 100%;
+    }
+    .badge-crd {
+      border: 1px solid #d6a85f;
+      color: #d6a85f;
       padding: 6px 15px;
       border-radius: 88px;
       font-size: 12px;
@@ -60,31 +80,53 @@
       font-weight: 500;
       letter-spacing: 0.14em;
       margin-bottom: 15px;
+      @include nav-collapsed {
+        padding: 4px 11px;
+        font-size: 9px;
+      }
     }
-    h3{
+    h3 {
       margin-block: 13px 15px;
+      @include mini-desktop {
+        font-size: 16px;
+        margin-block: 7px 10px;
+      }
     }
-    p{
+    p {
       display: flex;
-      align-items: center ;
+      align-items: center;
       gap: 12px;
-      color: #73797E;
+      color: #73797e;
       font-size: 14px;
       font-weight: 500;
       letter-spacing: -0.04em;
+      @include mini-desktop {
+        font-size: 12px;
+      }
     }
-    p + p{
+    p + p {
       margin-top: 8px;
     }
-    .btn-wrap{
+    .btn-wrap {
       display: flex;
       justify-content: flex-end;
-      .btn{
+      @include tablet {
+        justify-content: flex-start;
+      }
+      .btn {
         height: 39px;
         font-size: 13px;
         padding-inline: 24px;
         font-weight: 600;
         margin-top: -33px;
+
+        @include nav-collapsed {
+          margin-top: -18px;
+        }
+        @include tablet {
+          margin-top: 20px;
+        }
+        
       }
     }
   }

@@ -13,8 +13,17 @@
       border: 1px solid #d8dee6de;
       border-radius: 15px;
       padding: 60px 40px 45px 40px;
+      @include mini-desktop{
+        padding: 40px 25px;
+      }
+      @include tablet{
+        width: 100%;
+      }
       .hdng {
         margin-bottom: 35px;
+        @include mobile{
+          margin-bottom: 25px;
+        }
         h1 {
           color: #0b1219;
           font-size: 20px;
@@ -61,6 +70,9 @@
       .inp-wrap {
         .inp-innr-wrap {
           width: calc(50% - 7px);
+          @include mini-mobile{
+            width: 100%;
+          }
         }
         .inp-innr-wrap-fl-wdth {
           width: 100%;
@@ -120,12 +132,18 @@
       padding: 40px 24px 60px 24px;
       background-color: #ffffffb2;
       border-radius: 15px;
+      @include tablet{
+        width: 100%;
+      }
       .hdng {
         display: flex;
         align-items: center;
         gap: 30px;
         justify-content: space-between;
         margin-bottom: 40px;
+        @include mobile{
+          margin-bottom: 26px;
+        }
         h2 {
           color: #0b1219;
           font-size: 18px;
@@ -222,6 +240,9 @@
             color: #525962;
             font-size: 15px;
             font-weight: 500;
+            @include mini-mobile{
+              font-size: 13px;
+            }
           }
           li + li {
             margin-top: 8px;
@@ -484,6 +505,9 @@
     padding: 18px 22px;
     cursor: pointer;
     transition: background 0.2s;
+    @include mini-desktop{
+      flex-wrap: wrap;
+    }
 
     &:hover {
       background: #f8fafb;
@@ -563,6 +587,10 @@
     align-items: center;
     gap: 6px;
     flex-wrap: wrap;
+    @include mini-desktop{
+      width: 100%;
+      padding-left: 34px;
+    }
   }
 
   &__body {
@@ -620,6 +648,9 @@
     font-weight: 600;
     color: #9199a5;
     letter-spacing: -0.02em;
+    @include mini-mobile{
+      width: 120px;
+    }
   }
 
   &__val {
