@@ -14,6 +14,9 @@
   @include mini-desktop{
     grid-template-columns: repeat(2, 1fr);
   }
+  @include mini-mobile{
+    grid-template-columns: 1fr;
+  }
 }
 
 .checkbox-group__item {
@@ -115,15 +118,4 @@
   background-color: #009A9B;
 }
 
-/* ── Responsive ── */
-@media (max-width: 640px) {
-  .checkbox-group__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 420px) {
-  .checkbox-group__grid {
-    grid-template-columns: 1fr;
-  }
-}

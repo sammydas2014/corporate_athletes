@@ -237,6 +237,9 @@
         .referal-wrap {
           max-width: 397px;
           width: 100%;
+          @include tablet{
+            max-width: 100%;
+          }
         }
         .consern-list {
           margin-top: 34px;
@@ -342,6 +345,15 @@
           justify-content: space-between;
           flex-wrap: wrap;
           margin-top: 30px;
+          @include mini-mobile {
+            flex-direction: column;
+            gap: 15px;
+          }
+          .btn {
+            @include mini-mobile {
+              width: 100%;
+            }
+          }
           p {
             color: #444950;
             font-size: 13px;
