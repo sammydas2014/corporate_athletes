@@ -5,12 +5,17 @@
   padding-block: var(--sec-gap);
   text-align: center;
 
-  @include tablet {
-    padding-bottom: 36px;
+  @include mini-desktop {
+    padding-bottom: 50px;
+  }
+  @include mobile {
+    padding-bottom: 40px;
   }
 
-  @include mobile {
-    padding-bottom: 28px;
+  .sec__title {
+    @include mini-desktop {
+      margin-bottom: 10px;
+    }
   }
 
   .sec__title {
@@ -18,13 +23,8 @@
     max-width: 100%;
     margin-inline: auto;
 
-    @include mobile {
-      font-size: 28px;
-    }
-
-    @include mini-mobile {
-      font-size: 24px;
-      letter-spacing: -0.04em;
+    @include mini-desktop {
+      margin-bottom: 15px;
     }
   }
 
@@ -36,6 +36,12 @@
     line-height: 1.6;
     letter-spacing: -0.05em;
     margin-bottom: 28px;
+
+    @include mini-desktop {
+      max-width: 520px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
 
     @include mobile {
       font-size: 15px;
@@ -75,6 +81,10 @@
       color: var(--bs-white);
       letter-spacing: -0.02em;
       line-height: 1;
+      @include mobile {
+        text-align: left;
+        line-height: 1.2;
+      }
     }
   }
 }
@@ -95,7 +105,11 @@
 
   @include tablet {
     flex-direction: column;
-    gap: 36px;
+    gap: 30px;
+  }
+
+  @include tablet {
+    gap: 20px;
   }
 }
 
@@ -112,11 +126,11 @@
   padding: 50px 45px;
 
   @include mini-desktop {
-    padding: 36px 32px;
+    padding: 30px 25px;
   }
 
   @include mobile {
-    padding: 28px 20px;
+    padding: 25px 20px;
   }
 
   &__heading {
@@ -125,6 +139,13 @@
     letter-spacing: -0.04em;
     color: $color-dark-secondary;
     margin-bottom: 15px;
+    @include mini-desktop {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    @include mini-desktop {
+      font-size: 17px;
+    }
   }
 
   &__desc {
@@ -132,6 +153,13 @@
     color: #78828c;
     margin-bottom: 40px;
     line-height: 1.5;
+    @include mini-desktop {
+      margin-bottom: 30px;
+    }
+    @include mobile {
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
   }
 }
 
@@ -203,6 +231,10 @@
 // Frequency
 .evtsignup-freq {
   margin-bottom: 30px;
+
+  @include mini-desktop {
+    margin-bottom: 20px;
+  }
 
   &__heading {
     font-size: 12px;
@@ -277,6 +309,9 @@
   font-size: 15px;
   color: #a0a8b3;
   margin: 0;
+  @include mini-desktop {
+    font-size: 14px;
+  }
 }
 
 // ── Sidebar ───────────────────────────────────────────────────────────────────
@@ -288,14 +323,17 @@
   gap: 20px;
 
   @include mini-desktop {
-    width: 300px;
+    width: 350px;
   }
 
   @include tablet {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 28px;
+    gap: 30px;
+  }
+  @include tablet {
+    gap: 20px;
   }
 }
 
@@ -306,6 +344,11 @@
   text-transform: uppercase;
   color: $color-dark-secondary;
   margin-bottom: 30px;
+
+  @include mini-desktop {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
 }
 
 // Event categories
@@ -314,8 +357,14 @@
   border: 1px solid rgba(216, 222, 230, 0.87);
   border-radius: 15px;
   padding: 50px 45px;
+  @include mini-desktop {
+    padding: 30px 25px;
+  }
   @include tablet {
     flex: 1 1 280px;
+  }
+  @include mobile {
+    padding: 25px 20px;
   }
 }
 
@@ -323,12 +372,20 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  @include mini-desktop {
+    gap: 20px;
+  }
 }
 
 .category-item {
   display: flex;
   align-items: flex-start;
   gap: 24px;
+
+  @include mini-desktop {
+    gap: 12px;
+  }
 }
 
 .category-icon {
@@ -345,6 +402,17 @@
   img {
     width: 36px;
     height: 36px;
+    object-fit: contain;
+
+    @include mini-desktop {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  @include mini-desktop {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -359,6 +427,10 @@
   font-weight: 600;
   color: $color-dark-secondary;
   letter-spacing: -0.05em;
+
+  @include mini-desktop {
+    font-size: 16px;
+  }
 }
 
 .category-desc {
@@ -367,6 +439,9 @@
   line-height: 1.5;
   margin: 0;
   letter-spacing: -0.03em;
+  @include mini-desktop {
+    font-size: 15px;
+  }
 }
 
 // Why sign up
@@ -375,8 +450,15 @@
   border: 1px solid rgba(216, 222, 230, 0.87);
   border-radius: 15px;
   padding: 50px 45px;
+
+  @include mini-desktop {
+    padding: 30px 25px;
+  }
   @include tablet {
     flex: 1 1 260px;
+  }
+  @include mobile {
+    padding: 25px 20px;
   }
 }
 
