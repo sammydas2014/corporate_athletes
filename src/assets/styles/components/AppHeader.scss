@@ -374,6 +374,10 @@
 .navbar-brand img {
   height: auto;
   width: 140px;
+  
+  @include mini-mobile{
+    width: 100px;
+  }
 }
 
 // ── Toggler icon ──────────────────────────────────────────────────
