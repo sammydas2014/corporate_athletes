@@ -81,7 +81,7 @@
   gap: 25px;
   margin-left: auto;
   margin-right: 15px;
-  @include mini-mobile{
+  @include mini-mobile {
     gap: 15px;
     margin-right: 0;
   }
@@ -434,9 +434,8 @@
   }
 }
 
-
 @include mini-mobile {
-  .navbar-brand{
+  .navbar-brand {
     max-width: 100px;
   }
 }
@@ -505,12 +504,6 @@
   padding: 6px 0;
   margin: 0;
   z-index: 2000;
-
-  // Mobile: open to the left so it doesn't overflow screen
-  &--left {
-    right: auto;
-    left: 0;
-  }
 
   &__header {
     display: flex;
