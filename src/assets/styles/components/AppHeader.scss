@@ -81,6 +81,10 @@
   gap: 25px;
   margin-left: auto;
   margin-right: 15px;
+  @include mini-mobile{
+    gap: 15px;
+    margin-right: 0;
+  }
 }
 
 .navbar-backdrop {
@@ -428,4 +432,172 @@
   .dropdown-item {
     color: var(--bs-body-color) !important;
   }
+}
+
+
+@include mini-mobile {
+  .navbar-brand{
+    max-width: 100px;
+  }
+}
+
+// ── Profile button (logged out) ────────────────────────────────────
+.btn-profile-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--bs-dark);
+  font-size: 22px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: var(--bs-secondary);
+  }
+
+  .profile-icon-img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+}
+
+// ── Profile avatar button (logged in) ──────────────────────────────
+.btn-profile-avatar {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--bs-transition);
+
+  &:hover {
+    box-shadow: 0 0 0 3px rgba(197, 155, 108, 0.3);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+// ── Profile dropdown ───────────────────────────────────────────────
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  z-index: 2000;
+
+  // Mobile: open to the left so it doesn't overflow screen
+  &--left {
+    right: auto;
+    left: 0;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+
+    img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bs-dark);
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  &__email {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  &__divider {
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    margin: 4px 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: var(--bs-dark);
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+
+    i {
+      font-size: 16px;
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+      color: var(--bs-secondary);
+    }
+
+    &--logout {
+      color: #e05252;
+      &:hover {
+        background: rgba(224, 82, 82, 0.06);
+        color: #e05252;
+      }
+    }
+  }
+}
+
+// ── Dropdown open/close animation ─────────────────────────────────
+.profile-drop-enter-active,
+.profile-drop-leave-active {
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+.profile-drop-enter-from,
+.profile-drop-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+// Cart badge fix
+.cart-badge {
+  font-size: 10px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  line-height: 18px;
 }

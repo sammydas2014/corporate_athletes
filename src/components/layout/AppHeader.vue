@@ -6,17 +6,48 @@
       </router-link>
 
       <div class="d-flex align-items-center header-mobile-icons">
+
+        <span class="search_icon text-dark fw-semibold" @click="toggleSearch">
+          <i class="bi bi-search"></i>
+        </span>
+        <BaseButton to="/cart" class="cart_btn position-relative">
+          <i class="bi bi-cart3"></i>
+          <span v-if="isLoggedIn && shortlistCount >= 0"
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary text-dark fw-semibold cart-badge">
+            {{ shortlistCount }}
+          </span>
+        </BaseButton>
         <router-link to="/ai-intelligence/shortlist"
           class="d-flex align-items-center gap-2 position-relative text-dark fw-semibold">
           <i class="bi bi-heart"></i>
-          <span v-if="shortlistCount >= 0"
+          <span v-if="isLoggedIn && shortlistCount >= 0"
             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary text-dark fw-semibold">
             {{ shortlistCount }}
           </span>
         </router-link>
-        <span class="search_icon text-dark fw-semibold" @click="toggleSearch">
-          <i class="bi bi-search"></i>
-        </span>
+
+        <div class="profile-wrap position-relative" ref="profileBtnRef">
+          <button v-if="!isLoggedIn" class="btn-profile-icon" @click="loginModalOpen = true" title="Login">
+            <img :src="imageMap.userIcon" alt="Login" class="profile-icon-img" />
+          </button>
+          <button v-else class="btn-profile-avatar" @click.stop="toggleProfile">
+            <img :src="user?.avatar" :alt="user?.name" />
+          </button>
+          <transition name="profile-drop">
+            <ul v-if="isLoggedIn && profileOpen" class="profile-dropdown profile-dropdown--left" role="menu">
+              <li>
+                <router-link to="/profile" class="profile-dropdown__item" @click="closeProfile">
+                  <i class="bi bi-person"></i> My Profile
+                </router-link>
+              </li>
+              <li>
+                <button class="profile-dropdown__item profile-dropdown__item--logout" @click="logout">
+                  <i class="bi bi-box-arrow-right"></i> Logout
+                </button>
+              </li>
+            </ul>
+          </transition>
+        </div>
       </div>
 
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
@@ -52,19 +83,66 @@
           </li>
         </ul>
         <div class="d-flex align-items-center btn_wraps">
+          <BaseButton to="/about" variant="secondary" class="call_btn">
+            Book a Call
+          </BaseButton>
+
+          <span class="search_icon text-dark fw-semibold btn_wraps__icon" @click="toggleSearch">
+            <i class="bi bi-search"></i>
+          </span>
+
+          <BaseButton to="/cart" class="cart_btn desktopCart position-relative">
+            <i class="bi bi-cart3"></i>
+            <span v-if="isLoggedIn && shortlistCount >= 0"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary text-dark fw-semibold cart-badge">
+              {{ shortlistCount }}
+            </span>
+          </BaseButton>
+
           <router-link to="/ai-intelligence/shortlist"
             class="d-flex align-items-center gap-2 position-relative text-dark fw-semibold btn_wraps__icon">
             <i class="bi bi-heart"></i>
-            <span v-if="shortlistCount >= 0"
+            <span v-if="isLoggedIn && shortlistCount >= 0"
               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary text-dark fw-semibold">
               {{ shortlistCount }}
             </span>
           </router-link>
-          <span class="search_icon text-dark fw-semibold btn_wraps__icon" @click="toggleSearch">
-            <i class="bi bi-search"></i>
-          </span>
-          <BaseButton to="/about" variant="secondary" class="call_btn">Book a Strategy Call</BaseButton>
-          <BaseButton to="/cart" variant="outline-light" class="cart_btn"><i class="bi bi-cart3"></i></BaseButton>
+
+          <div class="profile-wrap desktopProfile position-relative" ref="desktopProfileBtnRef">
+
+            <button v-if="!isLoggedIn" class="btn-profile-icon" @click="loginModalOpen = true" aria-label="Login"
+              title="Login">
+              <img :src="imageMap.userIcon" alt="Login" class="profile-icon-img" />
+            </button>
+
+            <button v-else class="btn-profile-avatar" @click.stop="toggleProfile" aria-label="Profile menu"
+              :aria-expanded="profileOpen">
+              <img :src="user?.avatar" :alt="user?.name" />
+            </button>
+
+            <transition name="profile-drop">
+              <ul v-if="isLoggedIn && profileOpen" class="profile-dropdown" role="menu">
+                <li class="profile-dropdown__header">
+                  <img :src="user?.avatar" :alt="user?.name" />
+                  <div>
+                    <p class="profile-dropdown__name">{{ user?.name }}</p>
+                    <p class="profile-dropdown__email">{{ user?.email }}</p>
+                  </div>
+                </li>
+                <li role="separator" class="profile-dropdown__divider"></li>
+                <li>
+                  <router-link to="/profile" class="profile-dropdown__item" @click="closeProfile">
+                    <i class="bi bi-person"></i> My Profile
+                  </router-link>
+                </li>
+                <li>
+                  <button class="profile-dropdown__item profile-dropdown__item--logout" @click="logout">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                  </button>
+                </li>
+              </ul>
+            </transition>
+          </div>
 
         </div>
       </div>
@@ -83,6 +161,8 @@
     </div>
     <div v-if="searchOpen" class="search-backdrop" @click="closeSearch"></div>
     <div class="navbar-backdrop" :class="{ show: navOpen }" @click="closeNav"></div>
+
+    <LoginModal v-model="loginModalOpen" />
   </header>
 </template>
 
@@ -90,26 +170,56 @@
 import { ref, nextTick, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { Collapse } from 'bootstrap'
-import { imageMap } from '@/assets/images/imageMap';
-import BaseButton from '@/components/common/BaseButton.vue';
-import { navItems } from '@/config/hrader.config';
-import { shortlistedTools } from '@/services/shortlist.service';
+import { storeToRefs } from 'pinia'
+import { imageMap } from '@/assets/images/imageMap'
+import BaseButton from '@/components/common/BaseButton.vue'
+import LoginModal from '@/components/common/LoginModal.vue'
+import { navItems } from '@/config/hrader.config'
+import { shortlistedTools } from '@/services/shortlist.service'
+import { useAuthStore } from '@/stores/auth.store'
 
 const route = useRoute()
+const shortlistCount = shortlistedTools.length
 
-const shortlistCount = shortlistedTools.length;
+// ── Auth ───────────────────────────────────────────────────────────
+const auth = useAuthStore()
+const { isLoggedIn, user } = storeToRefs(auth)
+const loginModalOpen = ref(false)
+const profileOpen = ref(false)
+const profileBtnRef = ref(null)
+const desktopProfileBtnRef = ref(null)
 
+function toggleProfile() {
+  profileOpen.value = !profileOpen.value
+}
+
+function closeProfile() {
+  profileOpen.value = false
+}
+
+function handleProfileOutsideClick(e) {
+  if (profileOpen.value &&
+    !profileBtnRef.value?.contains(e.target) &&
+    !desktopProfileBtnRef.value?.contains(e.target)) {
+    closeProfile()
+  }
+}
+
+function logout() {
+  auth.logout()
+  closeProfile()
+}
+
+// ── Search ─────────────────────────────────────────────────────────
 const searchOpen = ref(false)
 const searchQuery = ref('')
 const searchInputRef = ref(null)
 
+// ── Mobile nav ─────────────────────────────────────────────────────
 const navbarCollapseRef = ref(null)
 const navOpen = ref(false)
 
-// Bootstrap's Dropdown (Popper-positioned) turned out unreliable here even
-// on desktop, so nav-item submenus are fully custom at every breakpoint:
-// plain Vue state + the `.dropdown-menu--open` class. CSS alone tells them
-// apart visually (floating on desktop, inline in the slide-in panel).
+// ── Dropdowns ──────────────────────────────────────────────────────
 const openDropdown = ref(null)
 
 function toggleDropdown(label) {
@@ -124,10 +234,14 @@ function handleOutsideClick(e) {
   if (openDropdown.value && !e.target.closest('.nav-item.dropdown')) {
     closeDropdown()
   }
+  handleProfileOutsideClick(e)
 }
 
 function handleEscape(e) {
-  if (e.key === 'Escape') closeDropdown()
+  if (e.key === 'Escape') {
+    closeDropdown()
+    closeProfile()
+  }
 }
 
 function toggleSearch() {
@@ -144,22 +258,14 @@ function closeSearch() {
   searchQuery.value = ''
 }
 
-function setNavOpen() {
-  navOpen.value = true
-}
-
-function setNavClosed() {
-  navOpen.value = false
-  openDropdown.value = null
-}
-
-function closeNav() {
-  Collapse.getOrCreateInstance(navbarCollapseRef.value).hide()
-}
+function setNavOpen() { navOpen.value = true }
+function setNavClosed() { navOpen.value = false; openDropdown.value = null }
+function closeNav() { Collapse.getOrCreateInstance(navbarCollapseRef.value).hide() }
 
 watch(() => route.fullPath, () => {
   if (navOpen.value) closeNav()
   closeDropdown()
+  closeProfile()
 })
 
 onMounted(() => {

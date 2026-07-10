@@ -174,6 +174,9 @@ export const imageMap = {
   googlePay: new URL("./g-pay.png", import.meta.url).href,
   masterCard: new URL("./master-card.png", import.meta.url).href,
 
+  profileImage: new URL("./profileImage.png", import.meta.url).href,
+  userIcon: new URL("./userIcon.svg", import.meta.url).href,
+
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
   },

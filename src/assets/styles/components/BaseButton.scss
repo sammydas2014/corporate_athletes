@@ -117,13 +117,28 @@
 }
 
 .cart_btn {
+  color: $color-dark-secondary;
   padding: 0;
-  width: 40px;
-  height: 40px;
-  color: #7e7e7e;
-  border-color: #afa89c87;
-  @include mini-desktop {
-    width: 35px;
-    height: 35px;
+  border: 0;
+  height: auto;
+  background-color: transparent;
+  &:hover {
+    background-color: transparent;
+    color: $color-dark-secondary;
+  }
+  .cart-badge {
+    margin-top: -3px;
+    letter-spacing: 0;
+  }
+  @include nav-collapsed {
+    font-size: 16px;
+    line-height: 1;
+  }
+}
+
+.desktopCart,
+.desktopProfile {
+  @include tablet-landscape {
+    display: none;
   }
 }
