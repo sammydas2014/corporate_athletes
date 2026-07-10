@@ -121,6 +121,7 @@
   padding: 0;
   border: 0;
   height: auto;
+  font-size: 18px;
   background-color: transparent;
   &:hover {
     background-color: transparent;
@@ -130,7 +131,7 @@
     margin-top: -3px;
     letter-spacing: 0;
   }
-  @include nav-collapsed {
+  @include mini-mobile {
     font-size: 16px;
     line-height: 1;
   }
