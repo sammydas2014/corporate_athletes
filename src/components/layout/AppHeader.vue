@@ -43,16 +43,13 @@
         <!-- Profile (mobile) -->
         <div class="profile-wrap position-relative" ref="mobileProfileBtnRef">
           <!-- Logged out → user icon -->
-          <button
+          <router-link
             v-if="!isLoggedIn"
             class="btn-profile-icon"
-            @click.stop="loginModalOpen = true"
-            title="Login"
-            aria-label="Login"
+            to="/auth/login"
           >
             <img :src="imageMap.userIcon" alt="Login" class="profile-icon-img" />
-          </button>
-
+          </router-link>
           <!-- Logged in → avatar -->
           <button
             v-else
@@ -200,15 +197,13 @@
           <div class="profile-wrap desktopProfile position-relative" ref="desktopProfileBtnRef">
 
             <!-- Logged out → user icon -->
-            <button
+            <router-link
               v-if="!isLoggedIn"
               class="btn-profile-icon"
-              @click.stop="loginModalOpen = true"
-              aria-label="Login"
-              title="Login"
+              to="/auth/login"
             >
               <img :src="imageMap.userIcon" alt="Login" class="profile-icon-img" />
-            </button>
+            </router-link>
 
             <!-- Logged in → avatar -->
             <button
@@ -278,8 +273,6 @@
     <!-- ── Nav backdrop (mobile) ───────────────────────────────────── -->
     <div class="navbar-backdrop" :class="{ show: navOpen }" @click="closeNav"></div>
 
-    <!-- ── Login Modal ─────────────────────────────────────────────── -->
-    <LoginModal v-model="loginModalOpen" />
 
   </header>
 </template>
@@ -291,7 +284,7 @@ import { Collapse } from 'bootstrap'
 import { storeToRefs } from 'pinia'
 import { imageMap } from '@/assets/images/imageMap'
 import BaseButton from '@/components/common/BaseButton.vue'
-import LoginModal from '@/components/common/LoginModal.vue'
+// import LoginModal from '@/components/common/LoginModal.vue'
 import { navItems } from '@/config/hrader.config'
 import { shortlistedTools } from '@/services/shortlist.service'
 import { useAuthStore } from '@/stores/auth.store'
@@ -305,8 +298,7 @@ const shortlistCount = computed(() => shortlistedTools.length)
 const auth = useAuthStore()
 const { isLoggedIn, user } = storeToRefs(auth)
 
-// ── Login modal ────────────────────────────────────────────────────
-const loginModalOpen = ref(false)
+
 
 // ── Profile dropdowns (separate state for mobile vs desktop) ───────
 const mobileProfileOpen = ref(false)

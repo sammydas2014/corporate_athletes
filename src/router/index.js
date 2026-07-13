@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+// Default Layout
+const DefaultLayout = () => import("@/layouts/DefaultLayout.vue");
+const AuthLayout = () => import("@/layouts/AuthLayout.vue")
 // Lazy-loaded Views
 const HomeView = () => import("@/views/Home/HomeView.vue");
 const AboutView = () => import("@/views/About/AboutView.vue");
@@ -47,206 +50,232 @@ const PlaybooksList = () => import("@/views/Insights/playbooks/PlaybooksList.vue
 const PlaybookDetail = () => import("@/views/Insights/playbooks/PlaybookDetail.vue");
 const ConsortiumContributions = () => import("@/views/Insights/ConsortiumContributions.vue");
 
+// Login & Registraction Page
+const Login = () => import("@/views/LoginView/LoginView.vue")
+const Register = () => import("@/views/RegisterView/RegisterView.vue")
+
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
-  },
-  {
-    path: "/solutions",
-    component: SolutionsView,
+    component: DefaultLayout,
     children: [
       {
         path: "",
-        name: "solutions-main",
-        component: SolutionsMain,
+        name: "home",
+        component: HomeView,
       },
       {
-        path: "ai-strategy-governance",
-        name: "solutions-strategy",
-        component: AiStrategyGovernance,
-      },
-      {
-        path: "ai-implementation-scaling",
-        name: "solutions-scaling",
-        component: AiImplementationScaling,
-      },
-      {
-        path: "finance-shared-services",
-        name: "solutions-finance",
-        component: FinanceSharedServices,
-      },
-      {
-        path: "digital-operating-model",
-        name: "solutions-digital",
-        component: DigitalOperatingModel,
-      },
-      {
-        path: "data-analytics",
-        name: "solutions-data",
-        component: DataAnalytics,
-      },
-    ],
-  },
-  {
-    path: "/ai-intelligence",
-    component: AiIntelligenceView,
-    children: [
-      {
-        path: "",
-        name: "aiintelligence-main",
-        component: AiIntelligenceMain,
-      },
-      {
-        path: "toolcatalogue",
-        name: "toolcatalogue",
-        component: ToolCatalogue,
-      },
-      {
-        path: "tools/:id",
-        name: "tool-details",
-        component: ToolDetails,
-        props: true,
-      },
-      {
-        path: "shortlist",
-        name: "tools-shortlist",
-        component: ToolsShortlist,
-      },
-      {
-        path: "comparison",
-        name: "tools-comparison",
-        component: ToolsComparison,
-      },
-      {
-        path: "stack-generator",
-        name: "stack-generator",
-        component: StackGenerator,
-      },
-      {
-        path: "outcome",
-        name: "stack-outcome",
-        component: OutcomeView,
-      },
-    ],
-  },
-  {
-    path: "/case-studies",
-    component: CaseStudiesView,
-    children: [
-      {
-        path: "",
-        name: "case-studies-list",
-        component: CaseStudiesList,
-      },
-      {
-        path: ":id",
-        name: "case-study-detail",
-        component: CaseStudyDetail,
-        props: true,
-      },
-    ],
-  },
-  {
-    path: "/insights",
-    component: InsightsView,
-    children: [
-      {
-        path: "",
-        name: "insights-main",
-        component: InsightsMain,
-      },
-      {
-        path: "articles",
-        name: "insights-articles",
-        component: Articles,
-      },
-      {
-        path: "deep-dives",
-        name: "insights-deep-dives",
-        component: AiDeepDives,
-      },
-      {
-        path: "playbooks",
-        component: PlaybooksView,
+        path: "/solutions",
+        component: SolutionsView,
         children: [
           {
             path: "",
-            name: "playbooks-list",
-            component: PlaybooksList,
+            name: "solutions-main",
+            component: SolutionsMain,
+          },
+          {
+            path: "ai-strategy-governance",
+            name: "solutions-strategy",
+            component: AiStrategyGovernance,
+          },
+          {
+            path: "ai-implementation-scaling",
+            name: "solutions-scaling",
+            component: AiImplementationScaling,
+          },
+          {
+            path: "finance-shared-services",
+            name: "solutions-finance",
+            component: FinanceSharedServices,
+          },
+          {
+            path: "digital-operating-model",
+            name: "solutions-digital",
+            component: DigitalOperatingModel,
+          },
+          {
+            path: "data-analytics",
+            name: "solutions-data",
+            component: DataAnalytics,
+          },
+        ],
+      },
+      {
+        path: "/ai-intelligence",
+        component: AiIntelligenceView,
+        children: [
+          {
+            path: "",
+            name: "aiintelligence-main",
+            component: AiIntelligenceMain,
+          },
+          {
+            path: "toolcatalogue",
+            name: "toolcatalogue",
+            component: ToolCatalogue,
+          },
+          {
+            path: "tools/:id",
+            name: "tool-details",
+            component: ToolDetails,
+            props: true,
+          },
+          {
+            path: "shortlist",
+            name: "tools-shortlist",
+            component: ToolsShortlist,
+          },
+          {
+            path: "comparison",
+            name: "tools-comparison",
+            component: ToolsComparison,
+          },
+          {
+            path: "stack-generator",
+            name: "stack-generator",
+            component: StackGenerator,
+          },
+          {
+            path: "outcome",
+            name: "stack-outcome",
+            component: OutcomeView,
+          },
+        ],
+      },
+      {
+        path: "/case-studies",
+        component: CaseStudiesView,
+        children: [
+          {
+            path: "",
+            name: "case-studies-list",
+            component: CaseStudiesList,
           },
           {
             path: ":id",
-            name: "playbook-detail",
-            component: PlaybookDetail,
+            name: "case-study-detail",
+            component: CaseStudyDetail,
             props: true,
           },
         ],
       },
       {
-        path: "consortium-contributions",
-        name: "guest-consortium-contributions",
-        component: ConsortiumContributions,
+        path: "/insights",
+        component: InsightsView,
+        children: [
+          {
+            path: "",
+            name: "insights-main",
+            component: InsightsMain,
+          },
+          {
+            path: "articles",
+            name: "insights-articles",
+            component: Articles,
+          },
+          {
+            path: "deep-dives",
+            name: "insights-deep-dives",
+            component: AiDeepDives,
+          },
+          {
+            path: "playbooks",
+            component: PlaybooksView,
+            children: [
+              {
+                path: "",
+                name: "playbooks-list",
+                component: PlaybooksList,
+              },
+              {
+                path: ":id",
+                name: "playbook-detail",
+                component: PlaybookDetail,
+                props: true,
+              },
+            ],
+          },
+          {
+            path: "consortium-contributions",
+            name: "guest-consortium-contributions",
+            component: ConsortiumContributions,
+          },
+        ],
+      },
+      {
+        path: "/about",
+        name: "about",
+        component: AboutView,
+      },
+      {
+        path: "/events",
+        name: "events",
+        component: EventsView,
+      },
+      {
+        path: "/events/event-details/:id",
+        name: "event-details",
+        component: EventDetails,
+        props: true,
+      },
+      {
+        path: "/events/sign-up",
+        name: "event-sign-up",
+        component: EventSignUp,
+      },
+      {
+        path: "/contact",
+        name: "contact",
+        component: ContactView,
+      },
+      {
+        path: "/registration",
+        name: "registration",
+        component: Registration,
+      },
+      {
+        path: "/subscription",
+        name: "subscription",
+        component: SubscriptionView,
+      },
+      {
+        path: "/profile",
+        name: "profile",
+        component: ProfileView,
+      },
+      {
+        path: "/cart",
+        name: "cart",
+        component: CartView,
+      },
+      {
+        path: "/checkout",
+        name: "checkout",
+        component: CheckoutView,
+      },
+      // Catch-all fallback
+      {
+        path: "/:pathMatch(.*)*",
+        redirect: "/",
       },
     ],
   },
   {
-    path: "/about",
-    name: "about",
-    component: AboutView,
-  },
-  {
-    path: "/events",
-    name: "events",
-    component: EventsView,
-  },
-  {
-    path: "/events/event-details/:id",
-    name: "event-details",
-    component: EventDetails,
-    props: true,
-  },
-  {
-    path: "/events/sign-up",
-    name: "event-sign-up",
-    component: EventSignUp,
-  },
-  {
-    path: "/contact",
-    name: "contact",
-    component: ContactView,
-  },
-  {
-    path: "/registration",
-    name: "registration",
-    component: Registration,
-  },
-  {
-    path: "/subscription",
-    name: "subscription",
-    component: SubscriptionView,
-  },
-  {
-    path: "/profile",
-    name: "profile",
-    component: ProfileView,
-  },
-  {
-    path: "/cart",
-    name: "cart",
-    component: CartView,
-  },
-  {
-    path: "/checkout",
-    name: "checkout",
-    component: CheckoutView,
-  },
-  // Catch-all fallback
-  {
-    path: "/:pathMatch(.*)*",
-    redirect: "/",
-  },
+    path:'/auth',
+    component:AuthLayout,
+    children:[
+      {
+        path:'login',
+        name:'login',
+        component:Login
+      },
+      {
+        path:'register',
+        name:'register',
+        component:Register
+      }
+    ]
+  }
 ];
 
 const router = createRouter({

@@ -1,0 +1,235 @@
+@use "../base" as *;
+
+.authwrap-section {
+  background-color: #fbfaf6;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  .innr-auth-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+    .left-auth-wrap {
+      width: 50%;
+      flex: 0 0 auto;
+      padding-top: 42px;
+      padding-bottom: 150px;
+      .container {
+        max-width: 450px;
+        margin-inline: auto;
+        .header-logo {
+          max-width: 146px;
+          margin-bottom: 137px;
+        }
+        .login-wrap {
+          max-width: 388px;
+          margin-left: auto;
+          h1 {
+            color: #0b1219;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.05em;
+            line-height: 35px;
+            margin-bottom: 2px;
+          }
+          p {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+            color: #5b6466;
+          }
+          .frm-wrap {
+            margin-top: 25px;
+            .googlBtn {
+              height: 45px;
+              border: 1px solid #d7dce3cf;
+              border-radius: 7px;
+              color: #292f3a;
+              font-size: 14px;
+              text-transform: none;
+              gap: 13px;
+              width: 100%;
+              background-color: transparent;
+              img {
+                width: 20px;
+              }
+              &:hover {
+                background-color: var(--bs-primary);
+                color: var(--bs-white);
+                border: 1px solid transparent;
+              }
+            }
+            .option-wrap {
+              margin-top: 25px;
+              margin-bottom: 20px;
+              p {
+                color: #6d6d6d;
+                font-size: 11px;
+                text-align: center;
+                text-transform: uppercase;
+                position: relative;
+                margin-bottom: 0;
+                line-height: 20px;
+                letter-spacing: 0.1em;
+                &::before {
+                  content: "";
+                  position: absolute;
+                  width: 97px;
+                  height: 1px;
+                  top: 50%;
+                  background-color: #d7dce3;
+                  left: 0;
+                }
+                &::after {
+                  content: "";
+                  position: absolute;
+                  width: 97px;
+                  height: 1px;
+                  top: 50%;
+                  background-color: #d7dce3;
+                  right: 0;
+                }
+              }
+            }
+            .inp-wrap {
+              label {
+                font-size: 14px;
+                color: #1a1d21;
+                letter-spacing: -0.04em;
+                font-weight: 500;
+                margin-bottom: 10px;
+              }
+              .form-floating {
+                background-color: transparent;
+                height: auto;
+                padding: 0;
+                margin: 0;
+                .baseInpFld {
+                  height: 45px;
+                  border: 1px solid #d7dce3cf;
+                  border-radius: 7px;
+                  padding-inline: 15px;
+                  color: #484f5b;
+                  font-size: 13px;
+                  letter-spacing: -0.04em;
+                  font-weight: 500;
+                  &::placeholder {
+                    color: #484f5b;
+                    font-size: 13px;
+                    letter-spacing: -0.04em;
+                    font-weight: 500;
+                  }
+                }
+                .slot-icon-right {
+                  right: 15px;
+                  cursor: pointer;
+                }
+              }
+            }
+            .inp-wrap + .inp-wrap {
+              margin-top: 20px;
+            }
+            .btn-wrap {
+              margin-top: 26px;
+              width: 100%;
+              .btn {
+                width: 100%;
+                height: 49px;
+                font-size: 15px;
+                margin-bottom: 24px;
+              }
+              p {
+                text-align: center;
+                font-size: 14px;
+                color: #5b6466;
+                a {
+                  color: #2c3031;
+                  font-weight: 500;
+                }
+              }
+              .trmsplcy-cls {
+                font-size: 11px;
+                text-align: center;
+                letter-spacing: -0.04em;
+                margin-bottom: 16px;
+              }
+            }
+            .innr-wrap {
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-block: 20px;
+              .inp-wrap {
+                width: calc(50% - 5px);
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .right-auth-wrap {
+      width: 50%;
+      flex: 0 0 auto;
+      background-image: url("../../images/loginpage-bg-img.png");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding-bottom: 70px;
+      .container {
+        max-width: 455px;
+        margin-left: 40px;
+        padding-top: 66px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        h6 {
+          color: var(--bs-white);
+          font-size: 13px;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          margin-bottom: 0;
+          font-weight: 400;
+        }
+        .btm-cote {
+          margin-top: auto;
+          h4 {
+            color: var(--bs-white);
+            font-size: 24px;
+            letter-spacing: 0.04em;
+            font-weight: 400;
+            line-height: 36px;
+            position: relative;
+            padding-bottom: 36px;
+            margin-bottom: 15px;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 45px;
+              height: 1px;
+              background-color: var(--bs-white);
+              bottom: 0;
+              left: 0;
+            }
+          }
+          p {
+            color: var(--bs-white);
+            font-size: 14px;
+            letter-spacing: -0.04em;
+          }
+        }
+      }
+    }
+  }
+  .register-auth-wrap {
+    .left-auth-wrap {
+      .container {
+        .header-logo {
+          margin-bottom: 55px;
+        }
+      }
+    }
+  }
+}

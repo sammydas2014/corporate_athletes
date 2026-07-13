@@ -176,6 +176,7 @@ export const imageMap = {
 
   profileImage: new URL("./profileImage.png", import.meta.url).href,
   userIcon: new URL("./userIcon.svg", import.meta.url).href,
+  googleIcon: new URL("./google-icon.png", import.meta.url).href,
 
   mask: {
     mask_aipl_img: new URL("./mask_aipl_img.svg", import.meta.url).href,
