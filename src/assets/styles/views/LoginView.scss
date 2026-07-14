@@ -16,16 +16,36 @@
       flex: 0 0 auto;
       padding-top: 42px;
       padding-bottom: 150px;
+      @include tablet {
+        width: 100%;
+        padding-bottom: 90px;
+      }
       .container {
         max-width: 450px;
         margin-inline: auto;
+        @include tablet {
+          max-width: 80%;
+        }
+        @include mobile {
+          max-width: 100%;
+        }
         .header-logo {
           max-width: 146px;
           margin-bottom: 137px;
+          @include mobile {
+            max-width: 115px;
+            margin-bottom: 97px;
+          }
+          @include mini-mobile {
+            margin-bottom: 47px;
+          }
         }
         .login-wrap {
           max-width: 388px;
           margin-left: auto;
+          @include tablet {
+            margin-inline: auto;
+          }
           h1 {
             color: #0b1219;
             font-size: 24px;
@@ -160,9 +180,15 @@
               gap: 10px;
               flex-wrap: wrap;
               margin-block: 20px;
+              @include mini-mobile{
+                flex-direction: column;
+              }
               .inp-wrap {
                 width: calc(50% - 5px);
                 margin: 0;
+                @include mini-mobile{
+                  width: 100%;
+                }
               }
             }
           }
@@ -177,6 +203,10 @@
       background-repeat: no-repeat;
       background-position: center;
       padding-bottom: 70px;
+      @include tablet {
+        display: none;
+      }
+
       .container {
         max-width: 455px;
         margin-left: 40px;
